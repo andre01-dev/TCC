@@ -1,0 +1,53 @@
+.container-cardCurso{
+    background-color: #003F51;
+    width: 368px;
+    height: 500px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 50px;
+    color: #DFC8BA;
+
+    .titulo-carga{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        margin-bottom: 25px;
+
+        .tempo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+    }
+
+    h1{
+        margin-bottom: 10px;
+    }
+
+    p{
+        font-size:20px;
+        font-weight: 900;
+    }
+
+    .nivel-button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+        button{
+            width: 139px;
+            height: 51px;
+            border-radius: 4px;
+            background-color: #DFB674;
+            color: #003F51;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
