@@ -4,17 +4,17 @@ import './registrar.scss';
 
 export default function Registrar() {
 
-    const [nome, setNome] = useState("NOME");
-    const [email, setEmail] = useState("EMAIL");
-    const [cpf, setCpf] = useState("CPF");
-    const [telefone, setTelefone] = useState("TELEFONE");
-    const [dtNascimento, setDtNascimento] = useState("DATA DE NASCIMENTO");
-    const [senha, setSenha] = useState("SENHA");
-        const [entrarAtivo, setEntrarAtivo] = useState("entrar");
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [dtNascimento, setDtNascimento] = useState("");
+    const [senha, setSenha] = useState("");
+    const [entrarAtivo, setEntrarAtivo] = useState("entrar");
 
     async function RegistrarUsuario() {
         try {
-            const response = await api.post('/eventos', {
+            await api.post('/usuario', {
                 nome,
                 email,
                 cpf,
@@ -52,6 +52,7 @@ export default function Registrar() {
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
                         type="text"
+                        placeholder='Digite seu nome'
                     />
 
                     <input
@@ -59,6 +60,7 @@ export default function Registrar() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         type="text"
+                        placeholder='Digite seu email'
                     />
 
                     <div className='cpf-telefone'>
@@ -68,6 +70,7 @@ export default function Registrar() {
                             onChange={(e) => setCpf(e.target.value)}
                             type="text"
                             className='input-menor'
+                            placeholder='Digite seu CPF'
                         />
 
                         <input
@@ -76,6 +79,7 @@ export default function Registrar() {
                             onChange={(e) => setTelefone(e.target.value)}
                             type="text"
                             className='input-menor'
+                            placeholder='Digite seu telefone'
                         />
                     </div>
 
@@ -84,6 +88,7 @@ export default function Registrar() {
                         value={dtNascimento}
                         onChange={(e) => setDtNascimento(e.target.value)}
                         type="text"
+                        placeholder='Informe sua data de nascimento'
                     />
 
                     <input
@@ -91,6 +96,7 @@ export default function Registrar() {
                         value={senha}
                         onChange={(e) => setSenha(e.target.value)}
                         type="text"
+                        placeholder='Crie sua senha'
                     />
 
                 </div>

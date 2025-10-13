@@ -7,7 +7,7 @@ export async function inserirUsuario(novoUsuario) {
         (?,?,?,?,?,MD5(?),?)
     `
     const [registros] = await conection.query(comando, [
-        novoUsuario.nome_usuario,
+        novoUsuario.nome,
         novoUsuario.email,
         novoUsuario.cpf,
         novoUsuario.telefone,
