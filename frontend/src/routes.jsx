@@ -12,6 +12,7 @@ import Noticia7 from "./pages/noticias/noticia7";
 import Noticia8 from "./pages/noticias/noticia8";
 import Noticia9 from "./pages/noticias/noticia9";
 import Noticia10 from "./pages/noticias/noticia10";
+import Noticia11 from "./pages/noticias/noticia11";
 
 
 
@@ -33,6 +34,7 @@ export default function Navegacao () {
                 <Route path="/noticia8"  element= {<Noticia8/>}/>
                 <Route path="/noticia9"  element= {<Noticia9/>}/>
                 <Route path="/noticia10"  element= {<Noticia10/>}/>
+                <Route path="/noticia11"  element= {<Noticia11/>}/>
             </Routes>
         </BrowserRouter>
     );
