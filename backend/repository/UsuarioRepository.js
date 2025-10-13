@@ -2,9 +2,9 @@ import conection from "./conection.js";
 
 export async function inserirUsuario(novoUsuario) {
     const comando = `
-        insert into tb_usuario (nome_usuario, email, cpf, telefone, dt_nascimento, sabendo, senha, id_curso)
+        insert into tb_usuario (nome_usuario, email, cpf, telefone, dt_nascimento, senha, id_curso)
         values
-        (?,?,?,?,?,?,MD5(?),?)
+        (?,?,?,?,?,MD5(?),?)
     `
     const [registros] = await conection.query(comando, [
         novoUsuario.nome_usuario,
@@ -12,7 +12,6 @@ export async function inserirUsuario(novoUsuario) {
         novoUsuario.cpf,
         novoUsuario.telefone,
         novoUsuario.dt_nascimento,
-        novoUsuario.sabendo,
         novoUsuario.senha,
         novoUsuario.id_curso,
     ]

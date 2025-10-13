@@ -15,7 +15,6 @@ create table tb_usuario (
     cpf varchar (20),
     telefone varchar (20),
     dt_nascimento date,
-    sabendo varchar(100),
     senha varchar(500),
     id_curso int,
     foreign key (id_curso) references tb_curso(id_curso)
