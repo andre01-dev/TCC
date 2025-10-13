@@ -3,7 +3,7 @@ import './noticia.scss'
 
 export default function Noticia2 (){
     return (
-        <div className='noticia1'>
+        <div className='noticia'>
             <Cabecalho/>
             <div className='voltar-noticia'>
                 <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
