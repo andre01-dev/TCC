@@ -1,0 +1,96 @@
+.container-tudo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px;
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.dados-container{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    gap: 20px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #021B23 ;
+    padding:30px;
+    border-radius: 20px;
+    text-align: center;
+    height: 500px;
+    width: 450px;
+    color: #DFB674;
+
+}
+
+.user img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 270px;
+    height: 250px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+    border: 6px solid #003F51;
+}
+
+.dados {
+    display: flex;
+    background-color: #021B23;
+    border-radius: 20px;
+    padding: 25px;
+
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #DFB674;
+}
+
+.dados h2{
+  color: #DFB674;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    background-color: #02485c;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.progresso{
+    background-color: #021B23;
+    border-radius: 12px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    width: 700px;
+    padding: 10px 20px;
+    color: #DFB674;
+  }
+.barra1{
+    background-color: #DFB674;
+    border: 5px solid #DFB674;
+    width: 440px;
+    height: 20px;
+    border-radius: 12px;
+    margin-right: 30px;
+}
+
+.barra2{
+    background-color: #DFB674;
+    border: 5px solid #DFB674;
+    width: 400px;
+    border-radius: 12px;
+}
+
