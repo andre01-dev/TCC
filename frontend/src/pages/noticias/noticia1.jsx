@@ -1,10 +1,10 @@
 import Cabecalho from '../../components/cabecalho/cabecalho';
 import './noticia.scss'
 
-export default function Noticia1 (){
+export default function Noticia1() {
     return (
         <div className='noticia'>
-            <Cabecalho/>
+            <Cabecalho />
             <div className='voltar-noticia'>
                 <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                 <p>
@@ -20,8 +20,11 @@ export default function Noticia1 (){
                 Por Fantástico
                 08/06/2025 22h10  Atualizado há 4 meses</h3>
 
-                <div className='corpo-noticia'>
-                    <p>Golpistas têm usado o Instagram para uma nova fraude, que copia os perfis de empresas reais, anuncia promoções falsas e desaparece com o dinheiro de quem compra.
+            <div className='corpo-noticia'>
+                <div className='fundo-noticia'>
+                    <img src="/src/assets/images/noticia1.png" alt="" />
+                </div>
+                <p>Golpistas têm usado o Instagram para uma nova fraude, que copia os perfis de empresas reais, anuncia promoções falsas e desaparece com o dinheiro de quem compra.
 
                     Em Florianópolis, o brechó Brechik virou alvo de criminosos. “Eu recebi um print de uma cliente falando que tinha um perfil se passando pela gente, usando o nosso nome, a nossa logo, a nossa mesma descrição e algumas imagens nossas”, conta Carla Machado, gestora do negócio fundado pela avó há mais de 40 anos.
 
@@ -42,12 +45,9 @@ export default function Noticia1 (){
                     “Essas organizações acabavam gastando uma grande quantia em dinheiro para impulsionar os anúncios. (...) Quando quebramos o sigilo bancário de um dos investigados, encontramos um pagamento de R$ 106 mil para o Facebook”, afirma o delegado Thiago Henrique Moreira.
                     Segundo ele, as investigações esbarram na falta de colaboração das plataformas. “Temos uma investigação há cinco anos parada, aguardando informações básicas sobre faturamento das redes sociais de quanto gastaram com impulsionamento.”
                     A pedido do Fantástico, o NetLab da UFRJ analisou anúncios feitos por contas falsas se passando por grandes marcas de varejo do Brasil. Em apenas quatro dias, foram identificados 277 anúncios fraudulentos, com 72% ativos por dois dias.</p>
-                <div className='fundo-noticia'>
-                    <img src="/src/assets/images/noticia1.png" alt="" />
-                </div>
                 <p className='aspas'>“A plataforma não fez absolutamente nada. São anúncios que devem ser muito efetivos, porque seguem no ar, provavelmente angariando vítimas e os consumidores seguem clicando neles”, afirma Marie Santini, professora e diretora do NetLab.</p>
                 <p>O jornal americano “The Wall Street Journal” revelou que a Meta — dona do Instagram, Facebook e WhatsApp — é responsável por quase metade dos golpes identificados por uma plataforma de pagamentos entre 2023 e 2024.
-                Um relatório interno de 2022 da Meta apontou que 70% das novas contas de anunciantes são criadas para promover fraudes ou produtos ilícitos.</p>
+                    Um relatório interno de 2022 da Meta apontou que 70% das novas contas de anunciantes são criadas para promover fraudes ou produtos ilícitos.</p>
                 <p className='aspas'>“Hoje nós temos a capacidade computacional para combater isso. Só que a Meta não faz propositalmente, em busca de aumentar sua receita”, afirma David Nemer, professor da Universidade da Virgínia.
                 </p>
                 <p>Ex-funcionários ouvidos pelo jornal disseram que são necessárias mais de 30 denúncias para derrubar um perfil.
@@ -56,7 +56,7 @@ export default function Noticia1 (){
                     No Brasil, o Supremo Tribunal Federal retomou o julgamento sobre a validade do artigo 19 do Marco Civil da Internet, que estabelece que plataformas só podem ser responsabilizadas por conteúdos de usuários após decisão judicial. O julgamento deve continuar nesta semana.</p>
                 <p className='aspas'>“Essas empresas superpoderosas, em última instância, estão protegendo esses criminosos. Garantem o anonimato deles, não entregam os dados e eles ficam impunes. Elas continuam ganhando dinheiro com os anúncios e eles continuam ganhando dinheiro com os golpes”, afirma Marie Santini.</p>
                 <p className='finish'>E questiona: “A gente vai deixar a sociedade continuar sofrendo tudo isso?”</p>
-                </div>
+            </div>
         </div>
     );
 }
