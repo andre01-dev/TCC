@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route} from "react-router";
 
-import Inicio from "./pages";
+import Inicio from "./pages/index.jsx";
 import Registrar from "./pages/registrar";
 import Perfil from "./pages/perfil.jsx";
 import Noticia1 from "./pages/noticias/noticia1";

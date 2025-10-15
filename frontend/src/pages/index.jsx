@@ -1,13 +1,12 @@
-import "./index.scss"
-import CardCurso from "../components/CardCurso/cardCurso";
+import "./index.scss";
 import Cabecalho from "../components/cabecalho/cabecalho";
+import Parte1 from "../components/paginaPrincipal/1parte";
 
 export default function Inicio () {
     return(
         <div className="container-inicio">
             <Cabecalho/>
-            <h1>Inicio</h1>
-            <CardCurso />
+          <Parte1/>
         </div>
     );
 }
