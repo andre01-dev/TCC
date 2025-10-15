@@ -50,28 +50,14 @@
     margin-top: 10px;
 }
 
-/*button{
-    background-color: #DFB674;
-    border-radius: 12px;
-    padding: 15px;
-    padding-left: 40px;
-    padding-right: 40px;
-    border: 1px solid #DFB674;
-    color: #02485c;
-    font-size: 17px;
-}
-
-button:hover{
-    background-color: #ca9b4a;
-}*/
-
-$color: #0cf;
+$color: #DFB674;
 
 button {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: #fff;
+  color: #02485c;
+  border: 1px solid #DFB674;
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -103,7 +89,7 @@ button {
     z-index: -1;
   }
   &:hover {
-    color: #fff;
+    color: #02485c;
     &:before {
       width: 100%;
     }
