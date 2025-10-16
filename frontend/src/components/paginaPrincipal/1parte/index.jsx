@@ -26,7 +26,7 @@ export default function Parte1(){
 </div>
                 </div>
 <div className="tudo-img">
-    <img className="img" src="/src/assets/images/image.png"/>
+    <img className="img" src="/src/assets/images/velha.png"/>
 </div>
             </div>
         </div>

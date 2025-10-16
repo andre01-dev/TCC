@@ -1,35 +1,48 @@
 .carrossel {
-  overflow-x: auto;
-  scroll-behavior: smooth;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
-.cards {
-  display: flex;
-  gap: 20px;
-  padding: 10px 0;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+.tx {
+    margin: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #02485c;
+}
+
+.cards {    
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .card {
-  min-width: 250px;
-  flex-shrink: 0;
-  background: #f6f6f6;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  img {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    flex-shrink: 0;
+    padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover img {
-    transform: translateY(-10px);
-  }
+    img {
+        height: 300px;
+        width: 300px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
 
-  &:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
+    &:hover img {
+        transform: translateY(-10px);
+    }
+
+    &:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 }
