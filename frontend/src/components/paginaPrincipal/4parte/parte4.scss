@@ -1,0 +1,35 @@
+.carrossel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.card {
+  min-width: 250px;
+  flex-shrink: 0;
+  background: #f6f6f6;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: translateY(-10px);
+  }
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}

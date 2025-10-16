@@ -1,0 +1,21 @@
+
+.quadrado{
+    margin-top: 80px;
+    border: 3px solid #023b4a;
+    display: flex;
+    border-radius: 12px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 40px;
+}
+
+.txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #023b4a;
+
+    h1{
+        font-size: 60px;
+    }
+}

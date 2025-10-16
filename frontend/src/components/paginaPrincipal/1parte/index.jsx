@@ -17,12 +17,12 @@ export default function Parte1(){
 </div>
 <div className="txtxt">
     <h3>AQUI VOCÊ ENCONTRA:</h3>
-    <h3>Cursos</h3>
-    <h3>Notícias</h3>
-    <h3>Conhecimento</h3>
+    <h3> <img className="imgage" src="/src/assets/images/setaEsquerda.png"></img> Cursos</h3>
+    <h3> <img className="imgage" src="/src/assets/images/setaEsquerda.png"></img> Notícias</h3>
+    <h3> <img className="imgage" src="/src/assets/images/setaEsquerda.png"></img> Conhecimento</h3>
 </div>
-<div className="bt">
-    <button>Saiba mais sobre nós</button>
+<div>
+    <button className="bt">Saiba mais sobre nós</button>
 </div>
                 </div>
 <div className="tudo-img">

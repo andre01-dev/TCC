@@ -52,7 +52,7 @@
 
 $color: #DFB674;
 
-button {
+.bt {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
@@ -96,6 +96,12 @@ button {
   }
 }
 
+.imgage{
+transform: rotateY(180deg);
+height: 20px;
+}
+
 .img{
     height: 510px;
 }
+
