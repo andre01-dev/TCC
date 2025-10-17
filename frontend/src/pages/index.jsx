@@ -1,29 +1,48 @@
 import "./index.scss";
 import Cabecalho from "../components/cabecalho/cabecalho";
-import Parte1 from "../components/paginaPrincipal/1parte";
-import Parte2 from "../components/paginaPrincipal/2parte";
-import Parte3 from "../components/paginaPrincipal/3parte";
-import Parte4 from "../components/paginaPrincipal/4parte";
+import Inicio from "../components/paginaPrincipal/Inicio/inicio";
+import Paraquem from "../components/paginaPrincipal/Paraquem/paraquem";
+import BigNumber from "../components/paginaPrincipal/BigNumber";
+import CardCurso2 from "../components/paginaPrincipal/CardCurso2/cardCurso2";
+import MVV from "../components/paginaPrincipal/mvv/mvv";
+import Depoimentos from "../components/paginaPrincipal/depoimentos/depoimentos";
+import AcontecendoAgora from "../components/paginaPrincipal/AcontecemdoAgora/AcontecendoAgora";
 
-
-export default function Inicio() {
+export default function Comeco() {
     return (
         <div className="container-inicio">
             <Cabecalho />
-            <Parte1 />
+            <Inicio />
             <div className="separacao">
 
             </div>
             <div>
-                <Parte2 />
+                <Paraquem />
             </div>
 
             <div>
-                <Parte3 />
+                <BigNumber />
             </div>
 
             <div>
-                <Parte4/>
+                <h1 className="ConhecaCurso">Conhecça Nossos Cursos</h1>
+                <CardCurso2/>
+            </div>
+
+            <div>
+                <MVV/>
+            </div>
+
+            <div>
+                <h1 className="Depoimento">Depoimentos</h1>
+                <Depoimentos/>
+            </div>
+
+            <div className="barra"></div>
+
+            <div>
+                <h1 className="AcontecendoAgora">O que está acontecendo agora?</h1>
+                <AcontecendoAgora/>
             </div>
         </div>
     );

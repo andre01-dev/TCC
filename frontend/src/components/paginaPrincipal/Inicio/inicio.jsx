@@ -1,6 +1,6 @@
-import "./parte1.scss"
+import "./inicio.scss"
 
-export default function Parte1(){
+export default function Inicio(){
     return(
         <div>
             <div className="tudo">

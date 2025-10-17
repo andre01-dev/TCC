@@ -1,0 +1,68 @@
+.container {
+  background-color: #f6e9e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  margin-top: 60px;
+}
+
+.cartoes {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.cartao {
+  background-color: #003F51;
+  color: white;
+  width: 320px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    opacity: 0.08;
+    z-index: 0;
+  }
+
+  h2, p {
+    position: relative;
+    z-index: 1;
+    color: #DFB674;
+  }
+
+  h2{
+    margin-bottom: 30px;
+  }
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.missao::before {
+  background-image: url("/src/assets/images/alvo.png");
+}
+
+.visao::before {
+  background-image: url("/src/assets/images/olho.png");
+}
+
+.valores::before {
+  background-image: url("/src/assets/images/coracao.png");
+}
+.cartao::before {
+  opacity: 0.9;
+}

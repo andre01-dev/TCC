@@ -1,4 +1,4 @@
-import "./parte2.scss";
+import "./paraquem.scss";
 
 export default function Parte2() {
   return (

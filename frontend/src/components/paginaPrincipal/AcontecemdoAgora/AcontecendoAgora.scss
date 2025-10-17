@@ -1,0 +1,19 @@
+.item {
+    display: flex;  
+    align-items: center;
+    margin-bottom: 20px;  
+    
+    .image {
+        width: 300px; 
+        margin-right: 20px;  
+        height: 200px;
+        border-radius: 20px;
+        margin-left: 30px;
+    }
+    
+    .texto h2{
+        color: #003F51;
+    }
+}
+
+    

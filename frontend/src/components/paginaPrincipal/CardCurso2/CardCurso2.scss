@@ -1,17 +1,6 @@
-.carrossel {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
 
-.tx {
-    margin: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #02485c;
-}
-
-.cards {    
+.cards {
+    margin-top: 30px;    
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -28,21 +17,27 @@
     min-width: 250px;
     flex-shrink: 0;
     padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 
     img {
         height: 300px;
         width: 300px;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
+        border-radius: 12px;
+        transition: transform 0.6s ease, height 0.6s ease, width 0.6s ease;
     }
 
     &:hover img {
         transform: translateY(-10px);
+        height: 320px;
+        width: 320px;
     }
 
-    &:hover {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
+
+}
+
+.card p{
+ margin-top: 30px;
+ color: #003F51;
+ display: flex;
+ text-align: center;
 }

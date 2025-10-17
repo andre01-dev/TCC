@@ -1,6 +1,7 @@
 
 .quadrado{
     margin-top: 80px;
+    background-color: #023b4a;
     border: 3px solid #023b4a;
     display: flex;
     border-radius: 12px;
@@ -9,11 +10,11 @@
     padding: 40px;
 }
 
-.txt{
+.txtt{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #023b4a;
+    color: #DFB674;
 
     h1{
         font-size: 60px;

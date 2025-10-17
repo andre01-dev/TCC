@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route} from "react-router";
 
-import Inicio from "./pages/index.jsx";
+import Comeco from "./pages/index.jsx";
 import Registrar from "./pages/registrar";
 import Perfil from "./pages/perfil.jsx";
 import Noticia1 from "./pages/noticias/noticia1";
@@ -26,7 +26,7 @@ export default function Navegacao () {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/"  element= {<Inicio />}/>
+                <Route path="/"  element= {<Comeco />}/>
                 <Route path="/registrar"  element= {<Registrar />}/>
                 <Route path="/perfil"  element= {<Perfil />}/>
                 <Route path="/noticia1"  element= {<Noticia1 />}/>
