@@ -7,6 +7,7 @@ import CardCurso2 from "../components/paginaPrincipal/CardCurso2/cardCurso2";
 import MVV from "../components/paginaPrincipal/mvv/mvv";
 import Depoimentos from "../components/paginaPrincipal/depoimentos/depoimentos";
 import AcontecendoAgora from "../components/paginaPrincipal/AcontecemdoAgora/AcontecendoAgora";
+import Rodape from "../components/rodape/rodape";
 
 export default function Comeco() {
     return (
@@ -44,6 +45,7 @@ export default function Comeco() {
                 <h1 className="AcontecendoAgora">O que está acontecendo agora?</h1>
                 <AcontecendoAgora/>
             </div>
+            <Rodape/>
         </div>
     );
 }

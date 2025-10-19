@@ -5,7 +5,7 @@ export default function Parte2() {
     <section className="parte2">
       <div className="onda-topo">
         <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-<path fill="#f6e9e8" d="M0,90 C360,300 500,-100 1440,120 L1440,0 L0,0 Z" />
+<path fill="#f6e9e8" d="M0,200 C360,0 900,-130 1440,120 L1440,0 L0,0 Z" />
         </svg>
         
       </div>
