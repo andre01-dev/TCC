@@ -1,4 +1,4 @@
-.body {
+.body-entrar {
     height: 650px;
     width: 1084px;
     display: flex;
@@ -9,22 +9,20 @@
     background-color: #F3E7E7;
     margin-left: 50px;
 
-    .container-registrar {
-
+    .container-entrar {
         display: flex;
         align-items: center;
         gap: 100px;
         text-align: center;
 
         .titulo-input {
-
             h1 {
                 margin-bottom: 40px;
                 color: #003F51;
                 font-weight: 700;
             }
-
-            .entrar-registrar {
+            
+             .entrar-registrar {
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -75,7 +73,6 @@
             }
 
 
-
             p {
                 margin-top: 30px;
                 margin-bottom: 30px;
@@ -113,7 +110,7 @@
                 }
             }
 
-            .bt-criarConta {
+            .bt-logar {
                 margin-top: 30px;
                 width: 200px;
                 height: 50px;
@@ -130,7 +127,21 @@
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
             }
 
+            .lembrar-esquecer{
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                .lembrar{
+                    padding-left: 10px;
+                    display: flex;
+                    gap: 7px;
+                }
+                a{
+                    color: #003F51;
+                    text-decoration: underline;
+                    padding-right: 20px;
+                }
+            }
         }
-
     }
 }
