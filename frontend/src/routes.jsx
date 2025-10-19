@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route} from "react-router";
 
 import Comeco from "./pages/index.jsx";
 import Registrar from "./pages/registrar";
+import Entrar from "./pages/entrar.jsx";
 import Perfil from "./pages/perfil.jsx";
 import Noticia1 from "./pages/noticias/noticia1";
 import Noticia2 from "./pages/noticias/noticia2";
@@ -20,14 +21,13 @@ import Noticia14 from "./pages/noticias/noticia14";
 import Noticia15 from "./pages/noticias/noticia15";
 
 
-
-
 export default function Navegacao () {
     return(
         <BrowserRouter>
             <Routes>
                 <Route path="/"  element= {<Comeco />}/>
                 <Route path="/registrar"  element= {<Registrar />}/>
+                <Route path="/entrar"  element= {<Entrar />}/>
                 <Route path="/perfil"  element= {<Perfil />}/>
                 <Route path="/noticia1"  element= {<Noticia1 />}/>
                 <Route path="/noticia2"  element= {<Noticia2 />}/>
