@@ -1,103 +1,140 @@
 import { useState } from 'react';
-import api from '../api.js'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff } from "lucide-react";
+import api from '../api.js';
 import './registrar.scss';
 
 export default function Registrar() {
 
-    const [nome, setNome] = useState("NOME");
-    const [email, setEmail] = useState("EMAIL");
-    const [cpf, setCpf] = useState("CPF");
-    const [telefone, setTelefone] = useState("TELEFONE");
-    const [dtNascimento, setDtNascimento] = useState("DATA DE NASCIMENTO");
-    const [senha, setSenha] = useState("SENHA");
-        const [entrarAtivo, setEntrarAtivo] = useState("entrar");
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [dt_nascimento, setDt_nascimento] = useState("");
+    const [senha, setSenha] = useState("");
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [ativo, setAtivo] = useState(location.pathname === "/registrar" ? "registrar" : "entrar");
+    const [mostrar, setMostrar] = useState(false);
 
     async function RegistrarUsuario() {
         try {
-            const response = await api.post('/eventos', {
+            await api.post('/usuario', {
                 nome,
                 email,
                 cpf,
                 telefone,
-                dtNascimento,
+                dt_nascimento,
                 senha
-            })
-            alert("Evento criado")
+            });
+            alert("Usuário registrado com sucesso!");
+            setNome("")
+            setEmail("")
+            setCpf("")
+            setTelefone("")
+            setDt_nascimento("")
+            setSenha("")
+
+            navigate("/entrar")
+
         } catch (e) {
-            alert(e.response?.data?.erro || "Erro ao criar evento")
+            alert(e.response?.data?.erro || "Erro ao registrar usuário");
         }
     }
 
     return (
         <div className='body'>
-        <div className='container-registrar'>
-            <img src="src/assets/images/logoVeio.png" height={400} />
-            <div className='titulo-input'>
-                <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
-                <div className='entrar-registrar'>
+            <div className='container-registrar'>
+                <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
+                <div className='titulo-input'>
+                    <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
 
-                    <button className={entrarAtivo === 'entrar' ? "ativo" : ""}
-                        onClick={() => setEntrarAtivo("entrar")}
-                    >ENTRAR</button>
+                    <div className="entrar-registrar">
+                        <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
 
-                    <button className={entrarAtivo === 'registrar' ? "ativo" : ""}
-                        onClick={() => setEntrarAtivo("registrar")}
-                    >REGISTRAR-SE</button>
+                        <Link to="/entrar" className={ativo === "entrar" ? "ativo" : ""}>
+                            Entrar
+                        </Link>
 
-                </div>
-                <p>Registre-se para ter acesso ao nosso conteúdo completo</p>
-                <div className='inputs'>
-                    <input
-                        id='input-nome'
-                        value={nome}
-                        onChange={(e) => setNome(e.target.value)}
-                        type="text"
-                    />
-
-                    <input
-                        id='input-email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        type="text"
-                    />
-
-                    <div className='cpf-telefone'>
-                        <input
-                            id='input-cpf'
-                            value={cpf}
-                            onChange={(e) => setCpf(e.target.value)}
-                            type="text"
-                            className='input-menor'
-                        />
-
-                        <input
-                            id='input-telefone'
-                            value={telefone}
-                            onChange={(e) => setTelefone(e.target.value)}
-                            type="text"
-                            className='input-menor'
-                        />
+                        <Link to="/registrar" className={ativo === "registrar" ? "ativo" : ""}>
+                            Registrar-se
+                        </Link>
                     </div>
 
-                    <input
-                        id='input-dtNascimento'
-                        value={dtNascimento}
-                        onChange={(e) => setDtNascimento(e.target.value)}
-                        type="text"
-                    />
+                    <p>Registre-se para ter acesso ao nosso conteúdo completo</p>
 
-                    <input
-                        id='input-senha'
-                        value={senha}
-                        onChange={(e) => setSenha(e.target.value)}
-                        type="text"
-                    />
+                    <div className='inputs'>
+                        <input
+                            id='input-nome'
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)}
+                            type="text"
+                            placeholder='Digite seu nome'
+                        />
+
+                        <input
+                            id='input-email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="text"
+                            placeholder='Digite seu email'
+                        />
+
+                        <div className='cpf-telefone'>
+                            <input
+                                id='input-cpf'
+                                value={cpf}
+                                onChange={(e) => setCpf(e.target.value)}
+                                type="text"
+                                className='input-menor'
+                                placeholder='Digite seu CPF'
+                            />
+
+                            <input
+                                id='input-telefone'
+                                value={telefone}
+                                onChange={(e) => setTelefone(e.target.value)}
+                                type="text"
+                                className='input-menor'
+                                placeholder='Digite seu telefone'
+                            />
+                        </div>
+
+                        <input
+                            id='input-dtNascimento'
+                            value={dt_nascimento}
+                            onChange={(e) => setDt_nascimento(e.target.value)}
+                            type="text"
+                            placeholder='Informe sua data de nascimento'
+                        />
+
+                        <div className='input-senha-container'>
+                            <input
+                                type={mostrar ? "text" : "password"}
+                                placeholder="Crie sua senha"
+                                className="input-senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                            />
+                            <span
+                                className="icone-senha"
+                                onClick={() => setMostrar(!mostrar)}
+                            >
+                                {mostrar ? <Eye size={18} /> : <EyeOff size={18} />}
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div className='div-bt-registrar'>
+                        <button className='bt-criarConta' onClick={RegistrarUsuario}>
+                            Registrar-se
+                        </button>
+                    </div>
+
 
                 </div>
             </div>
-
-            <button onClick={RegistrarUsuario}>Criar</button>
-        </div>
         </div>
     );
 }

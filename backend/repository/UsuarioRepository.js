@@ -7,7 +7,7 @@ export async function inserirUsuario(novoUsuario) {
         (?,?,?,?,?,MD5(?),?)
     `
     const [registros] = await conection.query(comando, [
-        novoUsuario.nome_usuario,
+        novoUsuario.nome,
         novoUsuario.email,
         novoUsuario.cpf,
         novoUsuario.telefone,
@@ -17,6 +17,16 @@ export async function inserirUsuario(novoUsuario) {
     ]
     )
     return registros.insertId;
+}
+
+export async function VerificarUsuario(email, senha) {
+    const comando = `
+        select nome_usuario, email
+        from tb_usuario
+        where email = ? AND senha = MD5(?)
+    `
+    const [registros] = await conection.query(comando, [email, senha])
+    return registros
 }
 
 export async function listarUsuario() {

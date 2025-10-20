@@ -1,4 +1,10 @@
 .container-cardCurso{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    margin-top: 60px;
     background-color: #003F51;
     width: 368px;
     height: 500px;
@@ -11,9 +17,18 @@
     margin-left: 50px;
     color: #DFC8BA;
 
+    .cardCurso {
+        display: flex;
+        flex-direction: column;
+        .imagem {
+            border-radius: 5px;
+        }
+    }
+
     .titulo-carga{
         display: flex;
         justify-content: space-between;
+        font-family:'Times New Roman', Times, serif;
         margin-top: 5px;
         margin-bottom: 25px;
 
