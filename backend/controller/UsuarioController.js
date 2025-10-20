@@ -10,6 +10,14 @@ endpoints.post("/usuario", async (req,resp) => {
     resp.send({NovoID: id});
 })
 
+endpoints.post('/logar', async (req,resp) => {
+    let email = req.body.email;
+    let senha = req.body.senha;
+
+    let registros = repoRegistrar.VerificarUsuario(email, senha);
+    resp.send(registros)
+})
+
 endpoints.get("/usuario", async (req,resp) => {
     let registros = repoRegistrar.listarUsuario();
     resp.send(registros)

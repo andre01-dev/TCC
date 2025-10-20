@@ -19,6 +19,16 @@ export async function inserirUsuario(novoUsuario) {
     return registros.insertId;
 }
 
+export async function VerificarUsuario(email, senha) {
+    const comando = `
+        select nome_usuario, email
+        from tb_usuario
+        where email = ? AND senha = MD5(?)
+    `
+    const [registros] = await conection.query(comando, [email, senha])
+    return registros
+}
+
 export async function listarUsuario() {
     const comando = `
         select * from tb_usuario

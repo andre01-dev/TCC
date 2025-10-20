@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff } from "lucide-react";
 import api from '../api.js';
 import './registrar.scss';
 
@@ -9,10 +10,12 @@ export default function Registrar() {
     const [email, setEmail] = useState("");
     const [cpf, setCpf] = useState("");
     const [telefone, setTelefone] = useState("");
-    const [dtNascimento, setDtNascimento] = useState("");
+    const [dt_nascimento, setDt_nascimento] = useState("");
     const [senha, setSenha] = useState("");
     const location = useLocation();
+    const navigate = useNavigate();
     const [ativo, setAtivo] = useState(location.pathname === "/registrar" ? "registrar" : "entrar");
+    const [mostrar, setMostrar] = useState(false);
 
     async function RegistrarUsuario() {
         try {
@@ -21,10 +24,19 @@ export default function Registrar() {
                 email,
                 cpf,
                 telefone,
-                dtNascimento,
+                dt_nascimento,
                 senha
             });
             alert("Usuário registrado com sucesso!");
+            setNome("")
+            setEmail("")
+            setCpf("")
+            setTelefone("")
+            setDt_nascimento("")
+            setSenha("")
+
+            navigate("/entrar")
+
         } catch (e) {
             alert(e.response?.data?.erro || "Erro ao registrar usuário");
         }
@@ -90,24 +102,36 @@ export default function Registrar() {
 
                         <input
                             id='input-dtNascimento'
-                            value={dtNascimento}
-                            onChange={(e) => setDtNascimento(e.target.value)}
+                            value={dt_nascimento}
+                            onChange={(e) => setDt_nascimento(e.target.value)}
                             type="text"
                             placeholder='Informe sua data de nascimento'
                         />
 
-                        <input
-                            id='input-senha'
-                            value={senha}
-                            onChange={(e) => setSenha(e.target.value)}
-                            type="password"
-                            placeholder='Crie sua senha'
-                        />
+                        <div className='input-senha-container'>
+                            <input
+                                type={mostrar ? "text" : "password"}
+                                placeholder="Crie sua senha"
+                                className="input-senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                            />
+                            <span
+                                className="icone-senha"
+                                onClick={() => setMostrar(!mostrar)}
+                            >
+                                {mostrar ? <Eye size={18} /> : <EyeOff size={18} />}
+                            </span>
+
+                        </div>
                     </div>
 
-                    <button className='bt-criarConta' onClick={RegistrarUsuario}>
-                        Registrar-se
-                    </button>
+                    <div className='div-bt-registrar'>
+                        <button className='bt-criarConta' onClick={RegistrarUsuario}>
+                            Registrar-se
+                        </button>
+                    </div>
+
 
                 </div>
             </div>

@@ -37,7 +37,6 @@
                 overflow: hidden;
             }
 
-            /* fundo dourado animado */
             .fundo {
                 position: absolute;
                 top: 5px;
@@ -50,12 +49,10 @@
                 z-index: 0;
             }
 
-            /* move o fundo para o lado direito */
             .fundo.registrar {
                 left: calc(50% + 0px);
             }
 
-            /* links */
             .entrar-registrar a {
                 flex: 1;
                 text-align: center;
@@ -69,12 +66,9 @@
                 padding: 8px 0;
             }
 
-            /* cor do texto quando o botão está ativo */
             .entrar-registrar a.ativo {
                 color: #00475b;
             }
-
-
 
             p {
                 margin-top: 30px;
@@ -97,7 +91,6 @@
                     .input-menor {
                         width: 190px;
                     }
-
                 }
 
                 input {
@@ -111,23 +104,61 @@
                     font-weight: 700;
                     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
                 }
+
+                .input-senha-container {
+                    position: relative;
+                    width: 400px;
+                }
+
+                .input-senha {
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 34px;
+                    padding: 20px 50px 20px 20px;
+                    background-color: #f3e7e7;
+                    border: 2.5px solid #003f51;
+                    color: #003f51;
+                    font-weight: 700;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                }
+
+                .icone-senha {
+                    position: absolute;
+                    right: 18px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #003f51;
+                    cursor: pointer;
+                    transition: opacity 0.2s ease;
+                }
+
+                .icone-senha:hover {
+                    opacity: 0.6;
+                }
+
             }
 
-            .bt-criarConta {
-                margin-top: 30px;
-                width: 200px;
-                height: 50px;
-                border-radius: 34px;
-                background-color: #003F51;
-                color: #DFB674;
-                font-size: 18px;
-                border: 2px solid #003F51;
-                transition: all 0.3s ease;
-            }
+            .div-bt-registrar {
+                display: flex;
+                justify-content: end;
+                margin-right: 15px;
 
-            .bt-criarConta:hover {
-                transform: scale(1.05);
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                .bt-criarConta {
+                    margin-top: 30px;
+                    width: 200px;
+                    height: 50px;
+                    border-radius: 34px;
+                    background-color: #003F51;
+                    color: #DFB674;
+                    font-size: 18px;
+                    border: 2px solid #003F51;
+                    transition: all 0.3s ease;
+                }
+
+                .bt-criarConta:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                }
             }
 
         }

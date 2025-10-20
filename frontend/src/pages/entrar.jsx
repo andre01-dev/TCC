@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff } from "lucide-react";
 import api from '../api.js'
 import './entrar.scss'
 
@@ -10,7 +11,24 @@ export default function Entrar() {
     const [senha, setSenha] = useState("");
     const location = useLocation();
     const [ativo, setAtivo] = useState(location.pathname === "/registrar" ? "registrar" : "entrar");
+    const [mostrar, setMostrar] = useState(false);
+    const navigate = useNavigate();
 
+    async function VerificarUsuario() {
+        try {
+            await api.post('/logar', {
+                email,
+                senha
+            });
+            alert("Login realizado com sucesso!");
+            setEmail("")
+            setSenha("")
+            navigate('/')
+        }
+        catch (e) {
+            alert(e.response?.data?.erro || "Erro ao realizar login");
+        }
+    }
     return (
         <div className='body-entrar'>
             <div className='container-entrar'>
@@ -42,13 +60,23 @@ export default function Entrar() {
                             placeholder='Digite seu email'
                         />
 
-                        <input
-                            id='input-senha'
-                            value={senha}
-                            onChange={(e) => setSenha(e.target.value)}
-                            type="password"
-                            placeholder='Digite sua senha'
-                        />
+                        <div className='input-senha-container'>
+                            <input
+                                type={mostrar ? "text" : "password"}
+                                placeholder="Crie sua senha"
+                                className="input-senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                            />
+                            <span
+                                className="icone-senha"
+                                onClick={() => setMostrar(!mostrar)}
+                            >
+                                {mostrar ? <Eye size={18} /> : <EyeOff size={18} />}
+                            </span>
+
+                        </div>
+
                     </div>
 
                     <div className='lembrar-esquecer'>
@@ -59,9 +87,12 @@ export default function Entrar() {
                         <a href="" className='esqueceu-senhas'>Esqueceu a senha?</a>
                     </div>
 
-                    <button className='bt-logar'>
-                        Entrar
-                    </button>
+                    <div className='div-bt'>
+                        <button className='bt-logar' onClick={VerificarUsuario}>
+                            Entrar
+                        </button>
+                    </div>
+
 
                 </div>
             </div>
