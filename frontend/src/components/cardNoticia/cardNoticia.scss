@@ -1,0 +1,24 @@
+.wrap{
+
+        .cardNotice{
+        display: flex;
+        flex-direction:column ;
+        height: 500px;
+        width: 300px;
+        img{
+            height: auto;
+            width: auto;
+            border-radius: 30px;
+        }
+        h2{
+            text-align: justify;
+        }
+    }
+
+    
+}
+.wrap:hover{
+        scale: 1.1;
+        transition: 0.2s;
+        cursor: pointer;;
+    }

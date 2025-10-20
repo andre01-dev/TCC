@@ -1,0 +1,18 @@
+.titulo-noticia{
+    h1{
+       margin-bottom: 100px; 
+    }
+    
+}
+
+.align{
+    display: flex;
+    justify-content: center;
+    .cardsNoticias{
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+        width: 80%;
+        justify-content: space-around;
+    }
+}

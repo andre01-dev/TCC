@@ -20,6 +20,7 @@ import Noticia13 from "./pages/noticias/noticia13";
 import Noticia14 from "./pages/noticias/noticia14";
 import Noticia15 from "./pages/noticias/noticia15";
 import Cursos from "./pages/cursos.jsx"
+import TodasNoticias from "./pages/noticias/fullnotices.jsx";
 
 
 export default function Navegacao () {
@@ -45,6 +46,7 @@ export default function Navegacao () {
                 <Route path="/noticia13" element={<Noticia13/>}/>
                 <Route path="/noticia14" element={<Noticia14/>}/>
                 <Route path="/noticia15" element={<Noticia15/>}/>
+                <Route path="/tdsntc" element={<TodasNoticias/>}/>
                 <Route path="/curso" element={<Cursos />} />
             </Routes>
         </BrowserRouter>
