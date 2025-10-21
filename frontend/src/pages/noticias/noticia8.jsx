@@ -1,16 +1,19 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
 import './noticia.scss'
+import {Link} from 'react-router'
 
 export default function Noticia8() {
     return (
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
-                <p>
-                    voltar para as notícias
-                </p>
-            </div>
+                <Link to={"/"}>
+                    <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
+                    <p>
+                        voltar para as notícias
+                    </p>
+                </Link>
+            </div> 
 
             <div className='titulo-noticia'>
                 <h1>Idoso cai em golpe da prova de vida do INSS e perde mais de R$ 1,6 mil: 'Me quebrou as pernas'</h1>

@@ -1,16 +1,19 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
 import './noticia.scss'
+import {Link} from 'react-router'
 
 export default function Noticia10() {
     return (
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
-                <p>
-                    voltar para as notícias
-                </p>
-            </div>
+                <Link to={"/"}>
+                    <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
+                    <p>
+                        voltar para as notícias
+                    </p>
+                </Link>
+            </div> 
 
             <div className='titulo-noticia'>
                 <h1>Idosos são as maiores vítimas de golpes financeiros: veja os 18 mais comuns</h1>

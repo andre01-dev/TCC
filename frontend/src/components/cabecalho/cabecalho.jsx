@@ -10,11 +10,11 @@ export default function Cabecalho(){
                 </div>
                     <h1>CONECTANDO GERAÇÕES</h1>
                 <div className="navegar">
-                    <p>Inicio</p>
-                    <p>Cursos</p>
-                    <p>Notícias</p>
-                    <p>Quem Somos</p>
-                    <p>Login/Registrar</p>
+                    <Link to ={"/"}><p>Inicio</p></Link>
+                    <Link to ={"/curso"}><p>Cursos</p></Link>
+                    <Link to ={"/tdsntc"}><p>Notícias</p></Link>
+                    <Link><p>Quem Somos</p></Link>
+                    <Link to={"/registrar"}><p>Login/Registrar</p></Link>
                 </div>
             </div>
         </div>

@@ -15,6 +15,15 @@
         color: #003F51;
         background-color: transparent;
         transition: color 0.3s ease;
+
+        a{
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        
+        
       
         &::before {
           content: "";
@@ -59,6 +68,8 @@
           background-color: white;
         }
       }
+
+      
 
     .titulo-noticia{
         text-align: center;

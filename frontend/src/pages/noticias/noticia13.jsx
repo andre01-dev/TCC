@@ -1,16 +1,19 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
 import './noticia.scss'
+import {Link} from 'react-router'
 
 export default function Noticia13() {
     return (
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
-                <p>
-                    voltar para as notícias
-                </p>
-            </div>
+                <Link to={"/"}>
+                    <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
+                    <p>
+                        voltar para as notícias
+                    </p>
+                </Link>
+            </div> 
 
             <div className='titulo-noticia'>
                 <h1>Número de golpes contra pessoas idosas cresce mais de 70% em 2023</h1>
