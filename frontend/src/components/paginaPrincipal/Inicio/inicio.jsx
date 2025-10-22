@@ -7,7 +7,7 @@ export default function Inicio(){
                 <div className="td">
 
 <div className="tt">
-    <h1>Educação midiática para pessoas 60+</h1>
+    <h1 className="titulo">Educação midiática para pessoas 60+</h1>
 </div>
 <div className="txt">
     <h3>O EducaMídia 60+ é o programa criado pelo Instituto <br />
