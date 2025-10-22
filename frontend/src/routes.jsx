@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route} from "react-router";
-
 import Comeco from "./pages/index.jsx";
 import Registrar from "./pages/registrar";
 import Entrar from "./pages/entrar.jsx";
