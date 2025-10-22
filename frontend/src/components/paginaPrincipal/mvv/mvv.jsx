@@ -6,41 +6,14 @@
                 <div className="cartoes">
                 <div className="cartao missao">
                     <h2>Missão</h2>
-                    <p>Lorem ipsum dolor sit amet. Sit alias fugit qui galisum nihil <br />
-                        qui numquam vero 33 repellat nihil id assumenda numquam. Et <br />
-                        explicabo aliquam sed nihil praesentium aut autem nihil et <br />
-                        libero dolore et nihil aperiam et ipsum  <br />
-                        eveniet est error voluptatibus. 
-                        Lorem ipsum dolor sit amet. Sit alias fugit qui galisum nihil <br />
-                        qui numquam vero 33 repellat nihil id assumenda numquam. Et <br />
-                        explicabo aliquam sed nihil praesentium aut autem nihil et <br />
-                        libero dolore et nihil aperiam et ipsum  <br />
-                        eveniet est error voluptatibus.  </p>
+                    <p>Promover a inclusão digital da pessoa idosa, oferecendo cursos, notícias e suporte que facilitem o uso seguro da tecnologia, fortalecendo sua autonomia, confiança e participação ativa no mundo digital.  </p>
                 </div>
                 <div className="cartao visao">
                     <h2>Visão</h2>
-        <p>Lorem ipsum dolor sit amet. Sit alias fugit qui galisum nihil <br />
-                        qui numquam vero 33 repellat nihil id assumenda numquam. Et <br />
-                        explicabo aliquam sed nihil praesentium aut autem nihil et <br />
-                        libero dolore et nihil aperiam et ipsum  <br />
-                        eveniet est error voluptatibus.  
-                        Lorem ipsum dolor sit amet. Sit alias fugit qui galisum nihil <br />
-                        qui numquam vero 33 repellat nihil id assumenda numquam. Et <br />
-                        explicabo aliquam sed nihil praesentium aut autem nihil et <br />
-                        libero dolore et nihil aperiam et ipsum  <br />
-                        eveniet est error voluptatibus. </p>            </div>
+                    <p>Ser referência nacional em educação digital para idosos, reconhecida por transformar o aprendizado em uma experiência acolhedora, acessível e segura, contribuindo para uma sociedade mais conectada e inclusiva. </p>            </div>
                 <div className="cartao valores">
                     <h2>Valores</h2>
-        <p>Lorem ipsum dolor sit amet. Sit alias fugit qui galisum nihil <br />
-                        qui numquam vero 33 repellat nihil id assumenda numquam. Et <br />
-                        explicabo aliquam sed nihil praesentium aut autem nihil et <br />
-                        libero dolore et nihil aperiam et ipsum  <br />
-                        eveniet est error voluptatibus. 
-                        Lorem ipsum dolor sit amet. Sit alias fugit qui galisum nihil <br />
-                        qui numquam vero 33 repellat nihil id assumenda numquam. Et <br />
-                        explicabo aliquam sed nihil praesentium aut autem nihil et <br />
-                        libero dolore et nihil aperiam et ipsum  <br />
-                        eveniet est error voluptatibus.  </p>            </div>
+                    <p>Baseados na empatia, no respeito e na acessibilidade, buscando sempre compreender as necessidades de cada idoso. Prezamos pela segurança digital, garantindo o uso responsável da tecnologia, transparência.  </p>            </div>
                 </div>
             </div>
         )

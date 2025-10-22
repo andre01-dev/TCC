@@ -1,61 +1,84 @@
-.container {
-  background-color: #f6e9e8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.carousel-container {
+  position: relative;
   padding: 60px 0;
-  margin-top: 60px;
+  text-align: center;
 }
 
-.cartoes {
+.carousel-inner-wrapper {
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carousel-inner {
   display: flex;
-  gap: 40px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.5s ease; // animação leve ao passar
+}
+
+.slide {
+  flex: 0 0 auto;
+  display: flex;
   justify-content: center;
 }
 
 .carde {
-  background-color: #DFC8BA;
-  color: white;
+  background-color: #dfc8ba;
   width: 260px;
-  height: 370px;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  padding: 30px 20px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 
-  &:hover {
-    transform: translateY(-25px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    height: 380px;
-  }
-
-  h2, p {
-    position: relative;
-    z-index: 1;
-    color: #003F51;
-  }
-
-  h2 {
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; // evita corte de texto
 
   img {
-    display: block;
-    margin: 0 auto 30px auto;
-    height: 100px;
     width: 100px;
+    height: 100px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid #003F51;
-    transition: transform 0.4s ease, height 0.4s ease, width 0.4s ease;
+    margin-bottom: 15px;
   }
 
-  &:hover img {
-    transform: translateY(-10px);
-    height: 120px;
-    width: 120px;
+  p {
+    font-size: 15px;
+    line-height: 1.4;
+    word-wrap: break-word; // quebra linhas longas
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #003f51;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .carousel-inner-wrapper {
+    max-width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  .carousel-inner-wrapper {
+    max-width: 300px;
   }
 }
