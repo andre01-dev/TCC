@@ -20,7 +20,7 @@ import Noticia14 from "./pages/noticias/noticia14";
 import Noticia15 from "./pages/noticias/noticia15";
 import Cursos from "./pages/cursos.jsx"
 import TodasNoticias from "./pages/noticias/fullnotices.jsx";
-
+import Curso6 from "./pages/paginaCurso6.jsx"
 
 export default function Navegacao () {
     return(
@@ -46,7 +46,8 @@ export default function Navegacao () {
                 <Route path="/noticia14" element={<Noticia14/>}/>
                 <Route path="/noticia15" element={<Noticia15/>}/>
                 <Route path="/tdsntc" element={<TodasNoticias/>}/>
-                <Route path="/curso" element={<Cursos />} />
+                <Route path="/cursos" element={<Cursos />} />
+                <Route path="/curso6" element={<Curso6 />} />
             </Routes>
         </BrowserRouter>
     );

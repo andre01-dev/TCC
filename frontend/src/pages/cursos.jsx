@@ -29,6 +29,7 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar como indentificar mensagens suspeitas'
         nivel='Nivel: Básico'
+        rota="/curso1"
         />
 
         <CardCurso 
@@ -38,6 +39,7 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar como evitar fraudes e compras impulsivas'
         nivel='Nivel: Básico'
+        rota="/curso2"
         />
 
         <CardCurso 
@@ -47,6 +49,7 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco'
         nivel='Nivel: Básico'
+        rota="/curso3"
         />
 
         <CardCurso 
@@ -56,6 +59,7 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar a Armazenar documentos e fotos com segurança'
         nivel='Nivel: Básico'
+        rota="/curso4"
         />
 
         <CardCurso 
@@ -65,6 +69,7 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar a Criar uma conta e usar o E-mail'
         nivel='Nivel: Básico'
+        rota="/curso5"
         />
 
         <CardCurso 
@@ -74,6 +79,7 @@ export default function Cursos()
         tema='Inteligência Artificial'
         descricao='Nesse Curso vamos te ensinar a Usar a Inteligencia Artificial'
         nivel='Nivel: Básico'
+        rota="/curso6"
         />
 
         <CardCurso 
@@ -83,6 +89,7 @@ export default function Cursos()
         tema='Educação Financeira'
         descricao='Nesse Curso vamos te dar dicas de como controlar seus gastos e evitar fraudes'
         nivel='Nivel: Básico'
+        rota="/curso7"
         />
 
         <CardCurso 
@@ -92,6 +99,7 @@ export default function Cursos()
         tema='Senhas Seguras'
         descricao='Nesse Curso vamos te ensinar a Criar uma Senha Forte.'
         nivel='Nivel: Básico'
+        rota="/curso8"
         />
 
         <CardCurso 
@@ -101,6 +109,7 @@ export default function Cursos()
         tema='Golpes (Phishing)'
         descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer'
         nivel='Nivel: Básico'
+        rota="/curso9"
         />
         </div>
 
