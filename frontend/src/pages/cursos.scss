@@ -1,7 +1,21 @@
-.cursos{
-    display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 10px;
-  padding: 20px;
+.cursos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; 
+  justify-items: center;
+  padding: 40px;
+  background-color: #fdf1ef; 
+}
+
+
+@media (max-width: 1200px) {
+  .cursos {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .cursos {
+    grid-template-columns: 1fr; 
+  }
 }
