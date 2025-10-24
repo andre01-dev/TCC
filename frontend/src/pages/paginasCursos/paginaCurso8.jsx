@@ -1,17 +1,17 @@
-import "./paginaCurso6.scss";
-import PaginaCurso from "../components/paginaCurso/paginaCurso.jsx";
-import Rodape from "../components/rodape/rodape.jsx";
-import Cabecalho from "../components/cabecalho/cabecalho.jsx";
-import curso6 from "../assets/images/curso6.png";
+import "./paginaCurso8.scss";
+import PaginaCurso from "../../components/paginaCurso/paginaCurso.jsx";
+import Rodape from "../../components/rodape/rodape.jsx";
+import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
+import curso8 from "../../assets/images/curso8.png";
 
-export default function Curso6() {
+export default function Curso8() {
  return(
     <div className="container-pagonaCurso">
         <Cabecalho />
         <div className="paginas">
             
         <PaginaCurso
-        imagem={curso6}
+        imagem={curso8}
         titulo="Fake News"
         texto= "chdsvv"
         modulo1= "Introdução"

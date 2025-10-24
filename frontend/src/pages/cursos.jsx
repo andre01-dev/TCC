@@ -2,6 +2,7 @@ import './cursos.scss'
 import CardCurso from '../components/CardCurso/cardCurso.jsx'
 import Cabecalho from '../components/cabecalho/cabecalho.jsx'
 import Rodape from '../components/rodape/rodape.jsx'
+import {Link} from 'react-router'
 
 import curso1 from "../assets/images/curso1.png";
 import curso2 from "../assets/images/curso2.png";
@@ -21,7 +22,7 @@ export default function Cursos()
         <Cabecalho />
 
         <div className='cursos'>
-
+        <Link to="/curso1">
         <CardCurso 
         imagem={curso1}
         titulo='Internet Segura'
@@ -29,9 +30,10 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar como indentificar mensagens suspeitas'
         nivel='Nivel: Básico'
-        rota="/curso1"
         />
+        </Link>
 
+        <Link to='/curso2'>
         <CardCurso 
         imagem={curso2}
         titulo='Compras Online de Forma Segura'
@@ -39,9 +41,10 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar como evitar fraudes e compras impulsivas'
         nivel='Nivel: Básico'
-        rota="/curso2"
         />
+        </Link>
 
+        <Link to='/curso3'>
         <CardCurso 
         imagem={curso3}
         titulo='Bancos Digitais'
@@ -49,9 +52,10 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco'
         nivel='Nivel: Básico'
-        rota="/curso3"
         />
+        </Link>
 
+        <Link to='/curso4'>
         <CardCurso 
         imagem={curso4}
         titulo='Organização Digital'
@@ -59,9 +63,10 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar a Armazenar documentos e fotos com segurança'
         nivel='Nivel: Básico'
-        rota="/curso4"
         />
+        </Link>
 
+        <Link to='/curso5'>
         <CardCurso 
         imagem={curso5}
         titulo='Criando e Usando E-mail'
@@ -69,9 +74,10 @@ export default function Cursos()
         tema='Fake News'
         descricao='Nesse Curso vamos te ensinar a Criar uma conta e usar o E-mail'
         nivel='Nivel: Básico'
-        rota="/curso5"
         />
+        </Link>
 
+        <Link to='/curso6'>
         <CardCurso 
         imagem={curso6}
         titulo='Introdução a Inteligência Artificial'
@@ -79,9 +85,10 @@ export default function Cursos()
         tema='Inteligência Artificial'
         descricao='Nesse Curso vamos te ensinar a Usar a Inteligencia Artificial'
         nivel='Nivel: Básico'
-        rota="/curso6"
         />
+        </Link>
 
+        <Link to='/curso7'>
         <CardCurso 
         imagem={curso7}
         titulo='Educação Financeira Digital '
@@ -89,9 +96,10 @@ export default function Cursos()
         tema='Educação Financeira'
         descricao='Nesse Curso vamos te dar dicas de como controlar seus gastos e evitar fraudes'
         nivel='Nivel: Básico'
-        rota="/curso7"
         />
+        </Link>
 
+        <Link to='/curso8'>
         <CardCurso 
         imagem={curso8}
         titulo='Proteção de Senhas'
@@ -99,9 +107,10 @@ export default function Cursos()
         tema='Senhas Seguras'
         descricao='Nesse Curso vamos te ensinar a Criar uma Senha Forte.'
         nivel='Nivel: Básico'
-        rota="/curso8"
         />
+        </Link>
 
+        <Link to='/curso9'>
         <CardCurso 
         imagem={curso9}
         titulo='Golpe po E-mail (Phishing)'
@@ -109,8 +118,8 @@ export default function Cursos()
         tema='Golpes (Phishing)'
         descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer'
         nivel='Nivel: Básico'
-        rota="/curso9"
         />
+        </Link>
         </div>
 
         <Rodape />

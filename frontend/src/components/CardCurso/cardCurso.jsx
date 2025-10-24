@@ -16,9 +16,7 @@ export default function CardCurso({imagem, titulo, duracao, tema, descricao, niv
                 <p>{descricao}</p>
                 <div className="nivel-button">
                     <h2>{nivel}</h2>
-                    <Link to={{rota}}>
                     <button>Gratuito</button>
-                    </Link>
                 </div>
             </div>
         </div>
