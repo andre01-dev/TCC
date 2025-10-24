@@ -7,7 +7,7 @@ export default function Noticia11() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -35,8 +35,12 @@ export default function Noticia11() {
                 <br />
 
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso11.png" alt="" />
+                
+                <Link to={"/curso2"}>
+                <img src="/src/assets/images/curso2.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
 
 
                 <p>Ainda de acordo com a polícia, há indícios de que integrantes do grupo têm vínculos com uma facção criminosa de atuação nacional, que se utiliza de pessoas cooptadas para movimentar o dinheiro obtido ilegalmente.</p>

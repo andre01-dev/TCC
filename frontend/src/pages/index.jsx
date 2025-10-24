@@ -26,7 +26,7 @@ export default function Comeco() {
             </div>
 
             <div>
-                <h1 className="ConhecaCurso">Conhecça Nossos Cursos</h1>
+                <h1 className="ConhecaCurso">Conheça Nossos Cursos</h1>
                 <CardCurso2/>
             </div>
 

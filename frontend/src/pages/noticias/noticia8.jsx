@@ -7,7 +7,7 @@ export default function Noticia8() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -37,8 +37,12 @@ export default function Noticia8() {
                 <br />
                 <p>O caso foi registrado como estelionato na Delegacia de Polícia de Peruíbe. Em nota, o Agibank expressou solidariedade ao cliente e afirmou que está à disposição para investigar o ocorrido (veja o posicionamento completo adiante). O g1 também entrou em contato com o INSS, mas não obteve retorno até a publicação desta reportagem.</p>
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso8.png" alt="" />
+                
+                <Link to={"/curso8"}>
+                    <img src="/src/assets/images/curso8.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>O que aconteceu</h2>
                 <br />
                 <h2>Golpe</h2>

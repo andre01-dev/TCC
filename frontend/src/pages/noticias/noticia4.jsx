@@ -7,7 +7,7 @@ export default function Noticia4() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -37,8 +37,11 @@ export default function Noticia4() {
                     O coordenador do Procon da Assembleia Legislativa de Minas Gerais (ALMG) Marcelo Barbosa  explica que o MED não é aplicado nos casos em que o consumidor faz um pix por engano na conta de outra pessoa ou empresa. “Nessa situação deve-se entrar em contato com o recebedor para solicitar a devolução do dinheiro. Caso não o conheça, o consumidor pode pedir ajuda ao seu banco”, afirma. Apesar de não haver norma do Banco Central sobre devoluções em caso de engano ou erro do pagador, esse tipo de situação configura apropriação indébita, conforme descrito no Código Penal.</p>
 
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso4.png" alt="" />
-                <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                
+                <Link to ={"/curso4"}>
+                    <img src="/src/assets/images/curso4.png" alt="" />
+                    <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
                 <h2>Como funciona</h2>
                 <p>Para solicitar o MED, o cliente que tiver sido vítima de fraude deve acionar o seu banco em até 80 dias após o envio do pix. Se a instituição julgar que de fato se trata de um golpe, ela vai acionar o banco no qual o dinheiro foi depositado para que a respectiva conta seja bloqueada. O caso passará por uma revisão mais criteriosa e, comprovada a fraude, o consumidor receberá o dinheiro de volta integral ou parcialmente.
 

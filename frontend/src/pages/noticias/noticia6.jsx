@@ -7,7 +7,7 @@ export default function Noticia6() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -33,10 +33,14 @@ export default function Noticia6() {
                 <br />
                 <p>Segundo a pesquisa, não há um perfil claro para as vítimas desse tipo de crime. O DataSenado investigou variáveis como tamanho do município, situação de domicílio (se urbano ou rural), religião, situação no mercado de trabalho, renda, escolaridade, faixa etária, sexo, cor e raça. “As pessoas que relatam ter perdido dinheiro com esse tipo de crime nos últimos 12 meses estão distribuídas em proporção semelhante às características socioeconômicas da população brasileira”, conclui o documento. </p>
                 <br />
-
+                
                 <h2>---- continue depois da publicidade ----</h2>
+                <Link to = {"/curso6"}>
                 <img src="/src/assets/images/curso6.png" alt="" />
-                <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
+               
 
                 <h2>Endividamento</h2>
                 <br />

@@ -7,7 +7,7 @@ export default function Noticia9() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -37,8 +37,12 @@ export default function Noticia9() {
                 <br />
                 <p>A ação, realizada em conjunto entre as Polícias Civis do Rio Grande do Sul, Ceará e São Paulo, investiga os crimes de estelionato qualificado, associação criminosa e lavagem de dinheiro.</p>
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso9.png" alt="" />
-                <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                
+                <Link to={"/curso9"}>
+                    <img src="/src/assets/images/curso9.png" alt="" />
+                    <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>O que aconteceu</h2>
                 <br />
                 <p>25 policiais do Rio Grande do Sul participaram da operação, realizada na última quarta-feira (27). Também houve cumprimento de busca e apreensão no estado do Ceará.</p>

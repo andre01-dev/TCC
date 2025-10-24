@@ -7,7 +7,7 @@ export default function Noticia7() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -29,8 +29,12 @@ export default function Noticia7() {
                 <p>A polícia investiga uma mulher identificada como Rayene Carla Reis, 28, acusada de extorquir vítimas ameaçando-as de morte e de agressões físicas em um golpe que envolve um falso programa com uma prostituta. Ela abordava as pessoas dizendo que elas haviam contratado uma garota e não compareceram ao encontro. Rayene está foragida, mas dois de seus parentes, que também faziam parte do golpe, foram presos</p>
                 <br />
                 <h2>---- continue depois da publicidade ----</h2>
+                
+                <Link to ={"/curso7"}>
                 <img src="/src/assets/images/curso7.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>O que aconteceu</h2>
                 <br />
                 <ul>

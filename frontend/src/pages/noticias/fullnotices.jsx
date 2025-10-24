@@ -12,7 +12,7 @@ export default function TodasNoticias() {
                 <Link to={"/"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
-                        voltar para as notícias
+                        voltar para a página inicial
                     </p>
                 </Link>
             </div> 

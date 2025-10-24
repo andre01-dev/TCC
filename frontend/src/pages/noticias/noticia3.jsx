@@ -7,7 +7,7 @@ export default function Noticia3() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -31,8 +31,12 @@ export default function Noticia3() {
                 <p>A cada cinco minutos, uma pessoa é vítima de algum tipo de golpe realizado pela internet. De janeiro a setembro deste ano, foram 79.869 registros de estelionato virtual — ou 295,8 por dia, 12 por hora. Outras 1.977 pessoas conseguiram escapar do golpe no mesmo período. Nos doze meses do ano passado, o total de casos chegou a 87.172 — além de 3.134 tentativas. Para se ter uma dimensão do crescimento desse tipo de delito em Minas, o número de registros em 2018 foi de 28.160 ocorrências. Já em 2023, foram 87.172 — um aumento de 210%. Em meio a esse cenário, e com a proximidade da chegada das promoções da Black Friday e do Natal, a Polícia Militar de Minas Gerais lançou, nesta quinta-feira (17 de outubro), a campanha “Se deu dúvida, é golpe”. Nas redes sociais, a corporação vai postar vídeos com dicas para livrar a população dos golpes. Os dados foram repassados à reportagem Polícia Civil.</p>
 
                 <h2>---- continue depois da publicidade ----</h2>
+                <Link to ={"curso3"}>
                 <img src="/src/assets/images/curso3.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
+                
                 <p>Quais os sinais de alerta para desconfiar de um golpe</p>
 
                 <p>O especialista em direito digital Alexandre Atheniense informa que, após a pandemia de Covid-19, houve um boom de golpes virtuais. "Tivemos um aumento no uso de plataformas digitais para diversos serviços, e as pessoas passaram a usar o computador no ambiente doméstico, que não tem o mesmo nível de segurança do espaço corporativo. Isso fez com que os hackers passassem a atuar contra o cidadão comum." Atheniense pondera que outro fator que ajuda a explicar o aumento dos delitos é que "o golpista está cada vez mais profissional, muitas vezes ligado a organizações criminosas, enquanto as vítimas, principalmente as de faixa etária mais elevada, acreditam em qualquer tipo de anúncio que encontram", afirma.</p>

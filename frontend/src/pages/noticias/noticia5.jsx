@@ -7,7 +7,7 @@ export default function Noticia5() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -41,8 +41,12 @@ export default function Noticia5() {
                 <p className='aspas'>"Eram o meu rosto, meu cabelo e a minha voz", diz Hanna à BBC News Brasil. "O único detalhe é que a voz estava um pouco em descompasso com o vídeo, mas sabemos que isso pode acontecer devido à conexão com a internet. É assustador ver a evolução desse tipo de golpe."</p>
 
                 <h2>---- continue depois da publicidade ----</h2>
+                
+                <Link to ={"/curso5"}>
                 <img src="/src/assets/images/curso5.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>Como funciona</h2>
                 <p>A advogada explica acreditar que criminosos tenham usado inteligência artificial (IA) para criar um "clone" dela e tentar aplicar golpes com sua imagem.</p>
 

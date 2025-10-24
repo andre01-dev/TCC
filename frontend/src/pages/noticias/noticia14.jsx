@@ -7,7 +7,7 @@ export default function Noticia14() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -43,11 +43,13 @@ export default function Noticia14() {
                 <p>Os policiais entraram em contato com o irmão da idosa, que esteve no local para buscá-la.</p>
                 <br />
                 <p>A Polícia Civil está investigando o caso e procura identificar o golpista.</p>
-
+                
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso14.png" alt="" />
+                
+                <Link to= {"/curso5"}>
+                <img src="/src/assets/images/curso5.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
-
+                </Link>
 
                 <h2>Dicas contra golpes</h2>
                 <p>Neste ano, o Ministério dos Direitos Humanos e da Cidadania (MDH) lançou uma cartilha listando os principais golpes contra idosos registrados no Brasil. Entre eles, está o golpe do falso namoro pela internet.</p>

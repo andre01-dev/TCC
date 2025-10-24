@@ -7,7 +7,7 @@ export default function Noticia13() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -51,8 +51,12 @@ export default function Noticia13() {
                 <p className="aspas">“Buscar ele mesmo, através de um outro telefone, pegar ali, ligar, ligar para o telefone, aquele mesmo telefone que ele tem no cartão do banco, ele faz a ligação. Pedir ajuda a um conhecido, pessoas de confiança que possa te dar subsídio para você fazer o contato com a instituição que está buscando alguma atualização ou se for um golpe, simplesmente apagar as mensagens sem baixar, sem entrar em link, sem nenhuma informação que possa comprometê-lo”, explica Ione Amorim, coordenadora do Programa de Serviços Financeiros do Idec.</p>
 
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso13.png" alt="" />
+                
+                <Link to={"/curso4"}>
+                <img src="/src/assets/images/curso4.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
 
                 <p>O aposentado enganado ficou sem a poupança construída com sacrifício e ainda paga um empréstimo que nunca fez. Ele registrou boletim de ocorrência e tenta resolver a situação na Justiça: R$ 135 mil de prejuízo financeiro - e outros incalculáveis.</p>
                 <p>“A pessoa cai mesmo, são pessoas habilitadas. Sabe, são pessoas habilitadas. É muito difícil”, lamenta uma vítima.</p>

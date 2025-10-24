@@ -7,7 +7,7 @@ export default function Noticia1() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -35,8 +35,12 @@ export default function Noticia1() {
                     O perfil falso passou a anunciar promoções com preços muito abaixo do normal. “Eu já seguia a loja oficial deles. Começou a aparecer muito anúncio, com preços maravilhosos. Acabei caindo no golpe”, relata Jeniffer Santos, uma das vítimas.</p>
 
                 <h2>---- continue depois da publicidade ----</h2>
+                
+                <Link to ={"/curso1"}>
                 <img src="/src/assets/images/curso1.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <p>Comprovantes de pagamento indicam que os golpistas podem ter feito mais de 17 mil vendas falsas. As vítimas denunciaram o perfil falso, mas quem acabou banido foi o perfil verdadeiro da loja.</p>
                 <p className='aspas'>“A gente chora, a gente fica frustrado. Além de trabalho, é a nossa história familiar também ali”, desabafa Carla.”</p>
                 <p>A orientação de especialistas é buscar a Justiça. “Como a plataforma não fornece um prazo de resposta, a saída para uma medida rápida é entrar com pedido judicial”, explica o advogado Luís Restanho.

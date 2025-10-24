@@ -7,7 +7,7 @@ export default function Noticia10() {
         <div className='noticia'>
             <Cabecalho />
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -31,8 +31,12 @@ export default function Noticia10() {
                 <p>Veja quais são os principais golpes e como se precaver e reduzir as chances de se tornar vítima.</p>
                 <br />
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso10.png" alt="" />
+                
+                <Link to={"/curso1"}>
+                <img src="/src/assets/images/curso1.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>O que aconteceu</h2>
                 <ol>
                     <li>Oferta de empréstimo consignado e cartão de crédito</li>
