@@ -37,6 +37,30 @@ endpoints.get('/puxarNome', async (req,resp) => {
     resp.send(registros);
 })
 
+endpoints.get('/verificar/email', async (req,resp) => {
+    try{
+        let email = req.query.email;
+    
+        const registros = await repoRegistrar.VerificarEmail(email);
+    
+        if(registros.length === 0){
+           return resp.status(401).send({erro: "E-mail não encontrado"})
+        }
+        resp.send({ok: true})
+    } catch(e) {
+        resp.status(500).send({erro: "Erro ao verificar e-mail"})
+    }
+})
+
+endpoints.put('/alterarsenha', async (req,resp) => {
+    let email = req.body.email;
+    let novaSenha = req.body.novaSenha;
+
+    await repoRegistrar.AlterarSenha(novaSenha, email);
+
+    resp.send({mensagem: "Senha alterada com sucesso!"})
+})
+
 
 
 

@@ -9,6 +9,7 @@ import Depoimentos from "../components/paginaPrincipal/depoimentos/depoimentos";
 import AcontecendoAgora from "../components/paginaPrincipal/AcontecemdoAgora/AcontecendoAgora";
 import Rodape from "../components/rodape/rodape";
 import { useEffect, useState } from "react";
+import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho";
 
 export default function Comeco() {
 
@@ -34,7 +35,7 @@ export default function Comeco() {
         <div className="container-inicio">
             {logado ? (
                 <>
-                    <Cabecalho
+                    <CabecalhoLogado
                         nome_usuario = {nomeUsuario}
                     />
                 </>

@@ -43,4 +43,25 @@ export async function PuxarNome(email) {
     return registros[0];
 }
 
+export async function VerificarEmail(email) {
+    const comando = `
+        select id_usuario
+        from tb_usuario
+        where email = ?
+    `
+    const [registros] = await conection.query(comando, [email]);
+    return registros
+}
+
+export async function AlterarSenha(novaSenha,email) {
+    const comando = `
+        update tb_usuario
+        set senha = MD5(?)
+        where email = ?
+    `
+    const [registros] = await conection.query(comando, [novaSenha, email])
+    return registros
+}
+
+
 

@@ -1,11 +1,43 @@
+import { useEffect, useState } from 'react';
 import Cabecalho from '../../components/cabecalho/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 
 export default function Noticia1() {
+
+    const [nomeUsuario, setNomeUsuario] = useState("");
+        const [logado, setLogado] = useState(false)
+        const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    
+        useEffect(() => {
+            const token = localStorage.getItem("TOKEN");
+    
+            if (token != undefined && token != null) {
+                setNomeUsuario(nome_usuario)
+                setLogado(!!token)
+            }
+            else{
+                setLogado(false)
+                setNomeUsuario("")
+            }
+        })
+
     return (
         <div className='noticia'>
-            <Cabecalho />
+
+            {logado ? (
+                            <>
+                                <CabecalhoLogado
+                                    nome_usuario = {nomeUsuario}
+                                />
+                            </>
+                        ) : (
+                          <>
+                            <Cabecalho />
+                          </>  
+                        )}
+            
             <div className='voltar-noticia'>
                 <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>

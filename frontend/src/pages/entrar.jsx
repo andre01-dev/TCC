@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from "lucide-react";
 import api from '../api.js'
@@ -9,23 +9,26 @@ export default function Entrar() {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [novaSenha, setNovaSenha] = useState("");
     const location = useLocation();
     const [ativo, setAtivo] = useState(location.pathname === "/registrar" ? "registrar" : "entrar");
     const [mostrar, setMostrar] = useState(false);
+    const [lembrar, setLembrar] = useState(false);
+    const [alterarSenha, setAlterarSenha] = useState(false);
+    const [validarEmail, setValidarEmail] = useState(false)
     const navigate = useNavigate();
 
     async function VerificarUsuario() {
 
-        const resposta = await api.get('/puxarNome', {
-            params: {
-                email: email
-            }
-        })
-
-        const nome_usuario = resposta.data.nome_usuario;
-        localStorage.setItem("NOME_USUARIO", nome_usuario);
 
         try {
+            const resposta = await api.get('/puxarNome', {
+                params: {
+                    email: email
+                }
+            })
+
+            const nome_usuario = resposta.data.nome_usuario;
             const response = await api.post('/logar', {
                 email,
                 senha
@@ -33,7 +36,16 @@ export default function Entrar() {
 
             const token = response.data.token;
 
+            localStorage.setItem("NOME_USUARIO", nome_usuario);
             localStorage.setItem("TOKEN", token);
+
+            if (lembrar) {
+                localStorage.setItem("NOME_USUARIO", nome_usuario);
+                localStorage.setItem("TOKEN", token);
+            } else {
+                sessionStorage.setItem("NOME_USUARIO", nome_usuario);
+                sessionStorage.setItem("TOKEN", token);
+            }
 
             alert("Login realizado com sucesso!");
 
@@ -45,7 +57,33 @@ export default function Entrar() {
             alert(e.response?.data?.erro || "Erro ao realizar login");
         }
     }
-    
+
+    async function verificarEmail() {
+        try {
+            await api.get('/verificar/email', {
+                params: { email }
+            });
+            setValidarEmail(true);
+        } catch (e) {
+            alert("E-mail não encontrado");
+        }
+    }
+
+    async function recuperarSenha() {
+        try {
+            await api.put('/alterarsenha', {
+                email,
+                novaSenha
+            });
+            alert("Senha alterada com sucesso");
+            setEmail("");
+            setNovaSenha("")
+            navigate("/entrar")
+        } catch (e) {
+            alert(e.response?.data?.erro || "Erro ao alterar senha");
+        }
+    }
+
     return (
         <div className='body-entrar'>
             <div className='container-entrar'>
@@ -80,7 +118,7 @@ export default function Entrar() {
                         <div className='input-senha-container'>
                             <input
                                 type={mostrar ? "text" : "password"}
-                                placeholder="Crie sua senha"
+                                placeholder="Insira sua senha"
                                 className="input-senha"
                                 value={senha}
                                 onChange={(e) => setSenha(e.target.value)}
@@ -98,10 +136,47 @@ export default function Entrar() {
 
                     <div className='lembrar-esquecer'>
                         <label className='lembrar'>
-                            <input className='inp-lembrar' type="checkbox" />
+                            <input className='inp-lembrar' type="checkbox" checked={lembrar} onChange={(e) => setLembrar(e.target.checked)} />
                             Lembrar de mim
                         </label>
-                        <a href="" className='esqueceu-senhas'>Esqueceu a senha?</a>
+                        <a href="" className='esqueceu-senhas' 
+                        onClick={(e) => { e.preventDefault(); setAlterarSenha(true); setValidarEmail(false); setEmail(""); setSenha("") }}>Esqueceu a senha?</a>
+                        {alterarSenha && (
+                            <div className="container-alterarSenha" onClick={() => setAlterarSenha(false)}>
+                                <div className="alterarSenha" onClick={(e) => e.stopPropagation()}>
+                                    <h2>Recuperar senha</h2>
+
+                                    {!validarEmail && (
+                                        <>
+                                            <input
+                                                type="email"
+                                                placeholder="Digite seu e-mail"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
+                                            <button onClick={verificarEmail}>Verificar e-mail</button>
+                                        </>
+                                    )}
+
+                                    {validarEmail && (
+                                        <>
+                                            <input
+                                                type="password"
+                                                placeholder="Digite a nova senha"
+                                                value={novaSenha}
+                                                onChange={(e) => setNovaSenha(e.target.value)}
+                                            />
+                                            <button onClick={recuperarSenha}>Alterar senha</button>
+                                        </>
+                                    )}
+
+                                    <button className="bt-fechar" onClick={() => setAlterarSenha(false)}>
+                                        Fechar
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
                     </div>
 
                     <div className='div-bt'>

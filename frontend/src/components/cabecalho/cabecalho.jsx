@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import './cabecalho.scss'
 import { Link } from 'react-router'
 
-export default function Cabecalho({ nome_usuario }) {
+export default function Cabecalho() {
 
     const navigate = useNavigate();
     const [menuLogado, setMenuLogado] = useState(false)
@@ -27,17 +27,7 @@ export default function Cabecalho({ nome_usuario }) {
                     <Link to={"/tdsntc"}><p className='nav-cabecalho'>Notícias</p></Link>
                     <Link><p className='nav-cabecalho'>Quem Somos</p></Link>
                     <Link to={"/registrar"}><p className='nav-cabecalho'>Login/Registrar</p></Link>
-                    <button className='nome-usuario' onClick={() => setMenuLogado(!menuLogado)}>{nome_usuario}</button>
-
-                    {menuLogado && (
-                        <div className="popup-menu" onClick={() => setMenuLogado(false)}>
-                            <div className="popup">
-                                <Link to={"/perfil"}><p>Meu perfil</p></Link>
-                                <button onClick={Sair}>Sair</button>
-                                
-                            </div>
-                        </div>
-                    )}
+                    
                 </div>
             </div>
         </div>
