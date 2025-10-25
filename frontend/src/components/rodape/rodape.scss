@@ -1,6 +1,6 @@
 .rodape {
   background-color: #004051;
-  color: white;
+  color: #F3E7E7;
   position: relative;
   font-family: "Poppins", sans-serif;
   margin-top: auto;
@@ -20,14 +20,15 @@
   
   .rodape-conteudo {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: flex-start;
       padding: 100px 90px 40px;
       flex-wrap: wrap;
-      background-color: #004051;
+      background-color: #003F51;
+      gap: 40px;
       
       .colun{
-        margin-right: 500px;
+        margin-right: 0px;
       }
     .coluna {
       display: flex;
@@ -87,6 +88,6 @@
   }
   .link
   {
-    color: white;
+    color: #F3E7E7;
   }
 }

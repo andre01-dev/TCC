@@ -25,14 +25,22 @@ export async function VerificarUsuario(email, senha) {
         from tb_usuario
         where email = ? AND senha = MD5(?)
     `
-    const [registros] = await conection.query(comando, [email, senha])
-    return registros
+    const [registros] = await conection.query(comando, [email, senha]);
+
+    if (registros.length === 0) {
+        return null;
+    }
+    return registros[0];
 }
 
-export async function listarUsuario() {
+export async function PuxarNome(email) {
     const comando = `
-        select * from tb_usuario
+        select nome_usuario
+        from tb_usuario
+        where email = ?
     `
-    const [registros] = await conection.query(comando);
-    return registros
+    const [registros] = await conection.query(comando, [email])
+    return registros[0];
 }
+
+

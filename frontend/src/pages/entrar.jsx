@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from "lucide-react";
 import api from '../api.js'
@@ -15,12 +15,28 @@ export default function Entrar() {
     const navigate = useNavigate();
 
     async function VerificarUsuario() {
+
+        const resposta = await api.get('/puxarNome', {
+            params: {
+                email: email
+            }
+        })
+
+        const nome_usuario = resposta.data.nome_usuario;
+        localStorage.setItem("NOME_USUARIO", nome_usuario);
+
         try {
-            await api.post('/logar', {
+            const response = await api.post('/logar', {
                 email,
                 senha
             });
+
+            const token = response.data.token;
+
+            localStorage.setItem("TOKEN", token);
+
             alert("Login realizado com sucesso!");
+
             setEmail("")
             setSenha("")
             navigate('/')
@@ -29,6 +45,7 @@ export default function Entrar() {
             alert(e.response?.data?.erro || "Erro ao realizar login");
         }
     }
+    
     return (
         <div className='body-entrar'>
             <div className='container-entrar'>
