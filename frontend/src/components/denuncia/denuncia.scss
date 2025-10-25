@@ -1,0 +1,70 @@
+.alinhar-denuncia {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  .denuncia-container {
+    background-color: #153949;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 750px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+
+    .denuncia-content {
+      .denuncia-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .denuncia-icon {
+          width: 60px;
+          margin-right: 15px;
+        }
+
+        h2 {
+          flex-grow: 1;
+          font-size: 22px;
+          letter-spacing: 1px;
+        }
+
+        .denuncia-carimbo {
+          color: red;
+          border: 2px solid red;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-weight: bold;
+          transform: rotate(-15deg);
+        }
+      }
+
+      .denuncia-text {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .but-denuncia {
+        display: flex;
+        justify-content: end;
+
+        .denuncia-btn {
+          background-color: #DFB674;
+          color: #153949;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 8px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: 20px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #edb55b;
+          }
+        }
+      }
+    }
+  }
+}

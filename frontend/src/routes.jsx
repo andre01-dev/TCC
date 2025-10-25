@@ -29,6 +29,7 @@ import Curso6 from "./pages/paginasCursos/paginaCurso6.jsx";
 import Curso7 from "./pages/paginasCursos/paginaCurso7.jsx";
 import Curso8 from "./pages/paginasCursos/paginaCurso8.jsx";
 import Curso9 from "./pages/paginasCursos/paginaCurso9.jsx";
+import Denunciapag from "./pages/denunciapag.jsx";
 
 export default function Navegacao () {
     return(
@@ -64,7 +65,7 @@ export default function Navegacao () {
                 <Route path="/curso7" element={<Curso7 />} />
                 <Route path="/curso8" element={<Curso8 />} />
                 <Route path="/curso9" element={<Curso9 />} />
-
+                <Route path="/denuncia" element={<Denunciapag />} />
             </Routes>
         </BrowserRouter>
     );

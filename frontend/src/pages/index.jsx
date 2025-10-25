@@ -10,6 +10,7 @@ import AcontecendoAgora from "../components/paginaPrincipal/AcontecemdoAgora/Aco
 import Rodape from "../components/rodape/rodape";
 import { useEffect, useState } from "react";
 import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho";
+import Denuncia from "../components/denuncia/denuncia";
 
 export default function Comeco() {
 
@@ -77,6 +78,10 @@ export default function Comeco() {
             <div>
                 <h1 className="AcontecendoAgora">O que está acontecendo agora?</h1>
                 <AcontecendoAgora />
+            </div>
+
+            <div>
+                <Denuncia />
             </div>
             <Rodape />
         </div>
