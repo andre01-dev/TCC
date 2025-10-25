@@ -1,13 +1,43 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
+import { useEffect, useState } from 'react';
+import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
 
 export default function Noticia8() {
+
+    const [nomeUsuario, setNomeUsuario] = useState("");
+        const [logado, setLogado] = useState(false)
+        const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    
+        useEffect(() => {
+            const token = localStorage.getItem("TOKEN");
+    
+            if (token != undefined && token != null) {
+                setNomeUsuario(nome_usuario)
+                setLogado(!!token)
+            }
+            else{
+                setLogado(false)
+                setNomeUsuario("")
+            }
+        })
+
     return (
         <div className='noticia'>
-            <Cabecalho />
+            {logado ? (
+                            <>
+                                <CabecalhoLogado
+                                    nome_usuario = {nomeUsuario}
+                                />
+                            </>
+                        ) : (
+                          <>
+                            <Cabecalho />
+                          </>  
+                        )}
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -37,8 +67,12 @@ export default function Noticia8() {
                 <br />
                 <p>O caso foi registrado como estelionato na Delegacia de Polícia de Peruíbe. Em nota, o Agibank expressou solidariedade ao cliente e afirmou que está à disposição para investigar o ocorrido (veja o posicionamento completo adiante). O g1 também entrou em contato com o INSS, mas não obteve retorno até a publicação desta reportagem.</p>
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso8.png" alt="" />
+                
+                <Link to={"/curso8"}>
+                    <img src="/src/assets/images/curso8.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>O que aconteceu</h2>
                 <br />
                 <h2>Golpe</h2>

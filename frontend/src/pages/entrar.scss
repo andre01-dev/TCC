@@ -21,8 +21,8 @@
                 color: #003F51;
                 font-weight: 700;
             }
-            
-             .entrar-registrar {
+
+            .entrar-registrar {
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -103,7 +103,7 @@
                     font-weight: 700;
                     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
                 }
-                
+
                 .input-senha-container {
                     position: relative;
                     width: 400px;
@@ -135,10 +135,12 @@
                     opacity: 0.6;
                 }
             }
-            .div-bt{
+
+            .div-bt {
                 display: flex;
                 justify-content: end;
                 margin-top: 15px;
+
                 .bt-logar {
                     margin-top: 30px;
                     width: 200px;
@@ -150,23 +152,25 @@
                     border: 2px solid #003F51;
                     transition: all 0.3s ease;
                 }
-    
+
                 .bt-criarConta:hover {
                     transform: scale(1.05);
                     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
                 }
             }
 
-            .lembrar-esquecer{
+            .lembrar-esquecer {
                 margin-top: 20px;
                 display: flex;
                 justify-content: space-between;
-                .lembrar{
+
+                .lembrar {
                     padding-left: 10px;
                     display: flex;
                     gap: 7px;
                 }
-                a{
+
+                a {
                     color: #003F51;
                     text-decoration: underline;
                     padding-right: 20px;
@@ -174,4 +178,57 @@
             }
         }
     }
+}
+
+.container-alterarSenha {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+    .alterarSenha {
+        background: #F3E7E7;
+        padding: 30px;
+        border-radius: 12px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .alterarSenha h2 {
+        margin-bottom: 10px;
+        text-align: center;
+        color: #003F51;
+    }
+
+    .alterarSenha input {
+        padding: 10px;
+        border: 2px solid #003F51;
+        border-radius: 8px;
+        background-color: #F3E7E7;
+    }
+
+    .alterarSenha button {
+        background-color: #DFB674;
+        color: #003F51;
+        font-size: 17px;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .bt-fechar {
+        background: #003F51;
+    }
+
 }

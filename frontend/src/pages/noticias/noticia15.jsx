@@ -1,13 +1,43 @@
+import { useEffect, useState } from "react";
 import Cabecalho from "../../components/cabecalho/cabecalho";
+import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho";
 import './noticia.scss'
 import {Link} from 'react-router'
 
 export default function Noticia15() {
+
+    const [nomeUsuario, setNomeUsuario] = useState("");
+        const [logado, setLogado] = useState(false)
+        const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    
+        useEffect(() => {
+            const token = localStorage.getItem("TOKEN");
+    
+            if (token != undefined && token != null) {
+                setNomeUsuario(nome_usuario)
+                setLogado(!!token)
+            }
+            else{
+                setLogado(false)
+                setNomeUsuario("")
+            }
+        })
+
     return (
         <div className='noticia'>
-            <Cabecalho />
+            {logado ? (
+                            <>
+                                <CabecalhoLogado
+                                    nome_usuario = {nomeUsuario}
+                                />
+                            </>
+                        ) : (
+                          <>
+                            <Cabecalho />
+                          </>  
+                        )}
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -25,9 +55,11 @@ export default function Noticia15() {
 
             </p>
             <div className='corpo-noticia'>
+                
                 <div className='fundo-noticia'>
-                    <img src="/src/assets/images/noticia15.png" alt="" />
+                    <img src="/src/assets/images/noticia6.png" alt="" />
                 </div>
+                
                 <p>Estar na terceira idade não é um impeditivo para a acessar a internet. Há dez anos, 4% dos idosos no País acessavam a rede, número que cresceu para 20% no último levantamento do Comitê Gestor da Internet (CGI). Em redes sociais como o Facebook, perfis de brasileiros acima dos 60 anos que acessam a plataforma passam dos 4 milhões em um universo de 117 milhões de usuários no País. Cada vez mais conectada, essa faixa etária também está exposta aos riscos do ambiente virtual.</p>
                 <br />
                 <p>Idosos são considerados alvos fáceis de crimes cibernéticos, mostra um levantamento global da fabricante de softwares de segurança Kaspersky. ”O fraudador, quando vai fazer o ataque, mira a todos, mas quando vê que a pessoa já tem alguma idade, costuma aperfeiçoar golpes", afirma o pesquisador sênior de Segurança Digital da Kaspersky, Fábio Assolini. Por não ter muito conhecimento de segurança ou fraudes na web, esse internauta não sabe distinguir a fraude de algo legítimo, explica.</p>
@@ -42,9 +74,10 @@ export default function Noticia15() {
 
 
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso15.png" alt="" />
+                <Link to={"/curso7"}>
+                <img src="/src/assets/images/curso7.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
-
+                </Link>
                 <h2>Manual básico de proteção online para o idoso</h2>
                 <ol>
                     <li> Peça ajuda aos seus parentes e escolha empresas de confiança</li>

@@ -2,12 +2,15 @@ import jwt from 'jsonwebtoken'
 
 const KEY = 'borapracima'
 
-
 export function generateToken(userInfo) {
-  if (!userInfo.role)
-    userInfo.role = 'user';
 
-  return jwt.sign(userInfo, KEY)
+  const payload = {
+    ...userInfo,
+    role: userInfo.role || "user"
+  };
+
+  // gerar token
+  return jwt.sign(payload, KEY);
 }
 
 export function getTokenInfo(req) {

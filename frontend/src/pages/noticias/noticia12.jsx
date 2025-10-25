@@ -1,13 +1,43 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
+import { useEffect, useState } from 'react';
+import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
 
 export default function Noticia12() {
+
+    const [nomeUsuario, setNomeUsuario] = useState("");
+        const [logado, setLogado] = useState(false)
+        const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    
+        useEffect(() => {
+            const token = localStorage.getItem("TOKEN");
+    
+            if (token != undefined && token != null) {
+                setNomeUsuario(nome_usuario)
+                setLogado(!!token)
+            }
+            else{
+                setLogado(false)
+                setNomeUsuario("")
+            }
+        })
+
     return (
         <div className='noticia'>
-            <Cabecalho />
+            {logado ? (
+                            <>
+                                <CabecalhoLogado
+                                    nome_usuario = {nomeUsuario}
+                                />
+                            </>
+                        ) : (
+                          <>
+                            <Cabecalho />
+                          </>  
+                        )}
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -43,8 +73,12 @@ export default function Noticia12() {
                 <br />
                 <p>As técnicas usadas, por sua vez, são cada vez mais sofisticadas. Os criminosos combinam a engenharia social com dados vazados, construindo narrativas convincentes. Eles clonam cartões, criam centrais falsas de banco, aplicam o “golpe do Pix” e se aproveitam de cada detalhe disponível nas redes sociais das vítimas.</p>
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso12.png" alt="" />
+                
+                <Link to={"/curso3"}>
+                <img src="/src/assets/images/curso3.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
 
                 <h2>Golpes a cada segundo</h2>
                 <p>A dimensão do problema impressiona: segundo o Fórum Brasileiro de Segurança Pública, quase 8 mil brasileiros são vítimas de golpes digitais a cada hora. Isso inclui desde quem paga por um produto e não recebe, até quem tem o celular furtado e as contas invadidas em minutos.</p>

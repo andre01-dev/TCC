@@ -1,4 +1,5 @@
 import "./rodape.scss";
+import {Link} from 'react-router'
 
 export default function Rodape() {
   return (
@@ -21,8 +22,8 @@ export default function Rodape() {
         <div className="coluna">
           <h4>Links</h4>
           <ul>
-            <li>Cursos</li>
-            <li>Notícias</li>
+            <li><Link className="link" to='/cursos'>Cursos</Link></li>
+            <li><Link className="link" to='/tdsntc'>Notícias</Link></li>
             <li>Quem Somos</li>
           </ul>
         </div>

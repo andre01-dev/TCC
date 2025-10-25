@@ -1,0 +1,18 @@
+.container-cursos {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8f8f8;
+
+  .titulo-cursos {
+    font-size: 2rem;
+    color: #073f46;
+    margin-bottom: 2rem;
+  }
+
+  .lista-cursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}

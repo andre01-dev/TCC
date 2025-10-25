@@ -20,7 +20,15 @@ import Noticia14 from "./pages/noticias/noticia14";
 import Noticia15 from "./pages/noticias/noticia15";
 import Cursos from "./pages/cursos.jsx"
 import TodasNoticias from "./pages/noticias/fullnotices.jsx";
-
+import Curso1 from "./pages/paginasCursos/paginaCurso1.jsx";
+import Curso2 from "./pages/paginasCursos/paginaCurso2.jsx";
+import Curso3 from "./pages/paginasCursos/paginaCurso3.jsx";
+import Curso4 from "./pages/paginasCursos/paginaCurso4.jsx";
+import Curso5 from "./pages/paginasCursos/paginaCurso5.jsx";
+import Curso6 from "./pages/paginasCursos/paginaCurso6.jsx";
+import Curso7 from "./pages/paginasCursos/paginaCurso7.jsx";
+import Curso8 from "./pages/paginasCursos/paginaCurso8.jsx";
+import Curso9 from "./pages/paginasCursos/paginaCurso9.jsx";
 
 export default function Navegacao () {
     return(
@@ -46,7 +54,17 @@ export default function Navegacao () {
                 <Route path="/noticia14" element={<Noticia14/>}/>
                 <Route path="/noticia15" element={<Noticia15/>}/>
                 <Route path="/tdsntc" element={<TodasNoticias/>}/>
-                <Route path="/curso" element={<Cursos />} />
+                <Route path="/cursos" element={<Cursos />} />
+                <Route path="/curso1" element={<Curso1 />} />
+                <Route path="/curso2" element={<Curso2 />} />
+                <Route path="/curso3" element={<Curso3 />} />
+                <Route path="/curso4" element={<Curso4 />} />
+                <Route path="/curso5" element={<Curso5 />} />
+                <Route path="/curso6" element={<Curso6 />} />
+                <Route path="/curso7" element={<Curso7 />} />
+                <Route path="/curso8" element={<Curso8 />} />
+                <Route path="/curso9" element={<Curso9 />} />
+
             </Routes>
         </BrowserRouter>
     );

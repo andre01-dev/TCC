@@ -1,13 +1,43 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
+import { useEffect, useState } from 'react';
+import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
 
 export default function Noticia10() {
+
+    const [nomeUsuario, setNomeUsuario] = useState("");
+        const [logado, setLogado] = useState(false)
+        const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    
+        useEffect(() => {
+            const token = localStorage.getItem("TOKEN");
+    
+            if (token != undefined && token != null) {
+                setNomeUsuario(nome_usuario)
+                setLogado(!!token)
+            }
+            else{
+                setLogado(false)
+                setNomeUsuario("")
+            }
+        })
+
     return (
         <div className='noticia'>
-            <Cabecalho />
+            {logado ? (
+                            <>
+                                <CabecalhoLogado
+                                    nome_usuario = {nomeUsuario}
+                                />
+                            </>
+                        ) : (
+                          <>
+                            <Cabecalho />
+                          </>  
+                        )}
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -31,8 +61,12 @@ export default function Noticia10() {
                 <p>Veja quais são os principais golpes e como se precaver e reduzir as chances de se tornar vítima.</p>
                 <br />
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso10.png" alt="" />
+                
+                <Link to={"/curso1"}>
+                <img src="/src/assets/images/curso1.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
                 <h2>O que aconteceu</h2>
                 <ol>
                     <li>Oferta de empréstimo consignado e cartão de crédito</li>

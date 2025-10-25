@@ -1,13 +1,43 @@
 import Cabecalho from "../../components/cabecalho/cabecalho";
+import { useEffect, useState } from 'react';
+import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
 
 export default function Noticia11() {
+
+    const [nomeUsuario, setNomeUsuario] = useState("");
+        const [logado, setLogado] = useState(false)
+        const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    
+        useEffect(() => {
+            const token = localStorage.getItem("TOKEN");
+    
+            if (token != undefined && token != null) {
+                setNomeUsuario(nome_usuario)
+                setLogado(!!token)
+            }
+            else{
+                setLogado(false)
+                setNomeUsuario("")
+            }
+        })
+
     return (
         <div className='noticia'>
-            <Cabecalho />
+            {logado ? (
+                            <>
+                                <CabecalhoLogado
+                                    nome_usuario = {nomeUsuario}
+                                />
+                            </>
+                        ) : (
+                          <>
+                            <Cabecalho />
+                          </>  
+                        )}
             <div className='voltar-noticia'>
-                <Link to={"/"}>
+                <Link to={"/tdsntc"}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -35,8 +65,12 @@ export default function Noticia11() {
                 <br />
 
                 <h2>---- continue depois da publicidade ----</h2>
-                <img src="/src/assets/images/curso11.png" alt="" />
+                
+                <Link to={"/curso2"}>
+                <img src="/src/assets/images/curso2.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
+                
 
 
                 <p>Ainda de acordo com a polícia, há indícios de que integrantes do grupo têm vínculos com uma facção criminosa de atuação nacional, que se utiliza de pessoas cooptadas para movimentar o dinheiro obtido ilegalmente.</p>

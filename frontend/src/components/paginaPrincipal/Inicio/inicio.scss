@@ -36,18 +36,33 @@
 
 
 .txt{
-    color: black;
+    color: #003F51;
     display: flex;
     gap: 10px;
-    
+    font-size: 20px;
 }
 
 .txtxt{
     margin-top: 5px;
     margin-bottom: 20px;
-    color:  black;
     padding: 10px;
     gap: 20px;
+    color: #003F51;
+
+    .topicos{
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      gap: 7px;
+      color: #003F51;
+
+      .topicos-h3{
+        margin-top: -2px;
+        text-decoration: underline;
+      }
+    }
 }
 
 .txtxt h3{
@@ -60,10 +75,11 @@ $color: #DFB674;
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: #02485c;
+  color: #003F51;
   border: 1px solid #DFB674;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 17px;
+  font-weight: 500;
   letter-spacing: .15rem;
   transition: all .3s;
   position: relative;
