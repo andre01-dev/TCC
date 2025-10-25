@@ -15,8 +15,9 @@ export default function Comeco() {
             <Cabecalho />
             <Inicio />
             <div className="separacao">
-
+                
             </div>
+
             <div>
                 <Paraquem />
             </div>
