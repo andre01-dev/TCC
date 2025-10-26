@@ -3,6 +3,7 @@ import Comeco from "./pages/index.jsx";
 import Registrar from "./pages/registrar";
 import Entrar from "./pages/entrar.jsx";
 import Perfil from "./pages/perfil.jsx";
+import QuemSomos from "./pages/somos.jsx"
 import Noticia1 from "./pages/noticias/noticia1";
 import Noticia2 from "./pages/noticias/noticia2";
 import Noticia3 from "./pages/noticias/noticia3";
@@ -39,6 +40,7 @@ export default function Navegacao () {
                 <Route path="/registrar"  element= {<Registrar />}/>
                 <Route path="/entrar"  element= {<Entrar />}/>
                 <Route path="/perfil"  element= {<Perfil />}/>
+                <Route path="/quemsomos" element= {<QuemSomos/>} />
                 <Route path="/noticia1"  element= {<Noticia1 />}/>
                 <Route path="/noticia2"  element= {<Noticia2 />}/>
                 <Route path="/noticia3"  element= {<Noticia3 />}/>
