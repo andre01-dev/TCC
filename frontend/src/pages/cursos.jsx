@@ -50,15 +50,29 @@ export default function Cursos() {
                 </>
             )}
 
+            <div className='voltar-cursos'>
+  <Link to={"/tdsntc"}>
+    <button className='voltar'>
+      <img src="/src/assets/images/setaEsquerda.png" height={25} />
+    </button>
+    <p>Voltar para a página de Notícias</p>
+  </Link>
+</div>
+
+  <div className='titulo-cursos'>
+                <h1>Cursos</h1>
+            </div>
+
+
 
             <div className='cursos'>
                 <Link to="/curso1">
                     <CardCurso
                         imagem={curso1}
                         titulo='Internet Segura'
-                        duracao=' 20min'
+                        duracao=' 1min'
                         tema='Fake News'
-                        descricao='Nesse Curso vamos te ensinar como indentificar mensagens suspeitas'
+                        descricao='Nesse Curso vamos te ensinar como navegar de forma segura'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -67,7 +81,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso2}
                         titulo='Compras Online de Forma Segura'
-                        duracao=' 10min'
+                        duracao=' 6min'
                         tema='Fake News'
                         descricao='Nesse Curso vamos te ensinar como evitar fraudes e compras impulsivas'
                         nivel='Nivel: Básico'
@@ -78,7 +92,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso3}
                         titulo='Bancos Digitais'
-                        duracao=' 30min'
+                        duracao=' 6min'
                         tema='Fake News'
                         descricao='Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco'
                         nivel='Nivel: Básico'
@@ -89,7 +103,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso4}
                         titulo='Organização Digital'
-                        duracao=' 40min'
+                        duracao=' 6min'
                         tema='Fake News'
                         descricao='Nesse Curso vamos te ensinar a Armazenar documentos e fotos com segurança'
                         nivel='Nivel: Básico'
@@ -100,7 +114,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso5}
                         titulo='Criando e Usando E-mail'
-                        duracao=' 15min'
+                        duracao=' 12min'
                         tema='Fake News'
                         descricao='Nesse Curso vamos te ensinar a Criar uma conta e usar o E-mail'
                         nivel='Nivel: Básico'
@@ -111,7 +125,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso6}
                         titulo='Introdução a Inteligência Artificial'
-                        duracao=' 27min'
+                        duracao=' 7min'
                         tema='Inteligência Artificial'
                         descricao='Nesse Curso vamos te ensinar a Usar a Inteligencia Artificial'
                         nivel='Nivel: Básico'
@@ -122,7 +136,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso7}
                         titulo='Educação Financeira Digital '
-                        duracao=' 55min'
+                        duracao=' 6min'
                         tema='Educação Financeira'
                         descricao='Nesse Curso vamos te dar dicas de como controlar seus gastos e evitar fraudes'
                         nivel='Nivel: Básico'
@@ -133,7 +147,7 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso8}
                         titulo='Proteção de Senhas'
-                        duracao=' 23min'
+                        duracao=' 6min'
                         tema='Senhas Seguras'
                         descricao='Nesse Curso vamos te ensinar a Criar uma Senha Forte.'
                         nivel='Nivel: Básico'
@@ -144,13 +158,20 @@ export default function Cursos() {
                     <CardCurso
                         imagem={curso9}
                         titulo='Golpe po E-mail (Phishing)'
-                        duracao=' 30min'
+                        duracao=' 5min'
                         tema='Golpes (Phishing)'
                         descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer'
                         nivel='Nivel: Básico'
                     />
                 </Link>
             </div>
+
+            <button 
+  className="botao-topo" 
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
+  ⬆
+</button>
 
             <Rodape />
 

@@ -1,10 +1,83 @@
+.voltar-cursos {
+  width: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+  overflow: hidden; 
+  color: #003F51;
+  background-color: transparent;
+  transition: color 0.3s ease;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; 
+    background-color: #DFB674; 
+    transition: width 0.4s ease; 
+    z-index: 0; 
+  }
+
+  .voltar, p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .voltar {
+    background-color: #DFB674;
+    border: none;
+    border-radius: 11px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  p {
+    color: #003F51;
+    transition: color 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 100%; 
+  }
+
+  &:hover p {
+    color: white;
+  }
+
+  &:hover .voltar {
+    background-color: white;
+  }
+}
+
+     .titulo-cursos{
+          text-align: center;
+          margin: 20px;
+          color:#003F51
+      }
+
+
 .cursos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px; 
   justify-items: center;
   padding: 40px;
-  background-color: #fdf1ef; 
+  background-color: transparent; 
 }
 
 
@@ -18,4 +91,27 @@
   .cursos {
     grid-template-columns: 1fr; 
   }
+}
+
+.botao-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #DFB674;
+  color: #003F51;
+  border: none;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-topo:hover {
+  background-color: #cfa764;
+  transform: translateY(-3px);
 }
