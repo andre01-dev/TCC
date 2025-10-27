@@ -12,8 +12,6 @@
   justify-content: center;
   gap: 30px;
 
-
-
   img {
     margin-left: 30px;
     border: 10px solid #DFC8BA;
@@ -21,19 +19,20 @@
     background-color: #DFC8BA;
   }
 
-  h1 {
-    color: #003F51;
-    font-size: 35px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+  .texto {
+    h1 {
+      color: #003F51;
+      font-size: 35px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
 
-  }
-
-  p {
-    color: #003F51;
-    margin-top: 70px;
-    text-align: baseline;
-    font-size: 24px;
+    p {
+      color: #003F51;
+      margin-top: 70px;
+      text-align: baseline;
+      font-size: 24px;
+    }
   }
 }
 
@@ -41,40 +40,40 @@
   position: relative;
   padding: 80px 0;
   overflow: hidden;
-}
 
-.faixa-diagonal {
-  background-color: #d5c1b0;
-  transform: skewY(-6deg);
-  margin: 0 -50px;
-  padding: 80px 0;
-}
+  .faixa-diagonal {
+    background-color: #d5c1b0;
+    transform: skewY(-6deg);
+    margin: 0 -50px;
+    padding: 80px 0;
 
-.conteudo {
-  transform: skewY(6deg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
-  gap: 40px;
-  padding: 0 20px;
-}
+    .conteudo {
+      transform: skewY(6deg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 40px;
+      padding: 0 20px;
 
-.textoo {
-  width: 55%;
-  color: #3d3d3d;
-  font-size: 21px;
-  line-height: 1.6;
-  text-align: justify;
-}
+      .textoo {
+        width: 55%;
+        color: #3d3d3d;
+        font-size: 21px;
+        line-height: 1.6;
+        text-align: justify;
+      }
 
-.img {
-  width: 300px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      .img {
+        width: 300px;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
 }
 
 .esquerda {
@@ -85,12 +84,6 @@
   margin-right: 50px;
   margin-bottom: 100px;
 
-  .texto {
-    margin-left: 120px;
-    margin-top: 120px;
-
-  }
-
   img {
     margin-left: 10px;
     border: 10px solid #DFC8BA;
@@ -98,17 +91,22 @@
     background-color: #DFC8BA;
   }
 
-  h1 {
-    color: #003F51;
-    font-size: 35px;
-    margin-top: -150px;
-    margin-bottom: 10px;
-  }
+  .texto {
+    margin-left: 120px;
+    margin-top: 120px;
 
-  p {
-    color: #003F51;
-    margin-top: 30px;
-    font-size: 24px;
+    h1 {
+      color: #003F51;
+      font-size: 35px;
+      margin-top: -150px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #003F51;
+      margin-top: 30px;
+      font-size: 24px;
+    }
   }
 }
 
@@ -120,6 +118,12 @@
   margin-left: 250px;
   flex-direction: row-reverse;
 
+  img {
+    margin-right: 30px;
+    border: 10px solid #DFC8BA;
+    border-radius: 12px;
+    background-color: #DFC8BA;
+  }
 
   .texto {
     display: flex;
@@ -128,47 +132,36 @@
     margin-right: 180px;
     margin-top: 140px;
     text-align: left;
-  }
 
-  img {
-    margin-right: 30px;
-    border: 10px solid #DFC8BA;
-    border-radius: 12px;
-    background-color: #DFC8BA;
-  }
+    h1 {
+      color: #003F51;
+      font-size: 35px;
+      margin-top: -150px;
+      margin-bottom: 10px;
+    }
 
-  h1 {
-    color: #003F51;
-    font-size: 35px;
-    margin-top: -150px;
-    margin-bottom: 10px;
+    p {
+      color: #003F51;
+      margin-top: 30px;
+      font-size: 24px;
+    }
   }
-
-  p {
-    color: #003F51;
-    margin-top: 30px;
-    font-size: 24px;
-  }
-
 }
 
 .btt {
   margin-top: 40px;
-  padding: 10px;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding: 10px 70px;
   border-radius: 10px;
   background-color: #DFB674;
   border: 2px solid #DFB674;
   color: #003F51;
   font-size: 16px;
   transition: 0.5s ease;
-}
 
-.btt:hover {
-  background-color: #cb9c4f;
+  &:hover {
+    background-color: #cb9c4f;
+  }
 }
-
 
 .container {
   display: flex;
@@ -179,65 +172,63 @@
   transition: all 0.3s ease;
   flex-wrap: wrap;
   background-color: #d5c1b0;
-}
 
-.card {
-  position: relative;
-  background: #fff;
-  width: 300px;
-  height: 450px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 100px 20px 20px;
-  transition: 0.3s;
-}
+  .card {
+    position: relative;
+    background: #fff;
+    width: 300px;
+    height: 450px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 100px 20px 20px;
+    transition: 0.3s;
 
-.card .circle {
-  position: absolute;
-  margin-bottom: 150px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  background: gray;
-  border-radius: 50%;
-}
+    .circle {
+      position: absolute;
+      margin-bottom: 150px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: gray;
+      border-radius: 50%;
+    }
 
-.card h3 {
-  margin-top: 90px;
-  font-size: 1.2rem;
-  color: #333;
-}
+    h3 {
+      margin-top: 90px;
+      font-size: 1.2rem;
+      color: #333;
+    }
 
-.card p {
-  font-size: 0.9rem;
-  color: #555;
-}
+    p {
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-
-.card:hover {
-  transform: translateY(-40px);
-  filter: none;
-  z-index: 10;
-}
-
-.container:hover > :not(:hover){
-  filter: blur(5px);
-  transition: 0.3s;
-}
-
-
-  .text{
-    margin-top: 100px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    color: #003F51;
-    font-size: 70px;
+    &:hover {
+      transform: translateY(-40px);
+      filter: none;
+      z-index: 10;
+    }
   }
-  
-.imagens{
+
+  &:hover > :not(:hover) {
+    filter: blur(5px);
+    transition: 0.3s;
+  }
+}
+
+.text {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #003F51;
+  font-size: 70px;
+}
+
+.imagens {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,8 +236,7 @@
   margin-top: 100px;
   margin-bottom: 300px;
 
-  img{
+  img {
     height: 200px;
   }
 }
-

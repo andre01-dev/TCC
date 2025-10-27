@@ -43,8 +43,11 @@ export default function Registrar() {
     }
 
     return (
-        <div className='body'>
-            <div className='container-registrar'>
+        
+
+            <div className='alinhe'>
+                <div className='body'>
+                <div className='container-registrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
                 <div className='titulo-input'>
                     <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
@@ -136,5 +139,8 @@ export default function Registrar() {
                 </div>
             </div>
         </div>
+
+            </div>
+            
     );
 }

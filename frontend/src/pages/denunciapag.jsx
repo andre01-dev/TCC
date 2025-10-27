@@ -1,77 +1,102 @@
-import Cabecalho from '../components/cabecalho/cabecalho'
-import Rodape from '../components/rodape/rodape'
-import './denunciapag.scss'
+import { useState, useEffect } from 'react';
+import api from '../api';
+import Cabecalho from '../components/cabecalho/cabecalho';
+import Rodape from '../components/rodape/rodape';
+import './denunciapag.scss';
 
 export default function Denunciapag() {
+  const [assunto, setAssunto] = useState('');
+  const [data, setData] = useState('');
+  const [ocorrido, setOcorrido] = useState('');
+  const [mensagem, setMensagem] = useState('');
+  const [denuncias, setDenuncias] = useState([]);
+
+  async function carregarDenuncias() {
+    const resposta = await api.get('/denuncia');
+    setDenuncias(resposta.data);
+  }
+
+  async function enviarDenuncia(e) {
+    e.preventDefault();
+
+    try {
+      const resposta = await api.post('/denuncia', {
+        assunto,
+        data,
+        ocorrido
+      });
+
+      setMensagem(resposta.data.mensagem);
+      setAssunto('');
+      setData('');
+      setOcorrido('');
+
+      carregarDenuncias(); // atualiza a lista depois do envio
+    } catch (err) {
+      setMensagem(err.response?.data?.erro || 'Erro ao enviar denúncia.');
+    }
+  }
+
+  useEffect(() => {
+    carregarDenuncias();
+  }, []);
+
   return (
     <div>
       <Cabecalho />
       <div className="denuncia-page">
-        <form className="form-denuncia">
+        <form className="form-denuncia" onSubmit={enviarDenuncia}>
           <div className="form-row">
             <div className="form-group">
               <label>Assunto:</label>
-              <input type="text" placeholder="Digite o assunto" />
+              <input
+                type="text"
+                placeholder="Digite o assunto"
+                value={assunto}
+                onChange={(e) => setAssunto(e.target.value)}
+              />
             </div>
 
-            
             <div className="form-group">
               <label>Data do ocorrido:</label>
-              <input type="date" />
+              <input
+                type="date"
+                value={data}
+                onChange={(e) => setData(e.target.value)}
+              />
             </div>
           </div>
 
           <div className="form-group full">
-            <textarea rows="5" placeholder="Descreva o ocorrido..."></textarea>
-          
-            <div className='but-denuncia'>
-              <button>Enviar Denúncia</button>
+            <textarea
+              rows="5"
+              placeholder="Descreva o ocorrido..."
+              value={ocorrido}
+              onChange={(e) => setOcorrido(e.target.value)}
+            ></textarea>
+
+            <div className="but-denuncia">
+              <button type="submit">Enviar Denúncia</button>
             </div>
           </div>
         </form>
+
+        {mensagem && <p className="msg">{mensagem}</p>}
 
         <div className="historico">
           <h3>Histórico de Denúncias</h3>
 
           <div className="historico-lista">
-            <div className="historico-item">
-              <span className="texto">CAI EM UMA FAKE NEWS</span>
-              <span className="data">09/10/2025</span>
-            </div>
-
-            <div className="historico-item">
-              <span className="texto">FUI HACKEADO</span>
-              <span className="data">09/10/2025</span>
-            </div>
-
-            <div className="historico-item">
-              <span className="texto">FIZ UMA COMPRA QUE ERA GOLPE</span>
-              <span className="data">09/10/2025</span>
-            </div>
-          </div>
-
-          <div className="chat-denuncia">
-            <div className="mensagem esquerda">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png"
-                alt="Usuário"
-              />
-              <div className="bolha">Oi, preciso de ajuda com um golpe.</div>
-            </div>
-
-            <div className="mensagem direita">
-              <div className="bolha resposta">Claro! Nos conte o que aconteceu.</div>
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/4140/4140061.png"
-                alt="Atendente"
-              />
-            </div>
+            {denuncias.map((item) => (
+              <div className="historico-item" key={item.id_denuncia}>
+                <span className="texto">{item.assunto}</span>
+                <span className="data">{item.data}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
       <Rodape />
     </div>
-
-
-  )
+  );
 }

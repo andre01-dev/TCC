@@ -1,234 +1,241 @@
-.body-entrar {
-    height: 650px;
-    width: 1084px;
+
+.alinhe{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    justify-items: center;
-    align-items: center;
-    background-color: #F3E7E7;
-    margin-left: 50px;
+    margin-top: 200px;
 
-    .container-entrar {
+    .body-entrar {
+        height: 650px;
+        width: 1084px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
         align-items: center;
-        gap: 100px;
-        text-align: center;
-
-        .titulo-input {
-            h1 {
-                margin-bottom: 40px;
-                color: #003F51;
-                font-weight: 700;
-            }
-
-            .entrar-registrar {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 270px;
-                background-color: #00475b;
-                border-radius: 40px;
-                padding: 5px;
-                margin: 20px auto;
-                overflow: hidden;
-            }
-
-            .fundo {
-                position: absolute;
-                top: 5px;
-                left: 5px;
-                width: calc(50% - 5px);
-                height: calc(100% - 10px);
-                background-color: #e6c07b;
-                border-radius: 40px;
-                transition: all 0.4s ease-in-out;
-                z-index: 0;
-            }
-
-            .fundo.registrar {
-                left: calc(50% + 0px);
-            }
-
-            .entrar-registrar a {
-                flex: 1;
-                text-align: center;
-                text-decoration: none;
-                font-weight: 600;
-                color: #e6c07b;
-                font-size: 15px;
-                border-radius: 40px;
-                z-index: 1;
-                transition: color 0.3s ease;
-                padding: 8px 0;
-            }
-
-            .entrar-registrar a.ativo {
-                color: #00475b;
-            }
-
-            p {
-                margin-top: 30px;
-                margin-bottom: 30px;
-                font-size: 17px;
-                color: #003F51;
-                font-weight: 500;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            }
-
-            .inputs {
-                display: flex;
-                flex-direction: column;
-                gap: 17px;
-
-                .cpf-telefone {
-                    display: flex;
-                    gap: 20px;
-
-                    .input-menor {
-                        width: 190px;
-                    }
-
-                }
-
-                input {
-                    width: 400px;
-                    height: 50px;
-                    border-radius: 34px;
-                    padding: 20px;
-                    background-color: #F3E7E7;
-                    border: 2.5px solid #003F51;
+        background-color: #F3E7E7;
+        margin-left: 50px;
+    
+        .container-entrar {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            text-align: center;
+    
+            .titulo-input {
+                h1 {
+                    margin-bottom: 40px;
                     color: #003F51;
                     font-weight: 700;
-                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
                 }
-
-                .input-senha-container {
+    
+                .entrar-registrar {
                     position: relative;
-                    width: 400px;
-                }
-
-                .input-senha {
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 34px;
-                    padding: 20px 50px 20px 20px;
-                    background-color: #f3e7e7;
-                    border: 2.5px solid #003f51;
-                    color: #003f51;
-                    font-weight: 700;
-                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-                }
-
-                .icone-senha {
-                    position: absolute;
-                    right: 18px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    color: #003f51;
-                    cursor: pointer;
-                    transition: opacity 0.2s ease;
-                }
-
-                .icone-senha:hover {
-                    opacity: 0.6;
-                }
-            }
-
-            .div-bt {
-                display: flex;
-                justify-content: end;
-                margin-top: 15px;
-
-                .bt-logar {
-                    margin-top: 30px;
-                    width: 200px;
-                    height: 50px;
-                    border-radius: 34px;
-                    background-color: #003F51;
-                    color: #DFB674;
-                    font-size: 18px;
-                    border: 2px solid #003F51;
-                    transition: all 0.3s ease;
-                }
-
-                .bt-criarConta:hover {
-                    transform: scale(1.05);
-                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-                }
-            }
-
-            .lembrar-esquecer {
-                margin-top: 20px;
-                display: flex;
-                justify-content: space-between;
-
-                .lembrar {
-                    padding-left: 10px;
                     display: flex;
-                    gap: 7px;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 270px;
+                    background-color: #00475b;
+                    border-radius: 40px;
+                    padding: 5px;
+                    margin: 20px auto;
+                    overflow: hidden;
                 }
-
-                a {
+    
+                .fundo {
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    width: calc(50% - 5px);
+                    height: calc(100% - 10px);
+                    background-color: #e6c07b;
+                    border-radius: 40px;
+                    transition: all 0.4s ease-in-out;
+                    z-index: 0;
+                }
+    
+                .fundo.registrar {
+                    left: calc(50% + 0px);
+                }
+    
+                .entrar-registrar a {
+                    flex: 1;
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: #e6c07b;
+                    font-size: 15px;
+                    border-radius: 40px;
+                    z-index: 1;
+                    transition: color 0.3s ease;
+                    padding: 8px 0;
+                }
+    
+                .entrar-registrar a.ativo {
+                    color: #00475b;
+                }
+    
+                p {
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    font-size: 17px;
                     color: #003F51;
-                    text-decoration: underline;
-                    padding-right: 20px;
+                    font-weight: 500;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
+    
+                .inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 17px;
+    
+                    .cpf-telefone {
+                        display: flex;
+                        gap: 20px;
+    
+                        .input-menor {
+                            width: 190px;
+                        }
+    
+                    }
+    
+                    input {
+                        width: 400px;
+                        height: 50px;
+                        border-radius: 34px;
+                        padding: 20px;
+                        background-color: #F3E7E7;
+                        border: 2.5px solid #003F51;
+                        color: #003F51;
+                        font-weight: 700;
+                        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                    }
+    
+                    .input-senha-container {
+                        position: relative;
+                        width: 400px;
+                    }
+    
+                    .input-senha {
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 34px;
+                        padding: 20px 50px 20px 20px;
+                        background-color: #f3e7e7;
+                        border: 2.5px solid #003f51;
+                        color: #003f51;
+                        font-weight: 700;
+                        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                    }
+    
+                    .icone-senha {
+                        position: absolute;
+                        right: 18px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #003f51;
+                        cursor: pointer;
+                        transition: opacity 0.2s ease;
+                    }
+    
+                    .icone-senha:hover {
+                        opacity: 0.6;
+                    }
+                }
+    
+                .div-bt {
+                    display: flex;
+                    justify-content: end;
+                    margin-top: 15px;
+    
+                    .bt-logar {
+                        margin-top: 30px;
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 34px;
+                        background-color: #003F51;
+                        color: #DFB674;
+                        font-size: 18px;
+                        border: 2px solid #003F51;
+                        transition: all 0.3s ease;
+                    }
+    
+                    .bt-criarConta:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                    }
+                }
+    
+                .lembrar-esquecer {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .lembrar {
+                        padding-left: 10px;
+                        display: flex;
+                        gap: 7px;
+                    }
+    
+                    a {
+                        color: #003F51;
+                        text-decoration: underline;
+                        padding-right: 20px;
+                    }
                 }
             }
         }
     }
-}
-
-.container-alterarSenha {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-
-    .alterarSenha {
-        background: #F3E7E7;
-        padding: 30px;
-        border-radius: 12px;
-        width: 400px;
+    
+    .container-alterarSenha {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
         display: flex;
-        flex-direction: column;
-        gap: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    
+        .alterarSenha {
+            background: #F3E7E7;
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    
+        .alterarSenha h2 {
+            margin-bottom: 10px;
+            text-align: center;
+            color: #003F51;
+        }
+    
+        .alterarSenha input {
+            padding: 10px;
+            border: 2px solid #003F51;
+            border-radius: 8px;
+            background-color: #F3E7E7;
+        }
+    
+        .alterarSenha button {
+            background-color: #DFB674;
+            color: #003F51;
+            font-size: 17px;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    
+        .bt-fechar {
+            background: #003F51;
+        }
+    
     }
-
-    .alterarSenha h2 {
-        margin-bottom: 10px;
-        text-align: center;
-        color: #003F51;
-    }
-
-    .alterarSenha input {
-        padding: 10px;
-        border: 2px solid #003F51;
-        border-radius: 8px;
-        background-color: #F3E7E7;
-    }
-
-    .alterarSenha button {
-        background-color: #DFB674;
-        color: #003F51;
-        font-size: 17px;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-    }
-
-    .bt-fechar {
-        background: #003F51;
-    }
-
 }

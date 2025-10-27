@@ -85,8 +85,10 @@ export default function Entrar() {
     }
 
     return (
-        <div className='body-entrar'>
-            <div className='container-entrar'>
+       
+            <div className='alinhe'>
+                 <div className='body-entrar'>
+                 <div className='container-entrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
                 <div className='titulo-input'>
                     <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
@@ -190,5 +192,7 @@ export default function Entrar() {
             </div>
 
         </div>
+            </div>
+            
     );
 }
