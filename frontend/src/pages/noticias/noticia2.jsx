@@ -3,6 +3,7 @@ import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import Cabecalho from '../../components/cabecalho/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia2() {
 
@@ -134,6 +135,7 @@ export default function Noticia2() {
 
                     *Com reportagem de janeiro de 2024</p>
             </div>
+            <Rodape/>
         </div>
     );
 }

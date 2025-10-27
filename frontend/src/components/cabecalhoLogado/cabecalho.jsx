@@ -20,7 +20,9 @@ export default function CabecalhoLogado({ nome_usuario }) {
         <div>
             <div className="container-cabecalho">
                 <div>
-                    <img src="src/assets/images/logoVeio.png" height={90} />
+                <Link to={"/"}>
+                        <img src="src/assets/images/logoVeio.png" height={90} />
+                    </Link>
                 </div>
                 <h1 className='titulo-cabecalho'>CONECTANDO GERAÇÕES</h1>
                 <div className="navegar">

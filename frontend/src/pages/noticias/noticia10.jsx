@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia10() {
 
@@ -62,10 +63,7 @@ export default function Noticia10() {
                 <br />
                 <h2>---- continue depois da publicidade ----</h2>
                 
-                <Link to={"/curso1"}>
-                <img src="/src/assets/images/curso1.png" alt="" />
-                <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
-                </Link>
+                
                 
                 <h2>O que aconteceu</h2>
                 <ol>
@@ -118,6 +116,11 @@ export default function Noticia10() {
                     <p>Nesse caso, uma pessoa liga, de um número desconhecido, e se passa por um parente como um sobrinho/a. Ainda pergunta se a vítima se esqueceu dele, constrangendo-a a falar o nome de um parente. Depois, diz que está com o carro quebrado e precisa de dinheiro.</p>
                     <br />
                     <p>Como evitar: Desligue o telefone e ligue para seu parente para verificar se ele realmente precisa de ajuda.</p>
+
+                    <Link to={"/curso1"}>
+                <img src="/src/assets/images/curso1.png" alt="" />
+                <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
+                </Link>
 
                     <li>Falso processo judicial</li>
                     <p>Golpistas informam que a pessoa idosa tem direito a receber uma quantia em dinheiro com uma causa ganha na Justiça. Para isso, cobram o pagamento dos honorários e outras taxas.</p>
@@ -192,6 +195,7 @@ export default function Noticia10() {
                     <p>Mantenha seu sistema operacional, navegador e programas antivírus atualizados. As atualizações ajudam a corrigir falhas de segurança e proteger seu dispositivo</p>
                 </ul>
             </div>
+            <Rodape/>
         </div>
     )
 }

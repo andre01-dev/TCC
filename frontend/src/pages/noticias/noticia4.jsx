@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia4() {
 
@@ -90,6 +91,7 @@ export default function Noticia4() {
 
 
             </div>
+            <Rodape/>
         </div>
     );
 }

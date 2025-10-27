@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia9() {
 
@@ -81,6 +82,7 @@ export default function Noticia9() {
                 <br />
                 <p>A ação contou com a participação de policiais civis da Divisão de Capturas do Departamento de Operações Policiais Estratégicas (Dope) e das Delegacias Seccionais de Mogi das Cruzes, Santo André e Barretos.</p>
             </div>
+            <Rodape/>
         </div>
     )
 }

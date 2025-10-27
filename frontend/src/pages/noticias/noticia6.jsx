@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia6() {
 
@@ -90,6 +91,7 @@ export default function Noticia6() {
                 <p>A pesquisa foi realizada entre os dias 5 e 28 de junho. Por telefone, foram entrevistadas 21.808 pessoas com 16 anos ou mais. O “Panorama Político” é aplicado desde 2008. A pesquisa avalia a opinião dos brasileiros para indicar prioridades para a atuação parlamentar e quantificar percepções em relação à democracia e aos principais temas em debate no país.</p>
                 <p className='aspas'>"Agência Senado (Reprodução autorizada mediante citação da Agência Senado)</p>
             </div>
+            <Rodape/>
         </div>
     );
 }

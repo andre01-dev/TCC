@@ -163,7 +163,7 @@
   }
 }
 
-.container {
+.containerr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,6 +172,7 @@
   transition: all 0.3s ease;
   flex-wrap: wrap;
   background-color: #d5c1b0;
+  height: 600px;
 
   .card {
     position: relative;

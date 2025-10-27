@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia11() {
 
@@ -80,6 +81,7 @@ export default function Noticia11() {
                 <p>Durante a operação, foram apreendidos diversos aparelhos eletrônicos que devem ajudar na identificação dos suspeitos e na análise do patrimônio do grupo. A Justiça também determinou o bloqueio de contas bancárias dos investigados, para tentar reparar os prejuízos causados às vítimas.</p>
 
             </div>
+            <Rodape/>
         </div>
     )
 }

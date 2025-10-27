@@ -19,12 +19,14 @@
   background-color: #003F51;
   color: white;
   width: 320px;
+  height: 420px;
   border-radius: 20px;
   text-align: center;
   padding: 30px 20px;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 25px;
 
   &::before {
     content: "";

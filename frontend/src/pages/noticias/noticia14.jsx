@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia14() {
 
@@ -92,6 +93,7 @@ export default function Noticia14() {
                 <br />
                 <p>"A gente frisa a importância dos familiares estarem atentos às redes sociais das pessoas mais idosas da família para que evitem cair em golpes, tendo em vista que o público-alvo de idosos é preferencial entre criminosos", disse.</p>
             </div>
+            <Rodape/>
         </div>
     )
 }

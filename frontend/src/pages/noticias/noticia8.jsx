@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia8() {
 
@@ -97,6 +98,8 @@ export default function Noticia8() {
                 <p>Além disso, destacou o trabalho contínuo de informação e alerta aos clientes para que jamais compartilhem dados pessoais, senhas ou realizem operações a pedido de terceiros por telefone ou links suspeitos, e que sempre utilizem os canais oficiais do Agibank para qualquer dúvida ou denúncia.</p>
 
             </div>
+            <Rodape/>
+
         </div>
     )
 }

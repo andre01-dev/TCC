@@ -73,7 +73,7 @@ export default function Somos() {
 
 
 <div>
-  <div class="container">
+  <div class="containerr">
     <div class="card">
       <div class="circle"></div>
       <h3>Card 1</h3>

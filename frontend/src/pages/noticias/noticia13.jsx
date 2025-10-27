@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia13() {
 
@@ -114,6 +115,7 @@ export default function Noticia13() {
                 <br />
                 <p>A transformação digital pode até mesmo ser irreversível, mas a segurança precisa caminhar junto. Ficar de olho nos golpes é mais do que uma simples precaução: é uma necessidade.</p>
             </div>
+            <Rodape/>
         </div>
     )
 }

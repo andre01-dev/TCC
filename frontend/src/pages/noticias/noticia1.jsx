@@ -3,6 +3,7 @@ import Cabecalho from '../../components/cabecalho/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia1() {
 
@@ -97,6 +98,7 @@ export default function Noticia1() {
                 <p className='aspas'>“Essas empresas superpoderosas, em última instância, estão protegendo esses criminosos. Garantem o anonimato deles, não entregam os dados e eles ficam impunes. Elas continuam ganhando dinheiro com os anúncios e eles continuam ganhando dinheiro com os golpes”, afirma Marie Santini.</p>
                 <p className='finish'>E questiona: “A gente vai deixar a sociedade continuar sofrendo tudo isso?”</p>
             </div>
+            <Rodape/>
         </div>
     );
 }

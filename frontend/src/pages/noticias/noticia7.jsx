@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import './noticia.scss'
 import {Link} from 'react-router'
+import Rodape from '../../components/rodape/rodape';
 
 export default function Noticia7() {
 
@@ -85,6 +86,7 @@ export default function Noticia7() {
                     <p>Segundo a delegada Márcia Beck, foram identificados ao menos 31 registros com o mesmo "modus operandi" do golpe da falsa prostituta. Em um celular atribuído a Rayene foi encontrada uma captura de tela de uma mensagem em um grupo do Telegram que "ensinava" a aplicar o golpe. A polícia acredita que a suspeita adaptou e criou uma estratégia própria para extorquir as vítimas</p>
                 </ul>
             </div>
+            <Rodape/>
         </div>
     )
 }
