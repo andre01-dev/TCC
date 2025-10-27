@@ -39,6 +39,8 @@ export default function Curso2() {
                       </>  
                     )}
         <div className="paginas">
+
+            
             
         <PaginaCurso
         imagem={curso2}
@@ -49,6 +51,7 @@ export default function Curso2() {
         modulo3="introdução"
         />
         </div>
+
         <Rodape />
     </div>
 )
