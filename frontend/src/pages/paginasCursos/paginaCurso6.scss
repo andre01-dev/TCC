@@ -16,3 +16,131 @@
     gap: 2rem;
   }
 }
+
+.corpo {
+  display: flex;
+  justify-content: space-between;
+
+  .menu-lateral {
+    background-color: #003F51;
+    width: 320px;
+    height: 900px;
+    padding: 15px;
+    border-radius: 10px;
+    color: #DFC8BA;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+    .img-lateral {
+      border-radius: 5px;
+      width: 100%;
+      height: 180px;
+      margin-bottom: 10px;
+    }
+
+    .titulo-duracao {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Times New Roman', Times, serif;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #FFDCA8;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+
+    }
+
+    .nivel-botao {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1px;
+
+
+      button {
+        width: 120px;
+        height: 45px;
+        border-radius: 4px;
+        background-color: #DFB674;
+        color: #003F51;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+      }
+    }
+
+    .inclui-h2 {
+      margin-top: 30px;
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .incluido {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+
+      h3 {
+        display: flex;
+      }
+    }
+
+    .avaliacao {
+      background-color: #F3E7E7;
+      height: 130px;
+      width: 200px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 50px;
+
+      h1 {
+        color: #003F51;
+      }
+
+      h2 {
+        color: #003F51;
+        margin-top: 15px;
+      }
+    }
+
+    .div-inscrever {
+      margin-top: 40px;
+      .bt-inscrever {
+        width: 180px;
+        height: 45px;
+        border-radius: 4px;
+        background-color: #DFB674;
+        color: #003F51;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+    }
+
+  }
+
+}

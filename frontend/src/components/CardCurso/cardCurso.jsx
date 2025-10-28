@@ -1,6 +1,6 @@
 import "./cardCurso.scss"
 
-export default function CardCurso({imagem, titulo, duracao, tema, descricao, nivel, rota}) {
+export default function CardCurso1({imagem, titulo, duracao, tema, descricao, nivel, rota}) {
     return (
         <div className="container-cardCurso">
             <div className="cardCurso">

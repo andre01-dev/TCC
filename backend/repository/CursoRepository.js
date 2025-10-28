@@ -1,24 +1,11 @@
 import conection from "./conection.js";
 
-export async function inserirCurso(novoCurso) {
+export async function inscreverCurso(id_usuario, id_curso) {
     const comando = `
-        insert into tb_curso (nome_curso, descricao, duracao)
+        insert into tb_matricula (cursando, concluido, id_usuario, id_curso)
         values
-        (?,?,?)
+        (true, false, ?, ?)
     `
-    const [registros] = await conection.query(comando, [
-        novoCurso.nome_curso,
-        novoCurso.descricao,
-        novoCurso.duracao
-    ])
-
-    return registros.insertId;
-}
-
-export async function listarCurso() {
-    const comando = `
-        select*from tb_curso
-    `
-    const [registros] = await conection.query(comando);
-    return registros
+    const [registros] = await conection.query(comando, [id_usuario, id_curso]);
+    return registros;
 }

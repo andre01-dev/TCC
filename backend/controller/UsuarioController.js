@@ -23,6 +23,7 @@ endpoints.post('/logar', async (req,resp) => {
     else{
         let token = generateToken(registros);
         resp.send({
+            "id_usuario": registros.id_usuario,
             "email": email,
             "token": token
         });
@@ -46,9 +47,13 @@ endpoints.get('/verificar/email', async (req,resp) => {
         if(registros.length === 0){
            return resp.status(401).send({erro: "E-mail não encontrado"})
         }
-        resp.send({ok: true})
+        resp.send({ok: true,
+            id_usuario: registros.id_usuario
+        })
     } catch(e) {
-        resp.status(500).send({erro: "Erro ao verificar e-mail"})
+        resp.status(500).send({erro: "Erro ao verificar e-mail",
+            id_usuario: registros.id_usuario
+        })
     }
 })
 

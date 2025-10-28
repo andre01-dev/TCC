@@ -35,16 +35,20 @@ export default function Entrar() {
             });
 
             const token = response.data.token;
+            const id_usuario = response.data.id_usuario;
 
             localStorage.setItem("NOME_USUARIO", nome_usuario);
             localStorage.setItem("TOKEN", token);
+            localStorage.setItem("ID_USUARIO", id_usuario);
 
             if (lembrar) {
                 localStorage.setItem("NOME_USUARIO", nome_usuario);
                 localStorage.setItem("TOKEN", token);
+                localStorage.setItem("ID_USUARIO", id_usuario);
             } else {
                 sessionStorage.setItem("NOME_USUARIO", nome_usuario);
                 sessionStorage.setItem("TOKEN", token);
+                sessionStorage.setItem("ID_USUARIO", id_usuario);
             }
 
             alert("Login realizado com sucesso!");

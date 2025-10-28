@@ -21,7 +21,7 @@ export async function inserirUsuario(novoUsuario) {
 
 export async function VerificarUsuario(email, senha) {
     const comando = `
-        select nome_usuario, email
+        select id_usuario, nome_usuario, email
         from tb_usuario
         where email = ? AND senha = MD5(?)
     `

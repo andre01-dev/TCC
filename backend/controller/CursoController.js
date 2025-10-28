@@ -3,13 +3,14 @@ import * as repoCurso from '../repository/CursoRepository.js'
 import { Router } from 'express'
 const endpoints = Router();
 
-endpoints.post('/curso', async (req,resp) => {
-    let novoCurso = req.body;
-    let id = repoCurso.inserirCurso(novoCurso)
-    resp.send({NovoID: id})
+endpoints.put("/inscrever", async (req,resp) => {
+    let id_usuario = req.body.id_usuario;
+    let id_curso = req.body.id_curso;
+
+    let registros = await repoCurso.inscreverCurso(id_usuario, id_curso);
+
+    resp.send({mensagem: "Inscrição realizada com sucesso!"})
 })
 
-endpoints.get("/curso/", async (req,resp) => {
-    let registros = repoCurso.listarCurso(id);
-    resp.send()
-})
+
+export default endpoints;
