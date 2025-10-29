@@ -51,11 +51,11 @@ export default function Cursos() {
             )}
 
             <div className='voltar-cursos'>
-  <Link to={"/tdsntc"}>
+  <Link to={"/"}>
     <button className='voltar'>
       <img src="/src/assets/images/setaEsquerda.png" height={25} />
     </button>
-    <p>Voltar para a página de Notícias</p>
+    <p>Voltar para a página Inicial</p>
   </Link>
 </div>
 
@@ -157,7 +157,7 @@ export default function Cursos() {
                 <Link to='/curso9'>
                     <CardCurso
                         imagem={curso9}
-                        titulo='Golpe po E-mail (Phishing)'
+                        titulo='Golpe por E-mail (Phishing)'
                         duracao=' 5min'
                         tema='Golpes (Phishing)'
                         descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer'

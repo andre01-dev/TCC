@@ -1,146 +1,191 @@
-.container-cursos {
-  padding: 2rem;
-  text-align: center;
-  background-color: #f8f8f8;
+.pagina-curso {
+  background-color: #faeded;
+  color: #003f51;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  .titulo-cursos {
-    font-size: 2rem;
-    color: #073f46;
-    margin-bottom: 2rem;
+.conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 60px 80px;
+  flex-wrap: wrap;
+}
+
+.lado-esquerdo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h1 {
+    font-size: 2.3rem;
+    color: #003f51;
   }
 
-  .lista-cursos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+  .video-box {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  .descricao {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-top: 10px;
+  }
+
+  .modulos {
+    margin-top: 25px;
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+      }
+    }
   }
 }
 
-.corpo {
+
+.lado-direito {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
 
-  .menu-lateral {
-    background-color: #003F51;
-    width: 320px;
-    height: 900px;
-    padding: 15px;
-    border-radius: 10px;
-    color: #DFC8BA;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card-curso {
+  background-color: #003f51;
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  text-align: left;
 
-
-    .img-lateral {
-      border-radius: 5px;
-      width: 100%;
-      height: 180px;
-      margin-bottom: 10px;
-    }
-
-    .titulo-duracao {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Times New Roman', Times, serif;
-      margin-top: 5px;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #FFDCA8;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.4;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 20px;
-
-    }
-
-    .nivel-botao {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 1px;
-
-
-      button {
-        width: 120px;
-        height: 45px;
-        border-radius: 4px;
-        background-color: #DFB674;
-        color: #003F51;
-        font-size: 18px;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-      }
-    }
-
-    .inclui-h2 {
-      margin-top: 30px;
-      display: flex;
-      margin-bottom: 20px;
-    }
-
-    .incluido {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 40px;
-
-      h3 {
-        display: flex;
-      }
-    }
-
-    .avaliacao {
-      background-color: #F3E7E7;
-      height: 130px;
-      width: 200px;
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: 50px;
-
-      h1 {
-        color: #003F51;
-      }
-
-      h2 {
-        color: #003F51;
-        margin-top: 15px;
-      }
-    }
-
-    .div-inscrever {
-      margin-top: 40px;
-      .bt-inscrever {
-        width: 180px;
-        height: 45px;
-        border-radius: 4px;
-        background-color: #DFB674;
-        color: #003F51;
-        font-size: 18px;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-    }
-
+  .tema {
+    font-size: 0.9rem;
+    opacity: 0.8;
   }
 
+  .tempo {
+    font-size: 0.9rem;
+    color: #dfb674;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+
+  .resumo {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .nivel {
+    margin-top: 5px;
+  }
+
+  .gratuito {
+    background-color: #dfb674;
+    color: #003f51;
+    font-weight: bold;
+    width: fit-content;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .inclui {
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 4px 0;
+      }
+    }
+  }
+
+  .avaliacao {
+    text-align: center;
+    margin-top: 15px;
+    align-self: center;
+  }
+
+  .botao-inscrever {
+    margin-top: 10px;
+    background-color: #dfb674;
+    color: #003f51;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+
+    &:hover {
+      background-color: #caa55d;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+
+@media (max-width: 900px) {
+  .conteudo {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .lado-esquerdo {
+    align-items: center;
+  }
+
+  .lado-direito {
+    width: 100%;
+  }
+
+  .card-curso {
+    width: 100%;
+    max-width: 350px;
+    align-items: center;
+    text-align: center;
+
+    .botao-inscrever {
+      width: 80%;
+    }
+  }
 }

@@ -1,7 +1,6 @@
 import "./paginaCurso1.scss";
 import Rodape from "../../components/rodape/rodape.jsx";
 import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
-import curso1 from "../../assets/images/curso1.png";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
 import { useEffect, useState } from "react";
 
@@ -13,9 +12,9 @@ export default function Curso1() {
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
 
-    if (token != undefined && token != null) {
+    if (token) {
       setNomeUsuario(nome_usuario);
-      setLogado(!!token);
+      setLogado(true);
     } else {
       setLogado(false);
       setNomeUsuario("");
@@ -23,45 +22,76 @@ export default function Curso1() {
   }, []);
 
   return (
-    <div className="container-paginaCurso">
+    <div className="pagina-curso">
       {logado ? (
         <CabecalhoLogado nome_usuario={nomeUsuario} />
       ) : (
         <Cabecalho />
       )}
 
-      <div className="conteudo-curso">
-        <h1>Fake News</h1>
+      <main className="conteudo">
+        <div className="lado-esquerdo">
+          <h1>Fake News</h1>
 
-        <img src={curso1} alt="Curso Fake News" className="imagem-curso" />
+          <div className="video-box">
+            <iframe
+              src="https://www.youtube.com/embed/Oss4C_KOZyg"
+              title="Curso Fake News - Internet Segura"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
 
-        <p>
-          Aprenda o que são Fake News e como se proteger de informações falsas
-          na internet. Descubra ferramentas e práticas seguras de checagem.
-        </p>
+          <p className="descricao">
+            Aprenda o que são Fake News e como se proteger de informações falsas
+            na internet. Descubra ferramentas e práticas seguras de checagem.
+          </p>
 
-  <div className="video-container">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/Oss4C_KOZyg"
-    title="Curso Fake News - Internet Segura"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-</div>
-
-
-        <div className="modulos">
-          <h2>Módulos</h2>
-          <ul>
-            <li>Introdução</li>
-            <li>Como identificar uma Fake News</li>
-            <li>Ferramentas de verificação</li>
-          </ul>
+          <div className="modulos">
+            <h2>Módulos</h2>
+            <ul>
+              <li>Introdução</li>
+              <li>Como identificar uma Fake News</li>
+              <li>Ferramentas de verificação</li>
+            </ul>
+          </div>
         </div>
-      </div>
+
+      
+        <div className="lado-direito">
+          <div className="card-curso">
+            <p className="tema">Internet Segura</p>
+            <p className="tempo">1min</p>
+
+            <h2>Fake News</h2>
+            <p className="resumo">
+              Guia básico de navegação pela internet, como realizar buscas de
+              informações e filtrar os resultados encontrados.
+            </p>
+
+            <p className="nivel">Nível: Básico</p>
+
+            <div className="gratuito">Gratuito</div>
+
+            <div className="inclui">
+              <h3>Esse curso inclui:</h3>
+              <ul>
+                <li>⭐ Apostila</li>
+                <li>⭐ Vídeo</li>
+                <li>⭐ Certificado</li>
+              </ul>
+            </div>
+
+            <div className="avaliacao">
+              <h3>5 de 5 ⭐⭐⭐⭐⭐</h3>
+              <p>Avaliação</p>
+            </div>
+
+            <button className="botao-inscrever">INSCREVA-SE</button>
+          </div>
+        </div>
+      </main> 
 
       <Rodape />
     </div>
