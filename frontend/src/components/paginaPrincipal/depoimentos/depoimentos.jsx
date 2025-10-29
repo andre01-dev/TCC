@@ -15,6 +15,7 @@ export default function Depoimentos() {
     },
     {
       img: "/src/assets/images/depoimento3.png",
+      especialista: "Especialista em educação para idosos",
       texto:
         "O site é uma bênção! Ensina com calma, tem vídeos curtos e diretos. Consegui até ajudar uma vizinha a criar o e-mail dela. Estou adorando aprender algo novo nessa idade.",
     },
@@ -75,6 +76,7 @@ export default function Depoimentos() {
             <div className="slide" key={i}>
               <div className="carde">
                 <img src={dep.img} alt={`Depoimento ${i + 1}`} />
+                <p className="especialista">{dep.especialista}</p>
                 <p>{dep.texto}</p>
               </div>
             </div>
