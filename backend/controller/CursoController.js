@@ -12,5 +12,12 @@ endpoints.put("/inscrever", async (req,resp) => {
     resp.send({mensagem: "Inscrição realizada com sucesso!"})
 })
 
+endpoints.put("/concluir", async (req,resp) => {
+    let id_usuario = req.body.id_usuario;
+
+    let registros = await repoCurso.FinalizarCurso(id_usuario);
+    resp.send(registros);
+})
+
 
 export default endpoints;

@@ -11,7 +11,8 @@ export default function CabecalhoLogado({ nome_usuario }) {
     function Sair () {
         localStorage.removeItem("NOME_USUARIO");
         localStorage.removeItem("TOKEN");
-        sessionStorage.removeItem("NOME_USUARIO");
+        localStorage.removeItem("ID_USUARIO");
+        localStorage.removeItem("RESULTADO_QUIZ");
         sessionStorage.removeItem("TOKEN");
         window.location.reload()
     }

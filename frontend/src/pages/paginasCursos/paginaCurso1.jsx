@@ -2,14 +2,18 @@ import "./paginaCurso1.scss";
 import Rodape from "../../components/rodape/rodape.jsx";
 import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
-import moduloCurso from "../../components/modulosCursos/index.jsx";
+import ModuloCurso from "../../components/modulosCursos/logado/index.jsx";
 import { useEffect, useState } from "react";
 import api from "../../api.js";
+import Quiz from "../../components/modulosCursos/quiz/index.jsx";
+import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
+import ModuloDesLogado from "../../components/modulosCursos/deslogado/index.jsx";
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
   const [logado, setLogado] = useState(false);
   const nome_usuario = localStorage.getItem("NOME_USUARIO");
+  const [passarModulo, setPassarModulo] = useState(0);
 
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
@@ -26,18 +30,48 @@ export default function Curso1() {
 
 
   async function inscreverCurso() {
+
     const id_usuario = localStorage.getItem("ID_USUARIO");
     const id_curso = 1;
-
     try {
-      const response = await api.put("/inscrever", {
-        id_usuario,
-        id_curso
-      })
-      alert("Inscrição realizada com sucesso!");
+      if (logado) {
+        const response = await api.put("/inscrever", {
+          id_usuario,
+          id_curso
+        })
+        alert("Inscrição realizada com sucesso!");
+      }
+      else {
+        alert("Faça login para se inscrever em um curso");
+      }
     }
     catch (e) {
       alert(e.response?.data?.erro || "Erro ao realizar inscrição")
+    }
+  }
+
+  function AvancarModulo() {
+    setPassarModulo(passarModulo + 1);
+  }
+
+  function VoltarModulo() {
+    setPassarModulo(passarModulo - 1);
+  }
+
+  async function FinalizarCurso() {
+    const resultado = localStorage.getItem("RESULTADO_QUIZ");
+    const id_usuario = localStorage.getItem("ID_USUARIO");
+
+    if (resultado === "acertou") {
+      try {
+        await api.put("/concluir", { id_usuario });
+        alert("Parabéns, você finalizou o curso");
+      } catch (e) {
+        alert("Erro ao finalizar curso");
+        console.error(e);
+      }
+    } else {
+      alert("Você errou a questão.");
     }
   }
 
@@ -68,13 +102,56 @@ export default function Curso1() {
             na internet. Descubra ferramentas e práticas seguras de checagem.
           </p>
 
-          <div className="modulos">
-            <h2>Módulos</h2>
-            <moduloCurso 
-              titulo= "Introdução"
-              conteudo= "Nesse Curso vamos te ensinar como indentificar mensagens suspeitas"
+          <h2>Módulos</h2>
+
+          {logado ? (
+            <>
+              {passarModulo === 0 && (
+                <>
+                  <ModuloCursoLogado
+                    titulo="Porque é importante?"
+                    conteudo="É importante identificar mensagens suspeitas para proteger seus dados pessoais e financeiros de golpes, ataques de vírus e roubo de identidade. Criminosos usam mensagens fraudulentas, como o phishing, para enganar as pessoas e fazê-las clicar em links maliciosos ou baixar anexos com vírus"
+                  />
+                  <button onClick={AvancarModulo}>Próximo</button>
+                </>
+              )}
+
+              {passarModulo === 1 && (
+                <>
+                  <ModuloCursoLogado
+                    titulo="Como identificar uma mensagem suspeita?"
+                    conteudo="Para identificar mensagens suspeitas, desconfie de erros de português, pedidos urgentes de dados pessoais ou dinheiro, links e anexos suspeitos (especialmente se mudam o URL), e mensagens que prometem prêmios ou empregos fáceis."
+                  />
+
+                  <button onClick={VoltarModulo}>Voltar</button>
+                  <button onClick={AvancarModulo}>Próximo</button>
+                </>
+              )}
+
+              {passarModulo === 2 && (
+                <>
+                  <div className="quiz">
+                    <Quiz
+                      pergunta="Qual é uma boa prática ao receber mensagens suspeitas?"
+                      opcaoA="Clicar nos links imediatamente"
+                      opcaoB="Responder pedindo mais informações"
+                      opcaoC="Baixar anexos sem verificar"
+                      opcaoD="Ignorar e verificar a autenticidade do remetente"
+                    />
+                  </div>
+                  <button onClick={VoltarModulo}>Voltar</button>
+                  <button onClick={FinalizarCurso}>Finalizar Curso</button>
+                </>
+              )}
+
+            </>
+
+          ) : (
+            <ModuloDesLogado
+              titulo={["Porque é importante?", "Como identificar uma mensagem suspeita?"]}
             />
-          </div>
+          )}
+
         </div>
 
 
