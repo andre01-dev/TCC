@@ -2,7 +2,9 @@ import "./paginaCurso1.scss";
 import Rodape from "../../components/rodape/rodape.jsx";
 import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
+import moduloCurso from "../../components/modulosCursos/index.jsx";
 import { useEffect, useState } from "react";
+import api from "../../api.js";
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
@@ -12,14 +14,32 @@ export default function Curso1() {
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
 
-    if (token) {
-      setNomeUsuario(nome_usuario);
-      setLogado(true);
-    } else {
-      setLogado(false);
-      setNomeUsuario("");
+    if (token != undefined && token != null) {
+      setNomeUsuario(nome_usuario)
+      setLogado(!!token)
     }
-  }, []);
+    else {
+      setLogado(false)
+      setNomeUsuario("")
+    }
+  })
+
+
+  async function inscreverCurso() {
+    const id_usuario = localStorage.getItem("ID_USUARIO");
+    const id_curso = 1;
+
+    try {
+      const response = await api.put("/inscrever", {
+        id_usuario,
+        id_curso
+      })
+      alert("Inscrição realizada com sucesso!");
+    }
+    catch (e) {
+      alert(e.response?.data?.erro || "Erro ao realizar inscrição")
+    }
+  }
 
   return (
     <div className="pagina-curso">
@@ -50,15 +70,14 @@ export default function Curso1() {
 
           <div className="modulos">
             <h2>Módulos</h2>
-            <ul>
-              <li>Introdução</li>
-              <li>Como identificar uma Fake News</li>
-              <li>Ferramentas de verificação</li>
-            </ul>
+            <moduloCurso 
+              titulo= "Introdução"
+              conteudo= "Nesse Curso vamos te ensinar como indentificar mensagens suspeitas"
+            />
           </div>
         </div>
 
-      
+
         <div className="lado-direito">
           <div className="card-curso">
             <p className="tema">Internet Segura</p>
@@ -88,10 +107,10 @@ export default function Curso1() {
               <p>Avaliação</p>
             </div>
 
-            <button className="botao-inscrever">INSCREVA-SE</button>
+            <button onClick={inscreverCurso} className="botao-inscrever">INSCREVA-SE</button>
           </div>
         </div>
-      </main> 
+      </main>
 
       <Rodape />
     </div>
