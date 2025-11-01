@@ -70,10 +70,11 @@ export default function Denunciapag() {
           <div className="form-group full">
             <textarea
               rows="5"
-              placeholder="Descreva o ocorrido..."
+              placeholder="Descreva o ocorrido, e ao final digite seu email:"
               value={ocorrido}
               onChange={(e) => setOcorrido(e.target.value)}
             ></textarea>
+            <p>Fique atento ao email, responderemos em 24h!</p>
 
             <div className="but-denuncia">
               <button type="submit">Enviar Denúncia</button>

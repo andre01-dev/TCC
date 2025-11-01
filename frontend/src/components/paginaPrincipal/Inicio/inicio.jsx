@@ -7,13 +7,10 @@ export default function Inicio() {
                 <div className="td">
 
                     <div className="tt">
-                        <h1 className="titulo">Educação midiática para pessoas 60+</h1>
+                        <h1 className="titulo">Aprenda a navegar de forma Segura na Internet</h1>
                     </div>
                     <div className="txt">
-                        <h3>O EducaMídia 60+ é o programa criado pelo Instituto <br />
-                            Palavra Aberta para que pessoas com mais de 60 anos de idade, <br />
-                            um grupo tão significativo da população brasileira, desenvolvam <br />
-                            as habilidades necessárias para participar plenamente dasociedade conectada.</h3>
+                        <h3>O Conectando Gerações foi criado para ajudar pessoas idosas a explorarem o mundo digital com mais confiança e segurança. Aqui, você encontra cursos que ensinam como se proteger de golpes online. Além disso, disponibilizamos notícias atualizadas e um canal de denúncias onde iremos auxiliar com qualquer problema.</h3>
                     </div>
                     <div className="txtxt">
                         <h3>AQUI VOCÊ ENCONTRA:</h3>
@@ -26,7 +23,7 @@ export default function Inicio() {
                     </div>
                 </div>
                 <div className="tudo-img">
-                    <img className="img" src="/src/assets/images/velha.png" />
+                    <img className="img" src="/src/assets/images/senhora.png" />
                 </div>
             </div>
         </div>

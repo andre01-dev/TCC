@@ -21,16 +21,21 @@ background-color: #DFC8BA;
     }
   }
 
+ 
+
   .conteudo {
     position: relative;
     padding: 140px 20px 60px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 
     h2 {
       color: #023b4a;
       font-weight: 600;
       font-size: 1.5rem;
       margin-bottom: 40px;
+      margin-left: 30px;
     }
 
     .text {
@@ -69,3 +74,4 @@ background-color: #DFC8BA;
     }
   }
 }
+ 

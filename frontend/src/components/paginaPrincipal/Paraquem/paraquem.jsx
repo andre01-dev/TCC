@@ -9,7 +9,7 @@ export default function Parte2() {
         </svg>
         
       </div>
-
+        
       <div className="conteudo">
         <h2>Para quem é o Conectando Gerações?</h2>
 
