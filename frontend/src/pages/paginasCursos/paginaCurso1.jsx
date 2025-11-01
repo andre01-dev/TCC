@@ -4,6 +4,7 @@ import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
 import ModuloCurso from "../../components/modulosCursos/logado/index.jsx";
 import { useEffect, useState } from "react";
+import{useNavigate} from 'react-router-dom';
 import api from "../../api.js";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
@@ -14,6 +15,8 @@ export default function Curso1() {
   const [logado, setLogado] = useState(false);
   const nome_usuario = localStorage.getItem("NOME_USUARIO");
   const [passarModulo, setPassarModulo] = useState(0);
+  const [mostrarConteudo, setMostrarConteudo] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
@@ -25,6 +28,11 @@ export default function Curso1() {
     else {
       setLogado(false)
       setNomeUsuario("")
+    }
+
+    if(passarModulo == -1){
+      navigate("/curso1");
+      window.location.reload();
     }
   })
 
@@ -40,6 +48,7 @@ export default function Curso1() {
           id_curso
         })
         alert("Inscrição realizada com sucesso!");
+        setMostrarConteudo(false);
       }
       else {
         alert("Faça login para se inscrever em um curso");
@@ -84,6 +93,9 @@ export default function Curso1() {
       )}
 
       <main className="conteudo">
+
+      {mostrarConteudo ? (
+        <>
         <div className="lado-esquerdo">
           <h1>Fake News</h1>
 
@@ -102,8 +114,46 @@ export default function Curso1() {
             na internet. Descubra ferramentas e práticas seguras de checagem.
           </p>
 
-          <h2>Módulos</h2>
 
+        </div>
+
+        <div className="lado-direito">
+          <div className="card-curso">
+            <p className="tema">Internet Segura</p>
+            <p className="tempo">1min</p>
+
+            <h2>Fake News</h2>
+            <p className="resumo">
+              Guia básico de navegação pela internet, como realizar buscas de
+              informações e filtrar os resultados encontrados.
+            </p>
+
+            <p className="nivel">Nível: Básico</p>
+
+            <div className="gratuito">Gratuito</div>
+
+            <div className="inclui">
+              <h3>Esse curso inclui:</h3>
+              <ul>
+                <li>⭐ Apostila</li>
+                <li>⭐ Vídeo</li>
+                <li>⭐ Certificado</li>
+              </ul>
+            </div>
+
+            <div className="avaliacao">
+              <h3>5 de 5 ⭐⭐⭐⭐⭐</h3>
+              <p>Avaliação</p>
+            </div>
+
+            <button onClick={inscreverCurso} className="botao-inscrever">INSCREVA-SE</button>
+          </div>
+        </div>
+        </>
+        
+
+      ): (
+        <div>
           {logado ? (
             <>
               {passarModulo === 0 && (
@@ -112,6 +162,7 @@ export default function Curso1() {
                     titulo="Porque é importante?"
                     conteudo="É importante identificar mensagens suspeitas para proteger seus dados pessoais e financeiros de golpes, ataques de vírus e roubo de identidade. Criminosos usam mensagens fraudulentas, como o phishing, para enganar as pessoas e fazê-las clicar em links maliciosos ou baixar anexos com vírus"
                   />
+                  <button onClick={VoltarModulo}>Voltar</button>
                   <button onClick={AvancarModulo}>Próximo</button>
                 </>
               )}
@@ -146,47 +197,13 @@ export default function Curso1() {
 
             </>
 
-          ) : (
-            <ModuloDesLogado
-              titulo={["Porque é importante?", "Como identificar uma mensagem suspeita?"]}
-            />
-          )}
-
+          ) : null}
         </div>
+      )}
+          
 
 
-        <div className="lado-direito">
-          <div className="card-curso">
-            <p className="tema">Internet Segura</p>
-            <p className="tempo">1min</p>
-
-            <h2>Fake News</h2>
-            <p className="resumo">
-              Guia básico de navegação pela internet, como realizar buscas de
-              informações e filtrar os resultados encontrados.
-            </p>
-
-            <p className="nivel">Nível: Básico</p>
-
-            <div className="gratuito">Gratuito</div>
-
-            <div className="inclui">
-              <h3>Esse curso inclui:</h3>
-              <ul>
-                <li>⭐ Apostila</li>
-                <li>⭐ Vídeo</li>
-                <li>⭐ Certificado</li>
-              </ul>
-            </div>
-
-            <div className="avaliacao">
-              <h3>5 de 5 ⭐⭐⭐⭐⭐</h3>
-              <p>Avaliação</p>
-            </div>
-
-            <button onClick={inscreverCurso} className="botao-inscrever">INSCREVA-SE</button>
-          </div>
-        </div>
+        
       </main>
 
       <Rodape />
