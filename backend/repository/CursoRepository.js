@@ -31,3 +31,12 @@ export async function VerificarMatricula(id_usuario, id_curso) {
     const [registros] = await conection.query(comando, [id_usuario, id_curso]);
     return registros;
 }
+
+export async function PuxarCursos() {
+    const comando = `
+        select nome_curso, descricao, duracao, url
+        from tb_curso
+    `
+    const [registros] = await conection.query(comando);
+    return registros
+}

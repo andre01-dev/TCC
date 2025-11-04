@@ -27,5 +27,10 @@ endpoints.post("/verificar/matricula", async (req,resp) => {
     resp.send(registros);
 })
 
+endpoints.get('/puxar/cursos', async (req,resp) => {
+    let registros = await repoCurso.PuxarCursos();
+    resp.send(registros);
+})
+
 
 export default endpoints;

@@ -1,9 +1,9 @@
+import api from '../api.js'
 import './cursos.scss'
 import CardCurso from '../components/CardCurso/cardCurso.jsx'
 import Cabecalho from '../components/cabecalho/cabecalho.jsx'
 import Rodape from '../components/rodape/rodape.jsx'
 import { Link } from 'react-router'
-
 import curso1 from "../assets/images/curso1.png";
 import curso2 from "../assets/images/curso2.png";
 import curso3 from "../assets/images/curso3.png";
@@ -20,7 +20,13 @@ export default function Cursos() {
 
     const [nomeUsuario, setNomeUsuario] = useState("");
     const [logado, setLogado] = useState(false)
-    const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    const nome_usuario = localStorage.getItem("NOME_USUARIO");
+    const [cursos, setCursos] = useState([]);
+
+    async function listarCursos() {
+        const response = await api.get("/puxar/cursos")
+        setCursos(response.data);
+    }
 
     useEffect(() => {
         const token = localStorage.getItem("TOKEN");
@@ -33,7 +39,11 @@ export default function Cursos() {
             setLogado(false)
             setNomeUsuario("")
         }
-    })
+
+        listarCursos()
+    }, []);
+
+
 
     return (
         <div className='Container-Curso'>
@@ -51,22 +61,22 @@ export default function Cursos() {
             )}
 
             <div className='voltar-cursos'>
-  <Link to={"/"}>
-    <button className='voltar'>
-      <img src="/src/assets/images/setaEsquerda.png" height={25} />
-    </button>
-    <p>Voltar para a página Inicial</p>
-  </Link>
-</div>
+                <Link to={"/"}>
+                    <button className='voltar'>
+                        <img src="/src/assets/images/setaEsquerda.png" height={25} />
+                    </button>
+                    <p>Voltar para a página Inicial</p>
+                </Link>
+            </div>
 
-  <div className='titulo-cursos'>
+            <div className='titulo-cursos'>
                 <h1>Cursos</h1>
             </div>
 
 
 
             <div className='cursos'>
-                <Link to="/curso1">
+                {/* <Link to="/curso1">
                     <CardCurso
                         imagem={curso1}
                         titulo='Internet Segura'
@@ -163,15 +173,40 @@ export default function Cursos() {
                         descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer.'
                         nivel='Nivel: Básico'
                     />
-                </Link>
+                </Link> */}
+
+
+                {cursos.map(curso =>
+                    <Link to={curso.url}>
+                        <div className='container-cardCurso'>
+                            <div className='cardCurso'>
+                                <img className='imagem' src={curso1} alt="" />
+                                <div className='titulo-carga'>
+                                    <h2 className='titulo'>{curso.nome_curso}</h2>
+                                    <div className='tempo'>
+                                        <img src="https://img.icons8.com/ios7/200/clock--v3.png" height={20} />
+                                        <h2>{curso.duracao}</h2>
+                                    </div>
+                                </div>
+                                <p>{curso.descricao}</p>
+                                <div className='nivel-button'>
+                                    <h2>Nível: Básico</h2>
+                                    <button>Gratuito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
+                )}
+
             </div>
 
-            <button 
-  className="botao-topo" 
-  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
->
-  ⬆
-</button>
+            <button
+                className="botao-topo"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+                ⬆
+            </button>
 
             <Rodape />
 
