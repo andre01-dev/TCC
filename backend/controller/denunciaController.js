@@ -14,6 +14,8 @@ endpoint.post('/denuncia',async(req,resp)=>{
             throw new Error("O campo 'data' é obrigatório!")
         if(!denuncia.ocorrido)
             throw new Error("O campo 'ocorrido' é obrigatório!")
+        if (!denuncia.email)
+            throw new Error("O campo 'email' é obrigatório!");
     
         const id = await EnviarDenuncia(denuncia);
 

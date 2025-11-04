@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import api from '../api';
 import Cabecalho from '../components/cabecalho/cabecalho';
 import Rodape from '../components/rodape/rodape';
@@ -8,8 +9,11 @@ export default function Denunciapag() {
   const [assunto, setAssunto] = useState('');
   const [data, setData] = useState('');
   const [ocorrido, setOcorrido] = useState('');
+  const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [denuncias, setDenuncias] = useState([]);
+
+
 
   async function carregarDenuncias() {
     const resposta = await api.get('/denuncia');
@@ -20,20 +24,32 @@ export default function Denunciapag() {
     e.preventDefault();
 
     try {
+      //  Envia pro backend normalmente
       const resposta = await api.post('/denuncia', {
         assunto,
         data,
-        ocorrido
+        ocorrido,
+        email
       });
 
-      setMensagem(resposta.data.mensagem);
+      // 2 Envia também o email pelo EmailJS
+      await emailjs.send(
+        'denuncia_tcc',    
+        'template_1l75xyn',    
+        { assunto, data, ocorrido,email },
+        'Tu-dCpjOHZRwzxbT4'      
+      );
+
+      setMensagem('Denúncia enviada com sucesso!');
       setAssunto('');
       setData('');
       setOcorrido('');
+      setEmail('');
 
-      carregarDenuncias(); // atualiza a lista depois do envio
+      carregarDenuncias();
     } catch (err) {
-      setMensagem(err.response?.data?.erro || 'Erro ao enviar denúncia.');
+      console.error(err);
+      setMensagem('Erro ao enviar denúncia.');
     }
   }
 
@@ -48,12 +64,24 @@ export default function Denunciapag() {
         <form className="form-denuncia" onSubmit={enviarDenuncia}>
           <div className="form-row">
             <div className="form-group">
+              <label>Email do denunciante:</label>
+              <input
+                type="email"
+                placeholder="Digite seu email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
               <label>Assunto:</label>
               <input
                 type="text"
                 placeholder="Digite o assunto"
                 value={assunto}
                 onChange={(e) => setAssunto(e.target.value)}
+                required
               />
             </div>
 
@@ -63,6 +91,7 @@ export default function Denunciapag() {
                 type="date"
                 value={data}
                 onChange={(e) => setData(e.target.value)}
+                required
               />
             </div>
           </div>
@@ -70,7 +99,7 @@ export default function Denunciapag() {
           <div className="form-group full">
             <textarea
               rows="5"
-              placeholder="Descreva o ocorrido, e ao final digite seu email:"
+              placeholder="Descreva o ocorrido"
               value={ocorrido}
               onChange={(e) => setOcorrido(e.target.value)}
             ></textarea>
@@ -86,7 +115,6 @@ export default function Denunciapag() {
 
         <div className="historico">
           <h3>Histórico de Denúncias</h3>
-
           <div className="historico-lista">
             {denuncias.map((item) => (
               <div className="historico-item" key={item.id_denuncia}>
