@@ -17,6 +17,14 @@ endpoints.put("/concluir", async (req,resp) => {
 
     let registros = await repoCurso.FinalizarCurso(id_usuario);
     resp.send(registros);
+});
+
+endpoints.post("/verificar/matricula", async (req,resp) => {
+    const id_usuario = req.body.id_usuario;
+    const id_curso = req.body.id_curso;
+
+    let registros = await repoCurso.VerificarMatricula(id_usuario, id_curso);
+    resp.send(registros);
 })
 
 

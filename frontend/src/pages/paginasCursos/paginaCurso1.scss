@@ -143,23 +143,7 @@
     align-self: center;
   }
 
-  .botao-inscrever {
-    margin-top: 10px;
-    background-color: #dfb674;
-    color: #003f51;
-    border: none;
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-
-    &:hover {
-      background-color: #caa55d;
-      transform: translateY(-2px);
-    }
-  }
+  
 }
 
 

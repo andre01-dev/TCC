@@ -9,12 +9,8 @@ export default function CabecalhoLogado({ nome_usuario }) {
     const [menuLogado, setMenuLogado] = useState(false)
 
     function Sair () {
-        localStorage.removeItem("NOME_USUARIO");
-        localStorage.removeItem("TOKEN");
-        localStorage.removeItem("ID_USUARIO");
-        localStorage.removeItem("RESULTADO_QUIZ");
-        sessionStorage.removeItem("TOKEN");
         window.location.reload()
+        localStorage.clear()
     }
 
     return (
