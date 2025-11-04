@@ -72,7 +72,7 @@ export default function Cursos() {
                         titulo='Internet Segura'
                         duracao=' 1min'
                         tema='Fake News'
-                        descricao='Nesse Curso vamos te ensinar como navegar de forma segura'
+                        descricao='Nesse Curso vamos te ensinar como navegar de forma segura.'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -82,8 +82,8 @@ export default function Cursos() {
                         imagem={curso2}
                         titulo='Compras Online de Forma Segura'
                         duracao=' 6min'
-                        tema='Fake News'
-                        descricao='Nesse Curso vamos te ensinar como evitar fraudes e compras impulsivas'
+                        tema='Segurança'
+                        descricao='Nesse Curso vamos te ensinar como evitar fraudes e compras impulsivas.'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -93,8 +93,8 @@ export default function Cursos() {
                         imagem={curso3}
                         titulo='Bancos Digitais'
                         duracao=' 6min'
-                        tema='Fake News'
-                        descricao='Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco'
+                        tema='Pagamentos Seguros'
+                        descricao='Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco..'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -104,8 +104,8 @@ export default function Cursos() {
                         imagem={curso4}
                         titulo='Organização Digital'
                         duracao=' 6min'
-                        tema='Fake News'
-                        descricao='Nesse Curso vamos te ensinar a Armazenar documentos e fotos com segurança'
+                        tema='Produtividade'
+                        descricao='Nesse Curso vamos te ensinar a Armazenar documentos e fotos com segurança.'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -115,8 +115,8 @@ export default function Cursos() {
                         imagem={curso5}
                         titulo='Criando e Usando E-mail'
                         duracao=' 12min'
-                        tema='Fake News'
-                        descricao='Nesse Curso vamos te ensinar a Criar uma conta e usar o E-mail'
+                        tema='E-mail'
+                        descricao='Nesse Curso vamos te ensinar a Criar uma conta e usar o E-mail.'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -127,7 +127,7 @@ export default function Cursos() {
                         titulo='Introdução a Inteligência Artificial'
                         duracao=' 7min'
                         tema='Inteligência Artificial'
-                        descricao='Nesse Curso vamos te ensinar a Usar a Inteligencia Artificial'
+                        descricao='Nesse Curso vamos te ensinar a Usar a Inteligencia Artificial.'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -138,7 +138,7 @@ export default function Cursos() {
                         titulo='Educação Financeira Digital '
                         duracao=' 6min'
                         tema='Educação Financeira'
-                        descricao='Nesse Curso vamos te dar dicas de como controlar seus gastos e evitar fraudes'
+                        descricao='Nesse Curso vamos te dar dicas de como controlar seus gastos.'
                         nivel='Nivel: Básico'
                     />
                 </Link>
@@ -160,7 +160,7 @@ export default function Cursos() {
                         titulo='Golpe por E-mail (Phishing)'
                         duracao=' 5min'
                         tema='Golpes (Phishing)'
-                        descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer'
+                        descricao='Nesse Curso vamos te ensinar a como Reconhecer E-mail Falsos e o Que Fazer.'
                         nivel='Nivel: Básico'
                     />
                 </Link>

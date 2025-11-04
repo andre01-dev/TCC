@@ -84,7 +84,7 @@ export default function Curso1() {
             <p className="tema">Proteção de Senhas</p>
             <p className="tempo">6min</p>
 
-            <h2>Proteão de Senhas</h2>
+            <h2>Proteção de Senhas</h2>
             <p className="resumo">
               Guia básico de navegação pela internet, como realizar buscas de
               informações e filtrar os resultados encontrados.
