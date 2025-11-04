@@ -1,0 +1,93 @@
+.container-quiz {
+    .quiz {
+
+        .pergunta {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .botao {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+
+            button {
+                background-color: #003F51;
+                color: #f3e7e7;
+                border: none;
+                border-radius: 8px;
+                padding: 10px 25px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+                &:hover {
+                    background-color: #dba65f;
+                    transform: scale(1.05);
+                }
+
+                &:active {
+                    transform: scale(0.97);
+                    background-color: #c98f4e;
+                }
+
+                &:focus {
+                    outline: 2px solid #004359;
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        .rep {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 63, 81, 0.95);
+            color: #fff;
+            padding: 30px 50px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            animation: aparecer-desaparecer 2s ease forwards;
+            z-index: 999;
+        }
+
+        .rep.correto {
+            background: rgba(0, 128, 0, 0.85);
+        }
+
+        .rep.errado {
+            background: rgba(200, 0, 0, 0.85);
+        }
+
+        /* ✨ Animação: aparece e depois desaparece */
+        @keyframes aparecer-desaparecer {
+            0% {
+                transform: translate(-50%, -50%) scale(0.6);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+    }
+}

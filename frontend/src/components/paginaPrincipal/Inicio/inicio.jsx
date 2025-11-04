@@ -1,4 +1,5 @@
 import "./inicio.scss"
+import {Link} from 'react-router'
 
 export default function Inicio() {
     return (
@@ -19,7 +20,10 @@ export default function Inicio() {
                         <h3> <img className="imgage" src="/src/assets/images/setaEsquerda.png"></img> Conhecimento</h3>
                     </div>
                     <div>
-                        <button className="bt">Saiba mais sobre nós</button>
+                        <Link to ={'/quemsomos'}>
+                            <button className="bt">Saiba mais sobre nós</button>
+                        </Link>
+                        
                     </div>
                 </div>
                 <div className="tudo-img">

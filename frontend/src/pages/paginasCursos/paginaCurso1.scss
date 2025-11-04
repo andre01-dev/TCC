@@ -1,5 +1,5 @@
 .pagina-curso {
-  background-color: #faeded;
+  background-color: #f3e7e7;
   color: #003f51;
   min-height: 100vh;
   display: flex;
@@ -172,4 +172,23 @@
       width: 80%;
     }
   }
+}
+
+.botoes{
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 160px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #DFB674;
+    color: #003F51;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
 }

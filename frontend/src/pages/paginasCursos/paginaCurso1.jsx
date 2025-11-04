@@ -126,7 +126,7 @@ export default function Curso1() {
 
               <p className="descricao">
                 Aprenda o que são Fake News e como se proteger de informações falsas
-                na internet. Descubra ferramentas e práticas seguras de checagem.
+                na internet. <br /> Descubra ferramentas e práticas seguras de checagem.
               </p>
 
 
@@ -188,8 +188,10 @@ export default function Curso1() {
                       titulo="Porque é importante?"
                       conteudo="É importante identificar mensagens suspeitas para proteger seus dados pessoais e financeiros de golpes, ataques de vírus e roubo de identidade. Criminosos usam mensagens fraudulentas, como o phishing, para enganar as pessoas e fazê-las clicar em links maliciosos ou baixar anexos com vírus"
                     />
+                   <div className="botoes">
                     <button onClick={VoltarModulo}>Voltar</button>
                     <button onClick={AvancarModulo}>Próximo</button>
+                    </div>
                   </>
                 )}
 
@@ -199,9 +201,10 @@ export default function Curso1() {
                       titulo="Como identificar uma mensagem suspeita?"
                       conteudo="Para identificar mensagens suspeitas, desconfie de erros de português, pedidos urgentes de dados pessoais ou dinheiro, links e anexos suspeitos (especialmente se mudam o URL), e mensagens que prometem prêmios ou empregos fáceis."
                     />
-
+                    <div className="botoes">
                     <button onClick={VoltarModulo}>Voltar</button>
                     <button onClick={AvancarModulo}>Próximo</button>
+                    </div>
                   </>
                 )}
 
@@ -216,8 +219,10 @@ export default function Curso1() {
                         opcaoD="Ignorar e verificar a autenticidade do remetente"
                       />
                     </div>
+                    <div className="botoes">
                     <button onClick={VoltarModulo}>Voltar</button>
                     <button onClick={FinalizarCurso}>Finalizar Curso</button>
+                    </div>
                   </>
                 )}
 

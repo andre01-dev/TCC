@@ -1,7 +1,7 @@
 .titul {
   display: flex;
   justify-content: center;
-  margin-top: 220px;
+  margin-top: 100px;
   margin-bottom: 160px;
   color: #003F51;
   font-size: 32px;
@@ -78,7 +78,7 @@
 
 .esquerda {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
   margin-right: 50px;
@@ -92,7 +92,6 @@
   }
 
   .texto {
-    margin-left: 120px;
     margin-top: 120px;
 
     h1 {
@@ -112,10 +111,10 @@
 
 .direita {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
-  margin-left: 250px;
+  margin-left: 50px;
   flex-direction: row-reverse;
 
   img {
@@ -129,7 +128,6 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    margin-right: 180px;
     margin-top: 140px;
     text-align: left;
 
@@ -144,6 +142,7 @@
       color: #003F51;
       margin-top: 30px;
       font-size: 24px;
+      margin: 20px;
     }
   }
 }
@@ -163,81 +162,99 @@
   }
 }
 
-.containerr {
+.desenvol-text{
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 180px;
-  transition: all 0.3s ease;
-  flex-wrap: wrap;
-  background-color: #d5c1b0;
-  height: 600px;
-
-  .card {
-    position: relative;
-    background: #fff;
-    width: 300px;
-    height: 450px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 100px 20px 20px;
-    transition: 0.3s;
-
-    .circle {
-      position: absolute;
-      margin-bottom: 150px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      background: gray;
-      border-radius: 50%;
-    }
-
-    h3 {
-      margin-top: 90px;
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    &:hover {
-      transform: translateY(-40px);
-      filter: none;
-      z-index: 10;
-    }
-  }
-
-  &:hover > :not(:hover) {
-    filter: blur(5px);
-    transition: 0.3s;
-  }
-}
-
-.text {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 120px;
   color: #003F51;
-  font-size: 70px;
+  font-size: 30px;
 }
-
-.imagens {
+.alinhando {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 50px;
-  margin-top: 100px;
-  margin-bottom: 300px;
+  background-color: #DFC8BA;
 
-  img {
-    height: 200px;
+
+  .ig {
+    padding: 12px;
+    background-color: #0466C8;
+    border-radius: 7px;
+  }
+
+  .depoimento {
+    background-color: none;
+    display: flex;
+    width: 80%;
+    gap: 50px;
+
+    .organizar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      h1 {
+        color: #0466C8;
+      }
+    }
+  }
+}
+
+.cardscolabs{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  gap: 110px;
+  flex-wrap: wrap;
+  padding: 28px;
+
+  img{
+      border-radius: 7px;
+      height:200px ;
+      width: 246px;
+      margin-top: 16px;
+  }
+
+}
+
+.parceiros {
+  text-align: center;
+  margin-top: 200px;
+margin-bottom: 300px;
+
+.text{
+  font-size: 50px;
+  color: #003F51;
+}
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-inner-wrapper {
+    overflow: hidden;
+    width: 80%;
+  }
+
+  .carousel-inner {
+    display: flex;
+    gap: 70px;
+    transition: transform 0.4s ease;
+  }
+
+  .slide img {
+    width: 270px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .btn {
+    background: none;
+    border: none;
+    color: #003F51;
+    font-size: 70px;
+    cursor: pointer;
   }
 }

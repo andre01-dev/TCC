@@ -26,7 +26,7 @@ export default function CabecalhoLogado({ nome_usuario }) {
                     <Link to={"/"}><p className='nav-cabecalho'>Inicio</p></Link>
                     <Link to={"/cursos"}><p className='nav-cabecalho'>Cursos</p></Link>
                     <Link to={"/tdsntc"}><p className='nav-cabecalho'>Notícias</p></Link>
-                    <Link><p className='nav-cabecalho'>Quem Somos</p></Link>
+                    <Link to={'/quemsomos'}><p className='nav-cabecalho'>Quem Somos</p></Link>
                     <button className='nome-usuario' onClick={() => setMenuLogado(!menuLogado)}>{nome_usuario}</button>
 
                     {menuLogado && (

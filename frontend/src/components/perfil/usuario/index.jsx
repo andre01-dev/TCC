@@ -46,7 +46,7 @@ export default function Perfil() {
         <div>
             <div className='container-tudo'>
                 <div className='user'>
-                    <h2>Gustavo Lana</h2>
+                    <h2></h2>
                     <img src="/src/assets/images/perfil.png" alt="" />
                 </div>
                 <div className="dados-container">
