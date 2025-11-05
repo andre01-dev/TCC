@@ -34,9 +34,19 @@ export async function VerificarMatricula(id_usuario, id_curso) {
 
 export async function PuxarCursos() {
     const comando = `
-        select nome_curso, descricao, duracao, url
-        from tb_curso
-    `
+        select nome_curso, descricao, duracao, url, caminho_img
+        from tb_curso`
+    
     const [registros] = await conection.query(comando);
     return registros
+}
+
+export async function CursoEspecifico(id_curso) {
+    const comando = `
+        select nome_curso, descricao, duracao
+        from tb_curso
+        where id_curso = ?`
+    
+    const [registros] = await conection.query(comando, [id_curso]);
+    return registros;
 }

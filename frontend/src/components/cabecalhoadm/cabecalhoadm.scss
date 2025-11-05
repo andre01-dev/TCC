@@ -1,0 +1,34 @@
+.cabecalho2{
+    padding: 20px;
+    background-color: #003F51;
+    border-bottom:2px inset #F3E7E7;
+    h1{
+        text-align: center;
+        color: #F3E7E7;
+    }
+    .ajuste{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .navegacao{
+            nav{
+                display: flex;
+                gap: 45px;
+                font-size: 20px;
+                p{
+                    color: #DFB674;
+                }
+            }
+        }
+        button{
+            color: #003F51;
+            background-color: #DFB674 ;
+            border-color: #DFB674;
+            padding: 6px;
+            border-radius: 7px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    }
+}

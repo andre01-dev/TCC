@@ -19,6 +19,19 @@ export default function Curso1() {
   const [mostrarConteudo, setMostrarConteudo] = useState(true);
   const [inscritoCurso, setInscritoCurso] = useState(false);
   const navigate = useNavigate();
+  const [curso, setCurso] = useState({
+    nome_curso: "",
+    descricao: "",
+    duracao: "",
+  });
+  const id_curso = 1;
+
+  async function CursoEspecifico() {
+    const response = await api.get("/curso", {
+      params: {id_curso}
+    })
+    setCurso(response.data[0]);
+  }
 
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
@@ -42,13 +55,13 @@ export default function Curso1() {
       setInscritoCurso(true);
     }
 
-  })
+    CursoEspecifico();
+  },[])
 
 
   async function inscreverCurso() {
 
     const id_usuario = localStorage.getItem("ID_USUARIO");
-    const id_curso = 1;
     try {
       if (logado) {
         const response = await api.put("/inscrever", {
@@ -90,6 +103,7 @@ export default function Curso1() {
       try {
         await api.put("/concluir", { id_usuario });
         alert("Parabéns, você finalizou o curso");
+        navigate('/cursos')
       } catch (e) {
         alert("Erro ao finalizar curso");
         console.error(e);
@@ -112,7 +126,7 @@ export default function Curso1() {
         {mostrarConteudo ? (
           <>
             <div className="lado-esquerdo">
-              <h1>Fake News</h1>
+              <h1>{curso.nome_curso}</h1>
 
               <div className="video-box">
                 <iframe
@@ -125,8 +139,7 @@ export default function Curso1() {
               </div>
 
               <p className="descricao">
-                Aprenda o que são Fake News e como se proteger de informações falsas
-                na internet. <br /> Descubra ferramentas e práticas seguras de checagem.
+                {curso.descricao}
               </p>
 
 
@@ -135,9 +148,9 @@ export default function Curso1() {
             <div className="lado-direito">
               <div className="card-curso">
                 <p className="tema">Internet Segura</p>
-                <p className="tempo">1min</p>
+                <p className="tempo">{curso.duracao}</p>
 
-                <h2>Fake News</h2>
+                <h2>{curso.nome_curso}</h2>
                 <p className="resumo">
                   Guia básico de navegação pela internet, como realizar buscas de
                   informações e filtrar os resultados encontrados.
