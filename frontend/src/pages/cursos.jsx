@@ -52,7 +52,7 @@ export default function Cursos() {
             )}
 
             <div className='voltar-cursos'>
-                <Link to={"/"}>
+                <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
                     <button className='voltar'>
                         <img src="/src/assets/images/setaEsquerda.png" height={25} />
                     </button>
@@ -68,7 +68,7 @@ export default function Cursos() {
 
             <div className='cursos'>
                 {cursos.map(curso =>
-                    <Link to={curso.url}>
+                    <Link to={curso.url} onClick={() => window.scrollTo(0, 0)}>
                         <div className='container-cardCurso'>
                             <div className='cardCurso'>
                                 <img className='imagem' src={curso.caminho_img} alt="" />

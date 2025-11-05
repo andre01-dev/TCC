@@ -16,7 +16,7 @@ export default function Denuncia(){
                     <p class="denuncia-text">CAIU EM ALGUM GOLPE?</p>
                     <p class="denuncia-text">FAÇA SUA DENÚNCIA NO NOSSO CANAL QUE IREMOS TE AJUDAR!</p>
                     
-                    <Link to ={'/denuncia'}>
+                    <Link to ={'/denuncia'} onClick={() => window.scrollTo(0, 0)}>
                         <div className='but-denuncia'>
                             <button class="denuncia-btn">Faça sua denúncia</button> 
                         </div>

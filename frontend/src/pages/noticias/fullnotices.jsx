@@ -56,7 +56,7 @@ export default function TodasNoticias() {
 
             <div className='align'>
                 <div className='cardsNoticias'>
-                    <Link to={"/noticia1"}>
+                    <Link to={"/noticia1"} onClick={() => window.scrollTo(0, 0)}> 
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia1.png"
@@ -65,7 +65,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia2"}>
+                    <Link to={"/noticia2"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia2.png"
@@ -74,7 +74,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia3"}>
+                    <Link to={"/noticia3"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia3.png"
@@ -83,7 +83,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia4"}>
+                    <Link to={"/noticia4"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia4.png"
@@ -92,7 +92,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia5"}>
+                    <Link to={"/noticia5"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia5.png"
@@ -101,7 +101,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia6"}>
+                    <Link to={"/noticia6"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia6.png"
@@ -110,7 +110,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia7"}>
+                    <Link to={"/noticia7"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia7.png"
@@ -119,7 +119,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia8"}>
+                    <Link to={"/noticia8"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia8.png"
@@ -128,7 +128,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia9"}>
+                    <Link to={"/noticia9"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia9.png"
@@ -137,7 +137,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia10"}>
+                    <Link to={"/noticia10"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia10.png"
@@ -146,7 +146,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia11"}>
+                    <Link to={"/noticia11"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia11.png"
@@ -155,7 +155,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia12"}>
+                    <Link to={"/noticia12"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia12.png"
@@ -164,7 +164,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia13"}>
+                    <Link to={"/noticia13"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia13.png"
@@ -173,7 +173,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia14"}>
+                    <Link to={"/noticia14"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia14.png"
@@ -182,7 +182,7 @@ export default function TodasNoticias() {
                         </div>
                     </Link>
 
-                    <Link to={"/noticia15"}>
+                    <Link to={"/noticia15"} onClick={() => window.scrollTo(0, 0)}>
                         <div className='cards'>
                             <CardNoticia
                                 imagem="src/assets/images/noticia15.png"

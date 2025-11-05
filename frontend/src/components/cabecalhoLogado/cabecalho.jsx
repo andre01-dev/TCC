@@ -17,16 +17,16 @@ export default function CabecalhoLogado({ nome_usuario }) {
         <div>
             <div className="container-cabecalho">
                 <div>
-                <Link to={"/"}>
+                <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
                         <img src="src/assets/images/logoVeio.png" height={90} />
                     </Link>
                 </div>
                 <h1 className='titulo-cabecalho'>CONECTANDO GERAÇÕES</h1>
                 <div className="navegar">
-                    <Link to={"/"}><p className='nav-cabecalho'>Inicio</p></Link>
-                    <Link to={"/cursos"}><p className='nav-cabecalho'>Cursos</p></Link>
-                    <Link to={"/tdsntc"}><p className='nav-cabecalho'>Notícias</p></Link>
-                    <Link to={'/quemsomos'}><p className='nav-cabecalho'>Quem Somos</p></Link>
+                    <Link to={"/"}onClick={() => window.scrollTo(0, 0)}><p className='nav-cabecalho'>Inicio</p></Link>
+                    <Link to={"/cursos"}onClick={() => window.scrollTo(0, 0)}><p className='nav-cabecalho'>Cursos</p></Link>
+                    <Link to={"/tdsntc"}onClick={() => window.scrollTo(0, 0)}><p className='nav-cabecalho'>Notícias</p></Link>
+                    <Link to={'/quemsomos'}onClick={() => window.scrollTo(0, 0)}><p className='nav-cabecalho'>Quem Somos</p></Link>
                     <button className='nome-usuario' onClick={() => setMenuLogado(!menuLogado)}>{nome_usuario}</button>
 
                     {menuLogado && (

@@ -6,7 +6,7 @@ export default function Parte2() {
         <section className="tudo">
             
             <div className="conteudo">
-                <Link to={"/noticia1"}>
+                <Link to={"/noticia1"} onClick={() => window.scrollTo(0, 0)}>
                 <div className="item">
                     <img
                         className="image"
@@ -22,7 +22,7 @@ export default function Parte2() {
                     </div>
                 </div></Link>
 
-                <Link to={"/noticia2"}>
+                <Link to={"/noticia2"} onClick={() => window.scrollTo(0, 0)}>
                 <div className="item">
                     <img
                         className="image"
@@ -38,7 +38,7 @@ export default function Parte2() {
                     </div>
                 </div></Link>
 
-                <Link to={"noticia3"}>
+                <Link to={"noticia3"} onClick={() => window.scrollTo(0, 0)}>
                 <div className="item">
                     <img
                         className="image"
@@ -53,7 +53,7 @@ export default function Parte2() {
                         </p>
                     </div>
                 </div></Link>
-                <Link to ={"/tdsntc"}>
+                <Link to ={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
                     <div className="alinhar">
                         <button className="verMais">+</button>
                         <p>Ver mais</p>

@@ -72,3 +72,10 @@ data date,
 ocorrido varchar(5000),
 email varchar(200)
 );
+
+create table depoimentos(
+id_depoimento int primary key auto_increment,
+imagem varchar(500),
+titulo varchar(200),
+depoimento varchar(250)
+);

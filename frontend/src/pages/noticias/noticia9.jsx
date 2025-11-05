@@ -38,7 +38,7 @@ export default function Noticia9() {
                           </>  
                         )}
             <div className='voltar-noticia'>
-                <Link to={"/tdsntc"}>
+                <Link to={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -69,7 +69,7 @@ export default function Noticia9() {
                 <p>A ação, realizada em conjunto entre as Polícias Civis do Rio Grande do Sul, Ceará e São Paulo, investiga os crimes de estelionato qualificado, associação criminosa e lavagem de dinheiro.</p>
                 <h2>---- continue depois da publicidade ----</h2>
                 
-                <Link to={"/curso9"}>
+                <Link to={"/curso9"} onClick={() => window.scrollTo(0, 0)}>
                     <img src="/src/assets/images/curso9.png" alt="" />
                     <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
                 </Link>

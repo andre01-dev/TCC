@@ -38,7 +38,7 @@ export default function Noticia6() {
                           </>  
                         )}
             <div className='voltar-noticia'>
-                <Link to={"/tdsntc"}>
+                <Link to={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -66,7 +66,7 @@ export default function Noticia6() {
                 <br />
                 
                 <h2>---- continue depois da publicidade ----</h2>
-                <Link to = {"/curso6"}>
+                <Link to = {"/curso6"} onClick={() => window.scrollTo(0, 0)}>
                 <img src="/src/assets/images/curso6.png" alt="" />
                  <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
                 </Link>

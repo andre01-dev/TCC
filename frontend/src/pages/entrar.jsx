@@ -100,11 +100,11 @@ export default function Entrar() {
                     <div className="entrar-registrar">
                         <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
 
-                        <Link to="/entrar" className={ativo === "entrar" ? "ativo" : ""}>
+                        <Link to="/entrar" className={ativo === "entrar" ? "ativo" : ""} onClick={() => window.scrollTo(0, 0)}>
                             Entrar
                         </Link>
 
-                        <Link to="/registrar" className={ativo === "registrar" ? "ativo" : ""}>
+                        <Link to="/registrar" className={ativo === "registrar" ? "ativo" : ""} onClick={() => window.scrollTo(0, 0)}>
                             Registrar-se
                         </Link>
                     </div>

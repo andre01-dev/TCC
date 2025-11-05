@@ -38,7 +38,7 @@ export default function Noticia10() {
                           </>  
                         )}
             <div className='voltar-noticia'>
-                <Link to={"/tdsntc"}>
+                <Link to={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -117,7 +117,7 @@ export default function Noticia10() {
                     <br />
                     <p>Como evitar: Desligue o telefone e ligue para seu parente para verificar se ele realmente precisa de ajuda.</p>
 
-                    <Link to={"/curso1"}>
+                    <Link to={"/curso1"} onClick={() => window.scrollTo(0, 0)}>
                 <img src="/src/assets/images/curso1.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
                 </Link>

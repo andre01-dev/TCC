@@ -38,7 +38,7 @@ export default function Noticia3() {
                           </>  
                         )}
             <div className='voltar-noticia'>
-                <Link to={"/tdsntc"}>
+                <Link to={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -62,7 +62,7 @@ export default function Noticia3() {
                 <p>A cada cinco minutos, uma pessoa é vítima de algum tipo de golpe realizado pela internet. De janeiro a setembro deste ano, foram 79.869 registros de estelionato virtual — ou 295,8 por dia, 12 por hora. Outras 1.977 pessoas conseguiram escapar do golpe no mesmo período. Nos doze meses do ano passado, o total de casos chegou a 87.172 — além de 3.134 tentativas. Para se ter uma dimensão do crescimento desse tipo de delito em Minas, o número de registros em 2018 foi de 28.160 ocorrências. Já em 2023, foram 87.172 — um aumento de 210%. Em meio a esse cenário, e com a proximidade da chegada das promoções da Black Friday e do Natal, a Polícia Militar de Minas Gerais lançou, nesta quinta-feira (17 de outubro), a campanha “Se deu dúvida, é golpe”. Nas redes sociais, a corporação vai postar vídeos com dicas para livrar a população dos golpes. Os dados foram repassados à reportagem Polícia Civil.</p>
 
                 <h2>---- continue depois da publicidade ----</h2>
-                <Link to ={"curso3"}>
+                <Link to ={"curso3"} onClick={() => window.scrollTo(0, 0)}>
                 <img src="/src/assets/images/curso3.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
                 </Link>

@@ -38,7 +38,7 @@ export default function Noticia12() {
                           </>  
                         )}
             <div className='voltar-noticia'>
-                <Link to={"/tdsntc"}>
+                <Link to={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
                     <button className='voltar'><img src="/src/assets/images/setaEsquerda.png" height={25} /></button>
                     <p>
                         voltar para as notícias
@@ -75,7 +75,7 @@ export default function Noticia12() {
                 <p>As técnicas usadas, por sua vez, são cada vez mais sofisticadas. Os criminosos combinam a engenharia social com dados vazados, construindo narrativas convincentes. Eles clonam cartões, criam centrais falsas de banco, aplicam o “golpe do Pix” e se aproveitam de cada detalhe disponível nas redes sociais das vítimas.</p>
                 <h2>---- continue depois da publicidade ----</h2>
                 
-                <Link to={"/curso3"}>
+                <Link to={"/curso3"} onClick={() => window.scrollTo(0, 0)}>
                 <img src="/src/assets/images/curso3.png" alt="" />
                 <h2>CLIQUE AQUI E NÃO CAIA NO BAIT</h2>
                 </Link>

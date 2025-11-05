@@ -20,7 +20,7 @@ export default function Inicio() {
                         <h3> <img className="imgage" src="/src/assets/images/setaEsquerda.png"></img> Conhecimento</h3>
                     </div>
                     <div>
-                        <Link to ={'/quemsomos'}>
+                        <Link to ={'/quemsomos'} onClick={() => window.scrollTo(0, 0)}>
                             <button className="bt">Saiba mais sobre nós</button>
                         </Link>
                         

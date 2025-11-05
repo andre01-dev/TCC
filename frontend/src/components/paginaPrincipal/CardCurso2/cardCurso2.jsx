@@ -95,7 +95,7 @@ export default function CardCurso2() {
 
       {/* Botões inferiores */}
       <div className="alinhamento">
-        <Link to="/cursos" className="alinhar">
+        <Link to="/cursos" className="alinhar" onClick={() => window.scrollTo(0, 0)}>
           <button className="verMais">+</button>
           <p>Ver mais</p>
         </Link>

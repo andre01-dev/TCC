@@ -22,8 +22,8 @@ export default function Rodape() {
         <div className="coluna">
           <h4>Links</h4>
           <ul>
-            <li><Link className="link" to='/cursos'>Cursos</Link></li>
-            <li><Link className="link" to='/tdsntc'>Notícias</Link></li>
+            <li><Link className="link" to='/cursos'onClick={() => window.scrollTo(0, 0)}>Cursos</Link></li>
+            <li><Link className="link" to='/tdsntc'onClick={() => window.scrollTo(0, 0)}>Notícias</Link></li>
             <li>Quem Somos</li>
           </ul>
         </div>
