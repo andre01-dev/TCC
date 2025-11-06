@@ -180,8 +180,8 @@ export default function Curso1() {
 
               <div className="video-box">
                 <iframe
-                  src="https://www.youtube.com/embed/Oss4C_KOZyg"
-                  title="Curso Fake News - Internet Segura"
+                  src="https://www.youtube.com/embed/JkNe9_6qHEs?si=34kH75L1q1LCs6yC"
+                  title="Curso Criando e Usanso Email - Criando e Usanso Email"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -197,13 +197,12 @@ export default function Curso1() {
 
             <div className="lado-direito">
               <div className="card-curso">
-                <p className="tema">Internet Segura</p>
+                <p className="tema">Comunicação Digital</p>
                 <p className="tempo">{curso.duracao}</p>
 
                 <h2>{curso.nome_curso}</h2>
                 <p className="resumo">
-                  Guia básico de navegação pela internet, como realizar buscas de
-                  informações e filtrar os resultados encontrados.
+                  Guia básico de como criar e ultilizar o seu email.
                 </p>
 
                 <p className="nivel">Nível: Básico</p>

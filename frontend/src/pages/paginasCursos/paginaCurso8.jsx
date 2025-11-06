@@ -180,8 +180,8 @@ export default function Curso1() {
 
               <div className="video-box">
                 <iframe
-                  src="https://www.youtube.com/embed/Oss4C_KOZyg"
-                  title="Curso Fake News - Internet Segura"
+                  src="https://www.youtube.com/embed/eUJZ_N5au_I?si=Yrjq-85ApjbBDoJg"
+                  title="Curso Proteja Suas Senhas - Proteja Suas Senhas"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -197,13 +197,12 @@ export default function Curso1() {
 
             <div className="lado-direito">
               <div className="card-curso">
-                <p className="tema">Internet Segura</p>
+                <p className="tema">Segurança Digital</p>
                 <p className="tempo">{curso.duracao}</p>
 
                 <h2>{curso.nome_curso}</h2>
                 <p className="resumo">
-                  Guia básico de navegação pela internet, como realizar buscas de
-                  informações e filtrar os resultados encontrados.
+                  Guia básico de como criar uma senha forte e eficaz para á sua navegação.
                 </p>
 
                 <p className="nivel">Nível: Básico</p>

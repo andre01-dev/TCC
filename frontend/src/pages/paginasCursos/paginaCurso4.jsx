@@ -180,8 +180,8 @@ export default function Curso1() {
 
               <div className="video-box">
                 <iframe
-                  src="https://www.youtube.com/embed/Oss4C_KOZyg"
-                  title="Curso Fake News - Internet Segura"
+                  src="https://www.youtube.com/embed/ujyAD3gcclg?si=34CErk5TzqoIqQ0G"
+                  title="CursoOrganização Digital - Organização Digital"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -197,13 +197,12 @@ export default function Curso1() {
 
             <div className="lado-direito">
               <div className="card-curso">
-                <p className="tema">Internet Segura</p>
+                <p className="tema">Planejamento Virtual</p>
                 <p className="tempo">{curso.duracao}</p>
 
                 <h2>{curso.nome_curso}</h2>
                 <p className="resumo">
-                  Guia básico de navegação pela internet, como realizar buscas de
-                  informações e filtrar os resultados encontrados.
+                  Guia básico de como organizar arquivos, fotos e documentos de forma segura.
                 </p>
 
                 <p className="nivel">Nível: Básico</p>
