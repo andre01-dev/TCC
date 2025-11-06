@@ -4,14 +4,75 @@ import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
 import { useEffect, useState } from "react";
 import api from "../../api.js";
+import { useNavigate } from "react-router-dom";
+import Quiz from "../../components/modulosCursos/quiz/index.jsx";
+import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
+import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
   const [logado, setLogado] = useState(false);
   const nome_usuario = localStorage.getItem("NOME_USUARIO");
+  const [passarModulo, setPassarModulo] = useState(0);
+  const [mostrarConteudo, setMostrarConteudo] = useState(true);
+  const [inscritoCurso, setInscritoCurso] = useState(false);
+  const navigate = useNavigate();
+  const [modulos, setModulos] = useState([]);
+  const [quiz, setQuiz] = useState([]);
+  const [curso, setCurso] = useState({
+    nome_curso: "",
+    descricao: "",
+    duracao: "",
+  });
+  const id_curso = 3;
 
- useEffect(() => {
+  async function verificarConclusao() {
+    const id_usuario = localStorage.getItem("ID_USUARIO")
+    try {
+      const resp = await api.get("/curso/concluido", {
+        params: { id_curso, id_usuario },
+      });
+
+      console.log("Resposta da API:", resp.data);
+
+      if (resp.data.concluido === true) {
+        alert("Você já concluiu esse curso!");
+        navigate("/cursos");
+      }
+    } catch (err) {
+      console.error("Erro ao verificar conclusão", err);
+    }
+  }
+
+
+
+  async function CursoEspecifico() {
+    const response = await api.get("/curso", {
+      params: { id_curso }
+    })
+    setCurso(response.data[0]);
+  }
+
+  async function PuxarModulos() {
+    const response = await api.get('/cursos/modulos', {
+      params: { id_curso }
+    })
+    setModulos(response.data);
+  }
+
+  async function PuxarQuiz() {
+    const response = await api.get("/cursos/quiz", {
+      params: { id_curso }
+    })
+    setQuiz(response.data)
+  }
+
+
+
+
+  useEffect(() => {
     const token = localStorage.getItem("TOKEN");
+    const matriculado = localStorage.getItem("MATRICULADO");
 
     if (token != undefined && token != null) {
       setNomeUsuario(nome_usuario)
@@ -21,24 +82,87 @@ export default function Curso1() {
       setLogado(false)
       setNomeUsuario("")
     }
-  })
+
+    if (passarModulo == -1) {
+      navigate("/curso1");
+      window.location.reload();
+    }
+
+    if (matriculado == "true") {
+      setInscritoCurso(true);
+    }
+
+    CursoEspecifico();
+    PuxarModulos();
+    PuxarQuiz();
+
+  }, [])
 
 
   async function inscreverCurso() {
-    const id_usuario = localStorage.getItem("ID_USUARIO");
-    const id_curso = 3;
 
+    const id_usuario = localStorage.getItem("ID_USUARIO");
     try {
-      const response = await api.put("/inscrever", {
-        id_usuario,
-        id_curso
-      })
-      alert("Inscrição realizada com sucesso!");
+      if (logado) {
+        const response = await api.put("/inscrever", {
+          id_usuario,
+          id_curso
+        })
+        alert("Inscrição realizada com sucesso!");
+        setMostrarConteudo(false);
+        localStorage.setItem("MATRICULADO", true);
+      }
+      else {
+        alert("Faça login para se inscrever em um curso");
+      }
     }
     catch (e) {
       alert(e.response?.data?.erro || "Erro ao realizar inscrição")
     }
   }
+
+  async function MatriculadoCurso() {
+    const id_usuario = localStorage.getItem("ID_USUARIO");
+
+    const response = await api.get("/curso/concluido", {
+      params: { id_curso, id_usuario }
+    });
+
+    if (response.data[0]?.concluido === 1) {
+      alert("Você já concluiu esse curso!");
+      navigate("/cursos");
+      return;
+    }
+
+    setMostrarConteudo(false);
+  }
+
+  function AvancarModulo() {
+    setPassarModulo(passarModulo + 1);
+  }
+
+  function VoltarModulo() {
+    setPassarModulo(passarModulo - 1);
+  }
+
+  async function FinalizarCurso() {
+    const resultado = localStorage.getItem("RESULTADO_QUIZ");
+    const id_usuario = localStorage.getItem("ID_USUARIO");
+
+    if (resultado === "acertou") {
+      try {
+        await api.put("/concluir", { id_usuario });
+        alert("Parabéns, você finalizou o curso");
+        navigate('/cursos')
+      } catch (e) {
+        alert("Erro ao finalizar curso");
+        console.error(e);
+      }
+    } else {
+      alert("Você errou a questão.");
+    }
+  }
+
 
   return (
     <div className="pagina-curso">
@@ -49,69 +173,122 @@ export default function Curso1() {
       )}
 
       <main className="conteudo">
-        <div className="lado-esquerdo">
-          <h1>Bancos Digitais</h1>
+        {mostrarConteudo ? (
+          <>
+            <div className="lado-esquerdo">
+              <h1>{curso.nome_curso}</h1>
 
-          <div className="video-box">
-            <iframe
-  src="https://www.youtube.com/embed/jjJAi6n78dQ?si=e8yIqCcTdrw_eqRs"
-  title="Curso Fake News - Internet Segura"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
-      
-          </div>
+              <div className="video-box">
+                <iframe
+                  src="https://www.youtube.com/embed/Oss4C_KOZyg"
+                  title="Curso Fake News - Internet Segura"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
 
-          <p className="descricao">
-            Aprenda o que são Fake News e como se proteger de informações falsas
-            na internet. Descubra ferramentas e práticas seguras de checagem.
-          </p>
+              <p className="descricao">
+                {curso.descricao}
+              </p>
 
-          <div className="modulos">
-            <h2>Módulos</h2>
-            <ul>
-              <li>Introdução</li>
-              <li>Como identificar uma Fake News</li>
-              <li>Ferramentas de verificação</li>
-            </ul>
-          </div>
-        </div>
 
-      
-        <div className="lado-direito">
-          <div className="card-curso">
-            <p className="tema">Bancos Digitais</p>
-            <p className="tempo">6min</p>
-
-            <h2>Bancos Digitais</h2>
-            <p className="resumo">
-              Guia básico de navegação pela internet, como realizar buscas de
-              informações e filtrar os resultados encontrados.
-            </p>
-
-            <p className="nivel">Nível: Básico</p>
-
-            <div className="gratuito">Gratuito</div>
-
-            <div className="inclui">
-              <h3>Esse curso inclui:</h3>
-              <ul>
-                <li>⭐ Apostila</li>
-                <li>⭐ Vídeo</li>
-                <li>⭐ Certificado</li>
-              </ul>
             </div>
 
-            <div className="avaliacao">
-              <h3>5 de 5 ⭐⭐⭐⭐⭐</h3>
-              <p>Avaliação</p>
-            </div>
+            <div className="lado-direito">
+              <div className="card-curso">
+                <p className="tema">Internet Segura</p>
+                <p className="tempo">{curso.duracao}</p>
 
-            <button onClick={inscreverCurso} className="botao-inscrever">INSCREVA-SE</button>
+                <h2>{curso.nome_curso}</h2>
+                <p className="resumo">
+                  Guia básico de navegação pela internet, como realizar buscas de
+                  informações e filtrar os resultados encontrados.
+                </p>
+
+                <p className="nivel">Nível: Básico</p>
+
+                <div className="gratuito">Gratuito</div>
+
+                <div className="inclui">
+                  <h3>Esse curso inclui:</h3>
+                  <ul>
+                    <li>⭐ Apostila</li>
+                    <li>⭐ Vídeo</li>
+                    <li>⭐ Certificado</li>
+                  </ul>
+                </div>
+
+                <div className="avaliacao">
+                  <h3>5 de 5 ⭐⭐⭐⭐⭐</h3>
+                  <p>Avaliação</p>
+                </div>
+
+                {inscritoCurso ? (
+                  <BtCurso
+                    titulo={"ACESSAR CURSO"}
+                    onClick={() => {
+                      MatriculadoCurso();
+                      verificarConclusao();
+                    }}
+                  />
+                ) : (
+                  <BtCurso
+                    titulo={"INSCREVA-SE"}
+                    onClick={inscreverCurso}
+                  />
+                )}
+
+              </div>
+            </div>
+          </>
+
+
+        ) : (
+          <div>
+            {logado ? (
+              <>
+                {passarModulo < modulos.length && (
+                  <>
+                    <ModuloCursoLogado
+                      titulo={modulos[passarModulo]?.titulo}
+                      conteudo={modulos[passarModulo]?.conteudo}
+                    />
+
+                    <div className="botoes">
+                      {passarModulo > 0 && (
+                        <button onClick={VoltarModulo}>Voltar</button>
+                      )}
+                      <button onClick={AvancarModulo}>Próximo</button>
+                    </div>
+                  </>
+                )}
+
+
+                {passarModulo === modulos.length && (
+                  <>
+                    <Quiz
+                      pergunta={quiz[0]?.pergunta}
+                      opcaoA={quiz[0]?.alternativa1}
+                      opcaoB={quiz[0]?.alternativa2}
+                      opcaoC={quiz[0]?.alternativa3}
+                      opcaoD={quiz[0]?.alternativa4}
+                      resposta={quiz[0]?.resposta}
+                    />
+
+                    <div className="botoes">
+                      <button onClick={VoltarModulo}>Voltar</button>
+                      <button onClick={FinalizarCurso}>Finalizar Curso</button>
+                    </div>
+                  </>
+                )}
+              </>
+            ) : null}
           </div>
-        </div>
-      </main> 
+
+
+        )}
+      </main>
 
       <Rodape />
     </div>

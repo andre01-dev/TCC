@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./quiz.scss";
 
-export default function Quiz({ pergunta, opcaoA, opcaoB, opcaoC, opcaoD }) {
+export default function Quiz({ pergunta, opcaoA, opcaoB, opcaoC, opcaoD, resposta }) {
   const [resp, setResp] = useState(null);
 
   const handleClick = (resultado) => {
     setResp(null);
     setTimeout(() => setResp(resultado), 7);
-    localStorage.setItem("RESULTADO_QUIZ", resultado === 3 ? "acertou" : "errou");
+    localStorage.setItem("RESULTADO_QUIZ", resultado === resposta ? "acertou" : "errou");
   };
 
   return (
@@ -23,8 +23,8 @@ export default function Quiz({ pergunta, opcaoA, opcaoB, opcaoC, opcaoD }) {
         </div>
 
         {resp !== null && (
-          <div className={`rep ${resp === 3 ? "correto" : "errado"}`}>
-            <p>{resp === 3 ? "✅ Correto!" : "❌ Errado!"}</p>
+          <div className={`rep ${resp === resposta ? "correto" : "errado"}`}>
+            <p>{resp === resposta ? "✅ Correto!" : "❌ Errado!"}</p>
           </div>
         )}
       </div>

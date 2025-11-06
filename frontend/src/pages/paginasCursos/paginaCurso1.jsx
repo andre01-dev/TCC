@@ -2,13 +2,11 @@ import "./paginaCurso1.scss";
 import Rodape from "../../components/rodape/rodape.jsx";
 import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
-import ModuloCurso from "../../components/modulosCursos/logado/index.jsx";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import api from "../../api.js";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
-import ModuloDesLogado from "../../components/modulosCursos/deslogado/index.jsx";
 import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
 
 export default function Curso1() {
@@ -19,6 +17,8 @@ export default function Curso1() {
   const [mostrarConteudo, setMostrarConteudo] = useState(true);
   const [inscritoCurso, setInscritoCurso] = useState(false);
   const navigate = useNavigate();
+  const [modulos, setModulos] = useState([]);
+  const [quiz, setQuiz] = useState([]);
   const [curso, setCurso] = useState({
     nome_curso: "",
     descricao: "",
@@ -26,12 +26,50 @@ export default function Curso1() {
   });
   const id_curso = 1;
 
+
+  async function verificarConclusao() {
+    const id_usuario = localStorage.getItem("ID_USUARIO")
+    try {
+      const resp = await api.get("/curso/concluido", {
+        params: { id_curso, id_usuario },
+      });
+
+      console.log("Resposta da API:", resp.data);
+
+      if (resp.data.concluido === true) {
+        alert("Você já concluiu esse curso!");
+        navigate("/cursos");
+      }
+    } catch (err) {
+      console.error("Erro ao verificar conclusão", err);
+    }
+  }
+
+
+
   async function CursoEspecifico() {
     const response = await api.get("/curso", {
-      params: {id_curso}
+      params: { id_curso }
     })
     setCurso(response.data[0]);
   }
+
+  async function PuxarModulos() {
+    const response = await api.get('/cursos/modulos', {
+      params: { id_curso }
+    })
+    setModulos(response.data);
+  }
+
+  async function PuxarQuiz() {
+    const response = await api.get("/cursos/quiz", {
+      params: { id_curso }
+    })
+    setQuiz(response.data)
+  }
+
+
+
 
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
@@ -51,12 +89,15 @@ export default function Curso1() {
       window.location.reload();
     }
 
-    if(matriculado == "true"){
+    if (matriculado == "true") {
       setInscritoCurso(true);
     }
 
     CursoEspecifico();
-  },[])
+    PuxarModulos();
+    PuxarQuiz();
+
+  }, [])
 
 
   async function inscreverCurso() {
@@ -81,9 +122,19 @@ export default function Curso1() {
     }
   }
 
-
   async function MatriculadoCurso() {
-    alert("Acessando curso.");
+    const id_usuario = localStorage.getItem("ID_USUARIO");
+
+    const response = await api.get("/curso/concluido", {
+      params: { id_curso, id_usuario }
+    });
+
+    if (response.data[0]?.concluido === 1) {
+      alert("Você já concluiu esse curso!");
+      navigate("/cursos");
+      return;
+    }
+
     setMostrarConteudo(false);
   }
 
@@ -175,17 +226,20 @@ export default function Curso1() {
                 </div>
 
                 {inscritoCurso ? (
-                  <BtCurso 
+                  <BtCurso
                     titulo={"ACESSAR CURSO"}
-                    onClick={MatriculadoCurso}
+                    onClick={() => {
+                      MatriculadoCurso();
+                      verificarConclusao(); 
+                    }}
                   />
                 ) : (
                   <BtCurso
-                  titulo={"INSCREVA-SE"}
-                  onClick={inscreverCurso}
-                />
+                    titulo={"INSCREVA-SE"}
+                    onClick={inscreverCurso}
+                  />
                 )}
-                
+
               </div>
             </div>
           </>
@@ -195,58 +249,46 @@ export default function Curso1() {
           <div>
             {logado ? (
               <>
-                {passarModulo === 0 && (
+                {passarModulo < modulos.length && (
                   <>
                     <ModuloCursoLogado
-                      titulo="Porque é importante?"
-                      conteudo="É importante identificar mensagens suspeitas para proteger seus dados pessoais e financeiros de golpes, ataques de vírus e roubo de identidade. Criminosos usam mensagens fraudulentas, como o phishing, para enganar as pessoas e fazê-las clicar em links maliciosos ou baixar anexos com vírus"
+                      titulo={modulos[passarModulo]?.titulo}
+                      conteudo={modulos[passarModulo]?.conteudo}
                     />
-                   <div className="botoes">
-                    <button onClick={VoltarModulo}>Voltar</button>
-                    <button onClick={AvancarModulo}>Próximo</button>
+
+                    <div className="botoes">
+                      {passarModulo > 0 && (
+                        <button onClick={VoltarModulo}>Voltar</button>
+                      )}
+                      <button onClick={AvancarModulo}>Próximo</button>
                     </div>
                   </>
                 )}
 
-                {passarModulo === 1 && (
+
+                {passarModulo === modulos.length && (
                   <>
-                    <ModuloCursoLogado
-                      titulo="Como identificar uma mensagem suspeita?"
-                      conteudo="Para identificar mensagens suspeitas, desconfie de erros de português, pedidos urgentes de dados pessoais ou dinheiro, links e anexos suspeitos (especialmente se mudam o URL), e mensagens que prometem prêmios ou empregos fáceis."
+                    <Quiz
+                      pergunta={quiz[0]?.pergunta}
+                      opcaoA={quiz[0]?.alternativa1}
+                      opcaoB={quiz[0]?.alternativa2}
+                      opcaoC={quiz[0]?.alternativa3}
+                      opcaoD={quiz[0]?.alternativa4}
+                      resposta={quiz[0]?.resposta}
                     />
+
                     <div className="botoes">
-                    <button onClick={VoltarModulo}>Voltar</button>
-                    <button onClick={AvancarModulo}>Próximo</button>
+                      <button onClick={VoltarModulo}>Voltar</button>
+                      <button onClick={FinalizarCurso}>Finalizar Curso</button>
                     </div>
                   </>
                 )}
-
-                {passarModulo === 2 && (
-                  <>
-                    <div className="quiz">
-                      <Quiz
-                        pergunta="Qual é uma boa prática ao receber mensagens suspeitas?"
-                        opcaoA="Clicar nos links imediatamente"
-                        opcaoB="Responder pedindo mais informações"
-                        opcaoC="Baixar anexos sem verificar"
-                        opcaoD="Ignorar e verificar a autenticidade do remetente"
-                      />
-                    </div>
-                    <div className="botoes">
-                    <button onClick={VoltarModulo}>Voltar</button>
-                    <button onClick={FinalizarCurso}>Finalizar Curso</button>
-                    </div>
-                  </>
-                )}
-
               </>
-
             ) : null}
           </div>
+
+
         )}
-
-
-
 
       </main>
 

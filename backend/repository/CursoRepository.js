@@ -26,7 +26,7 @@ export async function VerificarMatricula(id_usuario, id_curso) {
         select id_matricula
         from tb_matricula
         inner join tb_usuario on tb_matricula.id_usuario = tb_usuario.id_usuario
-        where cursando = true and tb_matricula.id_usuario = ? and tb_matricula.id_curso;
+        where cursando = true and tb_matricula.id_usuario = ? and tb_matricula.id_curso= ?;
     `
     const [registros] = await conection.query(comando, [id_usuario, id_curso]);
     return registros;
@@ -49,4 +49,34 @@ export async function CursoEspecifico(id_curso) {
     
     const [registros] = await conection.query(comando, [id_curso]);
     return registros;
+}
+
+export async function PuxarModulos(id_curso) {
+    const comando = `
+        select titulo, conteudo
+        from ModulosCursos
+        where id_curso = ?
+    `
+    const [registros] = await conection.query(comando, [id_curso]);
+    return registros;
+}
+
+export async function PuxarQuiz(id_curso) {
+    const comando = `
+        select pergunta, alternativa1, alternativa2, alternativa3, alternativa4, resposta
+        from QuizCursos
+        where id_curso = ?
+    `
+    const [registros] = await conection.query(comando, [id_curso]);
+    return registros;
+}
+
+export async function VerificarConclusao(id_curso, id_usuario) {
+    const comando = `
+        select concluido
+        from tb_matricula
+        where id_curso = ? and id_usuario = ?;
+    `
+    const [registros] = await conection.query(comando, [id_curso, id_usuario]);
+    return registros[0];
 }

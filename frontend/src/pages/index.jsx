@@ -11,6 +11,7 @@ import Rodape from "../components/rodape/rodape";
 import { useEffect, useState } from "react";
 import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho";
 import Denuncia from "../components/denuncia/denuncia";
+import FAQ from '../components/paginaPrincipal/FAQ/faq';
 
 export default function Comeco() {
 
@@ -87,7 +88,7 @@ export default function Comeco() {
     <h1 className="text-faq1 ">Dúvidas Frequentes</h1>
     <p className="text-faq2  " >Esta seção foi criada para ajudar você a encontrar respostas rápidas para as dúvidas mais comuns    Aqui reunimos informações importantes  <br /> sobre como utilizar o site de forma simples e segura. </p>
 <div className="faq">
-    <FAQ/>
+    <FAQ />
     <div className="Faq-img">
         <img src="/src/assets/images/faq-img.png" height={400}/>
     </div>

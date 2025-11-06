@@ -38,5 +38,27 @@ endpoints.get("/curso", async (req,resp) => {
     resp.send(registros);
 })
 
+endpoints.get('/cursos/modulos', async (req,resp) => {
+    let id_curso = req.query.id_curso;
+    let registros = await repoCurso.PuxarModulos(id_curso);
+    resp.send(registros);
+})
+
+endpoints.get('/cursos/quiz', async (req,resp) => {
+    let id_curso = req.query.id_curso;
+    let registros = await repoCurso.PuxarQuiz(id_curso);
+    resp.send(registros);
+})
+
+endpoints.get("/curso/concluido", async (req,resp) => {
+    let id_curso = req.query.id_curso;
+    let id_usuario = req.query.id_usuario;
+    let registros = await repoCurso.VerificarConclusao(id_curso, id_usuario);
+    if(registros && registros.concluido === 1){
+        resp.send({concluido: true})
+    } else{
+        resp.send({concluido: false});
+    }
+})
 
 export default endpoints;
