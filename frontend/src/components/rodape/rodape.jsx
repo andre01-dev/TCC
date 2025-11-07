@@ -15,7 +15,7 @@ export default function Rodape() {
         <div className="coluna logo">
           <img src="/src/assets/images/logoVeio.png" />
           <h3>CONECTANDO GERAÇÕES</h3>
-          <p>suportecg@gmail.com</p>
+          <p>tobugadoanalise@gmail.com</p>
         </div>
         </div>
 
@@ -48,7 +48,11 @@ export default function Rodape() {
       </div>
 
       <div className="rodape-final">
+        <p></p>
         <p>© 2025 Todos os direitos reservados para Conectando Gerações</p>
+        <Link to={'/loginadm'}>
+          <pre>Login Adm</pre>
+        </Link>
       </div>
     </footer>
   );

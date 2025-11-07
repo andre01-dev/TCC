@@ -80,11 +80,19 @@
   }
 
   .rodape-final {
+    display: flex;
+    justify-content: space-around;
     background-color: #002731;
     text-align: center;
     padding: 25px 0;
     font-size: 12px;
     color: #ccc;
+    a{
+      pre{
+        color: #F3E7E7;
+        scale: 1.1;
+      }
+    }
   }
   .link
   {

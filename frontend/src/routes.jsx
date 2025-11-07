@@ -32,8 +32,11 @@ import Curso8 from "./pages/paginasCursos/paginaCurso8.jsx";
 import Curso9 from "./pages/paginasCursos/paginaCurso9.jsx";
 import Denunciapag from "./pages/denunciapag.jsx";
 import AdmHistorico from "./pages/adm/admhistorico.jsx";
-
-
+import RelatorioGeralCursos from "./pages/adm/dashboard.jsx";
+import Adm from "./pages/adm/adm.jsx";
+import LoginAdm from "./pages/loginadm.jsx";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 export default function Navegacao() {
     return (
@@ -73,8 +76,11 @@ export default function Navegacao() {
                     <Route path="/curso9" element={<Curso9 />} />
                     <Route path="/denuncia" element={<Denunciapag />} />
                     <Route path="/admhistorico" element={<AdmHistorico />} />
+                    <Route path="/dashboard" element={<RelatorioGeralCursos />} />
+                    <Route path="/adm" element={<Adm/>} />
+                    <Route path="/loginadm" element={<LoginAdm/>} />
                 </Routes>
-            
+             <ToastContainer position="top-center" autoClose={2500} />
         </BrowserRouter>
     );
 }

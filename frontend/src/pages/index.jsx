@@ -86,7 +86,7 @@ export default function Comeco() {
             </div>
             
     <h1 className="text-faq1 ">Dúvidas Frequentes</h1>
-    <p className="text-faq2  " >Esta seção foi criada para ajudar você a encontrar respostas rápidas para as dúvidas mais comuns    Aqui reunimos informações importantes  <br /> sobre como utilizar o site de forma simples e segura. </p>
+    <p className="text-faq2 ">Esta seção foi criada para ajudar você a encontrar respostas rápidas para as dúvidas mais comuns. Aqui reunimos informações importantes  <br /> sobre como utilizar o site de forma simples e segura. </p>
 <div className="faq">
     <FAQ />
     <div className="Faq-img">

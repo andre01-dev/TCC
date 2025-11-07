@@ -7,15 +7,15 @@ export default function FAQ() {
   const perguntas = [
     {
       pergunta: "Como se registrar ou fazer login?",
-      resposta: "Acessando no canto superior direito do Cabeçalho login/registrar"
+      resposta: "Acessando no canto superior direito do Cabeçalho login/registrar."
     },
     {
       pergunta: "Nosso site é totalmente gratuito?",
-      resposta: "Sim, nosso site é totalemnte gratuito"
+      resposta: "Sim, nosso site é totalemnte gratuito!"
     },
     {
       pergunta: "Como acessar o canal de Denúncias?",
-      resposta: "Acessando o canal de Denúncias na pagina principal"
+      resposta: "Acessando o canal de Denúncias na página principal."
     },
     {
       pergunta: "O conteúdo é voltado apenas para idosos?",
@@ -23,7 +23,7 @@ export default function FAQ() {
     },
     {
       pergunta: "Como posso me inscrever nos cursos?",
-      resposta: "Basta acessar a página 'Cursos' no menu principal e clicar no curso desejado para iniciar."
+      resposta: "Basta acessar a página 'Cursos' no menú principal e clicar no curso desejado para iniciar."
     }
   ]
 

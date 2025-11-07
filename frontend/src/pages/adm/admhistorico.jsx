@@ -3,6 +3,7 @@ import emailjs from 'emailjs-com';
 import './admhistorico.scss';
 import api from '../../api';
 import CabecalhoADM from '../../components/cabecalhoadm/cabecalhoadm';
+import { Link } from 'react-router';
 
 function ajustarData(dataStr) {
   if (!dataStr) return '';
@@ -67,7 +68,7 @@ export default function AdmHistorico() {
 
   return (
     <div>
-        <CabecalhoADM/>
+      <CabecalhoADM />
       <div className="pagina-denuncia">
         {mensagem && <p className="mensagem">{mensagem}</p>}
 
@@ -95,7 +96,12 @@ export default function AdmHistorico() {
               </div>
             ))}
           </div>
+        </div><div className="divbut">
+          <Link to={'/adm'}>
+            <button> Voltar Para Página Inicial</button>
+          </Link>
         </div>
+
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function CabecalhoADM(){
                 <div></div>
                 <div className='navegacao'>
                     <nav>
-                        <Link to={'/inicioadm'} onClick={() => window.scrollTo(0, 0)}>
+                        <Link to={'/adm'} onClick={() => window.scrollTo(0, 0)}>
                             <p>Inicio</p>
                         </Link>
 

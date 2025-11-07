@@ -15,7 +15,7 @@ insert into tb_curso (nome_curso, descricao, duracao, url, caminho_img)
 values
 ("Fake News", "Nesse Curso vamos te ensinar como indentificar mensagens suspeitas", "3 min", "/curso1", "images/curso1.png"),
 ("Compras Online de Forma Segura", "Nesse Curso vamos te ensinar como evitar fraudes e compras impulsivas", "10 min", "/curso2", "images/curso2.png"),
-("Pagamentos Seguras", "Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco", "30 min", "/curso3", "images/curso3.png"),
+("Pagamentos Seguros", "Nesse Curso vamos te ensinar a navegar de modo segura no seu Banco", "30 min", "/curso3", "images/curso3.png"),
 ("Organização Digital", "Nesse Curso vamos te ensinar a Armazenar documentos e fotos com segurança", "40 min", "/curso4", "images/curso4.png"),
 ("Criando e Usando E-mail", "Nesse Curso vamos te ensinar a criar uma conta e usar o E-mail", "15 min", "/curso5", "images/curso5.png"),
 ("Introdução a Inteligência Artificial", "Nesse Curso vamos te ensinar a usar a Inteligencia Artificial com o ChatGPT", "27 min", "/curso6", "images/curso6.png"),
@@ -73,9 +73,15 @@ ocorrido varchar(5000),
 email varchar(200)
 );
 
-create table depoimentos(
-id_depoimento int primary key auto_increment,
-imagem varchar(500),
-titulo varchar(200),
-depoimento varchar(250)
+
+    
+CREATE TABLE tb_loginadm (
+  id_loginadm INT PRIMARY KEY AUTO_INCREMENT,
+  usuario VARCHAR(200),
+  senha VARCHAR(200)
 );
+
+INSERT INTO tb_loginadm (usuario, senha)
+VALUES ('adm', 'adm');
+
+
