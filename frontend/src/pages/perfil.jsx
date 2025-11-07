@@ -27,7 +27,7 @@ export default function Perfil() {
     })
 
     return (
-        <div>
+        <div className="teste">
             {logado ? (
                 <>
                     <CabecalhoLogado

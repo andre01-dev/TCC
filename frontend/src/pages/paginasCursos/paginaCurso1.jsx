@@ -109,7 +109,7 @@ export default function Curso1() {
         })
         alert("Inscrição realizada com sucesso!");
         setMostrarConteudo(false);
-        localStorage.setItem(`MATRICULADO_${id_curso}`, true);
+        // localStorage.setItem(`MATRICULADO_${id_curso}`, true); na funcao inscreverCurso
       }
       else {
         alert("Faça login para se inscrever em um curso");
