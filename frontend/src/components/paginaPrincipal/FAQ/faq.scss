@@ -18,8 +18,9 @@
 
 .faq-pergunta {
   width: 100%;
-  background: #DFC8BA;
-  color: white;
+  background: hsl(23, 37%, 80%);
+  color: #003F51;
+  font-weight: 500;
   padding: 24px;
   border: none;
   cursor: pointer;
@@ -48,7 +49,7 @@
   overflow: hidden;
   background-color: #d6b29c;
   padding: 0 14px;
-  color: white;
+  color: #003F51;
   border-radius: 0 0 6px 6px;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }

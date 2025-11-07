@@ -46,7 +46,6 @@ export default function Perfil() {
         <div>
             <div className='container-tudo'>
                 <div className='user'>
-                    <h2></h2>
                     <img src="/src/assets/images/perfil.png" alt="" />
                 </div>
                 <div className="dados-container">
@@ -67,7 +66,7 @@ export default function Perfil() {
                         </div>
                     </div>
 
-                    <div className="progresso">
+                    {/* <div className="progresso">
                         <div className="info">
                             <h3>Meu progresso</h3>
                             <div className="barra1"></div>
@@ -78,7 +77,7 @@ export default function Perfil() {
                             <h3>2 horas</h3>
 
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

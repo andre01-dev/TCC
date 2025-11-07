@@ -67,12 +67,13 @@ export default function Curso1() {
     setQuiz(response.data)
   }
 
-
-
-
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
-    const matriculado = localStorage.getItem("MATRICULADO");
+    const matriculado = localStorage.getItem(`MATRICULADO_${id_curso}`);
+
+    if (matriculado === "true") {
+      setInscritoCurso(true);
+    }
 
     if (token != undefined && token != null) {
       setNomeUsuario(nome_usuario)
@@ -88,9 +89,6 @@ export default function Curso1() {
       window.location.reload();
     }
 
-    if (matriculado == "true") {
-      setInscritoCurso(true);
-    }
 
     CursoEspecifico();
     PuxarModulos();
@@ -110,7 +108,7 @@ export default function Curso1() {
         })
         alert("Inscrição realizada com sucesso!");
         setMostrarConteudo(false);
-        localStorage.setItem("MATRICULADO", true);
+        localStorage.setItem(`MATRICULADO_${id_curso}`, true);
       }
       else {
         alert("Faça login para se inscrever em um curso");
