@@ -1,50 +1,25 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import api from "../../../api.js"
 import "./CardCurso2.scss";
 
 export default function CardCurso2() {
-  const cursos = [
-    {
-      img: "/src/assets/images/curso1.png",
-      texto:
-        "Guia básico de navegação pela internet, como realizar buscas e filtrar resultados.",
-    },
-    {
-      img: "/src/assets/images/curso2.png",
-      texto: "Guia básico de como evitar fraudes e compras impulsivas.",
-    },
-    {
-      img: "/src/assets/images/curso3.png",
-      texto: "Guia básico de como navegar de modo seguro no seu Banco.",
-    },
-    {
-      img: "/src/assets/images/curso4.png",
-      texto: "Guia básico de redes sociais e segurança digital.",
-    },
-    {
-      img: "/src/assets/images/curso5.png",
-      texto: "Guia básico de como reconhecer golpes online.",
-    },
-    {
-      img: "/src/assets/images/curso6.png",
-      texto: "Guia básico de privacidade e boas práticas digitais.",
-    },
-    {
-      img: "/src/assets/images/curso7.png",
-      texto: "Guia básico de compras seguras online.",
-    },
-    {
-      img: "/src/assets/images/curso8.png",
-      texto: "Guia básico de como criar senhas fortes.",
-    },
-    {
-      img: "/src/assets/images/curso9.png",
-      texto: "Guia básico de proteção de dados pessoais.",
-    },
-  ];
+  const [cursos, setCursos] = useState([]);
 
   const [visibleCards, setVisibleCards] = useState(3);
   const [startIndex, setStartIndex] = useState(0);
+
+  useEffect(() => {
+    async function carregarCursos() {
+      try {
+        const resp = await api.get("/puxar/cursos");   
+        setCursos(resp.data);                         
+      } catch (err) {
+        console.error("Erro ao carregar cursos:", err); 
+      }
+    }
+    carregarCursos();  // ⭐ ADICIONADA
+  }, []);
 
   // Ajuste responsivo (1 / 2 / 3 cards)
   useEffect(() => {
@@ -83,10 +58,11 @@ export default function CardCurso2() {
       <div className="curso0s">
         <div className="cards-wrapper">
           <div className="cards">
-            {getVisibleCards().map((curso, i) => (
+            {getVisibleCards().map((cursos, i) => (
               <div className="card" key={i}>
-                <img src={curso.img} alt={`Curso ${i + 1}`} />
-                <p>{curso.texto}</p>
+                <img src={cursos?.caminho_img} alt={`Curso ${i + 1}`} />
+                <h2>{cursos?.nome_curso}</h2>
+                <p>{cursos?.descricao}</p>
               </div>
             ))}
           </div>

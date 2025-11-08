@@ -1,45 +1,60 @@
+import { useEffect, useState } from "react"
+import {useNavigate} from 'react-router-dom'
 import "./conquistas.scss"
+import api from "../../../api";
 
-export default function Conquistas(){
-    return(
+export default function Conquistas() {
+
+    const [conquista, setConquistas] = useState([]);
+    const navigate = useNavigate();
+
+    async function Cursos() {
+        navigate("/cursos")
+    }
+
+    useEffect(() => {
+        const id_usuario = localStorage.getItem("ID_USUARIO");
+        async function PuxarConquistas() {
+            try {
+                const response = await api.get("/conquistas", {
+                    params: { id_usuario }
+                })
+                setConquistas(response.data);
+            }
+            catch {
+                alert("Erro ao carregar conquistas")
+            }
+        }
+
+        PuxarConquistas();
+    }, []);
+
+
+    return (
         <div className="tudo">
+
             <div className="conquistas">
-                <div className="conquista">
-<img src="/src/assets/images/conquista1.png"/>
-<h2>Internet Segura</h2>
-<div className="barra"></div>
-<h2>Modulo I</h2>
-                </div>
-                <div className="conquista">
-<img src="/src/assets/images/conquista2.png"/>
-<h2>Compras Onlines</h2>
-<div className="barra"></div>
-<h2>Modulo II</h2>
-                </div>
-                <div className="conquista">
-<img src="/src/assets/images/conquista3.png"/>
-<h2>Pagamentos Bancos Digital</h2>
-<div className="barra"></div>
-<h2>Modulo III</h2>
-                </div>
-                <div className="conquista">
-<img src="/src/assets/images/conquista4.png"/>
-<h2>Organização Digital</h2>
-<div className="barra"></div>
-<h2>Modulo IV</h2>
-                </div>
-                <div className="conquista">
-<img src="/src/assets/images/conquista5.png"/>
-<h2>Criando e Usando Email</h2>
-<div className="barra"></div>
-<h2>Modulo V</h2>
-                </div>
-                <div className="conquista">
-<img src="/src/assets/images/conquista6.png"/>
-<h2>Proteja suas Senhas</h2>
-<div className="barra"></div>
-<h2>Modulo VI</h2>
-                </div>
+                <h1>Suas Conquistas</h1>
+                {conquista && conquista.length > 0 ? (
+                    conquista.map((item) => (
+                        <>
+                            <img
+                                src={item.img_url}
+                                alt={item.titulo_curso}
+                                style={{ width: "120px", height: "120px" }}
+                            />
+                            <h2>{item.titulo_curso}</h2>
+                        </>
+
+                    ))
+                ) : (
+                    <>
+                        <h3>Você ainda não possue Conquistas</h3>
+                        <h3>Confira nossos cursos</h3>
+                        <button onClick={Cursos} className="bt-cursos">Páginas Cursos</button>
+                    </>
+
+                )}
             </div>
         </div>
     )

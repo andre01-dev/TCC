@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import "./cursoRealizado.scss";
+import api from "../../../api.js"
 
 export default function Realizado() {
+
+  const [cursos, setCursos] = useState([]);
+
+  useEffect(() => {
+    async function Puxarcursos() {
+      try{
+        const response = await api.get("/puxar/cursos3");
+        setCursos(response.data);
+      }
+      catch{
+        alert("Erro");
+      }
+    }
+    Puxarcursos();
+  })
+
   return (
     <div className="container-tudo">
       <div className="realizados">
@@ -39,42 +57,16 @@ export default function Realizado() {
 
       {/* Lado direito - Recomendações */}
       <div className="recomenda-tudo">
-    
-        <div className="recomendacao">
-          <div className="texto">
-            <h3>Proteja suas Senhas</h3>
-            <p>
-              Guia básico de navegação pela internet, como realizar buscas de
-              informações e filtrar os resultados encontrados.
-            </p>
-            <button>Ver curso</button>
+        {cursos.map((item, index) => (
+          <div key={index}>
+            <div className="textos">
+              <h3>{item.nome_curso}</h3>
+              <p>{item.descricao}</p>
+              <button>Ver Curso</button>
+            </div>
+            <img src={item.caminho_img} alt="" />
           </div>
-          <img src="/src/assets/images/logoCurso.png" />
-        </div>
-
-        <div className="recomendacao">
-          <div className="texto">
-            <h3>Compras Online</h3>
-            <p>
-              Guia básico de navegação pela internet, como realizar buscas de
-              informações e filtrar os resultados encontrados.
-            </p>
-            <button>Ver curso</button>
-          </div>
-          <img src="/src/assets/images/logoCurso.png"  />
-        </div>
-
-         <div className="recomendacao">
-          <div className="texto">
-            <h3>Compras Online</h3>
-            <p>
-              Guia básico de navegação pela internet, como realizar buscas de
-              informações e filtrar os resultados encontrados.
-            </p>
-            <button>Ver curso</button>
-          </div>
-          <img src="/src/assets/images/logoCurso.png"  />
-        </div>
+        ))}
       </div>
     </div>
   );

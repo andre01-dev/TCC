@@ -62,7 +62,7 @@ export default function Registrar() {
     return (
 
 
-        <div className='alinhe'>
+        
             <div className='body'>
                 <div className='container-registrar'>
                     <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
@@ -157,7 +157,6 @@ export default function Registrar() {
                 </div>
             </div>
 
-        </div>
 
     );
 }

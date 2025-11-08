@@ -11,6 +11,12 @@ endpoints.get('/perfil/informacoes/:id_usuario', async (req,resp) => {
     resp.send(registros);
 })
 
+endpoints.get("/conquistas", async (req,resp) => {
+    let id_usuario = req.query.id_usuario;
+    const registros = await repoPerfil.conquistas(id_usuario);
+    resp.send(registros);
+})
+
 
 
 export default endpoints;

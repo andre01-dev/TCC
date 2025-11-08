@@ -41,6 +41,16 @@ export async function PuxarCursos() {
     return registros
 }
 
+export async function PuxarCursos3() {
+    const comando = `
+        select nome_curso, descricao, duracao, url, caminho_img
+        from tb_curso
+        limit 3`
+    
+    const [registros] = await conection.query(comando);
+    return registros
+}
+
 export async function CursoEspecifico(id_curso) {
     const comando = `
         select nome_curso, descricao, duracao

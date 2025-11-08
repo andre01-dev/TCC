@@ -1,40 +1,25 @@
 import { useState, useEffect } from "react";
 import "./depoimentos.scss";
+import api from "../../../api.js";
 
 export default function Depoimentos() {
-  const depoimentos = [
-    {
-      img: "/src/assets/images/depoimento1.png",
-      texto:
-        "José Carlos, 72 anos- “Gostei muito das aulas sobre fake news. Antes eu acreditava em tudo que recebia no grupo da família, mas agora aprendi a verificar as informações. Me sinto mais segura e informada.”",
-    },
-    {
-      img: "/src/assets/images/depoimento2.png",
-      texto:
-        "Maria Aparecida, 68 anos- “Eu nunca fui muito amiga da tecnologia, mas o Conectando Gerações me ajudou a perder o medo do computador. Agora sei usar o WhatsApp, assistir vídeos e até fazer chamadas de vídeo com meus netos.”",
-    },
-    {
-      img: "/src/assets/images/depoimento3.png",
-      especialista: "Especialista em educação para idosos",
-      texto:
-        "Dona Helena, 70 anos- “O site é uma bênção! Ensina com calma, tem vídeos curtos e diretos. Consegui até ajudar uma vizinha a criar o e-mail dela. Estou adorando aprender algo novo nessa idade.”",
-    },
-    {
-      img: "/src/assets/images/depoimento4.png",
-      texto: "Arnaldo, 74 anos- “Eu entrei só para aprender a mexer no celular, mas acabei descobrindo um mundo novo. As dicas de segurança digital foram muito úteis. Hoje navego na internet com mais confiança.”",
-    },
-    {
-      img: "/src/assets/images/depoimento5.jpg",
-      texto: "Elza, 71 anos- “Gostei bastante dos conteúdos, mas achei que alguns vídeos poderiam ter legendas. Às vezes é difícil escutar bem, especialmente de dia por conta do barulho. Fora isso, é tudo excelente.”",
-    },
-    {
-      img: "/src/assets/images/depoimento6.png",
-      texto: "Carlos Alberto, 75 anos- “O curso é muito bom e me ajudou muito, mas senti falta de um suporte por telefone. Nem sempre consigo mandar mensagem pelo site quando tenho dúvida. Ainda assim, recomendo fortemente.”",
-    }
-  ];
+
+  const [depoimentos, setDepoimentos] = useState([]);
 
   const [visibleCards, setVisibleCards] = useState(3);
   const [startIndex, setStartIndex] = useState(0);
+
+  useEffect(() => {
+    async function PuxarDepoimentos() {
+      try {
+        const response = await api.get("/depoimentos");
+        setDepoimentos(response.data);
+      } catch (error) {
+        alert("Erro ao carregar depoimentos");
+      }
+    }
+    PuxarDepoimentos();
+  }, []);
 
   // Responsivo
   useEffect(() => {
@@ -68,6 +53,11 @@ export default function Depoimentos() {
     return cards;
   };
 
+  // Enquanto não carregou nada, evita erro
+  if (depoimentos.length === 0) {
+    return <p>Carregando depoimentos...</p>;
+  }
+
   return (
     <div className="carousel-container">
       <button className="btn prev" onClick={prevSlide}>
@@ -79,9 +69,9 @@ export default function Depoimentos() {
           {getVisibleCards().map((dep, i) => (
             <div className="slide" key={i}>
               <div className="carde">
-                <img src={dep.img} alt={`Depoimento ${i + 1}`} />
-                <p className="especialista">{dep.especialista}</p>
-                <p>{dep.texto}</p>
+                <img src={dep.imagem} alt={dep.titulo} />
+                <p className="especialista">{dep.titulo}</p>
+                <p>{dep.depoimento}</p>
               </div>
             </div>
           ))}

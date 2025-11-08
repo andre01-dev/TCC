@@ -90,7 +90,6 @@ export default function Entrar() {
 
     return (
        
-            <div className='alinhe'>
                  <div className='body-entrar'>
                  <div className='container-entrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
@@ -196,7 +195,7 @@ export default function Entrar() {
             </div>
 
         </div>
-            </div>
+
             
     );
 }

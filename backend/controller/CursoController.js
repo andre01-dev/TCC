@@ -32,6 +32,11 @@ endpoints.get('/puxar/cursos', async (req,resp) => {
     resp.send(registros);
 })
 
+endpoints.get('/puxar/cursos3', async (req,resp) => {
+    let registros = await repoCurso.PuxarCursos3();
+    resp.send(registros);
+})
+
 endpoints.get("/curso", async (req,resp) => {
     let id_curso = req.query.id_curso;
     let registros = await repoCurso.CursoEspecifico(id_curso);

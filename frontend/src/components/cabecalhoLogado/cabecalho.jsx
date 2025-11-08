@@ -32,7 +32,7 @@ export default function CabecalhoLogado({ nome_usuario }) {
                     {menuLogado && (
                         <div className="popup-menu" onClick={() => setMenuLogado(false)}>
                             <div className="popup">
-                                <Link to={"/perfil"}><p>Meu perfil</p></Link>
+                                <Link to={"/perfil"}><p>Meu Perfil</p></Link>
                                 <button onClick={Sair}>Sair</button>
                                 
                             </div>
