@@ -21,3 +21,13 @@ export async function conquistas(id_usuario) {
     const [registros] = await conection.query(comando, [id_usuario]);
     return registros;
 }
+
+export async function editarInfos(id_usuario, nome_usuario, email, telefone) {
+    const comando = `
+        update tb_usuario
+        set nome_usuario = ?, email = ?, telefone = ?
+        where id_usuario = ?
+    `;
+    
+    await conection.query(comando, [nome_usuario, email, telefone, id_usuario]);
+}
