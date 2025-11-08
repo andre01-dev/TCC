@@ -1,3 +1,70 @@
+.voltar-registrar {
+  width: fit-content;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+  overflow: hidden; 
+  color: #003F51;
+  background-color: transparent;
+  transition: color 0.3s ease;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; 
+    background-color: #DFB674; 
+    transition: width 0.4s ease; 
+    z-index: 0; 
+  }
+
+  .voltarReg, p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .voltarReg {
+    background-color: #DFB674;
+    border: none;
+    border-radius: 11px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  p {
+    color: #003F51;
+    transition: color 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 100%; 
+  }
+
+  &:hover p {
+    color: white;
+  }
+
+  &:hover .voltarReg {
+    background-color: white;
+  }
+}
 .body {
     height: 100vh;
     width: 100vw;

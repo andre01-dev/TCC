@@ -3,6 +3,7 @@ import Cabecalho from "../components/cabecalho/cabecalho.jsx";
 import Rodape from "../components/rodape/rodape.jsx";
 import CardColab from "../components/CardsColabs/cardscolabs.jsx";
 import { useState, useEffect } from "react";
+import CabecalhoLogado from '../components/cabecalhoLogado/cabecalho.jsx';
 
 
 export default function Somos() {
@@ -17,6 +18,9 @@ export default function Somos() {
 
   const [visibleCards, setVisibleCards] = useState(3);
   const [startIndex, setStartIndex] = useState(0);
+  const [logado, setLogado] = useState(false)
+  const [nomeUsuario, setNomeUsuario] = useState("");
+  const nome_usuario = localStorage.getItem("NOME_USUARIO");
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,6 +50,21 @@ export default function Somos() {
     return cards;
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("TOKEN");
+
+    if (token != undefined && token != null) {
+      setNomeUsuario(nome_usuario)
+      setLogado(!!token)
+    }
+    else {
+      setLogado(false)
+      setNomeUsuario("")
+    }
+
+
+  }, []);
+
 
   const colab = [{
     "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' height={200} />,
@@ -73,7 +92,17 @@ export default function Somos() {
 
   return (
     <div>
-      <Cabecalho />
+      {logado ? (
+        <>
+          <CabecalhoLogado
+            nome_usuario={nomeUsuario}
+          />
+        </>
+      ) : (
+        <>
+          <Cabecalho />
+        </>
+      )}
       <div className="titul">
         <h1>Quem Somos</h1>
       </div>
@@ -138,9 +167,9 @@ export default function Somos() {
           <button className="btt">saiba mais sobre notícias</button>
         </div>
       </div>
-<div className='desenvol-text'>
-  <h2>Desenvolvedores</h2>
-</div>
+      <div className='desenvol-text'>
+        <h2>Desenvolvedores</h2>
+      </div>
       <div className='alinhando'>
         <div className='cardscolabs'>
           {

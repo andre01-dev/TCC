@@ -60,102 +60,107 @@ export default function Registrar() {
     }
 
     return (
+        <div className='body'>
+            <div className='voltar-registrar'>
+                <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
+                    <button className='voltarReg'>
+                        <img src="/src/assets/images/setaEsquerda.png" height={25} />
+                    </button>
+                    <p>Voltar para a página Inicial</p>
+                </Link>
+            </div>
+            <div className='container-registrar'>
+                <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
+                <div className='titulo-input'>
+                    <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
 
+                    <div className="entrar-registrar">
+                        <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
 
-        
-            <div className='body'>
-                <div className='container-registrar'>
-                    <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
-                    <div className='titulo-input'>
-                        <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
+                        <Link to="/entrar" className={ativo === "entrar" ? "ativo" : ""} onClick={() => window.scrollTo(0, 0)}>
+                            Entrar
+                        </Link>
 
-                        <div className="entrar-registrar">
-                            <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
-
-                            <Link to="/entrar" className={ativo === "entrar" ? "ativo" : ""} onClick={() => window.scrollTo(0, 0)}>
-                                Entrar
-                            </Link>
-
-                            <Link to="/registrar" className={ativo === "registrar" ? "ativo" : ""} onClick={() => window.scrollTo(0, 0)}>
-                                Registrar-se
-                            </Link>
-                        </div>
-
-                        <p>Registre-se para ter acesso ao nosso conteúdo completo</p>
-
-                        <div className='inputs'>
-                            <input
-                                id='input-nome'
-                                value={nome}
-                                onChange={(e) => setNome(e.target.value)}
-                                type="text"
-                                placeholder='Digite seu nome'
-                            />
-
-                            <input
-                                id='input-email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                type="text"
-                                placeholder='Digite seu email'
-                            />
-
-                            <div className='cpf-telefone'>
-                                <input
-                                    id='input-cpf'
-                                    value={cpf}
-                                    onChange={(e) => setCpf(formatarCPF(e.target.value))}
-                                    type="text"
-                                    className='input-menor'
-                                    placeholder='Digite seu CPF'
-                                />
-
-                                <input
-                                    id='input-telefone'
-                                    value={telefone}
-                                    onChange={(e) => setTelefone(formatarTelefone(e.target.value))}
-                                    type="text"
-                                    className='input-menor'
-                                    placeholder='Digite seu telefone'
-                                />
-                            </div>
-
-                            <input
-                                id='input-dtNascimento'
-                                value={dt_nascimento}
-                                onChange={(e) => setDt_nascimento(e.target.value)}
-                                type="text"
-                                placeholder='Informe sua data de nascimento'
-                            />
-
-                            <div className='input-senha-container'>
-                                <input
-                                    type={mostrar ? "text" : "password"}
-                                    placeholder="Crie sua senha"
-                                    className="input-senha"
-                                    value={senha}
-                                    onChange={(e) => setSenha(e.target.value)}
-                                />
-                                <span
-                                    className="icone-senha"
-                                    onClick={() => setMostrar(!mostrar)}
-                                >
-                                    {mostrar ? <Eye size={18} /> : <EyeOff size={18} />}
-                                </span>
-
-                            </div>
-                        </div>
-
-                        <div className='div-bt-registrar'>
-                            <button className='bt-criarConta' onClick={RegistrarUsuario}>
-                                Registrar-se
-                            </button>
-                        </div>
-
-
+                        <Link to="/registrar" className={ativo === "registrar" ? "ativo" : ""} onClick={() => window.scrollTo(0, 0)}>
+                            Registrar-se
+                        </Link>
                     </div>
+
+                    <p>Registre-se para ter acesso ao nosso conteúdo completo</p>
+
+                    <div className='inputs'>
+                        <input
+                            id='input-nome'
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)}
+                            type="text"
+                            placeholder='Digite seu nome'
+                        />
+
+                        <input
+                            id='input-email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="text"
+                            placeholder='Digite seu email'
+                        />
+
+                        <div className='cpf-telefone'>
+                            <input
+                                id='input-cpf'
+                                value={cpf}
+                                onChange={(e) => setCpf(formatarCPF(e.target.value))}
+                                type="text"
+                                className='input-menor'
+                                placeholder='Digite seu CPF'
+                            />
+
+                            <input
+                                id='input-telefone'
+                                value={telefone}
+                                onChange={(e) => setTelefone(formatarTelefone(e.target.value))}
+                                type="text"
+                                className='input-menor'
+                                placeholder='Digite seu telefone'
+                            />
+                        </div>
+
+                        <input
+                            id='input-dtNascimento'
+                            value={dt_nascimento}
+                            onChange={(e) => setDt_nascimento(e.target.value)}
+                            type="text"
+                            placeholder='Informe sua data de nascimento'
+                        />
+
+                        <div className='input-senha-container'>
+                            <input
+                                type={mostrar ? "text" : "password"}
+                                placeholder="Crie sua senha"
+                                className="input-senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                            />
+                            <span
+                                className="icone-senha"
+                                onClick={() => setMostrar(!mostrar)}
+                            >
+                                {mostrar ? <Eye size={18} /> : <EyeOff size={18} />}
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div className='div-bt-registrar'>
+                        <button className='bt-criarConta' onClick={RegistrarUsuario}>
+                            Registrar-se
+                        </button>
+                    </div>
+
+
                 </div>
             </div>
+        </div>
 
 
     );

@@ -89,9 +89,16 @@ export default function Entrar() {
     }
 
     return (
-       
-                 <div className='body-entrar'>
-                 <div className='container-entrar'>
+        <div className='body-entrar'>
+            <div className='voltar-registrar'>
+                <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
+                    <button className='voltarReg'>
+                        <img src="/src/assets/images/setaEsquerda.png" height={25} />
+                    </button>
+                    <p>Voltar para a página Inicial</p>
+                </Link>
+            </div>
+            <div className='container-entrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
                 <div className='titulo-input'>
                     <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
@@ -144,8 +151,8 @@ export default function Entrar() {
                             <input className='inp-lembrar' type="checkbox" checked={lembrar} onChange={(e) => setLembrar(e.target.checked)} />
                             Lembrar de mim
                         </label>
-                        <a href="" className='esqueceu-senhas' 
-                        onClick={(e) => { e.preventDefault(); setAlterarSenha(true); setValidarEmail(false); setEmail(""); setSenha("") }}>Esqueceu a senha?</a>
+                        <a href="" className='esqueceu-senhas'
+                            onClick={(e) => { e.preventDefault(); setAlterarSenha(true); setValidarEmail(false); setEmail(""); setSenha("") }}>Esqueceu a senha?</a>
                         {alterarSenha && (
                             <div className="container-alterarSenha" onClick={() => setAlterarSenha(false)}>
                                 <div className="alterarSenha" onClick={(e) => e.stopPropagation()}>
@@ -196,6 +203,6 @@ export default function Entrar() {
 
         </div>
 
-            
+
     );
 }

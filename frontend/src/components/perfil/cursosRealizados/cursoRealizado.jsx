@@ -2,6 +2,7 @@ import "./cursoRealizado.scss";
 import { useEffect, useState } from "react";
 import api from "../../../api.js";
 import { toast } from "react-toastify";
+import { Link } from 'react-router-dom'
 
 export default function Realizado() {
   const [conquista, setConquista] = useState([]);
@@ -62,7 +63,10 @@ export default function Realizado() {
               <div className="texto">
                 <h3 className="titulo-recomendacao">{item.nome_curso}</h3>
                 <p>{item.descricao}</p>
-                <button>Ver Curso</button>
+                <Link to={item.url}>
+                  <button >Ver Curso</button>
+                </Link>
+
               </div>
               <img src={item.caminho_img} alt={item.nome_curso} />
             </div>
