@@ -1,73 +1,77 @@
-import { useEffect, useState } from "react";
 import "./cursoRealizado.scss";
-import api from "../../../api.js"
+import { useEffect, useState } from "react";
+import api from "../../../api.js";
+import { toast } from "react-toastify";
 
 export default function Realizado() {
-
+  const [conquista, setConquista] = useState([]);
   const [cursos, setCursos] = useState([]);
 
   useEffect(() => {
-    async function Puxarcursos() {
-      try{
-        const response = await api.get("/puxar/cursos3");
-        setCursos(response.data);
-      }
-      catch{
-        alert("Erro");
+
+    const id_usuario = localStorage.getItem("ID_USUARIO");
+    async function PuxarDados() {
+      try {
+        const response = await api.get("/conquistas", {
+          params: { id_usuario }
+        })
+        setConquista(response.data);
+
+        const respCursos = await api.get("/puxar/cursos3");
+        setCursos(respCursos.data);
+      } catch (err) {
+        console.error(err);
+        toast.error("Erro ao carregar informações");
       }
     }
-    Puxarcursos();
-  })
+
+    PuxarDados();
+  }, []); // <- importante: array de dependências para rodar só 1 vez
 
   return (
     <div className="container-tudo">
-      <div className="realizados">
-        <div className="realizado">
-          <img src="/src/assets/images/conquista1.png"  />
-          <div className="tt">
-            <h1>Internet Segura</h1>
-            <h3>Concluído</h3>
-          </div>
-        </div>
 
-        <div className="realizado">
-          <img src="/src/assets/images/conquista2.png"/>
-          <div className="tt">
-            <h1>Compras Online</h1>
-            <h3>Concluído</h3>
-          </div>
-        </div>
-
-        <div className="realizado">
-          <img src="/src/assets/images/conquista3.png" />
-          <div className="tt">
-            <h1>Pagamentos e banco Digital</h1>
-            <h3>Concluído</h3>
-          </div>
-        </div>
-
-        <div className="realizado">
-          <img src="/src/assets/images/conquista4.png" />
-          <div className="tt">
-            <h1>Criando e usando Email</h1>
-            <h3>Concluído</h3>
-          </div>
-        </div>
-      </div>
-
-      {/* Lado direito - Recomendações */}
-      <div className="recomenda-tudo">
-        {cursos.map((item, index) => (
-          <div key={index}>
-            <div className="textos">
-              <h3>{item.nome_curso}</h3>
-              <p>{item.descricao}</p>
-              <button>Ver Curso</button>
+      {conquista && conquista.length > 0 ? (
+        <div className="realizados">
+          {conquista.map((item) => (
+            <div className="realizado" key={item.id_conquista}>
+              <img
+                src={item.img_url}
+                style={{ width: "120px", height: "120px" }}
+              />
+              <div className="tt">
+                <h2>{item.titulo_curso}</h2>
+                <h3>Concluido</h3>
+              </div>
             </div>
-            <img src={item.caminho_img} alt="" />
-          </div>
-        ))}
+          ))}
+        </div>
+      ) : (
+        <div className="sem-cursos">
+          <h3>Você ainda não concluiu nenhum curso</h3>
+          <p>Veja as recomendações ao lado e comece um curso!</p>
+          <img src="/public/images/semconquista.png" height={200} />
+
+        </div>
+      )}
+
+      <div className="recomenda-tudo">
+        {cursos && cursos.length > 0 ? (
+          cursos.map((item) => (
+            <div className="recomendacao" key={item.id_curso}>
+              <div className="texto">
+                <h3 className="titulo-recomendacao">{item.nome_curso}</h3>
+                <p>{item.descricao}</p>
+                <button>Ver Curso</button>
+              </div>
+              <img src={item.caminho_img} alt={item.nome_curso} />
+            </div>
+          ))
+        ) : (
+          <p>Carregando recomendações...</p>
+        )}
       </div>
+
     </div>
   );
 }

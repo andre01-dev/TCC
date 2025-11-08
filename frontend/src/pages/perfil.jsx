@@ -3,9 +3,9 @@ import Cabecalho from "../components/cabecalho/cabecalho";
 import Conquistas from "../components/perfil/conquistas/conquistas";
 import CursoRealizado from "../components/perfil/cursosRealizados/cursoRealizado"
 import User from "../components/perfil/usuario/index";
-import Rodape from "../components/rodape/rodape";
 import "./perfil.scss";
 import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho";
+import Rodape2 from "../components/rodape/rodapePerfil";
 
 export default function Perfil() {
 
@@ -47,7 +47,7 @@ export default function Perfil() {
 
                 <CursoRealizado />
             </div>
-            <Rodape />
+            <Rodape2 />
         </div>
     )
 }

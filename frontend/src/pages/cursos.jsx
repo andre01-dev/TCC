@@ -68,7 +68,7 @@ export default function Cursos() {
 
             <div className='cursos'>
                 {cursos.map(curso =>
-                    <Link to={curso.url} onClick={() => window.scrollTo(0, 0)}>
+                    <Link key={curso.id_curso} to={curso.url} onClick={() => window.scrollTo(0, 0)}>
                         <div className='container-cardCurso'>
                             <div className='cardCurso'>
                                 <img className='imagem' src={curso.caminho_img} alt="" />

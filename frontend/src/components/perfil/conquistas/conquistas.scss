@@ -6,7 +6,7 @@
 }
 
 .conquistas {
-  background-color: #F3E7E7;
+  background-color: #021B23;
   padding: 60px 40px;
   border-radius: 30px;
   display: flex;
@@ -16,6 +16,10 @@
   max-width: 1100px;
   width: 1100px;
   height: 500px;
+  scrollbar-width: thin;
+  scrollbar-color: #c9a86b #003b4d;
+ overflow-y: auto;
+
 }
 
 .conquista {
@@ -24,9 +28,9 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 250px;
-  height: 160px;
+  height: 170px;
   text-align: center;
-  padding: 60px 20px 1px; 
+  padding: 60px 20px 1px;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -41,7 +45,7 @@
 
   img {
     position: absolute;
-    top: -55px; 
+    top: -33px;
     left: 50%;
     transform: translateX(-50%);
     height: 120px;
@@ -52,6 +56,8 @@
     font-size: 16px;
     margin: 5px 0;
     margin-top: 10px;
+
+
   }
 
   .barra {
@@ -59,6 +65,50 @@
     height: 2px;
     background-color: #003f51;
     margin: 6px auto;
+    margin-top: 40px;
     border-radius: 10px;
   }
 }
+
+.confira-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  h2{
+    color:white;
+  }
+
+  .img-conquista{
+    background-color: #f6e9e8;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 12px;
+  }
+}
+
+.confira-cursos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .card-conquista {
+    background-color: #f6e9e8;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  .bt-cursos {
+    background-color: #DFB674;
+    color: #003f51;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 12px;
+
+  }
+}
+

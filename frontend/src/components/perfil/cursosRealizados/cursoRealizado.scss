@@ -38,9 +38,9 @@
     flex-direction: column;
 }
 
-.tt h1 {
+.tt h2 {
     margin-top: 15px;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #fff;
 }
 
@@ -116,4 +116,20 @@
 
 .recomendacao button:hover {
   background-color: #007e96;
+}
+
+.sem-cursos{
+  color: white;
+  background-color: #012027;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  
+  img{
+margin-top: 20px;
+  }
 }

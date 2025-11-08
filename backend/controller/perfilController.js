@@ -14,7 +14,7 @@ endpoints.get('/perfil/informacoes/:id_usuario', async (req,resp) => {
 endpoints.get("/conquistas", async (req,resp) => {
     let id_usuario = req.query.id_usuario;
     const registros = await repoPerfil.conquistas(id_usuario);
-    resp.send(registros);
+    resp.send(registros);   
 })
 
 endpoints.put('/perfil/editar/:id_usuario', async (req, resp) => {

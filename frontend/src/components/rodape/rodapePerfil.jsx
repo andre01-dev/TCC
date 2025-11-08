@@ -1,14 +1,17 @@
 import "./rodape.scss";
 import { Link } from 'react-router'
 
-export default function Rodape() {
+export default function Rodape2() {
   return (
     <footer className="rodape">
-      <div className="onda-topo">
+      <div className="onda-linha">
         <svg viewBox="0 0 1440 320" preserveAspectRatio="none" width="100%" height="80">
-          <path fill="#F3E7E7"
-           d="M0,90 C460,600 700,-100 1440,0 L0,0 Z"    
-          /> 
+          <path
+            d="M0,90 C460,600 700,-100 1440,20"
+            fill="none"
+            stroke="#F3E7E7"     // cor da linha
+            strokeWidth="11"       // espessura
+          />
         </svg>
       </div>
 

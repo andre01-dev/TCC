@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router'
 import "./conquistas.scss"
 import api from "../../../api";
+import { toast } from "react-toastify";
 
 export default function Conquistas() {
 
@@ -19,10 +20,12 @@ export default function Conquistas() {
                 const response = await api.get("/conquistas", {
                     params: { id_usuario }
                 })
+    console.log("RETORNO DA API:", response.data); 
+
                 setConquistas(response.data);
             }
             catch {
-                alert("Erro ao carregar conquistas")
+                toast.error("Erro ao carregar conquistas")
             }
         }
 
@@ -34,24 +37,35 @@ export default function Conquistas() {
         <div className="tudo">
 
             <div className="conquistas">
-                <h1>Suas Conquistas</h1>
                 {conquista && conquista.length > 0 ? (
                     conquista.map((item) => (
                         <>
+                        <div className="conquistas-container">
+                        <div className="conquista" key={item.id_conquista}>
                             <img
                                 src={item.img_url}
                                 alt={item.titulo_curso}
                                 style={{ width: "120px", height: "120px" }}
-                            />
+                                />
+                                <div className="barra"></div>
                             <h2>{item.titulo_curso}</h2>
+                                </div>
+                                </div>
                         </>
 
                     ))
                 ) : (
                     <>
-                        <h3>Você ainda não possue Conquistas</h3>
+                    <div className="confira-container">
+                        <h2>Você não possui nenhuma conquista</h2>
+                        <div className="img-conquista">
+            <img src="/public/images/semconquista.png" height={200} />
+                        </div>
+                    <div className="confira-cursos">
                         <h3>Confira nossos cursos</h3>
                         <button onClick={Cursos} className="bt-cursos">Páginas Cursos</button>
+                    </div>
+                    </div>
                     </>
 
                 )}
