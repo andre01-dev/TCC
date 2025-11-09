@@ -5,7 +5,9 @@ import PerfilController from './controller/perfilController.js';
 import matriculaController from './controller/matriculaController.js';
 import loginAdmController from './controller/loginAdmController.js';
 import depoimentoController from "./controller/depoimentosController.js"
+import NoticiaController from './controller/NoticiaController.js';
 import express from 'express'
+
 
 export default function adicionarRotas(api) {
     api.use(UsuarioControler);
@@ -15,5 +17,6 @@ export default function adicionarRotas(api) {
     api.use(matriculaController);
     api.use(loginAdmController);
     api.use(depoimentoController);
+    api.use(NoticiaController);
     api.use("/images", express.static("images"));
 }

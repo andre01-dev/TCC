@@ -58,13 +58,13 @@ export default function TodasNoticias() {
                 <div className='cardsNoticias'>
                     {noticias.map((noticia) => (
                         <Link
-                            key={noticia.id}
-                            to={noticia.url}
+                        key={noticia.id_noticias}
+                        to={`/noticia/${noticia.id_noticias}`}
                             onClick={() => window.scrollTo(0, 0)}
                         >
                             <div className='cards'>
                                 <CardNoticia
-                                    imagem={noticia.comando_img1}
+                                    imagem={noticia.caminho_img1}
                                     titulo={noticia.titulo}
                                 />
                             </div>

@@ -1,50 +1,79 @@
 .item {
     display: flex;  
-    align-items: center;
+    align-items: flex-start; /* alinhado ao topo da imagem/texto */
+    justify-content: flex-start; /* tudo à esquerda */
     margin-bottom: 20px;  
-    
+    text-align: left; /* textos alinhados à esquerda */
+
     .image {
         width: 300px; 
         margin-right: 20px;  
         height: 200px;
         border-radius: 20px;
         margin-left: 30px;
+        object-fit: cover; /* garante que a imagem mantenha o formato */
     }
     
-    .texto h2{
-        color: #003F51;
+    .texto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* texto começa à esquerda */
+        justify-content: flex-start;
+        text-align: left;
+
+        h2 {
+            color: #003F51;
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
     }
 }
 
-.item :hover{
+.item:hover {
     scale: 1.01;
     transition: 0.2s;
     cursor: pointer;
     border-radius: 10px;
 }
 
-.conteudo{
-    a{
+.conteudo {
+    display: flex;
+    flex-direction: column; /* um embaixo do outro */
+    align-items: flex-start; /* tudo alinhado à esquerda */
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+
+    a {
         text-decoration: none;
         color: black;
+        width: 100%;
     }
-    .alinhar{
+
+    .alinhar {
         display: flex;
         justify-content: end;
         align-items: center;
         gap: 15px;
-        button{
+        width: 100%;
+        
+        button {
             padding: 10px 20px;
             color: #003F51;
             font-size: larger;
             background-color: #e6c07b;
             border-color: #e6c07b;
             cursor: pointer;
+            border-radius: 8px;
         }
-        p{
+
+        p {
             color: #003F51;
         }
     }
-    
 }
-    

@@ -19,7 +19,7 @@ export default function Cabecalho() {
             <div className="container-cabecalho">
                 <div>
                     <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
-                        <img src="src/assets/images/logoVeio.png" height={90} />
+                        <img src="/images/logoVeio.png" height={90} />
                     </Link>
                 </div>
                 <h1 className='titulo-cabecalho'>CONECTANDO GERAÇÕES</h1>

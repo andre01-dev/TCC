@@ -7,8 +7,10 @@
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.4",
     "react-toastify": "^11.0.5",
+    "remark-gfm": "^4.0.1",
     "sass": "^1.93.2",
     "vite": "^7.1.10"
   },
