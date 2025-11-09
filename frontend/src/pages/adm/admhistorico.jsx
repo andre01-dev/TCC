@@ -96,7 +96,8 @@ export default function AdmHistorico() {
               </div>
             ))}
           </div>
-        </div><div className="divbut">
+        </div>
+        <div className="divbut">
           <Link to={'/adm'}>
             <button> Voltar Para Página Inicial</button>
           </Link>

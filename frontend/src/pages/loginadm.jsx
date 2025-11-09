@@ -19,9 +19,9 @@ export default function LoginAdm() {
             const r = await api.post("/loginadm", { usuario, senha });
 
             if (r.data.ok === true) {
-                navigate("/adm");
+                localStorage.setItem("admLogado","true")
                 toast.success("login realizado")
-
+                navigate("/adm");
             } else{
                 toast.error("Usuário ou senha incorretos!");
             }

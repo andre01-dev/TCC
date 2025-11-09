@@ -1,60 +1,192 @@
 .container-adm {
     background-color: #003d4d;
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     margin-top: -60px;
-
+    overflow-x: hidden;
+  
     .container {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      background-color: #003d4d;
+  
+      .sidebar {
+        width: 260px;
+        border-right: 4px inset #f3e7e7;
+        min-height: 100vh;
         display: flex;
-        height: 100%;
-        width: 100%;
-        background-color: #003d4d;
-
-        .sidebar {
-            width: 260px;
-            border-right: 4px inset #F3E7E7;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            ul {
-                list-style: none;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-
-                li {
-                    a {
-                        text-decoration: none;
-                        font-size: 28px;
-                        color: #F3E7E7;
-                        display: block;
-                        padding: 10px 20px;
-                        border-left: 4px solid transparent;
-                        transition: 0.3s;
-
-                        &:hover {
-                            border-left: 5px solid #F3E7E7;
-                            transform: translateX(6px);
-                        }
-                    }
-                }
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+  
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+          padding: 0;
+          margin: 0;
+  
+          li {
+            a {
+              text-decoration: none;
+              font-size: 1.7rem;
+              color: #f3e7e7;
+              display: block;
+              padding: 10px 20px;
+              border-left: 4px solid transparent;
+              transition: 0.3s;
+  
+              &:hover {
+                border-left: 5px solid #f3e7e7;
+                transform: translateX(6px);
+              }
             }
+          }
         }
-
-        .conteudo {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .logoanimada {
-                height: 600px;
-                transition: 0.3s;
-            }
-
+      }
+  
+      .conteudo {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+  
+        .logoanimada {
+          height: 600px;
+          max-width: 90%;
+          transition: 0.3s;
+          object-fit: contain;
         }
+      }
     }
-}
+  }
+  
+  button {
+    color: #003f51;
+    background-color: #dfb674;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: 0.3s;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: #e4c082;
+    }
+  }
+  
+  /* ========================================================= */
+  /* 📱 RESPONSIVIDADE */
+  /* ========================================================= */
+  
+  /* 💻 1024px — Tablets e notebooks menores */
+  @media (max-width: 1024px) {
+    .container-adm {
+      .container {
+        flex-direction: column;
+  
+        .sidebar {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #f3e7e7;
+          padding: 10px 0;
+  
+          ul {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+  
+            li a {
+              font-size: 1.2rem;
+              padding: 8px 12px;
+            }
+          }
+        }
+  
+        .conteudo {
+          .logoanimada {
+            height: 400px;
+            margin-bottom: 360px;
+          }
+        }
+      }
+    }
+  }
+  
+  /* 📱 768px — Tablets e celulares grandes */
+  @media (max-width: 768px) {
+    .container-adm {
+      margin-top: 0;
+  
+      .container {
+        .sidebar {
+          ul {
+            gap: 8px;
+  
+            li a {
+              font-size: 1rem;
+              padding: 6px 10px;
+            }
+          }
+        }
+  
+        .conteudo {
+          .logoanimada {
+            height: 280px;
+            margin-bottom: 360px;
+          }
+        }
+      }
+    }
+  
+    button {
+      font-size: 0.95rem;
+      padding: 6px 10px;
+    }
+  }
+  
+  /* 📱 480px — Celulares pequenos */
+  @media (max-width: 480px) {
+    .container-adm {
+      .container {
+        flex-direction: column;
+  
+        .sidebar {
+          padding: 8px 0;
+          ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+  
+            li a {
+              font-size: 0.9rem;
+              padding: 5px 8px;
+            }
+          }
+        }
+  
+        .conteudo {
+          padding: 10px;
+          .logoanimada {
+            height: 200px;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  
+    button {
+      width: 100%;
+      max-width: 150px;
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
+  

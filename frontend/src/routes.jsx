@@ -23,6 +23,7 @@ import Adm from "./pages/adm/adm.jsx";
 import LoginAdm from "./pages/loginadm.jsx";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import RotasPrivadas from "./components/rotasprivadas.jsx";
 
 export default function Navegacao() {
     return (
@@ -47,9 +48,9 @@ export default function Navegacao() {
                     <Route path="/curso8" element={<Curso8 />} />
                     <Route path="/curso9" element={<Curso9 />} />
                     <Route path="/denuncia" element={<Denunciapag />} />
-                    <Route path="/admhistorico" element={<AdmHistorico />} />
-                    <Route path="/dashboard" element={<RelatorioGeralCursos />} />
-                    <Route path="/adm" element={<Adm/>} />
+                    <Route path="/admhistorico" element={<RotasPrivadas><AdmHistorico /></RotasPrivadas>} />
+                    <Route path="/dashboard" element={<RotasPrivadas><RelatorioGeralCursos /></RotasPrivadas>} />
+                    <Route path="/adm" element={<RotasPrivadas><Adm/></RotasPrivadas>} />
                     <Route path="/loginadm" element={<LoginAdm/>} />
                 </Routes>
              <ToastContainer position="top-center" autoClose={2500} />
