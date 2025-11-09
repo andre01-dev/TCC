@@ -181,17 +181,18 @@ export default function Curso1() {
               <div className="video-box">
                 <iframe
                   src="https://www.youtube.com/embed/JkNe9_6qHEs?si=34kH75L1q1LCs6yC"
-                  title="Curso Criando e Usanso Email - Criando e Usanso Email"
+                  title="Curso Criando e Usando Email - Criando e Usando Email"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
-
+                            <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "criando e usando e-mail"
+    ? "Aprenda a criar e utilizar seu e-mail de forma prática e segura. Neste curso, você vai entender como configurar uma conta, enviar e receber mensagens, organizar sua caixa de entrada e reconhecer tentativas de fraude. Ideal para quem deseja se comunicar com confiança no mundo digital."
+    : curso.descricao}
+</p>
 
             </div>
 

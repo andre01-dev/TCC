@@ -2,7 +2,7 @@ import Cabecalho from '../../components/cabecalho/cabecalho';
 import Rodape from '../../components/rodape/rodape';
 import CardNoticia from '../../components/cardNoticia/cardNoticia';
 import './fullnotices.scss';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
 import CabecalhoLogado from '../../components/cabecalhoLogado/cabecalho';
 import api from '../../api';

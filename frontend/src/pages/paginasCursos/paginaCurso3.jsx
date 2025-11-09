@@ -174,7 +174,11 @@ export default function Curso1() {
         {mostrarConteudo ? (
           <>
             <div className="lado-esquerdo">
-              <h1>{curso.nome_curso}</h1>
+           <h1>
+  {curso.nome_curso === "Pagamentos Seguras"
+    ? "Pagamentos Seguros"
+    : curso.nome_curso}
+</h1>
 
               <div className="video-box">
                 <iframe
@@ -186,9 +190,11 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
+        <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "pagamentos seguras"
+    ? " Neste curso, você vai aprender a realizar pagamentos online com segurança e confiança. Serão apresentadas as principais formas de pagamento digital, como cartões, boletos e carteiras virtuais, além dos cuidados necessários para proteger seus dados financeiros. Você também aprenderá a identificar sites e plataformas confiáveis, evitar golpes e compreender como funcionam as medidas de proteção oferecidas pelos bancos e sistemas de pagamento. O objetivo é garantir que cada transação seja feita de forma segura, consciente e sem riscos."
+    : curso.descricao}
+</p>
 
 
             </div>
@@ -198,7 +204,9 @@ export default function Curso1() {
                 <p className="tema">Bancos Digitais</p>
                 <p className="tempo">{curso.duracao}</p>
 
-                <h2>{curso.nome_curso}</h2>
+                <h2> {curso.nome_curso === "Pagamentos Seguras"
+    ? "Pagamentos Seguros"
+    : curso.nome_curso}</h2>
                 <p className="resumo">
                   Guia básico de como fazer transações finaceiras de forma rapida e segura.
                 </p>

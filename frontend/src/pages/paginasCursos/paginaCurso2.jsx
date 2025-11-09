@@ -8,6 +8,8 @@ import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import { useNavigate } from "react-router-dom";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
@@ -27,14 +29,14 @@ export default function Curso1() {
   const id_curso = 2;
 
   async function verificarConclusao() {
-    const id_usuario = localStorage.getItem("ID_USUARIO")
+    const id_usuario = localStorage.getItem("ID_USUARIO");
     try {
       const resp = await api.get("/curso/concluido", {
         params: { id_curso, id_usuario },
       });
 
       if (resp.data.concluido === true) {
-        alert("Você já concluiu esse curso!");
+        toast.info("Você já concluiu esse curso!");
         navigate("/cursos");
       }
     } catch (err) {
@@ -43,24 +45,18 @@ export default function Curso1() {
   }
 
   async function CursoEspecifico() {
-    const response = await api.get("/curso", {
-      params: { id_curso }
-    })
+    const response = await api.get("/curso", { params: { id_curso } });
     setCurso(response.data[0]);
   }
 
   async function PuxarModulos() {
-    const response = await api.get('/cursos/modulos', {
-      params: { id_curso }
-    })
+    const response = await api.get("/cursos/modulos", { params: { id_curso } });
     setModulos(response.data);
   }
 
   async function PuxarQuiz() {
-    const response = await api.get("/cursos/quiz", {
-      params: { id_curso }
-    })
-    setQuiz(response.data)
+    const response = await api.get("/cursos/quiz", { params: { id_curso } });
+    setQuiz(response.data);
   }
 
   useEffect(() => {
@@ -71,58 +67,51 @@ export default function Curso1() {
       setInscritoCurso(true);
     }
 
-    if (token != undefined && token != null) {
-      setNomeUsuario(nome_usuario)
-      setLogado(!!token)
-    }
-    else {
-      setLogado(false)
-      setNomeUsuario("")
+    if (token) {
+      setNomeUsuario(nome_usuario);
+      setLogado(true);
+    } else {
+      setLogado(false);
+      setNomeUsuario("");
     }
 
-    if (passarModulo == -1) {
+    if (passarModulo === -1) {
       navigate("/curso1");
       window.location.reload();
     }
 
-
     CursoEspecifico();
     PuxarModulos();
     PuxarQuiz();
-
-  }, [])
+  }, []);
 
   async function inscreverCurso() {
-
     const id_usuario = localStorage.getItem("ID_USUARIO");
     try {
       if (logado) {
-        const response = await api.put("/inscrever", {
-          id_usuario,
-          id_curso
-        })
-        alert("Inscrição realizada com sucesso!");
+        await api.put("/inscrever", { id_usuario, id_curso });
+        toast.success("Inscrição realizada com sucesso!");
         setMostrarConteudo(false);
         localStorage.setItem(`MATRICULADO_${id_curso}`, true);
+      } else {
+        toast.info("Faça login para se inscrever em um curso");
       }
-      else {
-        alert("Faça login para se inscrever em um curso");
-      }
-    }
-    catch (e) {
-      alert(e.response?.data?.erro || "Erro ao realizar inscrição")
+    } catch (e) {
+      toast.error(e.response?.data?.erro || "Erro ao realizar inscrição");
     }
   }
 
-  async function MatriculadoCurso() {
+  
+  
+       async function MatriculadoCurso() {
     const id_usuario = localStorage.getItem("ID_USUARIO");
-
     const response = await api.get("/curso/concluido", {
-      params: { id_curso, id_usuario }
-    });
+      params: { id_curso, id_usuario },
+    
+       });
 
     if (response.data[0]?.concluido === 1) {
-      alert("Você já concluiu esse curso!");
+      toast.info("Você já concluiu esse curso!");
       navigate("/cursos");
       return;
     }
@@ -145,19 +134,22 @@ export default function Curso1() {
     if (resultado === "acertou") {
       try {
         await api.put("/concluir", { id_usuario });
-        alert("Parabéns, você finalizou o curso");
-        navigate('/cursos')
+        toast.success("Parabéns! Você finalizou o curso 🎉");
+        navigate("/cursos");
       } catch (e) {
-        alert("Erro ao finalizar curso");
+        toast.error("Erro ao finalizar curso");
         console.error(e);
       }
     } else {
-      alert("Você errou a questão.");
+      toast.warn("Você errou a questão. Tente novamente!");
     }
   }
 
   return (
     <div className="pagina-curso">
+    
+      <ToastContainer position="top-center" autoClose={3000} />
+
       {logado ? (
         <CabecalhoLogado nome_usuario={nomeUsuario} />
       ) : (
@@ -181,10 +173,11 @@ export default function Curso1() {
               </div>
 
               <p className="descricao">
-                {curso.descricao}
+                {curso.nome_curso?.toLowerCase() ===
+                "compras online de forma segura"
+                  ? "Neste curso, você aprenderá a reconhecer práticas enganosas e evitar fraudes em ambientes digitais. Serão apresentados os principais tipos de golpes online, como identificar sites e ofertas suspeitas e quais cuidados adotar ao realizar compras na internet. Além disso, você vai entender como controlar impulsos de consumo, desenvolvendo hábitos mais seguros e conscientes nas suas transações digitais."
+                  : curso.descricao}
               </p>
-
-
             </div>
 
             <div className="lado-direito">
@@ -224,17 +217,11 @@ export default function Curso1() {
                     }}
                   />
                 ) : (
-                  <BtCurso
-                    titulo={"INSCREVA-SE"}
-                    onClick={inscreverCurso}
-                  />
+                  <BtCurso titulo={"INSCREVA-SE"} onClick={inscreverCurso} />
                 )}
-
               </div>
             </div>
           </>
-
-
         ) : (
           <div>
             {logado ? (
@@ -254,7 +241,6 @@ export default function Curso1() {
                     </div>
                   </>
                 )}
-
 
                 {passarModulo === modulos.length && (
                   <>
@@ -276,8 +262,6 @@ export default function Curso1() {
               </>
             ) : null}
           </div>
-
-
         )}
       </main>
 

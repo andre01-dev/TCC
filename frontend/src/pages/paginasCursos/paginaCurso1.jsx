@@ -8,24 +8,25 @@ import api from "../../api.js";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
 import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
+import { ToastContainer, toast } from "react-toastify";
 
-export default function Curso1() {
-  const [nomeUsuario, setNomeUsuario] = useState("");
-  const [logado, setLogado] = useState(false);
-  const nome_usuario = localStorage.getItem("NOME_USUARIO");
-  const [passarModulo, setPassarModulo] = useState(0);
-  const [mostrarConteudo, setMostrarConteudo] = useState(true);
-  const [inscritoCurso, setInscritoCurso] = useState(false);
-  const navigate = useNavigate();
-  const [modulos, setModulos] = useState([]);
-  const [quiz, setQuiz] = useState([]);
-  const [curso, setCurso] = useState({
+
+   export default function Curso1() {
+    const [nomeUsuario, setNomeUsuario] = useState("");
+    const [logado, setLogado] = useState(false);
+    const nome_usuario = localStorage.getItem("NOME_USUARIO");
+    const [passarModulo, setPassarModulo] = useState(0);
+    const [mostrarConteudo, setMostrarConteudo] = useState(true);
+    const [inscritoCurso, setInscritoCurso] = useState(false);
+     const navigate = useNavigate();
+      const [modulos, setModulos] = useState([]);
+    const [quiz, setQuiz] = useState([]);
+    const [curso, setCurso] = useState({
     nome_curso: "",
     descricao: "",
     duracao: "",
   });
   const id_curso = 1;
-
 
   async function verificarConclusao() {
     const id_usuario = localStorage.getItem("ID_USUARIO")
@@ -34,18 +35,15 @@ export default function Curso1() {
         params: { id_curso, id_usuario },
       });
 
-      console.log("Resposta da API:", resp.data);
-
       if (resp.data.concluido === true) {
-        alert("Você já concluiu esse curso!");
+        toast.info("Você já concluiu esse curso!");
         navigate("/cursos");
       }
     } catch (err) {
       console.error("Erro ao verificar conclusão", err);
+      toast.error("Erro ao verificar conclusão do curso");
     }
   }
-
-
 
   async function CursoEspecifico() {
     const response = await api.get("/curso", {
@@ -68,7 +66,6 @@ export default function Curso1() {
     setQuiz(response.data)
   }
 
-
   useEffect(() => {
     const token = localStorage.getItem("TOKEN");
     const matriculado = localStorage.getItem(`MATRICULADO_${id_curso}`);
@@ -80,8 +77,7 @@ export default function Curso1() {
     if (token != undefined && token != null) {
       setNomeUsuario(nome_usuario)
       setLogado(!!token)
-    }
-    else {
+    } else {
       setLogado(false)
       setNomeUsuario("")
     }
@@ -94,29 +90,24 @@ export default function Curso1() {
     CursoEspecifico();
     PuxarModulos();
     PuxarQuiz();
-
   }, [])
 
-
   async function inscreverCurso() {
-
     const id_usuario = localStorage.getItem("ID_USUARIO");
     try {
       if (logado) {
-        const response = await api.put("/inscrever", {
+        await api.put("/inscrever", {
           id_usuario,
           id_curso
         })
-        alert("Inscrição realizada com sucesso!");
+        toast.success("Inscrição realizada com sucesso!");
         setMostrarConteudo(false);
         localStorage.setItem(`MATRICULADO_${id_curso}`, true);
+      } else {
+        toast.info("Faça login para se inscrever em um curso");
       }
-      else {
-        alert("Faça login para se inscrever em um curso");
-      }
-    }
-    catch (e) {
-      alert(e.response?.data?.erro || "Erro ao realizar inscrição")
+    } catch (e) {
+      toast.error(e.response?.data?.erro || "Erro ao realizar inscrição");
     }
   }
 
@@ -128,7 +119,7 @@ export default function Curso1() {
     });
 
     if (response.data[0]?.concluido === 1) {
-      alert("Você já concluiu esse curso!");
+      toast.info("Você já concluiu esse curso!");
       navigate("/cursos");
       return;
     }
@@ -151,19 +142,21 @@ export default function Curso1() {
     if (resultado === "acertou") {
       try {
         await api.put("/concluir", { id_usuario });
-        alert("Parabéns, você finalizou o curso");
+        toast.success("Parabéns, você finalizou o curso!");
         navigate('/cursos')
       } catch (e) {
-        alert("Erro ao finalizar curso");
+        toast.error("Erro ao finalizar curso");
         console.error(e);
       }
     } else {
-      alert("Você errou a questão.");
+      toast.error("Você errou a questão. Tente novamente!");
     }
   }
 
   return (
     <div className="pagina-curso">
+      <ToastContainer position="top-center" autoClose={3000} />
+      
       {logado ? (
         <CabecalhoLogado nome_usuario={nomeUsuario} />
       ) : (
@@ -171,7 +164,6 @@ export default function Curso1() {
       )}
 
       <main className="conteudo">
-
         {mostrarConteudo ? (
           <>
             <div className="lado-esquerdo">
@@ -188,10 +180,10 @@ export default function Curso1() {
               </div>
 
               <p className="descricao">
-                {curso.descricao}
+                {curso.nome_curso?.toLowerCase() === "fake news"
+                  ? "Neste curso, você aprenderá a reconhecer e analisar conteúdos falsos que circulam nas redes. Serão abordados os principais tipos de fake news, suas estratégias de disseminação e formas de verificação da informação. O objetivo é desenvolver um olhar crítico e responsável para garantir uma navegação mais segura e consciente na internet."
+                  : curso.descricao}
               </p>
-
-
             </div>
 
             <div className="lado-direito">
@@ -206,7 +198,6 @@ export default function Curso1() {
                 </p>
 
                 <p className="nivel">Nível: Básico</p>
-
                 <div className="gratuito">Gratuito</div>
 
                 <div className="inclui">
@@ -237,12 +228,9 @@ export default function Curso1() {
                     onClick={inscreverCurso}
                   />
                 )}
-
               </div>
             </div>
           </>
-
-
         ) : (
           <div>
             {logado ? (
@@ -262,7 +250,6 @@ export default function Curso1() {
                     </div>
                   </>
                 )}
-
 
                 {passarModulo === modulos.length && (
                   <>
@@ -284,10 +271,7 @@ export default function Curso1() {
               </>
             ) : null}
           </div>
-
-
         )}
-
       </main>
 
       <Rodape />

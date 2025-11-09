@@ -188,9 +188,11 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
+                      <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "senhas seguras"
+    ? "Aprenda a criar e gerenciar senhas fortes para proteger suas contas e dados pessoais. Este curso mostra boas práticas de segurança digital e ensina como evitar os erros mais comuns que facilitam invasões e vazamento de informações. "
+    : curso.descricao}
+</p>
 
 
             </div>

@@ -189,10 +189,11 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
-
+                <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "organização digital"
+    ? " Neste curso, você aprenderá a manter seus arquivos, contas e informações organizadas no ambiente digital. Serão abordadas ferramentas e estratégias para gerenciar documentos, senhas e tarefas de forma prática e eficiente. O objetivo é ajudar você a criar um sistema digital limpo, seguro e produtivo, facilitando o seu dia a dia online."
+    : curso.descricao}
+</p>
 
             </div>
 

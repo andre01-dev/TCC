@@ -188,10 +188,11 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
-
+                           <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "educação financeira digital"
+    ? "Aprenda a lidar com o dinheiro de forma inteligente no ambiente online. Este curso aborda os principais conceitos de finanças digitais, como bancos digitais, carteiras virtuais, investimentos e segurança nas transações. O objetivo é desenvolver hábitos financeiros saudáveis e responsáveis no mundo conectado. "
+    : curso.descricao}
+</p>
 
             </div>
 

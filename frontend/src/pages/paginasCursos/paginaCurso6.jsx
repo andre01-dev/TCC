@@ -188,10 +188,11 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
-
+                        <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "introdução a inteligência artificial"
+    ? " Descubra o que é Inteligência Artificial e como ela está presente no seu cotidiano. Neste curso, você aprenderá os conceitos básicos da IA, suas aplicações em diferentes áreas e os cuidados éticos e de segurança no uso dessas tecnologias. Um primeiro passo para compreender o futuro digital de forma consciente e informada."
+    : curso.descricao}
+</p>
 
             </div>
 

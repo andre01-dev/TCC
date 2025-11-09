@@ -187,9 +187,11 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-              <p className="descricao">
-                {curso.descricao}
-              </p>
+                       <p className="descricao">
+  {curso.nome_curso?.toLowerCase() === "golpes"
+    ? "Neste curso, você vai aprender a identificar e evitar golpes conhecidos como phishing — tentativas de roubo de dados pessoais por meio de e-mails falsos. Serão apresentadas as principais táticas usadas por golpistas e estratégias simples para proteger suas informações e navegar com segurança. "
+    : curso.descricao}
+</p>
 
 
             </div>
