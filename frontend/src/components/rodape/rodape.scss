@@ -108,3 +108,54 @@
 .onda-linha svg {
   display: block;
 }
+
+
+@media (max-width: 768px) {
+
+  .rodape .rodape-conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 30px 30px;
+    gap: 45px;
+  }
+
+  .rodape .rodape-conteudo .coluna,
+  .rodape .rodape-conteudo .logo {
+    align-items: center !important;
+  }
+
+  .rodape .rodape-conteudo .coluna ul li {
+    font-size: 17px;
+  }
+
+  .rodape .rodape-conteudo h4 {
+    font-size: 22px;
+  }
+
+  .rodape .rodape-conteudo .logo img {
+    width: 120px;
+  }
+
+  .rodape .rodape-final {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .rodape .rodape-conteudo {
+    padding: 50px 20px 20px;
+  }
+
+  .rodape .rodape-conteudo .coluna ul li {
+    font-size: 16px;
+  }
+
+  .rodape .rodape-final {
+    font-size: 11px;
+  }
+}

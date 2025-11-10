@@ -25,7 +25,7 @@ export default function Parte2() {
 
   return (
     <section className="tudo">
-      <div className="conteudo">
+      <div className="conteudo-agora">
         {noticias.map((noticia) => (
           <Link
             key={noticia.id_noticias}

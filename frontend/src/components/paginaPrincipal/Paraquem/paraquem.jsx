@@ -10,7 +10,7 @@ export default function Parte2() {
         
       </div>
         
-      <div className="conteudo">
+      <div className="conteudo-paraquem">
         <h2>Para quem é o Conectando Gerações?</h2>
 
         <div className="text">

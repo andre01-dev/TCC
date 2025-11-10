@@ -1,9 +1,9 @@
 .item {
     display: flex;  
-    align-items: flex-start; /* alinhado ao topo da imagem/texto */
-    justify-content: flex-start; /* tudo à esquerda */
+    align-items: flex-start;
+    justify-content: flex-start; 
     margin-bottom: 20px;  
-    text-align: left; /* textos alinhados à esquerda */
+    text-align: left; 
 
     .image {
         width: 300px; 
@@ -11,13 +11,13 @@
         height: 200px;
         border-radius: 20px;
         margin-left: 30px;
-        object-fit: cover; /* garante que a imagem mantenha o formato */
+        object-fit: cover;
     }
     
     .texto {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* texto começa à esquerda */
+        align-items: flex-start;
         justify-content: flex-start;
         text-align: left;
 
@@ -41,10 +41,10 @@
     border-radius: 10px;
 }
 
-.conteudo {
+.conteudo-agora {
     display: flex;
-    flex-direction: column; /* um embaixo do outro */
-    align-items: flex-start; /* tudo alinhado à esquerda */
+    flex-direction: column;
+    align-items: flex-start; 
     justify-content: flex-start;
     text-align: left;
     width: 100%;
@@ -76,4 +76,51 @@
             color: #003F51;
         }
     }
+}
+
+
+@media (max-width: 768px) {
+
+  .item {
+    flex-direction: column; /* fica um embaixo do outro */
+    align-items: center; /* centraliza */
+    text-align: center; /* texto centralizado */
+    margin-bottom: 30px;
+
+    .image {
+      width: 85%; 
+      height: auto;
+      margin: 0 0 15px 0; /* remove margens laterais e dá espaço abaixo */
+      border-radius: 15px;
+    }
+
+    .texto {
+      align-items: center; /* centraliza texto */
+      text-align: center;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        padding: 0 15px; /* evita colar na borda da tela */
+      }
+    }
+  }
+
+  .conteudo-agora {
+    align-items: center !important;
+    text-align: center !important;
+
+    .alinhar {
+      justify-content: center; /* botão e texto centralizados */
+      margin-top: 15px;
+    }
+
+    .alinhar button {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+  }
 }

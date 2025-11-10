@@ -80,14 +80,56 @@
   right: 10px;
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
-  .carousel-inner-wrapper {
-    max-width: 700px;
+
+@media (max-width: 768px) {
+
+  .carousel-container {
+    padding: 40px 0;
   }
-}
-@media (max-width: 700px) {
+
   .carousel-inner-wrapper {
-    max-width: 300px;
+    max-width: 300px; /* largura ideal para 1 card */
+  }
+
+  .carousel-inner {
+    gap: 0; /* remove espaço entre slides no mobile */
+    justify-content: flex-start; /* faz o slide deslizar corretamente */
+  }
+
+  .slide {
+    flex: 0 0 100%; /* cada slide ocupa toda a largura */
+    display: flex;
+    justify-content: center;
+  }
+
+  .carde {
+    width: 90%;
+    padding: 15px;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  /* Botões menores e mais próximos */
+  .btn {
+    font-size: 18px;
+    padding: 2px;
+  }
+
+  .prev {
+    left: 5px;
+    width: 59px;
+    height: 40px;  }
+
+  .next {
+    right: 5px;
+    width: 59px;
+    height: 40px;
   }
 }

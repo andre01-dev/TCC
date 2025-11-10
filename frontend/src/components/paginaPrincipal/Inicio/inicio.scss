@@ -126,3 +126,46 @@ height: 20px;
     height: 510px;
 }
 
+
+@media (max-width: 768px) {
+
+  .tudo {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .tudo-img {
+    justify-content: center;
+  }
+
+  .img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .td {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .titulo {
+    font-size: 28px !important;
+  }
+
+  .txt{
+    font-size: 18px;
+    text-align: center;
+  }
+.txtxt {
+  font-size: 18px;
+}
+  .bt {
+    font-size: 15px;
+    padding: .6rem 1rem;
+  }
+
+}
+

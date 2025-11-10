@@ -3,7 +3,6 @@
 background-color: #DFC8BA;
   padding-bottom: 60px;
   color: #022a36;
-  font-family: "Poppins", sans-serif;
 
   .onda-topo {
     position: absolute;
@@ -23,7 +22,7 @@ background-color: #DFC8BA;
 
  
 
-  .conteudo {
+  .conteudo-paraquem {
     position: relative;
     padding: 140px 20px 60px;
     text-align: center;
@@ -75,3 +74,43 @@ background-color: #DFC8BA;
   }
 }
  
+
+@media (max-width: 768px) {
+
+  .parte2 .conteudo-paraquem {
+    padding: 100px 20px 40px;
+  }
+
+  .parte2 .conteudo-paraquem h2 {
+    font-size: 1.3rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .parte2 .conteudo-paraquem .text {
+    flex-direction: column; /* imagem em cima, texto embaixo */
+    gap: 20px;
+  }
+
+  .parte2 .conteudo-paraquem .text .imga {
+    width: 260px;
+    height: 190px;
+    border-radius: 15px;
+  }
+
+  .parte2 .conteudo-paraquem .text .texto {
+    max-width: 100%;
+    text-align: center; /* centraliza texto no mobile */
+    font-size: 1rem; /* substitui o 400px */
+  }
+
+  .parte2 .conteudo-paraquem .text .texto h3 {
+    font-size: 1.5rem;
+  }
+
+  .parte2 .conteudo-paraquem .text .texto p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 10px; /* espaçamento lateral para não colar nas bordas */
+  }
+}

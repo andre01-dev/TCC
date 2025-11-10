@@ -6,7 +6,7 @@ import BigNumber from "../components/paginaPrincipal/BigNumber";
 import CardCurso2 from "../components/paginaPrincipal/CardCurso2/cardCurso2";
 import MVV from "../components/paginaPrincipal/mvv/mvv";
 import Depoimentos from "../components/paginaPrincipal/depoimentos/depoimentos";
-import AcontecendoAgora from "../components/paginaPrincipal/AcontecemdoAgora/AcontecendoAgora";
+import AcontecendoAgora from "../components/paginaPrincipal/AcontecendoAgora/AcontecendoAgora";
 import Rodape from "../components/rodape/rodape";
 import { useEffect, useState } from "react";
 import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho";
