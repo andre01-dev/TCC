@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import api from '../api';
 import Cabecalho from '../components/cabecalho/cabecalho';
+import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho.jsx"
 import Rodape from '../components/rodape/rodape';
 import './denunciapag.scss';
 
@@ -12,6 +13,9 @@ export default function Denunciapag() {
   const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [denuncias, setDenuncias] = useState([]);
+  const [nomeUsuario, setNomeUsuario] = useState("");
+  const [logado, setLogado] = useState(false)
+  const nome_usuario = localStorage.getItem("NOME_USUARIO");
 
 
 
@@ -34,10 +38,10 @@ export default function Denunciapag() {
 
       // 2 Envia também o email pelo EmailJS
       await emailjs.send(
-        'denuncia_tcc',    
-        'template_1l75xyn',    
-        { assunto, data, ocorrido,email },
-        'Tu-dCpjOHZRwzxbT4'      
+        'denuncia_tcc',
+        'template_1l75xyn',
+        { assunto, data, ocorrido, email },
+        'Tu-dCpjOHZRwzxbT4'
       );
 
       setMensagem('Denúncia enviada com sucesso!');
@@ -54,12 +58,33 @@ export default function Denunciapag() {
   }
 
   useEffect(() => {
+    const token = localStorage.getItem("TOKEN");
+
+    if (token != undefined && token != null) {
+      setNomeUsuario(nome_usuario)
+      setLogado(!!token)
+    }
+    else {
+      setLogado(false)
+      setNomeUsuario("")
+    }
+    
     carregarDenuncias();
   }, []);
 
   return (
     <div>
-      <Cabecalho />
+      {logado ? (
+        <>
+          <CabecalhoLogado
+            nome_usuario={nomeUsuario}
+          />
+        </>
+      ) : (
+        <>
+          <Cabecalho />
+        </>
+      )}
       <div className="denuncia-page">
         <form className="form-denuncia" onSubmit={enviarDenuncia}>
           <div className="form-row">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Cabecalho from "../components/cabecalho/cabecalho";
 import Conquistas from "../components/perfil/conquistas/conquistas";
 import CursoRealizado from "../components/perfil/cursosRealizados/cursoRealizado"
@@ -11,7 +12,8 @@ export default function Perfil() {
 
     const [nomeUsuario, setNomeUsuario] = useState("");
     const [logado, setLogado] = useState(false)
-    const nome_usuario = localStorage.getItem("NOME_USUARIO")
+    const nome_usuario = localStorage.getItem("NOME_USUARIO");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem("TOKEN");

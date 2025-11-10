@@ -35,6 +35,18 @@ export default function Registrar() {
     }
 
     async function RegistrarUsuario() {
+
+        const camposVazios = [];
+
+        if (!nome) camposVazios.push("Nome");
+        if (!email) camposVazios.push("Email");
+        if (!senha) camposVazios.push("Senha");
+
+        if (camposVazios.length > 0) {
+            alert("Preencha os seguintes campos: " + camposVazios.join(", "));
+            return;
+        }
+
         try {
             await api.post('/usuario', {
                 nome,
@@ -107,13 +119,13 @@ export default function Registrar() {
 
                         <div className='cpf-telefone'>
                             <input
-                                id='input-cpf'
-                                value={cpf}
-                                onChange={(e) => setCpf(formatarCPF(e.target.value))}
-                                type="text"
-                                className='input-menor'
-                                placeholder='Digite seu CPF'
-                            />
+                            id='input-dtNascimento'
+                            value={dt_nascimento}
+                            onChange={(e) => setDt_nascimento(e.target.value)}
+                            type="date"
+                            className='input-menor'
+                            placeholder='Data de nascimento'
+                        />
 
                             <input
                                 id='input-telefone'
@@ -125,13 +137,7 @@ export default function Registrar() {
                             />
                         </div>
 
-                        <input
-                            id='input-dtNascimento'
-                            value={dt_nascimento}
-                            onChange={(e) => setDt_nascimento(e.target.value)}
-                            type="text"
-                            placeholder='Informe sua data de nascimento'
-                        />
+                        
 
                         <div className='input-senha-container'>
                             <input

@@ -20,6 +20,15 @@ export default function Entrar() {
 
     async function VerificarUsuario() {
 
+        const camposVazios = [];
+        if (!email) camposVazios.push("Email");
+        if (!senha) camposVazios.push("Senha");
+
+        if (camposVazios.length > 0) {
+            alert("Preencha os seguintes campos: " + camposVazios.join(", "));
+            return;
+        }
+
 
         try {
             const resposta = await api.get('/puxarNome', {

@@ -35,7 +35,7 @@ export default function Cabecalho() {
                     <Link to={"/quemsomos"}><p className='nav-cabecalho'>Quem Somos</p>
                     </Link>
                     <Link to={"/registrar"} onClick={() => window.scrollTo(0, 0)}>
-                    <p className='nav-cabecalho'>Login/Registrar</p>
+                    <p className='nav-cabecalho'>Entrar/Registrar</p>
                     </Link>
                 </div>
             </div>

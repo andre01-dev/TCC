@@ -7,7 +7,7 @@ export default function FAQ() {
   const perguntas = [
     {
       pergunta: "Como se registrar ou fazer login?",
-      resposta: "Acessando no canto superior direito do Cabeçalho login/registrar."
+      resposta: "Acessando no canto superior direito do Cabeçalho Entrar/Registrar."
     },
     {
       pergunta: "Nosso site é totalmente gratuito?",
