@@ -5,21 +5,24 @@
   display: flex;
   flex-direction: column;
 }
-
 .conteudo {
   display: flex;
+  flex-direction: row; 
   justify-content: center;
   align-items: flex-start;
-  gap: 50px;
+  gap: 90px;
   padding: 60px 80px;
-  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .lado-esquerdo {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 25px;
+  max-width: 60%; 
 
   h1 {
     font-size: 2.3rem;
@@ -28,7 +31,7 @@
 
   .video-box {
     width: 100%;
-    max-width: 850px;
+    max-width: 700px; 
     aspect-ratio: 16 / 9;
     border-radius: 20px;
     overflow: hidden;
@@ -46,33 +49,16 @@
     text-align: justify;
     margin-top: 10px;
   }
-
-  .modulos {
-    margin-top: 25px;
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        font-size: 1.1rem;
-        margin-bottom: 6px;
-      }
-    }
-  }
 }
-
 
 .lado-direito {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 350px; 
 }
+
 
 .card-curso {
   background-color: #003f51;
@@ -142,24 +128,24 @@
     margin-top: 15px;
     align-self: center;
   }
-
-  
 }
-
 
 @media (max-width: 900px) {
   .conteudo {
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
+    flex-wrap: wrap;
   }
 
   .lado-esquerdo {
     align-items: center;
+    min-width: unset;
   }
 
   .lado-direito {
     width: 100%;
+    justify-content: center;
   }
 
   .card-curso {
@@ -174,21 +160,21 @@
   }
 }
 
-.botoes{
+.botoes {
   margin-top: 35px;
   display: flex;
   justify-content: space-between;
+
   button {
     width: 160px;
     height: 45px;
     border-radius: 10px;
-    background-color: #DFB674;
-    color: #003F51;
+    background-color: #dfb674;
+    color: #003f51;
     font-size: 18px;
     font-weight: bold;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-
-}
+  }
 }
