@@ -30,6 +30,7 @@ endpoints.post('/logar', async (req,resp) => {
         resp.send({
             "id_usuario": registros.id_usuario,
             "email": email,
+            "fotoPerfil": registros.fotoPerfil,
             "token": token
         });
     }
@@ -71,7 +72,13 @@ endpoints.put('/alterarsenha', async (req,resp) => {
     resp.send({mensagem: "Senha alterada com sucesso!"})
 })
 
+endpoints.put("/alterar/foto", async (req,resp) => {
+    let id = req.body.id_usuario;
+    let foto = req.body.fotoPerfil;
 
+    const registros = await repoRegistrar.UploadFoto(foto, id);
+    resp.send({mensagem: "Foto Atualizada com sucesso!"});
+})
 
 
 export default endpoints;

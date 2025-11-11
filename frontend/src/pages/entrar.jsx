@@ -48,10 +48,13 @@ export default function Entrar() {
 
             const token = response.data.token;
             const id_usuario = response.data.id_usuario;
+            const foto_perfil = response.data.fotoPerfil;
+            
 
             localStorage.setItem("NOME_USUARIO", nome_usuario);
             localStorage.setItem("TOKEN", token);
             localStorage.setItem("ID_USUARIO", id_usuario);
+            localStorage.setItem("FOTO_PERFIL", foto_perfil || "");
 
             if (lembrar) {
                 localStorage.setItem("NOME_USUARIO", nome_usuario);

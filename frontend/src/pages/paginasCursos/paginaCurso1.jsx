@@ -3,7 +3,7 @@ import Rodape from "../../components/rodape/rodape.jsx";
 import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from "../../api.js";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
@@ -11,17 +11,17 @@ import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
 import { ToastContainer, toast } from "react-toastify";
 
 
-   export default function Curso1() {
-    const [nomeUsuario, setNomeUsuario] = useState("");
-    const [logado, setLogado] = useState(false);
-    const nome_usuario = localStorage.getItem("NOME_USUARIO");
-    const [passarModulo, setPassarModulo] = useState(0);
-    const [mostrarConteudo, setMostrarConteudo] = useState(true);
-    const [inscritoCurso, setInscritoCurso] = useState(false);
-     const navigate = useNavigate();
-      const [modulos, setModulos] = useState([]);
-    const [quiz, setQuiz] = useState([]);
-    const [curso, setCurso] = useState({
+export default function Curso1() {
+  const [nomeUsuario, setNomeUsuario] = useState("");
+  const [logado, setLogado] = useState(false);
+  const nome_usuario = localStorage.getItem("NOME_USUARIO");
+  const [passarModulo, setPassarModulo] = useState(0);
+  const [mostrarConteudo, setMostrarConteudo] = useState(true);
+  const [inscritoCurso, setInscritoCurso] = useState(false);
+  const navigate = useNavigate();
+  const [modulos, setModulos] = useState([]);
+  const [quiz, setQuiz] = useState([]);
+  const [curso, setCurso] = useState({
     nome_curso: "",
     descricao: "",
     duracao: "",
@@ -156,7 +156,7 @@ import { ToastContainer, toast } from "react-toastify";
   return (
     <div className="pagina-curso">
       <ToastContainer position="top-center" autoClose={3000} />
-      
+
       {logado ? (
         <CabecalhoLogado nome_usuario={nomeUsuario} />
       ) : (
@@ -235,8 +235,18 @@ import { ToastContainer, toast } from "react-toastify";
           <div>
             {logado ? (
               <>
+
+                <div className='voltar-cursos'>
+                  <Link to={"/cursos"} onClick={() => window.scrollTo(0, 0)}>
+                    <button className='voltarReg'>
+                      <img src="/src/assets/images/setaEsquerda.png" height={25} />
+                    </button>
+                    <p>Voltar para a página de Cursos</p>
+                  </Link>
+                </div>
                 {passarModulo < modulos.length && (
                   <>
+
                     <ModuloCursoLogado
                       titulo={modulos[passarModulo]?.titulo}
                       conteudo={modulos[passarModulo]?.conteudo}

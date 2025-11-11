@@ -4,7 +4,7 @@ import Cabecalho from "../../components/cabecalho/cabecalho.jsx";
 import CabecalhoLogado from "../../components/cabecalhoLogado/cabecalho.jsx";
 import { useEffect, useState } from "react";
 import api from "../../api.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
 import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
@@ -248,6 +248,14 @@ export default function Curso1() {
           <div>
             {logado ? (
               <>
+              <div className='voltar-cursos'>
+                  <Link to={"/cursos"} onClick={() => window.scrollTo(0, 0)}>
+                    <button className='voltarReg'>
+                      <img src="/src/assets/images/setaEsquerda.png" height={25} />
+                    </button>
+                    <p>Voltar para a página de Cursos</p>
+                  </Link>
+                </div>
                 {passarModulo < modulos.length && (
                   <>
                     <ModuloCursoLogado

@@ -56,19 +56,27 @@
     height: 320px;
     width: 450px;
     color: #DFB674;
-
+    justify-content: center;
 }
 
-.user img {
+.user-avatar {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-items: center;
     width: 270px;
     height: 250px;
-    border-radius: 100%;
     margin-bottom: 20px;
-    border: 6px solid #003F51;
+}
+
+.botao-upload {
+  color: #DFB674;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .dados {

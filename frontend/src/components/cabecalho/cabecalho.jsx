@@ -7,13 +7,6 @@ export default function Cabecalho() {
     const navigate = useNavigate();
     const [menuLogado, setMenuLogado] = useState(false)
     const [menuAberto, setMenuAberto] = useState(false)  // Novo estado para controlar o menu mobile
-
-    function Sair() {
-        localStorage.removeItem("NOME_USUARIO");
-        localStorage.removeItem("TOKEN");
-        window.location.reload()
-    }
-
     // Função para alternar o menu mobile
     function toggleMenu() {
         setMenuAberto(!menuAberto)
@@ -22,6 +15,12 @@ export default function Cabecalho() {
     // Função para fechar o menu ao clicar em um link
     function fecharMenu() {
         setMenuAberto(false)
+    }
+
+    function Sair() {
+        localStorage.removeItem("NOME_USUARIO");
+        localStorage.removeItem("TOKEN");
+        window.location.reload()
     }
 
     return (

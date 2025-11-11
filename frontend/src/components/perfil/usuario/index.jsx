@@ -1,90 +1,157 @@
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import "./index.scss";
 import api from "../../../api";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import Avatar from "react-avatar";
 
 export default function Perfil() {
+
     const [dados, setDados] = useState({});
     const [loading, setLoading] = useState(true);
     const [editar, setEditar] = useState(false);
 
-    const id_usuario = localStorage.getItem("ID_USUARIO");
+    const id_usuario = localStorage.getItem("ID_USUARIO"); 
+
+    const [foto, setFoto] = useState(localStorage.getItem('FOTO_PERFIL') || null);
+
+    async function pegarArquivo(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+
+        reader.onloadend = async () => {
+            const base64 = reader.result;
+
+            try {
+                await api.put("/alterar/foto", {
+                    id_usuario: id_usuario,     
+                    fotoPerfil: base64          
+                });
+
+                toast.success("Foto atualizada!");
+
+                setFoto(base64);
+
+                setDados({ ...dados, foto_perfil: base64 });
+
+                localStorage.setItem("FOTO_PERFIL", base64);
+
+                window.location.reload();
+
+            } catch (error) {
+                console.error("Erro ao enviar foto:", error);
+                toast.error("Erro ao enviar foto");
+            }
+        };
+
+        reader.readAsDataURL(file);
+    }
+
 
     useEffect(() => {
-
         async function puxarInfos() {
-
             if (!id_usuario) {
                 setLoading(false);
                 return;
             }
 
             try {
-
                 const response = await api.get(`/perfil/informacoes/${id_usuario}`);
                 setDados(response.data);
+                if (response.data.foto_perfil) {
+                    setFoto(response.data.foto_perfil);
+                    localStorage.setItem("FOTO_PERFIL", response.data.foto_perfil);
+                }
+
             } catch (error) {
                 console.error("Erro ao buscar informações do perfil:", error);
-
             } finally {
                 setLoading(false);
             }
         }
 
-
         puxarInfos();
-
     }, []);
 
-    if (loading) {
-        return <div className="loading-message">Carregando perfil...</div>;
-    }
 
     async function salvarEdicao() {
-        await axios.put(`http://localhost:5010/perfil/editar/${id_usuario}`, {
-            nome_usuario: dados.nome_usuario,
-            email: dados.email,
-            telefone: dados.telefone
-        });
-        localStorage.setItem("NOME_USUARIO", dados.nome_usuario);
-        setEditar(false);
-        window.location.reload();
+        try {
+            await axios.put(`http://localhost:5010/perfil/editar/${id_usuario}`, {
+                nome_usuario: dados.nome_usuario,
+                email: dados.email,
+                telefone: dados.telefone
+            });
+
+            localStorage.setItem("NOME_USUARIO", dados.nome_usuario);
+            setEditar(false);
+            toast.success("Perfil atualizado!");
+        } catch (error) {
+            toast.error("Erro ao atualizar perfil");
+        }
     }
+
+
+    if (loading) return <div className="loading-message">Carregando perfil...</div>;
+
 
     return (
         <div>
-            <div className='container-tudo'>
-                <div className='user'>
-                    <img src="/src/assets/images/perfil.png" alt="" />
+            <div className="container-tudo">
+                <div className="user">
+
+                    {/* ✅ Input escondido que recebe o arquivo */}
+                    <input
+                        id="uploadFoto"
+                        type="file"
+                        accept="image/*"
+                        onChange={pegarArquivo}
+                        style={{ display: "none" }}
+                    />
+
+                    {/* ✅ Botão para abrir o explorador de arquivos */}
+                    <label htmlFor="uploadFoto" className="botao-upload">
+                        Escolher imagem
+                    </label>
+
+                    {/* ✅ Avatar com foto OU avatar gerado pelo nome */}
+                    <Avatar
+                        className="user-avatar"
+                        src={foto}
+                        name={dados.nome_usuario}
+                        size="200"
+                        round={true}
+                    />
+
                 </div>
+
                 <div className="dados-container">
-                    <div className='dados'>
+                    <div className="dados">
                         <div className="container-editar">
                             <h2>Perfil</h2>
-                            <button className="bt-editar" onClick={() => {
-                                if (!id_usuario) {
-                                    toast.error("Você precisa estar logado para editar o perfil")
-                                    return;
-                                }
-                                setEditar(true);
-                            }
-                            }> Editar</button>
+
+                            <button className="bt-editar" onClick={() => setEditar(true)}>
+                                Editar
+                            </button>
                         </div>
+
                         <div className="info">
-                            <h3>nome</h3>
+                            <h3>Nome</h3>
                             <h3>{dados.nome_usuario}</h3>
                         </div>
+
                         <div className="info">
                             <h3>Email</h3>
                             <h3>{dados.email}</h3>
                         </div>
+
                         <div className="info">
                             <h3>Telefone</h3>
                             <h3>{dados.telefone}</h3>
                         </div>
                     </div>
+
 
                     {editar && (
                         <div className="popup-overlay">
@@ -117,20 +184,8 @@ export default function Perfil() {
                         </div>
                     )}
 
-                    {/* <div className="progresso">
-                        <div className="info">
-                            <h3>Meu progresso</h3>
-                            <div className="barra1"></div>
-                        </div>
-                        <div className="info">
-                            <h3>Tempo de Uso</h3>
-                            <div className="barra2"></div>
-                            <h3>2 horas</h3>
-
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </div>
-    )
+    );
 }

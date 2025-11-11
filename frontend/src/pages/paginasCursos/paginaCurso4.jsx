@@ -7,7 +7,7 @@ import api from "../../api.js";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
 import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
@@ -249,6 +249,14 @@ export default function Curso1() {
           <div>
             {logado ? (
               <>
+              <div className='voltar-cursos'>
+                  <Link to={"/cursos"} onClick={() => window.scrollTo(0, 0)}>
+                    <button className='voltarReg'>
+                      <img src="/src/assets/images/setaEsquerda.png" height={25} />
+                    </button>
+                    <p>Voltar para a página de Cursos</p>
+                  </Link>
+                </div>
                 {passarModulo < modulos.length && (
                   <>
                     <ModuloCursoLogado
