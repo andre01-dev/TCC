@@ -23,8 +23,7 @@ conteudo2 text (100000)
 create table tb_usuario (
 	id_usuario int primary key auto_increment,
     nome_usuario varchar (200),
-    email varchar (300),
-    cpf varchar (20),
+    email varchar (300) UNIQUE,
     telefone varchar (20),
     dt_nascimento varchar (20),
     senha varchar(500),

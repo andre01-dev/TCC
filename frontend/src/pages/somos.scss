@@ -78,10 +78,10 @@
 
 .esquerda {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 30px;
-  margin-right: 50px;
+ margin-top: 100px;
+  
   margin-bottom: 100px;
 
   img {
@@ -107,11 +107,13 @@
       font-size: 24px;
     }
   }
+
+
 }
 
 .direita {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 30px;
   margin-left: 50px;
@@ -129,6 +131,7 @@
     flex-direction: column;
     align-items: baseline;
     margin-top: 140px;
+    width: 45%;
     text-align: left;
 
     h1 {
@@ -174,6 +177,8 @@
   display: flex;
   justify-content: center;
   background-color: #DFC8BA;
+  flex-direction: column;
+  align-items: center;
 
 
   .ig {
@@ -201,16 +206,15 @@
 }
 
 .cardscolabs{
-  width: 80%;
   display: flex;
   justify-content: space-around;
-  gap: 110px;
+  gap: 88px;
   flex-wrap: wrap;
   padding: 28px;
 
   img{
       border-radius: 7px;
-      height:200px ;
+      height:250px ;
       width: 246px;
       margin-top: 16px;
   }

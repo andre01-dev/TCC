@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from "lucide-react";
+import { toast } from 'react-toastify';
 import api from '../api.js';
 import './registrar.scss';
 
@@ -8,7 +9,6 @@ export default function Registrar() {
 
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
-    const [cpf, setCpf] = useState("");
     const [telefone, setTelefone] = useState("");
     const [dt_nascimento, setDt_nascimento] = useState("");
     const [senha, setSenha] = useState("");
@@ -17,21 +17,23 @@ export default function Registrar() {
     const [ativo, setAtivo] = useState(location.pathname === "/registrar" ? "registrar" : "entrar");
     const [mostrar, setMostrar] = useState(false);
 
-    function formatarCPF(value) {
-        return value
-            .replace(/\D/g, '')
-            .replace(/(\d{3})(\d)/, '$1.$2')
-            .replace(/(\d{3})(\d)/, '$1.$2')
-            .replace(/(\d{3})(\d{1,2})$/, '$1-$2')
-            .slice(0, 14);
-    }
 
     function formatarTelefone(value) {
-        return value
-            .replace(/\D/g, '')
-            .replace(/(\d{2})(\d)/, '($1) $2')
-            .replace(/(\d{5})(\d)/, '$1-$2')
-            .slice(0, 15);
+        value = value.replace(/\D/g, "");
+
+        if (value.length > 11) value = value.slice(0, 11);
+
+
+        if (value.length > 6) {
+            return value.replace(/(\d{2})(\d{5})(\d{0,4})/, "$1 $2-$3");
+        }
+
+
+        if (value.length > 2) {
+            return value.replace(/(\d{2})(\d{0,5})/, "$1 $2");
+        }
+
+        return value;
     }
 
     async function RegistrarUsuario() {
@@ -41,9 +43,10 @@ export default function Registrar() {
         if (!nome) camposVazios.push("Nome");
         if (!email) camposVazios.push("Email");
         if (!senha) camposVazios.push("Senha");
+        if (!telefone) camposVazios.push("Telefone");
 
         if (camposVazios.length > 0) {
-            alert("Preencha os seguintes campos: " + camposVazios.join(", "));
+            toast.error(`Preencha os seguintes campos: ${camposVazios.join(", ")}`)
             return;
         }
 
@@ -51,15 +54,14 @@ export default function Registrar() {
             await api.post('/usuario', {
                 nome,
                 email,
-                cpf,
                 telefone,
                 dt_nascimento,
                 senha
             });
-            alert("Usuário registrado com sucesso!");
+            toast.success("Usuário Registrado com sucesso")
             setNome("")
             setEmail("")
-            setCpf("")
+
             setTelefone("")
             setDt_nascimento("")
             setSenha("")
@@ -67,7 +69,7 @@ export default function Registrar() {
             navigate("/entrar")
 
         } catch (e) {
-            alert(e.response?.data?.erro || "Erro ao registrar usuário");
+            toast.error(e.response?.data?.erro || "Erro ao registrar usuário");
         }
     }
 
@@ -119,25 +121,26 @@ export default function Registrar() {
 
                         <div className='cpf-telefone'>
                             <input
-                            id='input-dtNascimento'
-                            value={dt_nascimento}
-                            onChange={(e) => setDt_nascimento(e.target.value)}
-                            type="date"
-                            className='input-menor'
-                            placeholder='Data de nascimento'
-                        />
+                                id='input-dtNascimento'
+                                value={dt_nascimento}
+                                onChange={(e) => setDt_nascimento(e.target.value)}
+                                type="date"
+                                className='input-menor'
+                                placeholder='Data de nascimento'
+                            />
 
                             <input
                                 id='input-telefone'
+                                required
                                 value={telefone}
                                 onChange={(e) => setTelefone(formatarTelefone(e.target.value))}
-                                type="text"
+                                type="tel"
                                 className='input-menor'
                                 placeholder='Digite seu telefone'
                             />
                         </div>
 
-                        
+
 
                         <div className='input-senha-container'>
                             <input

@@ -7,7 +7,12 @@ const endpoints = Router();
 endpoints.post("/usuario", async (req,resp) => {
     let novoUsuario = req.body;
 
-    let id = repoRegistrar.inserirUsuario(novoUsuario);
+    const existe = await repoRegistrar.VerificarEmail(novoUsuario.email);
+    if(existe.length > 0) {
+        return resp.status(400).send({erro: "E-mail já cadastrado"});
+    }
+
+    let id = await repoRegistrar.inserirUsuario(novoUsuario);
     resp.send({NovoID: id});
 })
 

@@ -12,16 +12,16 @@ export default function CardCurso2() {
   useEffect(() => {
     async function carregarCursos() {
       try {
-        const resp = await api.get("/puxar/cursos");   
-        setCursos(resp.data);                         
+        const resp = await api.get("/puxar/cursos");
+        setCursos(resp.data);
       } catch (err) {
-        console.error("Erro ao carregar cursos:", err); 
+        console.error("Erro ao carregar cursos:", err);
       }
     }
-    carregarCursos();  // ⭐ ADICIONADA
+    carregarCursos();
   }, []);
 
-  // Ajuste responsivo (1 / 2 / 3 cards)
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 700) setVisibleCards(1);
@@ -33,7 +33,7 @@ export default function CardCurso2() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Avançar / voltar
+
   const nextSlide = () => {
     setStartIndex((prev) => (prev + visibleCards) % cursos.length);
   };
@@ -43,7 +43,7 @@ export default function CardCurso2() {
     );
   };
 
-  // Retorna os cursos visíveis
+
   const getVisibleCards = () => {
     let cards = [];
     for (let i = 0; i < visibleCards; i++) {
@@ -60,8 +60,10 @@ export default function CardCurso2() {
           <div className="cards">
             {getVisibleCards().map((cursos, i) => (
               <div className="card" key={i}>
-                <img src={cursos?.caminho_img} alt={`Curso ${i + 1}`} />
-                <h2>{cursos?.nome_curso}</h2>
+                <Link to={cursos?.url} onClick={() => window.scrollTo(0, 0)}>
+                  <img src={cursos?.caminho_img} alt={`Curso ${i + 1}`} />
+                </Link>
+                <h2 className="nm-curso">{cursos?.nome_curso}</h2>
                 <p>{cursos?.descricao}</p>
               </div>
             ))}
@@ -69,7 +71,6 @@ export default function CardCurso2() {
         </div>
       </div>
 
-      {/* Botões inferiores */}
       <div className="alinhamento">
         <Link to="/cursos" className="alinhar" onClick={() => window.scrollTo(0, 0)}>
           <button className="verMais">+</button>

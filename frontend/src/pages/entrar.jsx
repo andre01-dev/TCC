@@ -1,6 +1,7 @@
 import { useState, useEffect, use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from "lucide-react";
+import { toast } from 'react-toastify';
 import api from '../api.js'
 import './entrar.scss'
 
@@ -15,7 +16,9 @@ export default function Entrar() {
     const [mostrar, setMostrar] = useState(false);
     const [lembrar, setLembrar] = useState(false);
     const [alterarSenha, setAlterarSenha] = useState(false);
-    const [validarEmail, setValidarEmail] = useState(false)
+    const [validarEmail, setValidarEmail] = useState(false);
+    const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate();
 
     async function VerificarUsuario() {
@@ -25,7 +28,7 @@ export default function Entrar() {
         if (!senha) camposVazios.push("Senha");
 
         if (camposVazios.length > 0) {
-            alert("Preencha os seguintes campos: " + camposVazios.join(", "));
+            toast.error(`Preencha os seguintes campos: ${camposVazios.join(", ")}`)
             return;
         }
 
@@ -60,14 +63,14 @@ export default function Entrar() {
                 sessionStorage.setItem("ID_USUARIO", id_usuario);
             }
 
-            alert("Login realizado com sucesso!");
+            toast.success("Você entrou com sucesso")
 
             setEmail("")
             setSenha("")
             navigate('/')
         }
         catch (e) {
-            alert(e.response?.data?.erro || "Erro ao realizar login");
+            toast.error(e.response?.data?.erro || "Erro ao realizar login");
         }
     }
 
@@ -78,7 +81,7 @@ export default function Entrar() {
             });
             setValidarEmail(true);
         } catch (e) {
-            alert("E-mail não encontrado");
+            toast.error("E-mail não encontrado");
         }
     }
 
@@ -88,12 +91,12 @@ export default function Entrar() {
                 email,
                 novaSenha
             });
-            alert("Senha alterada com sucesso");
+            toast.success("Senha alterada com sucesso");
             setEmail("");
             setNovaSenha("")
             navigate("/entrar")
         } catch (e) {
-            alert(e.response?.data?.erro || "Erro ao alterar senha");
+            toast.error(e.response?.data?.erro || "Erro ao alterar senha");
         }
     }
 
@@ -201,8 +204,8 @@ export default function Entrar() {
                     </div>
 
                     <div className='div-bt'>
-                        <button className='bt-logar' onClick={VerificarUsuario}>
-                            Entrar
+                        <button className='bt-logar' onClick={VerificarUsuario} disabled={loading}>
+                            {loading ? "Entrando..." : "Entrar"}
                         </button>
                     </div>
 

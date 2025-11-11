@@ -4,6 +4,7 @@ import Rodape from "../components/rodape/rodape.jsx";
 import CardColab from "../components/CardsColabs/cardscolabs.jsx";
 import { useState, useEffect } from "react";
 import CabecalhoLogado from '../components/cabecalhoLogado/cabecalho.jsx';
+import { Link } from 'react-router'
 
 
 export default function Somos() {
@@ -12,8 +13,9 @@ export default function Somos() {
     { img: "/src/assets/images/parceiro1.png" },
     { img: "/src/assets/images/parceiro2.png" },
     { img: "/src/assets/images/parceiro3.png" },
-    { img: "/src/assets/images/parceiro1.png" },
-    { img: "/src/assets/images/parceiro2.png" },
+    { img: "/src/assets/images/parceria4.png" },
+    { img: "/src/assets/images/parceria5.png" },
+    { img: "/src/assets/images/parceria6.png" }
   ];
 
   const [visibleCards, setVisibleCards] = useState(3);
@@ -65,30 +67,33 @@ export default function Somos() {
 
   }, []);
 
-
-  const colab = [{
-    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' height={200} />,
+  const colab2 = [{
+    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
     "nome": "André",
-    "descricao": "FullStack e UI/UX"
+    "descricao": "Full-stack e UI/UX"
   }, {
-    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' height={200} />,
+    "imagem": <img src="src/assets/images/claudio.jpg" alt='imagem' />,
     "nome": "Claudio",
-    "descricao": "FullStack e UI/UX"
-  }, {
-    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' height={200} />,
-    "nome": "Gustavo Penha",
-    "descricao": "Front-End e UI/UX"
-  },
-  {
-    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' height={200} />,
-    "nome": "Pedro Lima",
-    "descricao": "Front-End e UI/UX"
-  },
-  {
-    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' height={200} />,
-    "nome": "Gustavo Lana",
-    "descricao": "Front-End e UI/UX"
+    "descricao": "Full-stack e UX"
   }]
+
+
+  const colab = [
+    {
+      "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
+      "nome": "Gustavo Lana",
+      "descricao": "Full-stack e Web Designer"
+    },
+    {
+      "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
+      "nome": "Pedro Lima",
+      "descricao": "Front-ende analista de dados"
+    }, {
+      "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
+      "nome": "Gustavo Penha",
+      "descricao": "Front-end e Pesquisador"
+    }
+  ]
 
   return (
     <div>
@@ -108,7 +113,7 @@ export default function Somos() {
       </div>
       <div className="tud">
         <div>
-          <img src="/src/assets/images/idosos computador.png" height={445} />
+          <img src="/src/assets/images/qmsm1.jpg" height={445} />
         </div>
         <div className="texto">
           <h1>História do Conectando Gerações</h1>
@@ -134,14 +139,16 @@ export default function Somos() {
                 Além disso, o projeto busca promover a inclusão digital e a autonomia dos idosos, oferecendo um espaço acessível e acolhedor para que possam aprender, interagir e se sentir seguros no uso da tecnologia. Acreditamos que, com o apoio certo, cada pessoa pode se adaptar ao mundo digital e aproveitar seus benefícios — desde a comunicação com familiares até o acesso a serviços e informações online. Nosso objetivo é transformar o medo da tecnologia em encanto e curiosidade, fortalecendo a conexão entre gerações e construindo uma sociedade mais integrada e informada.
               </p>
             </div>
-            <img className="img" src="/src/assets/images/senhora.png" />
+            <img className="img" src="/src/assets/images/qmsm2.jpg" />
           </div>
         </div>
       </div>
 
       <div className="esquerda">
         <div>
-          <img src="/src/assets/images/senhora.png" height={400} width={500} />
+          <Link to ={'/cursos'}>
+            <img src="/src/assets/images/curso4.png" height={400} width={500} />
+          </Link>
         </div>
         <div className="texto">
           <h1>Conheça nossos cursos</h1>
@@ -152,25 +159,41 @@ export default function Somos() {
             as vantagens do mundo digital sem medo. Nosso objetivo <br />
             é mostrar que a tecnologia pode ser uma grande aliada no  <br />
             dia a dia, tornando a vida mais  fácil, conectada e divertida.</p>
-          <button className="btt">Saiba mais sobre cursos</button>
+            <Link to ={'/cursos'}>
+          <button className="btt">Saiba mais sobre cursos</button></Link>
         </div>
       </div>
 
 
       <div className=" direita">
         <div>
-          <img src="/src/assets/images/senhora.png" height={400} width={500} />
+          <Link to={'/tdsntc'}>
+            <img src="/src/assets/images/noticia7.png" height={400} width={500} />
+          </Link>
         </div>
         <div className="texto">
           <h1>Conheça nossas notícias</h1>
           <p>Nossos cursos foram criados especialmente para ajudar pessoas idosas a aprender a usar a internet com segurança e confiança. Aqui, cada aula é pensada de forma simples e prática, para que você possa navegar, se comunicar e aproveitar as vantagens do mundo digital sem medo. Nosso objetivo é mostrar que a tecnologia pode ser uma grande aliada no dia a dia, tornando a vida mais fácil, conectada e divertida.pequeno texto explicando nossos cursos</p>
-          <button className="btt">saiba mais sobre notícias</button>
+          <Link to={'/tdsntc'}>
+          <button className="btt">saiba mais sobre notícias</button></Link>
         </div>
       </div>
       <div className='desenvol-text'>
         <h2>Desenvolvedores</h2>
       </div>
       <div className='alinhando'>
+        <div className='cardscolabs'>
+          {
+            colab2.map(c =>
+              <CardColab
+                imagem={c.imagem}
+                nome={c.nome}
+                descricao={c.descricao}
+              />
+            )
+          }
+        </div>
+
         <div className='cardscolabs'>
           {
             colab.map(c =>

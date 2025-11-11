@@ -86,10 +86,13 @@ export default function Denunciapag() {
         </>
       )}
       <div className="denuncia-page">
+        <div className='inicio'>
+          <h1>Pagina de Denúncias</h1>
+        </div>
         <form className="form-denuncia" onSubmit={enviarDenuncia}>
           <div className="form-row">
             <div className="form-group">
-              <label>Email do denunciante:</label>
+              <label>Email</label>
               <input
                 type="email"
                 placeholder="Digite seu email"
