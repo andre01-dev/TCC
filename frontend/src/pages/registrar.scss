@@ -231,3 +231,144 @@
 
     }
 }
+
+@media (max-width: 728px) {
+
+  .body {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30px;
+  }
+
+  /* ===== BOTÃO DE VOLTAR ===== */
+  .voltar-registrar {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px 0 20px 0;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 18px;
+    border-radius: 10px;
+    background-color: #DFB674;
+    
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; 
+    background-color: #DFB674; 
+    transition: width 0.4s ease; 
+    z-index: 0; 
+  }
+
+  .voltarReg, p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .voltarReg {
+    background-color: #DFB674;
+    border: none;
+    border-radius: 11px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  p {
+    color: #003F51;
+    transition: color 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 100%; 
+  }
+
+  &:hover p {
+    color: white;
+  }
+
+
+  }
+
+  /* ===== CONTAINER PRINCIPAL ===== */
+  .container-registrar {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* ===== TÍTULO + LOGO ===== */
+  .titulo-input h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    font-size: 24px;
+  }
+
+  .titulo-input img {
+    width: 40px; /* logo menor */
+    height: auto;
+  }
+
+  /* ===== INPUTS ===== */
+  .inputs {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    input,
+    .input-senha-container,
+    .input-senha {
+      width: 100% !important;
+      max-width: 320px;
+      height: 48px;
+      border-radius: 30px;
+      font-size: 15px;
+    }
+  }
+
+  /* ===== CPF + TELEFONE EMPILHADOS ===== */
+  .cpf-telefone {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+
+    .input-menor {
+      width: 90% !important;
+      max-width: 320px;
+    }
+  }
+
+  /* ===== BOTÃO CRIAR CONTA ===== */
+  .div-bt-registrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+
+    .bt-criarConta {
+      width: 200px;
+      height: 48px;
+      font-size: 16px;
+      border-radius: 30px;
+    }
+  }
+
+}

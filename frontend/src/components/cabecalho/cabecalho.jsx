@@ -1,87 +1,109 @@
-import { useState } from 'react'
-import { useNavigate } from "react-router";
+import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './cabecalho.scss'
-import { Link } from 'react-router'
 
 export default function Cabecalho() {
-    const navigate = useNavigate();
-    const [menuLogado, setMenuLogado] = useState(false)
-    const [menuAberto, setMenuAberto] = useState(false)  // Novo estado para controlar o menu mobile
-    // Função para alternar o menu mobile
-    function toggleMenu() {
-        setMenuAberto(!menuAberto)
-    }
+  const navigate = useNavigate()
+  const [menuAberto, setMenuAberto] = useState(false)
+  const [usuario, setUsuario] = useState(null)
 
-    // Função para fechar o menu ao clicar em um link
-    function fecharMenu() {
-        setMenuAberto(false)
-    }
+  useEffect(() => {
+    // Puxa o nome salvo no login
+    const nome = localStorage.getItem('NOME_USUARIO')
+    if (nome) setUsuario(nome)
+  }, [])
 
-    function Sair() {
-        localStorage.removeItem("NOME_USUARIO");
-        localStorage.removeItem("TOKEN");
-        window.location.reload()
-    }
+  function toggleMenu() {
+    setMenuAberto(!menuAberto)
+  }
 
-    return (
-        <div>
-            <div className="container-cabecalho">
-                <div>
-                    <Link to={"/"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                        <img src="/images/logoVeio.png" height={90} />
-                    </Link>
-                </div>
-                <h1 className='titulo-cabecalho'>CONECTANDO GERAÇÕES</h1>
-                {/* Menu desktop */}
-                <div className="navegar">
-                    <Link to={"/"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                        <p className='nav-cabecalho'>Inicio</p>
-                    </Link>
-                    <Link to={"/cursos"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                        <p className='nav-cabecalho'>Cursos</p>
-                    </Link>
-                    <Link to={"/tdsntc"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                        <p className='nav-cabecalho'>Notícias</p>
-                    </Link>
-                    <Link to={"/quemsomos"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                        <p className='nav-cabecalho'>Quem Somos</p>
-                    </Link>
-                    <Link to={"/registrar"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                        <p className='nav-cabecalho'>Entrar/Registrar</p>
-                    </Link>
-                </div>
-                {/* Botão hambúrguer para mobile */}
-                <div className="menu-hamburguer" onClick={toggleMenu}>
-                    ☰
-                </div>
+  function fecharMenu() {
+    setMenuAberto(false)
+  }
+
+  function Sair() {
+    localStorage.removeItem('NOME_USUARIO')
+    localStorage.removeItem('TOKEN')
+    setUsuario(null)
+    fecharMenu()
+    navigate('/')
+  }
+
+  return (
+    <div>
+      <div className="container-cabecalho">
+        <Link to="/" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+          <img src="/images/logoVeio.png" height={90} alt="Logo" />
+        </Link>
+
+        <h1 className="titulo-cabecalho">CONECTANDO GERAÇÕES</h1>
+
+        {/* MENU DESKTOP */}
+        <div className="navegar">
+          <Link to="/" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+            <p className="nav-cabecalho">Início</p>
+          </Link>
+          <Link to="/cursos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+            <p className="nav-cabecalho">Cursos</p>
+          </Link>
+          <Link to="/tdsntc" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+            <p className="nav-cabecalho">Notícias</p>
+          </Link>
+          <Link to="/quemsomos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+            <p className="nav-cabecalho">Quem Somos</p>
+          </Link>
+
+          {/* Condição logado ou não */}
+          {usuario ? (
+            <div className="icone-usuario" onClick={() => navigate('/perfil')}>
+              👤 {usuario}
             </div>
-            {/* Menu dropdown para mobile */}
-            {menuAberto && (
-                <div className="popup-menu">
-                    <div className="popup">
-                        <h2>Menu</h2>
-                        <Link to={"/"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Inicio</p>
-                        </Link>
-                        <Link to={"/cursos"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Cursos</p>
-                        </Link>
-                        <Link to={"/tdsntc"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Notícias</p>
-                        </Link>
-                        <Link to={"/quemsomos"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Quem Somos</p>
-                        </Link>
-                        <Link to={"/registrar"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Entrar/Registrar</p>
-                        </Link>
-                        {/* Se logado, adicionar opções aqui, como o botão Sair */}
-                        {menuLogado && (
-                            <button onClick={Sair}>Sair</button>
-                        )}
-                    </div>
-                </div>
-            )}
+          ) : (
+            <Link to="/registrar" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+              <p className="nav-cabecalho">Entrar/Registrar</p>
+            </Link>
+          )}
         </div>
-    )
+
+        {/* BOTÃO HAMBÚRGUER MOBILE */}
+        <div className="menu-hamburguer" onClick={toggleMenu}>
+          ☰
+        </div>
+      </div>
+
+      {/* MENU POPUP MOBILE */}
+      {menuAberto && (
+        <div className="popup-menu">
+          <div className="popup">
+            <h2>Menu</h2>
+            <Link to="/" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+              <p>Início</p>
+            </Link>
+            <Link to="/cursos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+              <p>Cursos</p>
+            </Link>
+            <Link to="/tdsntc" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+              <p>Notícias</p>
+            </Link>
+            <Link to="/quemsomos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
+              <p>Quem Somos</p>
+            </Link>
+
+            {usuario ? (
+              <>
+                <Link to="/perfil" onClick={fecharMenu}>
+                  <p>👤 {usuario}</p>
+                </Link>
+                <button onClick={Sair}>Sair</button>
+              </>
+            ) : (
+              <Link to="/registrar" onClick={fecharMenu}>
+                <p>Entrar/Registrar</p>
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }

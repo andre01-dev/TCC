@@ -20,9 +20,9 @@ export async function inserirUsuario(novoUsuario) {
 
 export async function VerificarUsuario(email, senha) {
     const comando = `
-        select id_usuario, nome_usuario, email, fotoPerfil
+        select id_usuario, nome_usuario, email
         from tb_usuario
-        where email = ? AND senha = MD5(?)
+        where email = ? AND senha = MD5(?);
     `
     const [registros] = await conection.query(comando, [email, senha]);
 

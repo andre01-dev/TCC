@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./depoimentos.scss";
 import api from "../../../api.js";
+import { toast } from "react-toastify";
+
 
 export default function Depoimentos() {
 
@@ -15,7 +17,7 @@ export default function Depoimentos() {
         const response = await api.get("/depoimentos");
         setDepoimentos(response.data);
       } catch (error) {
-        alert("Erro ao carregar depoimentos");
+        toast.error("Erro ao carregar depoimentos");
       }
     }
     PuxarDepoimentos();

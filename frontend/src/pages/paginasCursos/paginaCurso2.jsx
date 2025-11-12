@@ -9,7 +9,6 @@ import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
@@ -36,11 +35,12 @@ export default function Curso1() {
       });
 
       if (resp.data.concluido === true) {
-        toast.info("Você já concluiu esse curso!");
+        toast.warn("Você já concluiu esse curso!");
         navigate("/cursos");
       }
     } catch (err) {
       console.error("Erro ao verificar conclusão", err);
+      toast.error("Erro ao verificar conclusão do curso");
     }
   }
 

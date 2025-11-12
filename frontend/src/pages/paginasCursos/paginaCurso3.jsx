@@ -8,6 +8,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Quiz from "../../components/modulosCursos/quiz/index.jsx";
 import ModuloCursoLogado from "../../components/modulosCursos/logado/index.jsx";
 import BtCurso from "../../components/modulosCursos/BT-Cursos/index.jsx";
+import {  toast } from "react-toastify";
+
 
 export default function Curso1() {
   const [nomeUsuario, setNomeUsuario] = useState("");
@@ -36,12 +38,12 @@ export default function Curso1() {
       console.log("Resposta da API:", resp.data);
 
       if (resp.data.concluido === true) {
-        alert("Você já concluiu esse curso!");
+        toast.warn("Você já concluiu esse curso!");
         navigate("/cursos");
       }
     } catch (err) {
       console.error("Erro ao verificar conclusão", err);
-    }
+toast.error("Erro ao verificar conclusão do curso");    }
   }
 
 
@@ -106,16 +108,16 @@ export default function Curso1() {
           id_usuario,
           id_curso
         })
-        alert("Inscrição realizada com sucesso!");
+        toast.success("Inscrição realizada com sucesso!");
         setMostrarConteudo(false);
         localStorage.setItem(`MATRICULADO_${id_curso}`, true);
       }
       else {
-        alert("Faça login para se inscrever em um curso");
+        toast.info("Faça login para se inscrever em um curso");
       }
     }
     catch (e) {
-      alert(e.response?.data?.erro || "Erro ao realizar inscrição")
+      toast.error(e.response?.data?.erro || "Erro ao realizar inscrição")
     }
   }
 
@@ -127,7 +129,7 @@ export default function Curso1() {
     });
 
     if (response.data[0]?.concluido === 1) {
-      alert("Você já concluiu esse curso!");
+      toast.info("Você já concluiu esse curso!");
       navigate("/cursos");
       return;
     }
@@ -150,14 +152,14 @@ export default function Curso1() {
     if (resultado === "acertou") {
       try {
         await api.put("/concluir", { id_usuario });
-        alert("Parabéns, você finalizou o curso");
+        toast.success("Parabéns, você finalizou o curso");
         navigate('/cursos')
       } catch (e) {
-        alert("Erro ao finalizar curso");
+        toast.error("Erro ao finalizar curso");
         console.error(e);
       }
     } else {
-      alert("Você errou a questão.");
+      toast.error("Você errou a questão.");
     }
   }
 

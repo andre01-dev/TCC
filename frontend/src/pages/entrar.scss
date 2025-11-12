@@ -232,36 +232,129 @@
 
 }
 
-@media (max-width: 768px) {
+/* ==================== RESPONSIVIDADE SOMENTE PARA CELULAR ==================== */
+@media (max-width: 728px) {
+
+  .body-entrar {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30px;
+
     .container-entrar {
-        flex-direction: column;
-        gap: 40px;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
     }
 
-    .titulo-input {
-        width: 100%;
-        padding: 0 10px;
+    /* ===== BOTÃO DE VOLTAR ===== */
+    .voltar-entrar {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 10px 0 20px 0;
+      align-self: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 10px;
+      background-color: #DFB674;
+
+      p {
+        color: #003F51;
+        font-size: 15px;
+      }
+
+      .voltarBtn {
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 6px;
+        cursor: pointer;
+      }
+
+      &::before {
+        display: none;
+      }
     }
 
-    .entrar-registrar {
-        width: 100%;
-        max-width: 270px;
-    }
-}
-
-@media (max-width: 480px) {
-    .inputs input {
-        height: 45px;
-        padding: 15px;
-        font-size: 14px;
+    /* ===== TÍTULO + LOGO ===== */
+    .titulo-input h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px; 
+      font-size: 24px;
     }
 
-    .bt-logar {
-        height: 45px;
+    .titulo-input img {
+      width: 40px; /* logo menor */
+      height: auto;
+    }
+
+    /* ===== INPUTS ===== */
+    .inputs {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+
+      input,
+      .input-senha-container,
+      .input-senha {
+        width: 100% !important;
+        max-width: 320px;
+        height: 48px;
+        border-radius: 30px;
+        font-size: 15px;
+      }
+    }
+
+    /* ===== CPF + TELEFONE EMPILHADOS ===== */
+    .cpf-telefone {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      align-items: center;
+
+      .input-menor {
+        width: 90% !important;
+        max-width: 320px;
+      }
+    }
+
+    /* ===== BOTÃO LOGAR ===== */
+    .div-bt {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      margin-bottom: 20px;
+
+      .bt-logar {
+        width: 200px;
+        height: 48px;
         font-size: 16px;
+        border-radius: 30px;
+      }
     }
 
-    .titulo {
-        font-size: 22px;
+    /* ===== LEMBRAR E ESQUECER SENHA ===== */
+    .lembrar-esquecer {
+      justify-content: center;
+      align-items: center;
+      gap: -10px;
+      margin-top: 10px;
+
+      .lembrar {
+        padding: 10px;
+        margin-right: 120px;
+        justify-content: center;
+      }
+
+      a {
+        padding: 0;
+      }
     }
+  }
 }

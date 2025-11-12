@@ -262,3 +262,123 @@ margin-bottom: 300px;
     cursor: pointer;
   }
 }
+
+@media (max-width: 728px) {
+
+  /* Título da sessão */
+  .titul {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+
+  /* Seção padrão com imagem + texto */
+  .tud {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      margin: 0;
+      width: 85%;
+    }
+
+    .texto {
+      h1 {
+        font-size: 26px;
+        margin-top: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Seções esquerda e direita (Sobre/Quem Somos / Etapas / etc) */
+  .direita,
+  .esquerda {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+    margin-left: 0;
+
+    img {
+      width: 85%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .texto {
+      align-items: center !important;
+      margin-top: 0;
+      
+      h1 {
+        margin-top: 0;
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  }
+ 
+  /* Seção diagonal */
+  .conteudo {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 20px;
+
+    .textoo {
+      width: 90%;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .img {
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+
+  /* ==================== CARDS DOS DESENVOLVEDORES ==================== */
+  .cardscolabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0;
+    margin-bottom: 40px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 220px;
+      border-radius: 12px;
+    }
+
+    .organizar {
+      text-align: center;
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  /* Botão */
+  .btt {
+    padding: 10px 50px;
+    font-size: 15px;
+  }
+}

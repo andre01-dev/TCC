@@ -36,7 +36,7 @@ export default function Curso1() {
       });
 
       if (resp.data.concluido === true) {
-        toast.info("Você já concluiu esse curso!");
+        toast.warn("Você já concluiu esse curso!");
         navigate("/cursos");
       }
     } catch (err) {

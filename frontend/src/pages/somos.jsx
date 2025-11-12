@@ -173,7 +173,13 @@ export default function Somos() {
         </div>
         <div className="texto">
           <h1>Conheça nossas notícias</h1>
-          <p>Nossos cursos foram criados especialmente para ajudar pessoas idosas a aprender a usar a internet com segurança e confiança. Aqui, cada aula é pensada de forma simples e prática, para que você possa navegar, se comunicar e aproveitar as vantagens do mundo digital sem medo. Nosso objetivo é mostrar que a tecnologia pode ser uma grande aliada no dia a dia, tornando a vida mais fácil, conectada e divertida.pequeno texto explicando nossos cursos</p>
+            <p>Nossas noticias foram criadas especialmente para ajudar <br />
+            pessoas idosas a aprender a usar a internet com segurança e <br />
+            confiança. Aqui, cada noticia é selecionada, confiavel e pensada<br />
+            para que você possa navegar, se comunicar e aproveitar <br />
+            as vantagens do mundo digital sem medo. Nosso objetivo <br />
+            é mostrar que a tecnologia pode ser uma grande aliada no  <br />
+            dia a dia, tornando a vida mais  fácil, conectada e divertida.</p>
           <Link to={'/tdsntc'}>
           <button className="btt">saiba mais sobre notícias</button></Link>
         </div>
