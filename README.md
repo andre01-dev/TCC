@@ -22,11 +22,11 @@ Banco de Dados	MySQL	Armazenamento de usuários, denúncias, notícias e cursos
 
 🧪 Funcionalidades
 
-✔️ Cadastro e login de usuários
-✔️ Página com cursos interativos
-✔️ Notícias sobre golpes e segurança digital
-✔️ Ferramenta para denúncias
-✔️ Upload de foto de perfil
+✔️ Cadastro e login de usuários \
+✔️ Página com cursos interativos \
+✔️ Notícias sobre golpes e segurança digital \
+✔️ Ferramenta para denúncias \
+✔️ Upload de foto de perfil \
 
 👤 Integrantes do Projeto
 André Guilherme de Oliveira Sjydlovski
