@@ -27,6 +27,7 @@ create table tb_usuario (
     telefone varchar (20),
     dt_nascimento varchar (20),
     senha varchar(500),
+    fotoPerfil longtext,
     id_curso int,
     foreign key (id_curso) references tb_curso(id_curso)
 );
@@ -158,7 +159,7 @@ values
 (8, "Qual destas é uma senha segura?", "A) 123456", "B) senha123", "C) G@t0Azul#2025", "D) meuNome", 2),
 (9, "Como identificar um e-mail de golpe (phishing)?", "A) Tem erros de português, pedidos urgentes e links estranhos", "B) Sempre vem do seu banco verdadeiro", "C) É enviado apenas por amigos", "D) É colorido e cheio de emojis", 0);
 
-
+select*from tb_usuario;
 
 insert into noticias(caminho_img1,titulo,subtitulo,conteudo1,conteudo2)
 values
