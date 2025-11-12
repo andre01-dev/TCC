@@ -112,3 +112,122 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .tudo {
+    padding: 30px;
+  }
+
+  .conquistas {
+    gap: 50px;
+    padding: 50px 30px;
+    height: auto;
+  }
+
+  .conquista {
+    width: 220px;
+    height: 160px;
+  }
+}
+
+/* Tablets médios e celulares grandes (≤768px) */
+@media (max-width: 768px) {
+  .tudo {
+    padding: 20px;
+  }
+
+  .conquistas {
+    flex-direction: row;
+    gap: 40px;
+    height: auto;
+    max-width: 90%;
+  }
+
+  .conquista {
+    width: 100%;
+    height: 150px;
+    padding: 50px;
+  }
+
+  .conquista img {
+    height: 90px;
+    top: -25px;
+  }
+
+  .conquista h2 {
+    font-size: 14px;
+  }
+
+  .conquista .barra {
+    width: 80%;
+    margin-top: 50px;
+  }
+
+  .confira-container {
+    gap: 25px;
+  }
+
+  .confira-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .bt-cursos {
+    font-size: 0.95rem;
+    padding: 8px 20px;
+  }
+
+  .confira-cursos{
+    h3{
+      text-align: center;
+    }
+  }
+}
+
+/* Celulares pequenos (≤480px) */
+@media (max-width: 480px) {
+  .tudo {
+    padding: 10px;
+  }
+
+  .conquistas {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .conquista {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 50px 20px 15px;
+  }
+
+  .conquista img {
+    height: 80px;
+    top: -25px;
+  }
+
+  .conquista h2 {
+    font-size: 14px;
+  }
+
+  .conquista .barra {
+    width: 100px;
+    margin-top: 20px;
+  }
+
+  .confira-container {
+    gap: 20px;
+  }
+
+  .confira-container h2 {
+    font-size: 1rem;
+  }
+
+  .bt-cursos {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+

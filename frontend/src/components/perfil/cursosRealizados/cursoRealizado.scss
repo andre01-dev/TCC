@@ -133,3 +133,91 @@
 margin-top: 20px;
   }
 }
+
+@media (max-width: 1024px) {
+  .container-tudo {
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .realizados, .recomenda-tudo {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .recomendacao img {
+    width: 160px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-tudo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .realizados, .recomenda-tudo {
+    width: 90%;
+  }
+
+  .recomendacao {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .recomendacao img {
+    width: 100%;
+    height: auto;
+  }
+
+  .recomendacao .texto {
+    max-width: 100%;
+  }
+
+  .recomendacao button {
+    align-self: center;
+  }
+
+  .tt h2 {
+    font-size: 1.2rem;
+  }
+
+  .tt h3 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-tudo {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .realizados {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .realizado {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .recomendacao {
+    padding: 20px;
+  }
+
+  .titulo-recomendacao {
+    font-size: 1.3rem;
+  }
+
+  .recomendacao h3 {
+    font-size: 1rem;
+  }
+
+  .recomendacao p {
+    font-size: 0.85rem;
+  }
+}
