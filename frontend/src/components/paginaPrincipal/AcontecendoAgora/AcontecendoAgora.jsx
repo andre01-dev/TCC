@@ -42,7 +42,7 @@ export default function Parte2() {
               <div className="texto">
                 <h2 className="josefin-sans">{noticia.titulo}</h2>
                 <br />
-                <p className="josefin-sans">
+                <p className="average-sans">
                   {noticia.subtitulo?.slice(0, 200)}...
                   <br />
                 </p>

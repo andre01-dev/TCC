@@ -74,16 +74,16 @@ export default function Cursos() {
                             <div className='cardCurso'>
                                 <img className='imagem' src={curso.caminho_img} alt="" />
                                 <div className='titulo-carga'>
-                                    <h2 className='titulo average-sans'>{curso.nome_curso}</h2>
+                                    <h2 className='titulo josefin-sans'>{curso.nome_curso}</h2>
                                     <div className='tempo'>
                                         <img src="https://img.icons8.com/ios7/200/clock--v3.png" height={20} />
-                                        <h2 className='average-sans'>{curso.duracao}</h2>
+                                        <h2 className='josefin-sans'>{curso.duracao}</h2>
                                     </div>
                                 </div>
                                 <p className='average-sans'>{curso.descricao}</p>
                                 <div className='nivel-button'>
                                     <h2 className='average-sans'>Nível: Básico</h2>
-                                    <button>Gratuito</button>
+                                    <button className= "josefin-sans">Gratuito</button>
                                 </div>
                             </div>
                         </div>

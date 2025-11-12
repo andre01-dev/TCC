@@ -44,7 +44,7 @@ export default function Perfil() {
 
             <div>
                 <User />
-                <h1 className="conquistatxt">Confira suas conquistas</h1>
+                <h1 className="conquistatxt josefin-sans">Confira suas conquistas</h1>
                 <Conquistas />
 
                 <CursoRealizado />

@@ -27,19 +27,17 @@ export default function LoginAdm() {
             }
         } catch (err) {
             toast.error("Erro ao conectar ao servidor");
-
-
         }
     }
 
 
     return (
         <div className="login-container">
-            <h1 className='login-titulo'>Conectando Gerações <br />
+            <h1 className='login-titulo josefin-sans'>Conectando Gerações <br />
                 ADM</h1>
             <div className="login-card">
 
-                <label className="input-label">Usuário</label>
+                <label className="input-label josefin-sans">Usuário</label>
                 <input
                     placeholder='Enter your user'
                     value={usuario}
@@ -47,7 +45,7 @@ export default function LoginAdm() {
                     type="text"
                 />
 
-                <label className="input-label">Senha</label>
+                <label className="input-label josefin-sans">Senha</label>
                 <div className='input-senha-login'>
                 <input
                 className='input-login'
@@ -64,7 +62,7 @@ export default function LoginAdm() {
                 </span>
                     </div>
 
-                <button className="button-login" onClick={entrar}>
+                <button className="button-login josefin-sans" onClick={entrar}>
                     Entrar
                 </button>
             </div>

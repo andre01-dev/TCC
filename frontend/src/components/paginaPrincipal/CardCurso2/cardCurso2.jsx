@@ -74,7 +74,7 @@ export default function CardCurso2() {
 
       <div className="alinhamento">
         <Link to="/cursos" className="alinhar" onClick={() => window.scrollTo(0, 0)}>
-          <button className="verMais">+</button>
+          <button className="verMais average-sans">+</button>
           <p className="average-sans">Ver mais</p>
         </Link>
 

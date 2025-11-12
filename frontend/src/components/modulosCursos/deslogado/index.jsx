@@ -7,7 +7,7 @@ export default function ModuloDesLogado({titulo}) {
             <div className="moduloDeslogado">
                 <div className="titulos">
                     {titulo.map((item) => (
-                        <h3>{item}</h3>
+                        <h3 className="josefin-sans">{item}</h3>
                     ))}
                 </div>
             </div>

@@ -46,12 +46,12 @@ export default function TodasNoticias() {
                     <button className='voltar'>
                         <img src="/src/assets/images/setaEsquerda.png" height={25} />
                     </button>
-                    <p>Voltar para a página Inicial</p>
+                    <p className='josefin-sans'>Voltar para a página Inicial</p>
                 </Link>
             </div>
 
             <div className='titulo-noticia'>
-                <h1>Notícias</h1>
+                <h1 className='josefin-sans'>Notícias</h1>
             </div>
 
             <div className='align'>

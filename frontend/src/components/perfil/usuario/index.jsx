@@ -129,26 +129,26 @@ export default function Perfil() {
                 <div className="dados-container">
                     <div className="dados">
                         <div className="container-editar">
-                            <h2>Perfil</h2>
+                            <h2 className="josefin-sans">Perfil</h2>
 
-                            <button className="bt-editar" onClick={() => setEditar(true)}>
+                            <button className="bt-editar josefin-sans" onClick={() => setEditar(true)}>
                                 Editar
                             </button>
                         </div>
 
                         <div className="info">
-                            <h3>Nome</h3>
-                            <h3>{dados.nome_usuario}</h3>
+                            <h3 className="average-sans">Nome</h3>
+                            <h3 className="average-sans">{dados.nome_usuario}</h3>
                         </div>
 
                         <div className="info">
-                            <h3>Email</h3>
-                            <h3>{dados.email}</h3>
+                            <h3 className="average-sans">Email</h3>
+                            <h3 className="average-sans">{dados.email}</h3>
                         </div>
 
                         <div className="info">
-                            <h3>Telefone</h3>
-                            <h3>{dados.telefone}</h3>
+                            <h3 className="average-sans">Telefone</h3>
+                            <h3 className="average-sans">{dados.telefone}</h3>
                         </div>
                     </div>
 
@@ -156,21 +156,21 @@ export default function Perfil() {
                     {editar && (
                         <div className="popup-overlay">
                             <div className="popup-modal">
-                                <h2>Editar Perfil</h2>
+                                <h2 className="josefin-sans">Editar Perfil</h2>
 
-                                <label>Nome:</label>
+                                <label className="josefin-sans">Nome:</label>
                                 <input
                                     value={dados.nome_usuario}
                                     onChange={(e) => setDados({ ...dados, nome_usuario: e.target.value })}
                                 />
 
-                                <label>Email:</label>
+                                <label className="josefin-sans">Email:</label>
                                 <input
                                     value={dados.email}
                                     onChange={(e) => setDados({ ...dados, email: e.target.value })}
                                 />
 
-                                <label>Telefone:</label>
+                                <label className="josefin-sans">Telefone:</label>
                                 <input
                                     value={dados.telefone}
                                     onChange={(e) => setDados({ ...dados, telefone: e.target.value })}

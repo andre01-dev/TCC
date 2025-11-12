@@ -6,14 +6,14 @@
                 <div className="cardCurso">
                     <img className="imagem" src= {imagem} />
                     <div className="titulo-carga">
-                        <h2>{titulo}</h2>
+                        <h2 className="josefin-sans">{titulo}</h2>
                         <div className="tempo">
                         <img src="https://img.icons8.com/ios7/200/clock--v3.png" height={20} />
-                        <h2>{duracao}</h2>
+                        <h2 className="josefin-sans">{duracao}</h2>
                         </div>
                     </div>
                     <h1>{tema}</h1>
-                    <p> 
+                    <p className="average-sans"> 
                         {titulo === "Fake News"
     ? "Neste curso, você aprenderá a reconhecer e analisar conteúdos falsos que circulam nas redes. Serão abordados os principais tipos de fake news, suas estratégias de disseminação e formas de verificação da informação. O objetivo é desenvolver um olhar crítico e responsável para garantir uma navegação mais segura e consciente na internet."
      
@@ -45,8 +45,8 @@
                     : descricao}
     </p>
                     <div className="nivel-button">
-                        <h2>{nivel}</h2>
-                        <button>Gratuito</button>
+                        <h2 className="josefin-sans">{nivel}</h2>
+                        <button className="average-sans">Gratuito</button>
                     </div>
                 </div>
             </div>

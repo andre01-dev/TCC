@@ -12,6 +12,8 @@ import {
 import "./dashboard.scss";
 import CabecalhoADM from "../../components/cabecalhoadm/cabecalhoadm";
 import { Link } from "react-router"
+import '/src/assets/fonts/fonts.scss'
+
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -125,23 +127,22 @@ export default function RelatorioGeralCursos() {
   };
 
   return (
-    <div className="container-dashboard">
+    <div>
         <CabecalhoADM />
-
+<div className="container-dashboard">
         <div className="grafico-container">
-      <h2 className="titulo-grafico">Relatório de Cursos</h2>
+      <h2 className="titulo-grafico josefin-sans">Relatório de Cursos</h2>
       <div className="grafico-box">
         <Bar data={data} options={options} />
       </div>
+      
     </div>
     <div className="divbut">
         <Link to={'/adm'}>
-        <button> Voltar Para Página Inicial</button>
+        <button className="josefin-sans"> Voltar Para Página Inicial</button>
     </Link>
     </div>
-    
-        
     </div>
-    
+    </div>
   );
 }

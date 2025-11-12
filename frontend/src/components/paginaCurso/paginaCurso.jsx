@@ -5,7 +5,7 @@ export default function CardCurso({ videoUrl, titulo, texto, modulo1, modulo2, m
     <div className="container-paginaCurso">
       <div className="paginaCurso">
         <div className="titulo">
-          <h1>Cursos</h1>
+          <h1 className="josefin-sans">Cursos</h1>
         </div>
 
         <div className="video-container">
@@ -19,21 +19,21 @@ export default function CardCurso({ videoUrl, titulo, texto, modulo1, modulo2, m
         </div>
 
         <div className="subtitulo">
-          <h2>{titulo}</h2>
+          <h2 className="josefin-sans">{titulo}</h2>
         </div>
 
         <div className="texto">
-          <p>{texto}</p>
+          <p className="average-sans">{texto}</p>
         </div>
 
         <div className="titulomodulo">
-          <h2>Módulos</h2>
+          <h2 className="josefin-sans">Módulos</h2>
         </div>
 
         <ul className="lista-modulos">
-          <li>{modulo1}</li>
-          <li>{modulo2}</li>
-          <li>{modulo3}</li>
+          <li className="josefin-sans">{modulo1}</li>
+          <li className="josefin-sans">{modulo2}</li>
+          <li className="josefin-sans">{modulo3}</li>
         </ul>
       </div>
     </div>

@@ -59,12 +59,12 @@ export default function Noticia() {
                     <button className="voltar">
                         <img src="/src/assets/images/setaEsquerda.png" height={25} />
                     </button>
-                    <p>Voltar para as notícias</p>
+                    <p className='josefin-sans'>Voltar para as notícias</p>
                 </Link>
             </div>
 
             <div className="titulo-noticia">
-                <h1>{noticia.titulo}</h1>
+                <h1 className='josefin-sans'>{noticia.titulo}</h1>
             </div>
 
             {noticia.subtitulo && <h3 className="subtitulo">{noticia.subtitulo}</h3>}
@@ -74,8 +74,8 @@ export default function Noticia() {
                     <img src={noticia.caminho_img1} alt={noticia.titulo} />
                 </div>
 
-                <p>{noticia.conteudo1}</p>
-                {noticia.conteudo2 && <p>{noticia.conteudo2}</p>}
+                <p className='average-sans'>{noticia.conteudo1}</p>
+                {noticia.conteudo2 && <p className='average-sans'>{noticia.conteudo2}</p>}
             </div>
 
             <Rodape />

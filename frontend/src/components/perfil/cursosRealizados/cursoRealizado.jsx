@@ -41,16 +41,16 @@ export default function Realizado() {
                 style={{ width: "120px", height: "120px" }}
               />
               <div className="tt">
-                <h2>{item.titulo_curso}</h2>
-                <h3>Concluido</h3>
+                <h2 className="josefin-sans">{item.titulo_curso}</h2>
+                <h3 className="josefin-sans">Concluido</h3>
               </div>
             </div>
           ))}
         </div>
       ) : (
         <div className="sem-cursos">
-          <h3>Você ainda não concluiu nenhum curso</h3>
-          <p>Veja as recomendações ao lado e comece um curso!</p>
+          <h3 className="josefin-sans">Você ainda não concluiu nenhum curso</h3>
+          <p className="average-sans">Veja as recomendações ao lado e comece um curso!</p>
           <img src="/public/images/semconquista.png" height={200} />
 
         </div>
@@ -62,9 +62,9 @@ export default function Realizado() {
             <div className="recomendacao" key={item.id_curso}>
               <div className="texto">
                 <h3 className="titulo-recomendacao">{item.nome_curso}</h3>
-                <p>{item.descricao}</p>
+                <p className="average-sans">{item.descricao}</p>
                 <Link to={item.url}>
-                  <button >Ver Curso</button>
+                  <button className="averages-sans" >Ver Curso</button>
                 </Link>
 
               </div>
@@ -72,7 +72,7 @@ export default function Realizado() {
             </div>
           ))
         ) : (
-          <p>Carregando recomendações...</p>
+          <p className="average-sans">Carregando recomendações...</p>
         )}
       </div>
 

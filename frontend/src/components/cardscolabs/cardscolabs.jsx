@@ -5,8 +5,8 @@ export default function CardColab({ imagem, nome, descricao }) {
         <div className='cardcolab'>
             <div className='img'>{imagem}</div>
             <div className='textos'>
-                <h1>{nome}</h1>
-                <p>{descricao}</p>
+                <h1 className='josefin-sans'>{nome}</h1>
+                <p className='average-sans'>{descricao}</p>
             </div>
         </div>
     )

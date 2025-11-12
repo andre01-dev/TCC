@@ -48,7 +48,7 @@ export default function Conquistas() {
                                 style={{ width: "120px", height: "120px" }}
                                 />
                                 <div className="barra"></div>
-                            <h2>{item.titulo_curso}</h2>
+                            <h2 className="josefin-sans">{item.titulo_curso}</h2>
                                 </div>
                                 </div>
                         </>
@@ -57,13 +57,13 @@ export default function Conquistas() {
                 ) : (
                     <>
                     <div className="confira-container">
-                        <h2>Você não possui nenhuma conquista</h2>
+                        <h2 className="josefin-sans">Você não possui nenhuma conquista</h2>
                         <div className="img-conquista">
             <img src="/public/images/semconquista.png" height={200} />
                         </div>
                     <div className="confira-cursos">
-                        <h3>Confira nossos cursos</h3>
-                        <button onClick={Cursos} className="bt-cursos">Páginas Cursos</button>
+                        <h3 className="josefin-sans">Confira nossos cursos</h3>
+                        <button onClick={Cursos} className="bt-cursos average-sans">Páginas Cursos</button>
                     </div>
                     </div>
                     </>

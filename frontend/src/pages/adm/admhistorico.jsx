@@ -4,6 +4,7 @@ import './admhistorico.scss';
 import api from '../../api';
 import CabecalhoADM from '../../components/cabecalhoadm/cabecalhoadm';
 import { Link } from 'react-router';
+import '/src/assets/fonts/fonts.scss'
 
 function ajustarData(dataStr) {
   if (!dataStr) return '';
@@ -70,10 +71,10 @@ export default function AdmHistorico() {
     <div>
       <CabecalhoADM />
       <div className="pagina-denuncia">
-        {mensagem && <p className="mensagem">{mensagem}</p>}
+        {mensagem && <p className="mensagem average-sans">{mensagem}</p>}
 
         <div className="caixa-denuncia">
-          <h3 className="titulo">Histórico de Denúncias</h3>
+          <h3 className="titulo josefin-sans">Histórico de Denúncias</h3>
 
           <div className="lista-denuncia">
             {denuncias.map((item) => (
@@ -90,7 +91,7 @@ export default function AdmHistorico() {
                 {idSelecionado === item.id_denuncia && (
                   <div className="descricao-item">
                     <strong>Ocorrido:</strong>
-                    <p>{item.ocorrido}</p>
+                    <p className='average-sans'>{item.ocorrido}</p>
                   </div>
                 )}
               </div>
@@ -99,7 +100,7 @@ export default function AdmHistorico() {
         </div>
         <div className="divbut">
           <Link to={'/adm'}>
-            <button> Voltar Para Página Inicial</button>
+            <button className='josefin-sans'> Voltar Para Página Inicial</button>
           </Link>
         </div>
 

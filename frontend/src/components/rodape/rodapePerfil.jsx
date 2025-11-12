@@ -58,7 +58,7 @@ export default function Rodape2() {
         <p></p>
         <p className="average-sans">© 2025 Todos os direitos reservados para Conectando Gerações</p>
         <Link to={'/loginadm'}>
-          <pre>Login Adm</pre>
+          <pre className="average-sans">Login Adm</pre>
         </Link>
       </div>
     </footer>

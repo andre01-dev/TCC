@@ -176,7 +176,7 @@ export default function Curso1() {
         {mostrarConteudo ? (
           <>
             <div className="lado-esquerdo">
-              <h1>{curso.nome_curso}</h1>
+              <h1 className="josefin-sans">{curso.nome_curso}</h1>
 
               <div className="video-box">
                 <iframe
@@ -188,7 +188,7 @@ export default function Curso1() {
                 ></iframe>
               </div>
 
-                       <p className="descricao">
+                       <p className="descricao average-sans">
   {curso.nome_curso?.toLowerCase() === "golpes"
     ? "Neste curso, você vai aprender a identificar e evitar golpes conhecidos como phishing — tentativas de roubo de dados pessoais por meio de e-mails falsos. Serão apresentadas as principais táticas usadas por golpistas e estratégias simples para proteger suas informações e navegar com segurança. "
     : curso.descricao}
@@ -199,30 +199,30 @@ export default function Curso1() {
 
             <div className="lado-direito">
               <div className="card-curso">
-                <p className="tema">Fraude Digital</p>
-                <p className="tempo">{curso.duracao}</p>
+                <p className="tema average-sans">Fraude Digital</p>
+                <p className="tempo average-sans">{curso.duracao}</p>
 
-                <h2>{curso.nome_curso}</h2>
-                <p className="resumo">
+                <h2 className="josefin-sans">{curso.nome_curso}</h2>
+                <p className="resumo average-sans">
                   Guia básico de como verificar emails seguros.
                 </p>
 
-                <p className="nivel">Nível: Básico</p>
+                <p className="nivel average-sans">Nível: Básico</p>
 
                 <div className="gratuito">Gratuito</div>
 
                 <div className="inclui">
-                  <h3>Esse curso inclui:</h3>
+                  <h3 className="josefin-sans">Esse curso inclui:</h3>
                   <ul>
-                    <li>⭐ Apostila</li>
-                    <li>⭐ Vídeo</li>
-                    <li>⭐ Certificado</li>
+                    <li className="josefin-sans">⭐ Módulos</li>
+                    <li className="josefin-sans">⭐ Vídeo</li>
+                    <li className="josefin-sans">⭐ Quiz</li>
                   </ul>
                 </div>
 
                 <div className="avaliacao">
-                  <h3>5 de 5 ⭐⭐⭐⭐⭐</h3>
-                  <p>Avaliação</p>
+                  <h3 className="josefin-sans">5 de 5 ⭐⭐⭐⭐⭐</h3>
+                  <p className="average-sans">Avaliação</p>
                 </div>
 
                 {inscritoCurso ? (
@@ -254,7 +254,7 @@ export default function Curso1() {
                     <button className='voltarReg'>
                       <img src="/src/assets/images/setaEsquerda.png" height={25} />
                     </button>
-                    <p>Voltar para a página de Cursos</p>
+                    <p className="average-sans">Voltar para a página de Cursos</p>
                   </Link>
                 </div>
                 {passarModulo < modulos.length && (
@@ -286,8 +286,8 @@ export default function Curso1() {
                     />
 
                     <div className="botoes">
-                      <button onClick={VoltarModulo}>Voltar</button>
-                      <button onClick={FinalizarCurso}>Finalizar Curso</button>
+                      <button className="josefin-sans" onClick={VoltarModulo}>Voltar</button>
+                      <button className="josefin-sans" onClick={FinalizarCurso}>Finalizar Curso</button>
                     </div>
                   </>
                 )}

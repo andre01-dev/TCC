@@ -161,7 +161,7 @@ export default function Somos() {
             é mostrar que a tecnologia pode ser uma grande aliada no  <br />
             dia a dia, tornando a vida mais  fácil, conectada e divertida.</p>
             <Link to ={'/cursos'}>
-          <button className="btt">Saiba mais sobre cursos</button></Link>
+          <button className="btt josefin-sans">Saiba mais sobre cursos</button></Link>
         </div>
       </div>
 
@@ -182,7 +182,7 @@ export default function Somos() {
             é mostrar que a tecnologia pode ser uma grande aliada no  <br />
             dia a dia, tornando a vida mais  fácil, conectada e divertida.</p>
           <Link to={'/tdsntc'}>
-          <button className="btt">saiba mais sobre notícias</button></Link>
+          <button className="btt josefin-sans">saiba mais sobre notícias</button></Link>
         </div>
       </div>
       <div className='desenvol-text'>

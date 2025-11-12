@@ -13,7 +13,7 @@ export default function Quiz({ pergunta, opcaoA, opcaoB, opcaoC, opcaoD, respost
   return (
     <div className="container-quiz">
       <div className="quiz">
-        <h1 className="pergunta">{pergunta}</h1>
+        <h1 className="pergunta josefin-sans">{pergunta}</h1>
 
         <div className="botao">
           <button onClick={() => handleClick(0)}>{opcaoA}</button>
@@ -24,7 +24,7 @@ export default function Quiz({ pergunta, opcaoA, opcaoB, opcaoC, opcaoD, respost
 
         {resp !== null && (
           <div className={`rep ${resp === resposta ? "correto" : "errado"}`}>
-            <p>{resp === resposta ? "✅ Correto!" : "❌ Errado!"}</p>
+            <p className="average-sans">{resp === resposta ? "✅ Correto!" : "❌ Errado!"}</p>
           </div>
         )}
       </div>

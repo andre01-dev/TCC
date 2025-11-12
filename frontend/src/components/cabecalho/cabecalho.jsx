@@ -36,21 +36,21 @@ export default function Cabecalho() {
           <img src="/images/logoVeio.png" height={90} alt="Logo" />
         </Link>
 
-        <h1 className="titulo-cabecalho">CONECTANDO GERAÇÕES</h1>
+        <h1 className="titulo-cabecalho josefin-sans">CONECTANDO GERAÇÕES</h1>
 
         {/* MENU DESKTOP */}
         <div className="navegar">
           <Link to="/" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-            <p className="nav-cabecalho">Início</p>
+            <p className="nav-cabecalho average-sans">Início</p>
           </Link>
           <Link to="/cursos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-            <p className="nav-cabecalho">Cursos</p>
+            <p className="nav-cabecalho average-sans">Cursos</p>
           </Link>
           <Link to="/tdsntc" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-            <p className="nav-cabecalho">Notícias</p>
+            <p className="nav-cabecalho average-sans">Notícias</p>
           </Link>
           <Link to="/quemsomos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-            <p className="nav-cabecalho">Quem Somos</p>
+            <p className="nav-cabecalho average-sans">Quem Somos</p>
           </Link>
 
           {/* Condição logado ou não */}
@@ -60,7 +60,7 @@ export default function Cabecalho() {
             </div>
           ) : (
             <Link to="/registrar" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-              <p className="nav-cabecalho">Entrar/Registrar</p>
+              <p className="nav-cabecalho average-sans">Entrar/Registrar</p>
             </Link>
           )}
         </div>
@@ -77,28 +77,28 @@ export default function Cabecalho() {
           <div className="popup">
             <h2>Menu</h2>
             <Link to="/" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-              <p>Início</p>
+              <p clasname = 'average-sans'>Início</p>
             </Link>
             <Link to="/cursos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-              <p>Cursos</p>
+              <p clasname = 'average-sans'>Cursos</p>
             </Link>
             <Link to="/tdsntc" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-              <p>Notícias</p>
+              <p clasname = 'average-sans'>Notícias</p>
             </Link>
             <Link to="/quemsomos" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
-              <p>Quem Somos</p>
+              <p clasname = 'average-sans'>Quem Somos</p>
             </Link>
 
             {usuario ? (
               <>
                 <Link to="/perfil" onClick={fecharMenu}>
-                  <p>👤 {usuario}</p>
+                  <p clasname = 'average-sans'>👤 {usuario}</p>
                 </Link>
                 <button onClick={Sair}>Sair</button>
               </>
             ) : (
               <Link to="/registrar" onClick={fecharMenu}>
-                <p>Entrar/Registrar</p>
+                <p clasname = 'average-sans'>Entrar/Registrar</p>
               </Link>
             )}
           </div>

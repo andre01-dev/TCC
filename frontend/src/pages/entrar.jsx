@@ -117,7 +117,7 @@ export default function Entrar() {
             <div className='container-entrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
                 <div className='titulo-input'>
-                    <h1 className='titulo .average-sans'>CONECTANDO GERAÇÕES</h1>
+                    <h1 className='titulo josefin-sans'>CONECTANDO GERAÇÕES</h1>
 
                     <div className="entrar-registrar">
                         <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
@@ -131,7 +131,7 @@ export default function Entrar() {
                         </Link>
                     </div>
 
-                    <p className='average-sans '>Entre para ter acesso ao nosso conteúdo completo</p>
+                    <p className='average-sans'>Entre para ter acesso ao nosso conteúdo completo</p>
 
                     <div className='inputs'>
 
@@ -182,7 +182,7 @@ export default function Entrar() {
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
                                             />
-                                            <button onClick={verificarEmail}>Verificar e-mail</button>
+                                            <button className="josefin-sans" onClick={verificarEmail}>Verificar e-mail</button>
                                         </>
                                     )}
 
@@ -194,11 +194,11 @@ export default function Entrar() {
                                                 value={novaSenha}
                                                 onChange={(e) => setNovaSenha(e.target.value)}
                                             />
-                                            <button onClick={recuperarSenha}>Alterar senha</button>
+                                            <button className="josefin-sans" onClick={recuperarSenha}>Alterar senha</button>
                                         </>
                                     )}
 
-                                    <button className="bt-fechar" onClick={() => setAlterarSenha(false)}>
+                                    <button className="bt-fechar josefins-sans" onClick={() => setAlterarSenha(false)}>
                                         Fechar
                                     </button>
                                 </div>

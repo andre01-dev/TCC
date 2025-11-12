@@ -87,12 +87,12 @@ export default function Denunciapag() {
       )}
       <div className="denuncia-page">
         <div className='inicio'>
-          <h1>Pagina de Denúncias</h1>
+          <h1 className="josefin-sans">Pagina de Denúncias</h1>
         </div>
         <form className="form-denuncia" onSubmit={enviarDenuncia}>
           <div className="form-row">
             <div className="form-group">
-              <label>Email</label>
+              <label className="josefin-sans">Email</label>
               <input
                 type="email"
                 placeholder="Digite seu email"
@@ -103,7 +103,7 @@ export default function Denunciapag() {
             </div>
 
             <div className="form-group">
-              <label>Assunto:</label>
+              <label className="josefin-sans">Assunto:</label>
               <input
                 type="text"
                 placeholder="Digite o assunto"
@@ -114,7 +114,7 @@ export default function Denunciapag() {
             </div>
 
             <div className="form-group">
-              <label>Data do ocorrido:</label>
+              <label className="josefin-sans">Data do ocorrido:</label>
               <input
                 type="date"
                 value={data}
@@ -142,7 +142,7 @@ export default function Denunciapag() {
         {mensagem && <p className="msg">{mensagem}</p>}
 
         <div className="historico">
-          <h3>Histórico de Denúncias</h3>
+          <h3 className="josefin-sans">Histórico de Denúncias</h3>
           <div className="historico-lista">
             {denuncias.map((item) => (
               <div className="historico-item" key={item.id_denuncia}>

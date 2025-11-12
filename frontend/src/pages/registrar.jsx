@@ -80,13 +80,13 @@ export default function Registrar() {
                     <button className='voltarReg'>
                         <img src="/src/assets/images/setaEsquerda.png" height={25} />
                     </button>
-                    <p>Voltar para a página Inicial</p>
+                    <p className="average-sans">Voltar para a página Inicial</p>
                 </Link>
             </div>
             <div className='container-registrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
                 <div className='titulo-input'>
-                    <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
+                    <h1 className='titulo josefin-sans'>CONECTANDO GERAÇÕES</h1>
 
                     <div className="entrar-registrar">
                         <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
@@ -100,7 +100,7 @@ export default function Registrar() {
                         </Link>
                     </div>
 
-                    <p>Registre-se para ter acesso ao nosso conteúdo completo</p>
+                    <p className="average-sans">Registre-se para ter acesso ao nosso conteúdo completo</p>
 
                     <div className='inputs'>
                         <input
@@ -161,7 +161,7 @@ export default function Registrar() {
                     </div>
 
                     <div className='div-bt-registrar'>
-                        <button className='bt-criarConta' onClick={RegistrarUsuario}>
+                        <button className='bt-criarConta josefin-sans' onClick={RegistrarUsuario}>
                             Registrar-se
                         </button>
                     </div>

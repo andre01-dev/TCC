@@ -3,6 +3,7 @@ import Avatar from "react-avatar";
 import { useNavigate } from "react-router";
 import './cabecalho.scss'
 import { Link } from 'react-router-dom';
+import '/src/assets/fonts/fonts.scss'
 
 export default function CabecalhoLogado({ nome_usuario }) {
 
@@ -63,14 +64,14 @@ export default function CabecalhoLogado({ nome_usuario }) {
                 </Link>
             </div>
 
-            <h1 className='titulo-cabecalho'>CONECTANDO GERAÇÕES</h1>
+            <h1 className='titulo-cabecalho josefin-sans'>CONECTANDO GERAÇÕES</h1>
 
             {/* Menu desktop */}
             <div className="navegar">
-                <Link to={"/"}><p className='nav-cabecalho'>Início</p></Link>
-                <Link to={"/cursos"}><p className='nav-cabecalho'>Cursos</p></Link>
-                <Link to={"/tdsntc"}><p className='nav-cabecalho'>Notícias</p></Link>
-                <Link to={'/quemsomos'}><p className='nav-cabecalho'>Quem Somos</p></Link>
+                <Link to={"/"}><p className='nav-cabecalho josefin-sans'>Início</p></Link>
+                <Link to={"/cursos"}><p className='nav-cabecalho josefin-sans'>Cursos</p></Link>
+                <Link to={"/tdsntc"}><p className='nav-cabecalho josefin-sans'>Notícias</p></Link>
+                <Link to={'/quemsomos'}><p className='nav-cabecalho josefin-sans' >Quem Somos</p></Link>
 
                 {logado && (
                     <Avatar
@@ -86,8 +87,8 @@ export default function CabecalhoLogado({ nome_usuario }) {
                 {menuLogado && (
                     <div className="popup-menu" ref={popupRef}>
                         <div className="popup">
-                            <Link to={"/perfil"}><p>Meu Perfil</p></Link>
-                            <button onClick={Sair}>Sair</button>
+                            <Link to={"/perfil"}><p className='josefin-sans'>Meu Perfil</p></Link>
+                            <button className='josefin-sans' onClick={Sair}>Sair</button>
                         </div>
                     </div>
                 )}
@@ -99,28 +100,28 @@ export default function CabecalhoLogado({ nome_usuario }) {
             {menuAberto && (
                 <div className="popup-menu" ref={menuRef}>
                     <div className="popup">
-                        <h2>Menu</h2>
+                        <h2 className='average-sans'>Menu</h2>
                         <Link to={"/"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Início</p>
+                            <p className='average-sans'>Início</p>
                         </Link>
                         <Link to={"/cursos"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Cursos</p>
+                            <p className='average-sans'>Cursos</p>
                         </Link>
                         <Link to={"/tdsntc"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Notícias</p>
+                            <p className='average-sans'>Notícias</p>
                         </Link>
                         <Link to={"/quemsomos"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                            <p>Quem Somos</p>
+                            <p className='average-sans'>Quem Somos</p>
                         </Link>
 
                         {!logado ? (
                             <Link to={"/registrar"} onClick={() => { window.scrollTo(0, 0); fecharMenu(); }}>
-                                <p>Entrar/Registrar</p>
+                                <p className='average-sans'>Entrar/Registrar</p>
                             </Link>
                         ) : (
                             <>
-                                <Link to={"/perfil"} onClick={fecharMenu}><p>Meu Perfil</p></Link>
-                                <button onClick={() => { Sair(); fecharMenu(); }}>Sair</button>
+                                <Link to={"/perfil"} onClick={fecharMenu}><p className='average-sans'>Meu Perfil</p></Link>
+                                <button className='average-sans' onClick={() => { Sair(); fecharMenu(); }}>Sair</button>
                             </>
                         )}
                     </div>

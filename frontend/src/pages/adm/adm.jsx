@@ -1,7 +1,7 @@
 import './adm.scss'
 import {Link, useNavigate} from 'react-router'
 import { toast } from 'react-toastify';
-
+import '/src/assets/fonts/fonts.scss'
 
 export default function Adm(){
 
@@ -18,9 +18,9 @@ export default function Adm(){
         <div className='container'>
             <aside className='sidebar'>
                 <ul>
-                    <li><Link to={'/'}>Conectando Gerações</Link></li>
-                    <li><Link to="/dashboard">Dashboards</Link></li>
-                    <li><Link to="/admhistorico">Denúncias</Link></li>
+                    <li className='josefin-sans'><Link to={'/'}>Conectando Gerações</Link></li>
+                    <li className='josefin-sans'><Link to="/dashboard">Dashboards</Link></li>
+                    <li className='josefin-sans'><Link to="/admhistorico">Denúncias</Link></li>
                     <div>
                     <button onClick={sair}>Sair</button>
                 </div>
