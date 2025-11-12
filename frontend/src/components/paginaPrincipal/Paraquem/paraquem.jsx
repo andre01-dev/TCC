@@ -1,4 +1,5 @@
 import "./paraquem.scss";
+import '/src/assets/fonts/fonts.scss';
 
 export default function Parte2() {
   return (
@@ -11,7 +12,7 @@ export default function Parte2() {
       </div>
         
       <div className="conteudo-paraquem">
-        <h2>Para quem é o Conectando Gerações?</h2>
+        <h2 className="josefin-sans">Para quem é o Conectando Gerações?</h2>
 
         <div className="text">
           <img
@@ -21,8 +22,8 @@ export default function Parte2() {
           />
 
           <div className="texto">
-            <h3>60+</h3>
-            <p>
+            <h3 className="josefin-sans">60+</h3>
+            <p className="average-sans">
               O Conectando Gerações é um site criado para ajudar idosos a usar a
               internet com mais segurança e confiança. Nossa missão é orientar,
               ensinar e proteger, oferecendo dicas práticas para navegar online,

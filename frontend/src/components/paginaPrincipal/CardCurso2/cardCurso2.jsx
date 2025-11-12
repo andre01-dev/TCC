@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import api from "../../../api.js"
 import "./CardCurso2.scss";
+import '/src/assets/fonts/fonts.scss';
 
 export default function CardCurso2() {
   const [cursos, setCursos] = useState([]);
@@ -63,8 +64,8 @@ export default function CardCurso2() {
                 <Link to={cursos?.url} onClick={() => window.scrollTo(0, 0)}>
                   <img src={cursos?.caminho_img} alt={`Curso ${i + 1}`} />
                 </Link>
-                <h2 className="nm-curso">{cursos?.nome_curso}</h2>
-                <p>{cursos?.descricao}</p>
+                <h2 className="nm-curso josefin-sans">{cursos?.nome_curso}</h2>
+                <p className="average-sans">{cursos?.descricao}</p>
               </div>
             ))}
           </div>
@@ -74,7 +75,7 @@ export default function CardCurso2() {
       <div className="alinhamento">
         <Link to="/cursos" className="alinhar" onClick={() => window.scrollTo(0, 0)}>
           <button className="verMais">+</button>
-          <p>Ver mais</p>
+          <p className="average-sans">Ver mais</p>
         </Link>
 
         <div className="nextleft">

@@ -2,8 +2,9 @@ import { useState, useEffect, use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from "lucide-react";
 import { toast } from 'react-toastify';
-import api from '../api.js'
-import './entrar.scss'
+import api from '../api.js';
+import './entrar.scss';
+import '/src/assets/fonts/fonts.scss';
 
 
 export default function Entrar() {
@@ -110,13 +111,13 @@ export default function Entrar() {
                     <button className='voltarReg'>
                         <img src="/src/assets/images/setaEsquerda.png" height={25} />
                     </button>
-                    <p>Voltar para a página Inicial</p>
+                    <p className='average-sans '>Voltar para a página Inicial</p>
                 </Link>
             </div>
             <div className='container-entrar'>
                 <img src="src/assets/images/logoVeio.png" height={350} alt="Logo" />
                 <div className='titulo-input'>
-                    <h1 className='titulo'>CONECTANDO GERAÇÕES</h1>
+                    <h1 className='titulo .average-sans'>CONECTANDO GERAÇÕES</h1>
 
                     <div className="entrar-registrar">
                         <div className={`fundo ${ativo === "registrar" ? "registrar" : ""}`}></div>
@@ -130,7 +131,7 @@ export default function Entrar() {
                         </Link>
                     </div>
 
-                    <p>Entre para ter acesso ao nosso conteúdo completo</p>
+                    <p className='average-sans '>Entre para ter acesso ao nosso conteúdo completo</p>
 
                     <div className='inputs'>
 
@@ -163,10 +164,10 @@ export default function Entrar() {
 
                     <div className='lembrar-esquecer'>
                         <label className='lembrar'>
-                            <input className='inp-lembrar' type="checkbox" checked={lembrar} onChange={(e) => setLembrar(e.target.checked)} />
+                            <input className='inp-lembrar average-sans ' type="checkbox" checked={lembrar} onChange={(e) => setLembrar(e.target.checked)} />
                             Lembrar de mim
                         </label>
-                        <a href="" className='esqueceu-senhas'
+                        <a href="" className='esqueceu-senhas average-sans '
                             onClick={(e) => { e.preventDefault(); setAlterarSenha(true); setValidarEmail(false); setEmail(""); setSenha("") }}>Esqueceu a senha?</a>
                         {alterarSenha && (
                             <div className="container-alterarSenha" onClick={() => setAlterarSenha(false)}>

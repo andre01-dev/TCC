@@ -5,6 +5,7 @@ import CardColab from "../components/CardsColabs/cardscolabs.jsx";
 import { useState, useEffect } from "react";
 import CabecalhoLogado from '../components/cabecalhoLogado/cabecalho.jsx';
 import { Link } from 'react-router'
+import '/src/assets/fonts/fonts.scss';
 
 
 export default function Somos() {
@@ -109,15 +110,15 @@ export default function Somos() {
         </>
       )}
       <div className="titul">
-        <h1>Quem Somos</h1>
+        <h1 className="josefin-sans">Quem Somos</h1>
       </div>
       <div className="tud">
         <div>
           <img src="/src/assets/images/qmsm1.jpg" height={445} />
         </div>
         <div className="texto">
-          <h1>História do Conectando Gerações</h1>
-          <p>O projeto social foi desenvolvido pensando no desenvolvimento dos idosos
+          <h1 className="josefin-sans">História do Conectando Gerações</h1>
+          <p className='average-sans'>O projeto social foi desenvolvido pensando no desenvolvimento dos idosos
             para com o meio <br />
             digital, foram estudadas as estatisticas e nota-se que os
             idosos são o grupo que mais cai em
@@ -135,7 +136,7 @@ export default function Somos() {
         <div class="faixa-diagonal">
           <div class="conteudo">
             <div class="textoo">
-              <p>
+              <p className='average-sans'>
                 Além disso, o projeto busca promover a inclusão digital e a autonomia dos idosos, oferecendo um espaço acessível e acolhedor para que possam aprender, interagir e se sentir seguros no uso da tecnologia. Acreditamos que, com o apoio certo, cada pessoa pode se adaptar ao mundo digital e aproveitar seus benefícios — desde a comunicação com familiares até o acesso a serviços e informações online. Nosso objetivo é transformar o medo da tecnologia em encanto e curiosidade, fortalecendo a conexão entre gerações e construindo uma sociedade mais integrada e informada.
               </p>
             </div>
@@ -151,8 +152,8 @@ export default function Somos() {
           </Link>
         </div>
         <div className="texto">
-          <h1>Conheça nossos cursos</h1>
-          <p>Nossos cursos foram criados especialmente para ajudar <br />
+          <h1 className="josefin-sans">Conheça nossos cursos</h1>
+          <p className='average-sans'>Nossos cursos foram criados especialmente para ajudar <br />
             pessoas idosas a aprender a usar a internet com segurança e <br />
             confiança. Aqui, cada aula é pensada de forma simples e prática, <br />
             para que você possa navegar, se comunicar e aproveitar <br />
@@ -172,8 +173,8 @@ export default function Somos() {
           </Link>
         </div>
         <div className="texto">
-          <h1>Conheça nossas notícias</h1>
-            <p>Nossas noticias foram criadas especialmente para ajudar <br />
+          <h1 className="josefin-sans">Conheça nossas notícias</h1>
+            <p className='average-sans'>Nossas noticias foram criadas especialmente para ajudar <br />
             pessoas idosas a aprender a usar a internet com segurança e <br />
             confiança. Aqui, cada noticia é selecionada, confiavel e pensada<br />
             para que você possa navegar, se comunicar e aproveitar <br />
@@ -185,7 +186,7 @@ export default function Somos() {
         </div>
       </div>
       <div className='desenvol-text'>
-        <h2>Desenvolvedores</h2>
+        <h2 className="josefin-sans">Desenvolvedores</h2>
       </div>
       <div className='alinhando'>
         <div className='cardscolabs'>
@@ -215,7 +216,7 @@ export default function Somos() {
 
 
       <div className="parceiros">
-        <h1 className="text">Parceiros</h1>
+        <h1 className=" text josefin-sans" >Parceiros</h1>
 
         <div className="carousel-container">
           <button className="btn prev" onClick={prevSlide}>❮</button>

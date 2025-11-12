@@ -2,6 +2,7 @@ import "./AcontecendoAgora.scss";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import api from "../../../api";
+import '/src/assets/fonts/fonts.scss';
 
 
 
@@ -39,9 +40,9 @@ export default function Parte2() {
                 alt={noticia.titulo}
               />
               <div className="texto">
-                <h2>{noticia.titulo}</h2>
+                <h2 className="josefin-sans">{noticia.titulo}</h2>
                 <br />
-                <p>
+                <p className="josefin-sans">
                   {noticia.subtitulo?.slice(0, 200)}...
                   <br />
                 </p>
@@ -53,7 +54,7 @@ export default function Parte2() {
         <Link to={"/tdsntc"} onClick={() => window.scrollTo(0, 0)}>
           <div className="alinhar">
             <button className="verMais">+</button>
-            <p>Ver mais</p>
+            <p className="average-sans">Ver mais</p>
           </div>
         </Link>
       </div>

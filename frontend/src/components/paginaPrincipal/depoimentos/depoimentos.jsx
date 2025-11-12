@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./depoimentos.scss";
 import api from "../../../api.js";
 import { toast } from "react-toastify";
-
+import '/src/assets/fonts/fonts.scss';
 
 export default function Depoimentos() {
 
@@ -72,8 +72,8 @@ export default function Depoimentos() {
             <div className="slide" key={i}>
               <div className="carde">
                 <img src={dep.imagem} alt={dep.titulo} />
-                <p className="especialista">{dep.titulo}</p>
-                <p>{dep.depoimento}</p>
+                <p className="especialista average-sans">{dep.titulo}</p>
+                <p className="average-sans">{dep.depoimento}</p>
               </div>
             </div>
           ))}

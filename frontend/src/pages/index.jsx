@@ -12,6 +12,9 @@ import { useEffect, useState } from "react";
 import CabecalhoLogado from "../components/cabecalhoLogado/cabecalho";
 import Denuncia from "../components/denuncia/denuncia";
 import FAQ from '../components/paginaPrincipal/FAQ/faq';
+import '/src/assets/fonts/fonts.scss';
+
+
 
 export default function Comeco() {
 
@@ -61,7 +64,7 @@ export default function Comeco() {
             </div>
 
             <div>
-                <h1 className="ConhecaCurso">Conheça Nossos Cursos</h1>
+                <h1 className="ConhecaCurso josefin-sans ">Conheça Nossos Cursos</h1>
                 <CardCurso2 />
             </div>
 
@@ -70,14 +73,14 @@ export default function Comeco() {
             </div>
 
             <div>
-                <h1 className="Depoimento">Depoimentos</h1>
+                <h1 className="Depoimento josefin-sans ">Depoimentos</h1>
                 <Depoimentos />
             </div>
 
             <div className="barra"></div>
 
             <div>
-                <h1 className="AcontecendoAgora">O que está acontecendo agora?</h1>
+                <h1 className="AcontecendoAgora josefin-sans">O que está acontecendo agora?</h1>
                 <AcontecendoAgora />
             </div>
 
@@ -85,8 +88,8 @@ export default function Comeco() {
                 <Denuncia />
             </div>
             
-    <h1 className="text-faq1 ">Dúvidas Frequentes</h1>
-    <p className="text-faq2 ">Esta seção foi criada para ajudar você a encontrar respostas rápidas para as dúvidas mais comuns. Aqui reunimos informações importantes  <br /> sobre como utilizar o site de forma simples e segura. </p>
+    <h1 className="text-faq1 josefin-sans ">Dúvidas Frequentes</h1>
+    <p className="text-faq2 average-sans ">Esta seção foi criada para ajudar você a encontrar respostas rápidas para as dúvidas mais comuns. Aqui reunimos informações importantes  <br /> sobre como utilizar o site de forma simples e segura. </p>
 <div className="faq">
     <FAQ />
     <div className="Faq-img">
