@@ -2,15 +2,21 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './cabecalho.scss'
 
+
 export default function Cabecalho() {
+
   const navigate = useNavigate()
   const [menuAberto, setMenuAberto] = useState(false)
   const [usuario, setUsuario] = useState(null)
+  const [foto, setFoto] = useState(null)
 
   useEffect(() => {
-    // Puxa o nome salvo no login
+    // Puxa nome e foto salvos no login
     const nome = localStorage.getItem('NOME_USUARIO')
+    const fotoPerfil = localStorage.getItem('FOTO_USUARIO')
+
     if (nome) setUsuario(nome)
+    if (fotoPerfil) setFoto(fotoPerfil)
   }, [])
 
   function toggleMenu() {
@@ -23,8 +29,10 @@ export default function Cabecalho() {
 
   function Sair() {
     localStorage.removeItem('NOME_USUARIO')
+    localStorage.removeItem('FOTO_USUARIO')
     localStorage.removeItem('TOKEN')
     setUsuario(null)
+    setFoto(null)
     fecharMenu()
     navigate('/')
   }
@@ -53,10 +61,14 @@ export default function Cabecalho() {
             <p className="nav-cabecalho">Quem Somos</p>
           </Link>
 
-          {/* Condição logado ou não */}
+          {/* Ícone ou login (versão desktop) */}
           {usuario ? (
             <div className="icone-usuario" onClick={() => navigate('/perfil')}>
-              👤 {usuario}
+              {foto ? (
+                <img src={foto} alt="Perfil" className="foto-usuario" />
+              ) : (
+                <span>👤</span>
+              )}
             </div>
           ) : (
             <Link to="/registrar" onClick={() => { window.scrollTo(0, 0); fecharMenu() }}>
@@ -89,11 +101,16 @@ export default function Cabecalho() {
               <p>Quem Somos</p>
             </Link>
 
+            {/* Ícone/Foto no mobile */}
             {usuario ? (
               <>
-                <Link to="/perfil" onClick={fecharMenu}>
-                  <p>👤 {usuario}</p>
-                </Link>
+                <div className="perfil-menu" onClick={() => { navigate('/perfil'); fecharMenu(); }}>
+                  {foto ? (
+                    <img src={foto} alt="Perfil" className="foto-usuario" />
+                  ) : (
+                    <div className="icone-usuario">👤</div>
+                  )}
+                </div>
                 <button onClick={Sair}>Sair</button>
               </>
             ) : (
