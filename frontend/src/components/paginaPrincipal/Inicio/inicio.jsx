@@ -1,4 +1,5 @@
 import "./inicio.scss"
+import '/src/assets/fonts/fonts.scss'
 import {Link} from 'react-router'
 
 export default function Inicio() {
@@ -8,7 +9,7 @@ export default function Inicio() {
                 <div className="td">
 
                     <div className="tt">
-                        <h1 className="titulo">Aprenda a navegar de forma Segura na Internet</h1>
+                        <h1 className="titulo josefin-sans">Aprenda a navegar de forma Segura na Internet</h1>
                     </div>
                     <div className="txt">
                         <h3>O Conectando Gerações foi criado para ajudar pessoas idosas a explorarem o mundo digital com mais confiança e segurança. Aqui, você encontra cursos que ensinam como se proteger de golpes online. Além disso, disponibilizamos notícias atualizadas e um canal de denúncias onde iremos auxiliar com qualquer problema.</h3>
