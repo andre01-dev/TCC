@@ -26,11 +26,11 @@ Banco de Dados	MySQL	Armazenamento de usuários, denúncias, notícias e cursos
 ✔️ Página com cursos interativos \
 ✔️ Notícias sobre golpes e segurança digital \
 ✔️ Ferramenta para denúncias \
-✔️ Upload de foto de perfil \
+✔️ Upload de foto de perfil 
 
 👤 Integrantes do Projeto
-André Guilherme de Oliveira Sjydlovski
-José Cláudio de Souza Silva
-Gustavo Lana Oliveira
-Gustavo dos Santos Penha
+André Guilherme de Oliveira Sjydlovski \
+José Cláudio de Souza Silva \
+Gustavo Lana Oliveira \
+Gustavo dos Santos Penha \
 Pedro Lima de Oliveira
