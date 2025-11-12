@@ -62,12 +62,13 @@ export async function AlterarSenha(novaSenha,email) {
     return registros
 }
 
-export async function UploadFoto(fotoPerfil, id_usuario) {
+export async function UploadFoto(caminho, id_usuario) {
     const comando = `
         update tb_usuario set fotoPerfil = ? where id_usuario = ?
-    `
-    const [registros] = await conection.query(comando, [fotoPerfil, id_usuario]);
-    return registros
+    `;
+    
+    const [registros] = await conection.query(comando, [caminho, id_usuario]);
+    return registros;
 }
 
 

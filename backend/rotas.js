@@ -10,6 +10,8 @@ import express from 'express'
 
 
 export default function adicionarRotas(api) {
+    api.use("/images", express.static("images"));
+    api.use("/storage", express.static("public/storage"));
     api.use(UsuarioControler);
     api.use(denunciaController);
     api.use(CursoController);
@@ -18,5 +20,4 @@ export default function adicionarRotas(api) {
     api.use(loginAdmController);
     api.use(depoimentoController);
     api.use(NoticiaController);
-    api.use("/images", express.static("images"));
 }

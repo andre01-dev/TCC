@@ -1,8 +1,11 @@
 import * as repoRegistrar from '../repository/UsuarioRepository.js'
 import {Router} from 'express';
 import {generateToken} from '../utils/jwt.js'
+import multer from 'multer'
 
 const endpoints = Router();
+
+const upload = multer({dest: "public/storage"})
 
 endpoints.post("/usuario", async (req,resp) => {
     let novoUsuario = req.body;
@@ -72,13 +75,20 @@ endpoints.put('/alterarsenha', async (req,resp) => {
     resp.send({mensagem: "Senha alterada com sucesso!"})
 })
 
-endpoints.put("/alterar/foto", async (req,resp) => {
-    let id = req.body.id_usuario;
-    let foto = req.body.fotoPerfil;
+endpoints.put("/alterar/foto/:id_usuario", upload.single("fotoPerfil"), async (req, resp) => {
+    try {
+        const id = req.params.id_usuario;
+        const caminho = req.file.path; // caminho do multer
+        
+        const urlPublica = `http://localhost:5010/${caminho.replace("public\\", "").replace(/\\/g, "/")}`;
 
-    const registros = await repoRegistrar.UploadFoto(foto, id);
-    resp.send({mensagem: "Foto Atualizada com sucesso!"});
-})
+        await repoRegistrar.UploadFoto(urlPublica, id);
 
+
+        resp.send({ url: urlPublica, mensagem: "Foto Atualizada com sucesso!" });
+    } catch (error) {
+        resp.status(500).send({ erro: "Erro ao salvar imagem" });
+    }
+});
 
 export default endpoints;

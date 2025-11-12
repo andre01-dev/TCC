@@ -11,42 +11,42 @@ export default function Perfil() {
     const [loading, setLoading] = useState(true);
     const [editar, setEditar] = useState(false);
 
-    const id_usuario = localStorage.getItem("ID_USUARIO"); 
+    const id_usuario = localStorage.getItem("ID_USUARIO");
 
     const [foto, setFoto] = useState(localStorage.getItem('FOTO_PERFIL') || null);
+
 
     async function pegarArquivo(e) {
         const file = e.target.files[0];
         if (!file) return;
 
-        const reader = new FileReader();
+        if (file.size > 10 * 1024 * 1024) {
+        toast.error("A imagem deve ter no máximo 10MB.");
+        return;
+    }
 
-        reader.onloadend = async () => {
-            const base64 = reader.result;
+        const formData = new FormData();
+        formData.append("fotoPerfil", file); 
+        formData.append("id_usuario", id_usuario);
 
-            try {
-                await api.put("/alterar/foto", {
-                    id_usuario: id_usuario,     
-                    fotoPerfil: base64          
-                });
+        try {
+            const resp = await api.put(`/alterar/foto/${id_usuario}`, formData, {
+                headers: { "Content-Type": "multipart/form-data" }
+            });
 
-                toast.success("Foto atualizada!");
+            toast.success("Foto atualizada!");
 
-                setFoto(base64);
+            const urlPublica = resp.data.url;
+            setFoto(urlPublica);
+            setDados({ ...dados, fotoPerfil: urlPublica });
 
-                setDados({ ...dados, foto_perfil: base64 });
+            localStorage.setItem("FOTO_PERFIL", urlPublica);
 
-                localStorage.setItem("FOTO_PERFIL", base64);
-
-                window.location.reload();
-
-            } catch (error) {
-                console.error("Erro ao enviar foto:", error);
-                toast.error("Erro ao enviar foto");
-            }
-        };
-
-        reader.readAsDataURL(file);
+             window.location.reload();
+        } catch (error) {
+            console.error("Erro ao enviar imagem:", error);
+            toast.error("Erro ao enviar imagem");
+        }
     }
 
 
@@ -60,9 +60,9 @@ export default function Perfil() {
             try {
                 const response = await api.get(`/perfil/informacoes/${id_usuario}`);
                 setDados(response.data);
-                if (response.data.foto_perfil) {
-                    setFoto(response.data.foto_perfil);
-                    localStorage.setItem("FOTO_PERFIL", response.data.foto_perfil);
+                if (response.data.fotoPerfil) {
+                    setFoto(response.data.fotoPerfil);
+                    localStorage.setItem("FOTO_PERFIL", response.data.fotoPerfil);
                 }
 
             } catch (error) {
@@ -101,7 +101,7 @@ export default function Perfil() {
             <div className="container-tudo">
                 <div className="user">
 
-                    {/* ✅ Input escondido que recebe o arquivo */}
+                
                     <input
                         id="uploadFoto"
                         type="file"
@@ -110,12 +110,11 @@ export default function Perfil() {
                         style={{ display: "none" }}
                     />
 
-                    {/* ✅ Botão para abrir o explorador de arquivos */}
+          
                     <label htmlFor="uploadFoto" className="botao-upload">
                         Escolher imagem
                     </label>
 
-                    {/* ✅ Avatar com foto OU avatar gerado pelo nome */}
                     <Avatar
                         className="user-avatar"
                         src={foto}
