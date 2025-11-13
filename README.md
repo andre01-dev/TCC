@@ -2,6 +2,8 @@
 
 "Ensinar, orientar e proteger"
 Este projeto tem como objetivo ajudar idosos a aprender a usar a internet de forma segura, oferecendo cursos simples, notícias atualizadas e um espaço para denúncias de golpes online.
+____________________________________________________________________________________________________________________________________________________
+
 
 📌 Sobre o Projeto
 
@@ -13,12 +15,16 @@ Cursos interativos com vídeos e exercícios
 Notícias atualizadas sobre tecnologia voltada à segurança digital
 
 Área para denúncias de golpes virtuais ou situações suspeitas
+____________________________________________________________________________________________________________________________________________________
+
 
 🚀 Tecnologias utilizadas
 Stack	Tecnologia	Descrição
 Front-end	React.js	Interface do usuário, componentes, rotas e responsividade
 Back-end	Node.js + Express	API responsável pela comunicação e regras de negócio
 Banco de Dados	MySQL	Armazenamento de usuários, denúncias, notícias e cursos
+
+____________________________________________________________________________________________________________________________________________________
 
 🧪 Funcionalidades
 
