@@ -28,6 +28,7 @@ Banco de Dados	MySQL	Armazenamento de usuários, denúncias, notícias e cursos
 ✔️ Ferramenta para denúncias \
 ✔️ Upload de foto de perfil 
 
+____________________________________________________________________________________________________________________________________________________
 👤 Integrantes do Projeto
 André Guilherme de Oliveira Sjydlovski \
 José Cláudio de Souza Silva \
