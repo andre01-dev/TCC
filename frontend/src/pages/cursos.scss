@@ -88,11 +88,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .cursos {
-    grid-template-columns: 1fr; 
-  }
-}
 
 .botao-topo {
   position: fixed;
@@ -223,8 +218,26 @@
 
 
 @media (max-width: 768px) {
-  .cardCurso {
-    width: 90%;
-    height: auto;
+    .cursos {
+    grid-template-columns: 1fr; 
   }
+  .voltar-cursos {
+    margin: 20px auto;
+    padding: 8px 14px;
+    gap: 6px;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+
+    .voltar {
+      padding: 8px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
 }

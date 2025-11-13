@@ -91,5 +91,27 @@
         }
 
     }
-}
+      @media (max-width: 768px) {
+    .quiz {
+      .pergunta {
+        font-size: 28px;
+        margin-top: 130px;
+      }
 
+      .botao {
+        gap: 15px;
+      }
+
+      .botao button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      .rep {
+        font-size: 1.6rem;
+        padding: 25px 40px;
+      }
+    }
+}
+ 
+}

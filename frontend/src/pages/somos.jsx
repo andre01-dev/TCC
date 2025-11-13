@@ -69,11 +69,11 @@ export default function Somos() {
   }, []);
 
   const colab2 = [{
-    "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
+    "imagem": <img src="src/assets/images/Andre.jpeg" alt='imagem' />,
     "nome": "André",
     "descricao": "Full-stack e UI/UX"
   }, {
-    "imagem": <img src="src/assets/images/claudio.jpg" alt='imagem' />,
+    "imagem": <img src="src/assets/images/jose.jpeg" alt='imagem' />,
     "nome": "Claudio",
     "descricao": "Full-stack e UX"
   }]
@@ -81,14 +81,14 @@ export default function Somos() {
 
   const colab = [
     {
-      "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
+      "imagem": <img src="src/assets/images/eu.jpeg" alt='imagem' />,
       "nome": "Gustavo Lana",
       "descricao": "Full-stack e Web Designer"
     },
     {
-      "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
+      "imagem": <img src="src/assets/images/Pedro.jpeg" alt='imagem' />,
       "nome": "Pedro Lima",
-      "descricao": "Front-ende analista de dados"
+      "descricao": "Front-end analista de dados"
     }, {
       "imagem": <img src="src/assets/images/noticia14.png" alt='imagem' />,
       "nome": "Gustavo Penha",
