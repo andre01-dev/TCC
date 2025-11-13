@@ -73,7 +73,7 @@ export default function Somos() {
     "nome": "André",
     "descricao": "Full-stack e UI/UX"
   }, {
-    "imagem": <img src="src/assets/images/jose.jpeg" alt='imagem' />,
+    "imagem": <img src="src/assets/images/claudio.jpg" alt='imagem' />,
     "nome": "Claudio",
     "descricao": "Full-stack e UX"
   }]
